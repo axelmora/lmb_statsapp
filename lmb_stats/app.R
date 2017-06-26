@@ -13,9 +13,9 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("Index", tabName = "Index", icon = icon("dashboard")),
-      menuItem("Standings", tabName = "Standings", icon = icon("th")),
-      menuItem("Pyth Win Pct", tabName = "Pyth", icon = icon("th")),
-      menuItem("Att and time", tabName = "Att", icon = icon("th"))
+      menuItem("Standings", tabName = "Standings", icon = icon("th-list")),
+      menuItem("Pyth Win Pct", tabName = "Pyth", icon = icon("stats", lib="glyphicon")),
+      menuItem("Att and time", tabName = "Att", icon = icon("time", lib = "glyphicon"))
       )
   ),
   dashboardBody(
@@ -78,7 +78,11 @@ ui <- dashboardPage(
       ),
       tabItem(tabName = "Att",
               tabBox(
-                
+                width = 12,
+                tabPanel("Time",
+                         dygraphOutput("time")),
+                tabPanel("Attendance",
+                         dygraphOutput("att"))
               )
       )
     )
@@ -118,7 +122,9 @@ server <- function(input, output) {
   })  
   
   output$norte <- renderDygraph({
-    lmbts_nte <- read.csv("lmbts_nte.csv")
+    lmbts <- read.csv("lmbts.csv")
+    norte <- c(1,2,4,6,7,8,12,14,15)
+    lmbts_nte <- lmbts[norte]
     lmb.tsN <- xts(lmbts_nte[,-1], order.by = as.Date(lmbts_nte$DATE, "%Y-%m-%d"))
     dygraph(lmb.tsN, main = "2017 LMB standings", ylab = "Win/Loss percentage") %>%
       dySeries("mxo", label = "Diablos Rojos") %>%
@@ -138,7 +144,9 @@ server <- function(input, output) {
   })
   
   output$sur <- renderDygraph({
-    lmbts_sur <- read.csv("lmbts_sur.csv")
+    lmbts <- read.csv("lmbts.csv")
+    sur <- c(1,3,5,9,10,11,13,16,17)
+    lmbts_sur <- lmbts[sur]
     lmb.tsS <- xts(lmbts_sur[,-1], order.by = as.Date(lmbts_sur$DATE, "%Y-%m-%d"))
     dygraph(lmb.tsS, main = "2017 LMB standings", ylab = "Win/Loss percentage") %>%
       dySeries("leo", label = "Bravos") %>%
@@ -329,6 +337,30 @@ server <- function(input, output) {
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FF4500') %>%
       dyLimit(lmb_exp$Pyth[6], color = 'red') %>%
+      dyRangeSelector()
+  })
+  
+  output$time <- renderDygraph({
+    LMB_att_time <- read.csv("LMB_att_time.csv")
+    att_time <- LMB_att_time %>%
+      group_by(DATE) %>% summarise(
+        ATT = mean(ATT),
+        TIME = mean(TIME))
+    time.ts <- xts(att_time[,3], order.by = as.Date(att_time$DATE, "%Y-%m-%d"))
+    dygraph(time.ts, main = "2017 LMB GAMES TIME", ylab = "MINUTES") %>%
+      dyLimit(mean(att_time$TIME), color = 'red') %>%
+      dyRangeSelector()
+  })
+  
+  output$att <- renderDygraph({
+    LMB_att_time <- read.csv("LMB_att_time.csv")
+    att_time <- LMB_att_time %>%
+      group_by(DATE) %>% summarise(
+        ATT = mean(ATT),
+        TIME = mean(TIME))
+    att.ts <- xts(att_time[,2], order.by = as.Date(att_time$DATE, "%Y-%m-%d"))
+    dygraph(att.ts, main = "2017 LMB ATTENDANCE", ylab = "ATTENDANCE") %>%
+      dyLimit(mean(att_time$ATT), color = 'red') %>%
       dyRangeSelector()
   })
   
