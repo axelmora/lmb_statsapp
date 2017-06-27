@@ -7,6 +7,7 @@ library(tidyverse)
 library(dygraphs)
 library(shiny)
 library(shinydashboard)
+library(DT)
 
 ui <- dashboardPage(
   dashboardHeader(title = "LMB Stats ShinyApp"),
@@ -21,20 +22,23 @@ ui <- dashboardPage(
   dashboardBody(
     tabItems(
       tabItem(tabName = "Index",
-              box(
-                verbatimTextOutput("systime")
-              )
-      ),
+              tags$footer("Última actualización: 26 de junio de 2017")
+              ),
       tabItem(tabName = "Standings",
               tabBox(title = "Evolution standings",
                   width = 12,
-                  tabPanel("General",
+                  tabPanel("Standing",
+                     dataTableOutput("stan_nte"),
+                     br(),
+                     dataTableOutput("stan_sur")
+                  ),
+                  tabPanel("Gráfica general",
                     dygraphOutput("standings")
                   ),
-                  tabPanel("Norte",
+                  tabPanel("Gráfica Zona Norte",
                     dygraphOutput("norte")
                   ),
-                  tabPanel("Sur",
+                  tabPanel("Gráfica Zona Sur",
                     dygraphOutput("sur")
                   )
               )
@@ -362,6 +366,20 @@ server <- function(input, output) {
     dygraph(att.ts, main = "2017 LMB ATTENDANCE", ylab = "ATTENDANCE") %>%
       dyLimit(mean(att_time$ATT), color = 'red') %>%
       dyRangeSelector()
+  })
+  
+  output$stan_nte <- renderDataTable({
+    lmb_exp <- read.csv("lmb_2017_exp.csv")
+    stan.nte <- lmb_exp[c(1,3,4,10,12,13,15,16),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
+      arrange(desc(WPct))
+    stan.nte
+  })
+  
+  output$stan_sur <- renderDataTable({
+    lmb_exp <- read.csv("lmb_2017_exp.csv")
+    stan.sur <- lmb_exp[c(2,5,6,7,8,9,11,14),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
+      arrange(desc(WPct))
+    stan.sur
   })
   
   output$systime <- renderPrint({
