@@ -30,7 +30,7 @@ ui <- dashboardPage(
                 h2("Bienvenidos"),
                 h3("lmb statsapp")
               ),
-              tags$footer("Última actualización: 28 de junio de 2017")
+              tags$footer("Última actualización: 10 de septiembre de 2017")
               ),
       tabItem(tabName = "Standings",
               tabBox(title = "Evolution standings",
@@ -110,13 +110,17 @@ ui <- dashboardPage(
               tabBox(
                 width = 12,
                 tabPanel("Batting",
-                  dataTableOutput("bat"))
+                  dataTableOutput("bat")),
+                tabPanel("Advanced",
+                 dataTableOutput("bat2"))
               )),
       tabItem(tabName = "pit",
               tabBox(
                 width = 12,
-                tabPanel("Pitching",
-                         dataTableOutput("pit"))
+                tabPanel("Standard",
+                  dataTableOutput("pit")),
+                tabPanel("Advanced",
+                  dataTableOutput("pit2"))
               )
               )
     )
@@ -424,6 +428,22 @@ server <- function(input, output) {
   
   output$pit <- renderDataTable({
     lmb_p <- read.csv("lmb_p2.csv") %>%
+      arrange(desc(ERA))
+    datatable(lmb_p, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
+    )
+  })
+  
+  output$bat2 <- renderDataTable({
+    lmb_b <- read.csv("lmb_b3.csv") %>%
+      arrange(desc(AVG))
+    datatable(lmb_b, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
+    )
+  })
+  
+  output$pit2 <- renderDataTable({
+    lmb_p <- read.csv("lmb_p3.csv") %>%
       arrange(desc(ERA))
     datatable(lmb_p, extensions = 'FixedColumns',
               options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
