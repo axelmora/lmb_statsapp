@@ -8,28 +8,37 @@ library(dygraphs)
 library(shiny)
 library(shinydashboard)
 library(DT)
+library(shinyjs)
 
 ui <- dashboardPage(
-  dashboardHeader(title = "LMB Stats ShinyApp"),
+  dashboardHeader(title = "LMB StatsApp"),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Index", tabName = "Index", icon = icon("dashboard")),
       menuItem("Standings", tabName = "Standings", icon = icon("th-list")),
       menuItem("Pyth Win Pct", tabName = "Pyth", icon = icon("stats", lib="glyphicon")),
-      menuItem("Att and time", tabName = "Att", icon = icon("time", lib = "glyphicon"))
+      menuItem("Att and time", tabName = "Att", icon = icon("time", lib = "glyphicon")),
+      menuItem("Batting Stats", tabName = "bat", icon = icon("stats", lib = "glyphicon")),
+      menuItem("Pitching Stats", tabName = "pit", icon = icon("stats", lib = "glyphicon"))
       )
   ),
   dashboardBody(
     tabItems(
       tabItem(tabName = "Index",
-              tags$footer("Última actualización: 26 de junio de 2017")
+              box(
+                width = 12,
+                h2("Bienvenidos"),
+                h3("lmb statsapp")
+              ),
+              tags$footer("Última actualización: 28 de junio de 2017")
               ),
       tabItem(tabName = "Standings",
               tabBox(title = "Evolution standings",
                   width = 12,
-                  tabPanel("Standing",
-                     dataTableOutput("stan_nte"),
-                     br(),
+                  tabPanel("Standing Norte",
+                     dataTableOutput("stan_nte")
+                  ),
+                  tabPanel("Standing Sur",
                      dataTableOutput("stan_sur")
                   ),
                   tabPanel("Gráfica general",
@@ -44,6 +53,10 @@ ui <- dashboardPage(
               )
       ),
       tabItem(tabName = "Pyth",
+              h4("Expected W/L pct vs standing evolution"),
+              p("En esta sección se muestra la evolución de porcentaje de ganados y perdidos durante 
+                  la actual temporada contra el porcentaje esperado mediante la fórmula de Bill James
+                Pytagorean Winning Expected a partir de las carreras anotadas y permitidas al día de hoy."),
               tabBox(
                 width = 12,
                 tabPanel("AGS",
@@ -81,6 +94,10 @@ ui <- dashboardPage(
               )
       ),
       tabItem(tabName = "Att",
+              h4("Promedio de asistencia y duración de juegos"),
+              p("Se muestra una serie tiempo de forma gráfica del promedio de asistencia reportada en los
+                parques en cada jornada en la actual temporada contra el promedio general al día de hoy.
+                De la misma forma con la duración de los juegos."),
               tabBox(
                 width = 12,
                 tabPanel("Time",
@@ -88,13 +105,28 @@ ui <- dashboardPage(
                 tabPanel("Attendance",
                          dygraphOutput("att"))
               )
-      )
+      ),
+      tabItem(tabName = "bat",
+              tabBox(
+                width = 12,
+                tabPanel("Batting",
+                  dataTableOutput("bat"))
+              )),
+      tabItem(tabName = "pit",
+              tabBox(
+                width = 12,
+                tabPanel("Pitching",
+                         dataTableOutput("pit"))
+              )
+              )
     )
   )
 )
 
 server <- function(input, output) { 
 
+
+  
   output$standings <- renderDygraph({
     lmbts <- read.csv("lmbts.csv")
     lmb.ts <- xts(lmbts[,-1], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
@@ -372,14 +404,30 @@ server <- function(input, output) {
     lmb_exp <- read.csv("lmb_2017_exp.csv")
     stan.nte <- lmb_exp[c(1,3,4,10,12,13,15,16),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
       arrange(desc(WPct))
-    stan.nte
+    datatable(stan.nte, options = list(paging = FALSE, searching = FALSE))
   })
   
   output$stan_sur <- renderDataTable({
     lmb_exp <- read.csv("lmb_2017_exp.csv")
     stan.sur <- lmb_exp[c(2,5,6,7,8,9,11,14),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
       arrange(desc(WPct))
-    stan.sur
+    datatable(stan.sur, options = list(paging = FALSE, searching = FALSE))
+  })
+  
+  output$bat <- renderDataTable({
+    lmb_b <- read.csv("lmb_b2.csv") %>%
+      arrange(desc(AVG))
+    datatable(lmb_b, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
+            )
+  })
+  
+  output$pit <- renderDataTable({
+    lmb_p <- read.csv("lmb_p2.csv") %>%
+      arrange(desc(ERA))
+    datatable(lmb_p, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
+    )
   })
   
   output$systime <- renderPrint({

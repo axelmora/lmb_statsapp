@@ -3,8 +3,8 @@ title: lmb_stats
 account: axelmora
 server: shinyapps.io
 appId: 192190
-bundleId: 883203
+bundleId: 885840
 url: https://axelmora.shinyapps.io/lmb_stats/
-when: 1498530036.05445
+when: 1498686765.83262
 asMultiple: FALSE
 asStatic: FALSE
