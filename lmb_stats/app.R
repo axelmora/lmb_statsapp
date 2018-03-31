@@ -10,6 +10,7 @@ library(shinydashboard)
 library(DT)
 library(shinyjs)
 
+
 ui <- dashboardPage(
   dashboardHeader(title = "LMB StatsApp"),
   dashboardSidebar(
@@ -30,7 +31,7 @@ ui <- dashboardPage(
                 h2("Bienvenidos"),
                 h3("lmb statsapp")
               ),
-              tags$footer("Última actualización: 10 de septiembre de 2017")
+              tags$footer(paste0("Última actualización: ",Sys.time()))
               ),
       tabItem(tabName = "Standings",
               tabBox(title = "Evolution standings",
@@ -87,8 +88,8 @@ ui <- dashboardPage(
                          dygraphOutput("tij")),
                 tabPanel("LAG",
                          dygraphOutput("lag")),
-                tabPanel("VER",
-                         dygraphOutput("ver")),
+                tabPanel("LAR",
+                         dygraphOutput("lar")),
                 tabPanel("YUC",
                          dygraphOutput("yuc"))
               )
@@ -132,13 +133,13 @@ server <- function(input, output) {
 
   
   output$standings <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb.ts <- xts(lmbts[,-1], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
+    LMBts <- read.csv("LMBts.csv")
+    lmb.ts <- xts(LMBts[,-1], order.by = as.Date(LMBts$DATE, "%Y-%m-%d"))
     
-    dygraph(lmb.ts, main = "2017 LMB standings", ylab = "Win/Loss percentage") %>%
+    dygraph(lmb.ts, main = "2018 LMB standings", ylab = "Win/Loss percentage") %>%
       dySeries("mxo", label = "Diablos Rojos") %>%
       dySeries("leo", label = "Bravos") %>%
-      dySeries("vra", label = "Rojos del Aguila") %>%
+      dySeries("lar", label = "Tecolotes") %>%
       dySeries("vaq", label = "Vaqueros") %>%
       dySeries("mty", label = "Sultanes") %>%
       dySeries("mva", label = "Acereros") %>%
@@ -162,12 +163,12 @@ server <- function(input, output) {
   })  
   
   output$norte <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    norte <- c(1,2,4,6,7,8,12,14,15)
-    lmbts_nte <- lmbts[norte]
-    lmb.tsN <- xts(lmbts_nte[,-1], order.by = as.Date(lmbts_nte$DATE, "%Y-%m-%d"))
-    dygraph(lmb.tsN, main = "2017 LMB standings", ylab = "Win/Loss percentage") %>%
-      dySeries("mxo", label = "Diablos Rojos") %>%
+    LMBts <- read.csv("LMBts.csv")
+    norte <- c(2,3,4,5,7,8,11,12,15)
+    LMBts_nte <- LMBts[norte]
+    lmb.tsN <- xts(LMBts_nte[,-1], order.by = as.Date(LMBts_nte$DATE, "%Y-%m-%d"))
+    dygraph(lmb.tsN, main = "2018 LMB standings", ylab = "Win/Loss percentage") %>%
+      dySeries("lar", label = "Tecolotes") %>%
       dySeries("vaq", label = "Vaqueros") %>%
       dySeries("mty", label = "Sultanes") %>%
       dySeries("mva", label = "Acereros") %>%
@@ -184,13 +185,13 @@ server <- function(input, output) {
   })
   
   output$sur <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    sur <- c(1,3,5,9,10,11,13,16,17)
-    lmbts_sur <- lmbts[sur]
-    lmb.tsS <- xts(lmbts_sur[,-1], order.by = as.Date(lmbts_sur$DATE, "%Y-%m-%d"))
-    dygraph(lmb.tsS, main = "2017 LMB standings", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    sur <- c(2,6,9,10,13,14,16,17,18)
+    LMBts_sur <- LMBts[sur]
+    lmb.tsS <- xts(LMBts_sur[,-1], order.by = as.Date(LMBts_sur$DATE, "%Y-%m-%d"))
+    dygraph(lmb.tsS, main = "2018 LMB standings", ylab = "Win/Loss percentage") %>%
       dySeries("leo", label = "Bravos") %>%
-      dySeries("vra", label = "Rojos del Aguila") %>%
+      dySeries("mxo", label = "Diablos Rojos") %>%
       dySeries("yuc", label = "Leones") %>%
       dySeries("cam", label = "Piratas") %>%
       dySeries("tab", label = "Olmecas") %>%
@@ -205,249 +206,275 @@ server <- function(input, output) {
   })
   
   output$ags <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    ags.ts <- xts(lmbts[,2], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(ags.ts, main = "2017 Rieleros Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    aguts <- rename(select(LMBts,DATE,agu),WL_AVG = agu, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    agu.ts <- xts(aguts$WL_AVG, order.by = as.Date(aguts$DATE, "%Y-%m-%d"))
+    dygraph(agu.ts, main = "2018 Rieleros Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FFFF00') %>%
-      dyLimit(lmb_exp$Pyth[10], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[10], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$cam <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    cam.ts <- xts(lmbts[,3], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
+    LMBts <- read.csv("LMBts.csv")
+    camts <- rename(select(LMBts,DATE,cam),WL_AVG = cam, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    cam.ts <- xts(camts$WL_AVG, order.by = as.Date(camts$DATE, "%Y-%m-%d"))
     dygraph(cam.ts, main = "2017 Piratas Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#000080') %>%
-      dyLimit(lmb_exp$Pyth[9], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[9], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$dur <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    dur.ts <- xts(lmbts[,4], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
+    LMBts <- read.csv("LMBts.csv")
+    durts <- rename(select(LMBts,DATE,dur),WL_AVG = dur, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    dur.ts <- xts(durts$WL_AVG, order.by = as.Date(durts$DATE, "%Y-%m-%d"))
     dygraph(dur.ts, main = "2017 Generales Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#800080') %>%
-      dyLimit(lmb_exp$Pyth[4], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[4], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$leo <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    leo.ts <- xts(lmbts[,5], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(leo.ts, main = "2017 Bravos Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    leots <- rename(select(LMBts,DATE,leo),WL_AVG = leo, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    leo.ts <- xts(leots$WL_AVG, order.by = as.Date(leots$DATE, "%Y-%m-%d"))
+    dygraph(leo.ts, main = "2018 Bravos Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#66CDAA') %>%
-      dyLimit(lmb_exp$Pyth[2], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[2], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$mty <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    mty.ts <- xts(lmbts[,6], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(mty.ts, main = "2017 Sultanes Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    mtyts <- rename(select(LMBts,DATE,mty),WL_AVG = mty, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    mty.ts <- xts(mtyts$WL_AVG, order.by = as.Date(mtyts$DATE, "%Y-%m-%d"))
+    dygraph(mty.ts, main = "2018 Sultanes Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#00008B') %>%
-      dyLimit(lmb_exp$Pyth[13], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[13], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$mva <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    mva.ts <- xts(lmbts[,7], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(mva.ts, main = "2017 Acereros Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    mvats <- rename(select(LMBts,DATE,mva),WL_AVG = mva, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    mva.ts <- xts(mvats$WL_AVG, order.by = as.Date(mvats$DATE, "%Y-%m-%d"))
+    dygraph(mva.ts, main = "2018 Acereros Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#0000FF') %>%
-      dyLimit(lmb_exp$Pyth[1], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[1], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$mex <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    mex.ts <- xts(lmbts[,8], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(mex.ts, main = "2017 Diablos Rojos Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    mxots <- rename(select(LMBts,DATE,mxo),WL_AVG = mxo, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    mxo.ts <- xts(mxots$WL_AVG, order.by = as.Date(mxots$DATE, "%Y-%m-%d"))
+    dygraph(mxo.ts, main = "2018 Diablos Rojos Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FF0000') %>%
-      dyLimit(lmb_exp$Pyth[3], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[3], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$oax <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    oax.ts <- xts(lmbts[,9], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(oax.ts, main = "2017 Guerreros Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    oaxts <- rename(select(LMBts,DATE,oax),WL_AVG = oax, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    oax.ts <- xts(oaxts$WL_AVG, order.by = as.Date(oaxts$DATE, "%Y-%m-%d"))
+    dygraph(oax.ts, main = "2018 Guerreros Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#000000') %>%
-      dyLimit(lmb_exp$Pyth[5], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[5], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$pue <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    pue.ts <- xts(lmbts[,10], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(pue.ts, main = "2017 Pericos Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    puets <- rename(select(LMBts,DATE,pue),WL_AVG = pue, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    pue.ts <- xts(puets$WL_AVG, order.by = as.Date(puets$DATE, "%Y-%m-%d"))
+    dygraph(pue.ts, main = "2018 Pericos Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#008000') %>%
-      dyLimit(lmb_exp$Pyth[8], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[8], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$qui <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    qui.ts <- xts(lmbts[,11], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(qui.ts, main = "2017 Tigres Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    quits <- rename(select(LMBts,DATE,qui),WL_AVG = qui, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    qui.ts <- xts(quits$WL_AVG, order.by = as.Date(quits$DATE, "%Y-%m-%d"))
+    dygraph(qui.ts, main = "2018 Tigres Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#00008B') %>%
-      dyLimit(lmb_exp$Pyth[14], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[14], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$sal <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    sal.ts <- xts(lmbts[,12], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(sal.ts, main = "2017 Saraperos Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    sltts <- rename(select(LMBts,DATE,slt),WL_AVG = slt, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    slt.ts <- xts(sltts$WL_AVG, order.by = as.Date(sltts$DATE, "%Y-%m-%d"))
+    dygraph(slt.ts, main = "2018 Saraperos Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#40E0D0') %>%
-      dyLimit(lmb_exp$Pyth[12], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[12], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$tab <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    tab.ts <- xts(lmbts[,13], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
+    LMBts <- read.csv("LMBts.csv")
+    tabts <- rename(select(LMBts,DATE,tab),WL_AVG = tab, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    tab.ts <- xts(tabts$WL_AVG, order.by = as.Date(tabts$DATE, "%Y-%m-%d"))
     dygraph(tab.ts, main = "2017 Olmecas Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FFFF00') %>%
-      dyLimit(lmb_exp$Pyth[7], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[7], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$tij <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    tij.ts <- xts(lmbts[,14], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
+    LMBts <- read.csv("LMBts.csv")
+    tijts <- rename(select(LMBts,DATE,tij),WL_AVG = tij, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    tij.ts <- xts(tijts$WL_AVG, order.by = as.Date(tijts$DATE, "%Y-%m-%d"))
     dygraph(tij.ts, main = "2017 Toros Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#000000') %>%
-      dyLimit(lmb_exp$Pyth[15], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[15], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$lag <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    lag.ts <- xts(lmbts[,15], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(lag.ts, main = "2017 Vaqueros Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    lagts <- rename(select(LMBts,DATE,vaq),WL_AVG = vaq, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    lag.ts <- xts(lagts$WL_AVG, order.by = as.Date(lagts$DATE, "%Y-%m-%d"))
+    dygraph(lag.ts, main = "2018 Vaqueros Expected Winning Season", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#8B0000') %>%
-      dyLimit(lmb_exp$Pyth[16], color = 'red') %>%
+     # dyLimit(lmb_exp$Pyth[16], color = 'red') %>%
       dyRangeSelector()
   })
   
-  output$ver <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    ver.ts <- xts(lmbts[,16], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(ver.ts, main = "2017 Rojos del Aguila Expected Winning Season", ylab = "Win/Loss percentage") %>%
+  output$lar <- renderDygraph({
+    LMBts <- read.csv("LMBts.csv")
+    larts <- rename(select(LMBts,DATE,lar),WL_AVG = lar, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    lar.ts <- xts(larts$WL_AVG, order.by = as.Date(larts$DATE, "%Y-%m-%d"))
+    dygraph(lar.ts, main = "2018 Tecolotes Evolution WL AVG", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FF0000') %>%
-      dyLimit(lmb_exp$Pyth[11], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[11], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$yuc <- renderDygraph({
-    lmbts <- read.csv("lmbts.csv")
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    yuc.ts <- xts(lmbts[,17], order.by = as.Date(lmbts$DATE, "%Y-%m-%d"))
-    dygraph(yuc.ts, main = "2017 Leones Expected Winning Season", ylab = "Win/Loss percentage") %>%
+    LMBts <- read.csv("LMBts.csv")
+    yucts <- rename(select(LMBts,DATE,yuc),WL_AVG = yuc, DATE = DATE)
+    #lmb_exp <- read.csv("LMB2018stan")
+    yuc.ts <- xts(yucts$WL_AVG, order.by = as.Date(yucts$DATE, "%Y-%m-%d"))
+    dygraph(yuc.ts, main = "2018 Leones Evolution WL Avg", ylab = "Win/Loss percentage") %>%
       dyLegend(show = "follow") %>%
       dyOptions(colors = '#FF4500') %>%
-      dyLimit(lmb_exp$Pyth[6], color = 'red') %>%
+      #dyLimit(lmb_exp$Pyth[6], color = 'red') %>%
       dyRangeSelector()
   })
   
   output$time <- renderDygraph({
-    LMB_att_time <- read.csv("LMB_att_time.csv")
-    att_time <- LMB_att_time %>%
+    LMBatt_time <- read.csv("LMB2018.csv")
+    att_time <- LMBatt_time %>%
       group_by(DATE) %>% summarise(
         ATT = mean(ATT),
         TIME = mean(TIME))
     time.ts <- xts(att_time[,3], order.by = as.Date(att_time$DATE, "%Y-%m-%d"))
-    dygraph(time.ts, main = "2017 LMB GAMES TIME", ylab = "MINUTES") %>%
+    dygraph(time.ts, main = "2018 LMB GAMES TIME", ylab = "MINUTES") %>%
       dyLimit(mean(att_time$TIME), color = 'red') %>%
       dyRangeSelector()
   })
   
   output$att <- renderDygraph({
-    LMB_att_time <- read.csv("LMB_att_time.csv")
-    att_time <- LMB_att_time %>%
+    LMBatt_time <- read.csv("LMB2018.csv")
+    att_time <- LMBatt_time %>%
       group_by(DATE) %>% summarise(
         ATT = mean(ATT),
         TIME = mean(TIME))
     att.ts <- xts(att_time[,2], order.by = as.Date(att_time$DATE, "%Y-%m-%d"))
-    dygraph(att.ts, main = "2017 LMB ATTENDANCE", ylab = "ATTENDANCE") %>%
+    dygraph(att.ts, main = "2018 LMB ATTENDANCE", ylab = "ATTENDANCE") %>%
       dyLimit(mean(att_time$ATT), color = 'red') %>%
       dyRangeSelector()
   })
   
   output$stan_nte <- renderDataTable({
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    stan.nte <- lmb_exp[c(1,3,4,10,12,13,15,16),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
-      arrange(desc(WPct))
-    datatable(stan.nte, options = list(paging = FALSE, searching = FALSE))
+    stan.nte <- read.csv("LMB2018_stan_N.csv")
+    stan.nte = stan.nte[,-1]
+    #stan.nte <- lmb_exp[c(1,3,4,10,12,13,15,16),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
+    #  arrange(desc(WPct))
+    datatable(stan.nte, options = list(paging = FALSE, searching = FALSE)) %>%
+      formatRound(columns = c('PCT','RperG','RAperG','RunsRatio','PCTexp'), digits = 3)
   })
   
   output$stan_sur <- renderDataTable({
-    lmb_exp <- read.csv("lmb_2017_exp.csv")
-    stan.sur <- lmb_exp[c(2,5,6,7,8,9,11,14),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
-      arrange(desc(WPct))
-    datatable(stan.sur, options = list(paging = FALSE, searching = FALSE))
+    stan.sur <- read.csv("LMB2018_stan_S.csv")
+    stan.sur = stan.sur[,-1]
+    #stan.sur <- lmb_exp[c(2,5,6,7,8,9,11,14),c(1,6,7,10,4,5,8,9,16,13,14,15)] %>%
+    #  arrange(desc(WPct))
+    datatable(stan.sur, options = list(paging = FALSE, searching = FALSE)) %>%
+      formatRound(columns = c('PCT','RperG','RAperG','RunsRatio','PCTexp'), digits = 3)
   })
   
   output$bat <- renderDataTable({
-    lmb_b <- read.csv("lmb_b2.csv") %>%
+    lmb_b <- read.csv("LMB2018_bat_bas.csv") %>%
       arrange(desc(AVG))
-    datatable(lmb_b, extensions = 'FixedColumns',
+    datatable(lmb_b[,-1], extensions = 'FixedColumns',
               options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
-            )
+            ) %>%
+      formatRound(columns = c('AVG','OBP','SLG','OPS'), digits = 3)
   })
   
   output$pit <- renderDataTable({
-    lmb_p <- read.csv("lmb_p2.csv") %>%
+    lmb_p <- read.csv("LMB2018_pit_bas.csv") %>%
       arrange(desc(ERA))
-    datatable(lmb_p, extensions = 'FixedColumns',
+    datatable(lmb_p[,-1], extensions = 'FixedColumns',
               options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
-    )
+    ) %>%
+      formatRound(columns = c('ERA','WHIP'), digits = 2) %>%
+      formatRound(columns = c('IP'), digits = 1)
   })
   
   output$bat2 <- renderDataTable({
-    lmb_b <- read.csv("lmb_b3.csv") %>%
+    lmb_b <- read.csv("LMB2018_bat_bas.csv") %>%
       arrange(desc(AVG))
-    datatable(lmb_b, extensions = 'FixedColumns',
+    datatable(lmb_b[,-1], extensions = 'FixedColumns',
               options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
-    )
+    ) %>%
+      formatRound(columns = c('AVG','OBP','SLG','OPS'), digits = 3)
   })
   
   output$pit2 <- renderDataTable({
-    lmb_p <- read.csv("lmb_p3.csv") %>%
+    lmb_p <- read.csv("LMB2018_pit_sab.csv") %>%
       arrange(desc(ERA))
-    datatable(lmb_p, extensions = 'FixedColumns',
+    datatable(lmb_p[,-1], extensions = 'FixedColumns',
               options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 6)
-    )
+    ) %>%
+      formatRound(columns = c('ERA','WHIP','BB.9','K.9'), digits = 2) %>%
+      formatRound(columns = c('IP'), digits = 1)
   })
   
   output$systime <- renderPrint({
