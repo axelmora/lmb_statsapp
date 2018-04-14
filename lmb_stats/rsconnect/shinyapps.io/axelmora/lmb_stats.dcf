@@ -5,8 +5,8 @@ account: axelmora
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 192190
-bundleId: 1306114
+bundleId: 1318164
 url: https://axelmora.shinyapps.io/lmb_stats/
-when: 1523028124.44855
+when: 1523676928.99927
 asMultiple: FALSE
 asStatic: FALSE
