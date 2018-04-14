@@ -15,12 +15,13 @@ ui <- dashboardPage(
   dashboardHeader(title = "LMB StatsApp"),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Index", tabName = "Index", icon = icon("dashboard")),
       menuItem("Standings", tabName = "Standings", icon = icon("th-list")),
       menuItem("Teams charts", tabName = "Pyth", icon = icon("stats", lib="glyphicon")),
       menuItem("Att and time", tabName = "Att", icon = icon("time", lib = "glyphicon")),
-      menuItem("Batting Stats", tabName = "bat", icon = icon("stats", lib = "glyphicon")),
-      menuItem("Pitching Stats", tabName = "pit", icon = icon("stats", lib = "glyphicon"))
+      menuItem("Batting Leaders", tabName = "bat", icon = icon("stats", lib = "glyphicon")),
+      menuItem("Pitching Leaders", tabName = "pit", icon = icon("stats", lib = "glyphicon")),
+      menuItem("Team batting", tabName = "tb", icon = icon("stats", lib = "glyphicon")),
+      menuItem("Team pitching", tabName = "tp", icon = icon("stats", lib = "glyphicon"))
       )
   ),
   dashboardBody(
@@ -118,8 +119,24 @@ ui <- dashboardPage(
                   dataTableOutput("pit")),
                 tabPanel("Advanced",
                   dataTableOutput("pit2"))
-              )
-              )
+              )),
+      tabItem(tabName = "tb",
+              tabBox(
+                width = 12,
+                tabPanel("Batting",
+                         dataTableOutput("tb")),
+                tabPanel("Advanced",
+                         dataTableOutput("tb2"))
+              )),
+      tabItem(tabName = "tp",
+              tabBox(
+                width = 12,
+                tabPanel("Standard",
+                         dataTableOutput("tp")),
+                tabPanel("Advanced",
+                         dataTableOutput("tp2"))
+        )
+      )
     )
   )
 )
@@ -495,7 +512,47 @@ server <- function(input, output) {
       formatRound(columns = c('ERA','WHIP','BB.9','K.9'), digits = 2) %>%
       formatRound(columns = c('IP'), digits = 1)
   })
+  output$tb <- renderDataTable({
+    lmb.tb.u <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSH456A4j21jiEPonQ0Z9-cUMClhkuRl3diI-ecx14CCcK9WJQMJuLCew_nVj1L1mB3oprgjKzbUROu/pub?gid=1445749423&single=true&output=csv"
+    lmb_tb <- read.csv(url(lmb.tb.u)) %>%
+      arrange(desc(AVG))
+    datatable(lmb_tb, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 8)
+    ) %>%
+      formatRound(columns = c('AVG','OBP','SLG','OPS'), digits = 3)
+  })
   
+  output$tp <- renderDataTable({
+    lmb.tp.u <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTkwZWopw5S0Sqa5Sx_6HuE9RUXHTKPIjRlAfE3XjYlYRAO98mdyBeDmMKXKxaDwi0pEYnTkxHyZ5Je/pub?gid=1532815747&single=true&output=csv"
+    lmb_tp <- read.csv(url(lmb.tp.u)) %>%
+      arrange(desc(ERA))
+    datatable(lmb_tp, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 8)
+    ) %>%
+      formatRound(columns = c('ERA','WHIP'), digits = 2) %>%
+      formatRound(columns = c('IP'), digits = 1)
+  })
+  
+  output$tb2 <- renderDataTable({
+    lmb.tb2.u <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSH456A4j21jiEPonQ0Z9-cUMClhkuRl3diI-ecx14CCcK9WJQMJuLCew_nVj1L1mB3oprgjKzbUROu/pub?gid=1445749423&single=true&output=csv"
+    lmb_tb <- read.csv(url(lmb.tb2.u)) %>%
+      arrange(desc(AVG))
+    datatable(lmb_tb, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 8)
+    ) %>%
+      formatRound(columns = c('AVG','OBP','SLG','OPS'), digits = 3)
+  })
+  
+  output$tp2 <- renderDataTable({
+    lmb.tp2.u <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU9wHxLfPPZkMxomezKeSBHjQp4xgdPXNK7v7Dj6jrER0sLeIn59Bal0Pl5JMMMF0nondwGU5QdGuD/pub?gid=2134339612&single=true&output=csv"
+    lmb_tp <- read.csv(url(lmb.tp2.u)) %>%
+      arrange(desc(ERA))
+    datatable(lmb_tp, extensions = 'FixedColumns',
+              options = list(scrollX = TRUE, fixedColumns = TRUE, pageLength = 8)
+    ) %>%
+      formatRound(columns = c('ERA','WHIP','BB.9','K.9'), digits = 2) %>%
+      formatRound(columns = c('IP'), digits = 1)
+  })
   output$systime <- renderPrint({
     Sys.time()
   })
