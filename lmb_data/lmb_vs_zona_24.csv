@@ -1,0 +1,28 @@
+NORTE,,,,,,,,,
+,GENERAL,,,VS SUR,,,VS NORTE,,
+EQUIPO,G,P,PCT,G,P,PCT,G,P,PCT
+Sultanes de Monterrey,41,25,0.621,8,4,0.667,33,21,0.611
+Algodoneros Union Laguna,40,26,0.606,7,5,0.583,33,21,0.611
+Tecos de los Dos Laredos,40,28,0.588,7,5,0.583,33,23,0.589
+Acereros del Norte,37,29,0.561,8,4,0.667,29,25,0.537
+Toros de Tijuana,36,31,0.537,5,7,0.417,31,24,0.564
+Saraperos de Saltillo,34,33,0.507,2,9,0.182,32,24,0.571
+Rieleros de Aguascalientes,31,36,0.463,9,3,0.750,22,33,0.400
+Charros de Jalisco,28,39,0.418,7,5,0.583,21,34,0.382
+Dorados de Chihuahua,25,43,0.368,4,8,0.333,21,35,0.375
+Caliente de Durango,24,43,0.358,4,8,0.333,20,35,0.364
+General,,,,61,58,0.512605042,275,275,0.500
+SUR,,,,,,,,,
+,GENERAL,,,VS SUR,,,VS NORTE,,
+EQUIPO,G,P,PCT,G,P,PCT,G,P,PCT
+Diablos Rojos del Mexico,53,15,0.779,44,13,0.772,9,2,0.818
+Leones de Yucatan,35,27,0.565,29,21,0.580,6,6,0.500
+Conspiradores de Queretaro,34,31,0.523,26,27,0.491,8,4,0.667
+Olmecas de Tabasco,35,32,0.522,30,25,0.545,5,7,0.417
+Pericos de Puebla,35,32,0.522,32,23,0.582,3,9,0.250
+Guerreros de Oaxaca,34,32,0.515,26,28,0.481,8,4,0.667
+El Aguila de Veracruz,31,33,0.484,25,27,0.481,6,6,0.500
+Bravos de Leon,27,39,0.409,22,32,0.407,5,7,0.417
+Piratas de Campeche,22,41,0.349,17,34,0.333,5,7,0.417
+Tigres de Quintana Roo,19,46,0.292,16,37,0.302,3,9,0.250
+General,,,,267,267,0.500,58,61,0.487394958
