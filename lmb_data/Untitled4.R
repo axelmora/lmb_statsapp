@@ -1,5 +1,5 @@
 library(baseballr)
-ah ok oklibrary(dplyr)
+library(dplyr)
 
 lmb_pace_24 <- mlb_game_pace(season = 2024, sport_ids = 23)
 lmb_pace_24 <- lmb_pace_24 %>%

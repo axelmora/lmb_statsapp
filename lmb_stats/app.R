@@ -9,7 +9,6 @@ library(shiny)
 library(shinydashboard)
 library(DT)
 library(shinyjs)
-library(baseballr)
 
 
 ui <- dashboardPage(
