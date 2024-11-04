@@ -1,1001 +1,141 @@
 "","Season","Name","Team","GP","GS","A","PO","E","F%","DP","TP","CS","SB","SB%","PB","pickoffs","team_id","team_code","team_abbreviation","franchise_name","club_name","venue_id","venue_name","capacity","league_id","division_id","sport_id"
-"1","2024","Felipe Acosta","DUR",15,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"2","2024","Abel Adames","CAM",13,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"3","2024","Jose Adames","TIG",32,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"4","2024","Samuel Adames","LEO",12,0,1,5,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"5","2024","Micker Adolfo","LEO",26,25,2,39,0,"1.000",2,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"6","2024","Miguel Aguilar","JAL",35,0,7,3,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"7","2024","Ryan Aguilar","LAR",8,6,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"8","2024","Ryan Aguilar","LAR",3,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"9","2024","Al Alburquerque","TAB",20,0,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"10","2024","Elkin Alcala","JAL",25,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"11","2024","Ismael Alcantara","AGS",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"12","2024","Reza Aleaziz","OAX",38,0,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"13","2024","Tyler Alexander","SLT",7,7,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"14","2024","Diogenes Almengo","CAM",35,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"15","2024","Abraham Almonte","TAB",11,11,1,22,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"16","2024","Cristian Alvarado","PUE",9,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"17","2024","Samuel Alvarado","PUE",20,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"18","2024","Abiel Amador","AGS",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"19","2024","Abiel Amador","AGS",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"20","2024","Japhet Amador","MEX",2,2,0,16,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"21","2024","Daniel Amaral","MVA",4,1,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"22","2024","Daniel Amaral","MVA",28,21,2,45,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"23","2024","Daniel Amaral","MVA",7,3,0,14,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"24","2024","Shaun Anderson","TAB",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"25","2024","Tanner Anderson","MTY",18,18,11,4,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"26","2024","Merfy Andrew","CAM",9,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"27","2024","Fabian Anguamea","VER",13,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"28","2024","Nestor Anguamea","JAL",28,0,3,1,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"29","2024","Tomohiro Anraku","MEX",47,0,7,3,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"30","2024","Elvis Araujo","VER",11,10,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"31","2024","Omar Araujo","LAG",17,2,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"32","2024","Carlos Arellano","VER",4,1,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"33","2024","Carlos Arellano","VER",4,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"34","2024","Diosbel Arias","MEX",2,1,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"35","2024","Jonathan Aro","JAL",17,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"36","2024","Baltazar Arredondo","DUR",10,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"37","2024","Yeison Asencio","SLT",1,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"38","2024","Willians Astudillo","SLT",21,16,9,139,0,"1.000",12,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"39","2024","Willians Astudillo","SLT",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"40","2024","Michael Baca","TAB",6,1,8,7,0,"1.000",2,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"41","2024","Carlos Baez","JAL",5,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"42","2024","Carlos Baez","JAL",4,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"43","2024","Michel Baez","MTY",7,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"44","2024","Alejandro Barraza","LAR",21,0,3,4,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"45","2024","Manny Barreda","TIJ",13,11,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"46","2024","Luis Barrera","CAM",29,28,0,57,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"47","2024","Franklin Barreto","MEX",76,75,7,148,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"48","2024","Raul Barron","TIG",34,0,5,2,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"49","2024","Tyler Beardsley","AGS",8,8,8,4,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"50","2024","Cal Becker","DUR",2,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"51","2024","Carlos Belen","MTY",46,0,4,4,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"52","2024","Engel Beltre","CAM",14,11,1,22,0,"1.000",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"53","2024","Engel Beltre","CAM",5,5,0,9,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"54","2024","Carlos Betancourt","OAX",7,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"55","2024","Daniel Bies","LEO",23,5,4,4,0,"1.000",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"56","2024","Bryan Blanton","SLT",13,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"57","2024","Esteban Bloch","OAX",48,0,7,2,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"58","2024","Anthony Boix","CHI",5,1,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"59","2024","Ronald Bolaños","LAG",9,7,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"60","2024","Rigoberto Borbolla","TIG",23,0,0,1,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"61","2024","Ernesto Borges","CAM",18,0,3,4,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"62","2024","Manuel Boscan","DUR",3,3,3,30,0,"1.000",4,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"63","2024","Wilfredo Boscan","QRO",15,12,6,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"64","2024","Michael Boyle","YUC",22,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"65","2024","Silvino Bracho","TIJ",44,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"66","2024","Bobby Bradley","TIJ",4,3,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"67","2024","Edgar Bravo","CAM",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"68","2024","Edgar Bravo","CAM",6,3,0,7,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"69","2024","Edgar Bravo","CAM",15,11,0,36,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"70","2024","Jose Bravo","MEX",11,11,7,7,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"71","2024","Liarvis Breto","CHI",39,0,4,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"72","2024","Lewis Brinson","TAB",6,2,0,7,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"73","2024","Lewis Brinson","AGS",1,1,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"74","2024","Lewis Brinson","AGS",4,4,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"75","2024","Geoff Broussard","LAR",45,0,5,4,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"76","2024","Victor Buelna","VER",14,0,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"77","2024","Enrique Burgos","OAX",9,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"78","2024","Samuel Burgos","MVA",3,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"79","2024","Fernando Burgueno","TIG",16,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"80","2024","Sergio Burruel","CHI",34,33,10,221,0,"1.000",2,0,9,15,".625",2,0,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"81","2024","Carlos Bustamante","MVA",25,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"82","2024","Omar Bustamante","MVA",2,1,0,4,0,"1.000",0,0,0,3,"1.000",0,0,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"83","2024","Leobaldo Cabrera","AGS",9,7,0,21,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"84","2024","Leobaldo Cabrera","AGS",2,2,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"85","2024","Ramón Cabrera","YUC",3,3,5,22,0,"1.000",1,0,1,0,".000",0,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"86","2024","Angel Camacho","YUC",2,0,0,3,0,"1.000",1,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"87","2024","Angel Camacho","YUC",5,3,9,4,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"88","2024","Angel Camacho","YUC",7,4,14,6,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"89","2024","Angel Camacho","YUC",12,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"90","2024","Angel Camacho","YUC",8,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"91","2024","Jose Camacho","LEO",2,0,1,4,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"92","2024","Juan Camacho","JAL",6,5,2,39,0,"1.000",1,0,1,5,".833",0,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"93","2024","A.J. Candelario","QRO",35,0,0,2,0,"1.000",2,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"94","2024","Malquin Canelo","VER",3,2,8,4,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"95","2024","Malquin Canelo","VER",4,1,4,0,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"96","2024","Malquin Canelo","VER",3,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"97","2024","Roberto Caro","TIG",18,17,4,33,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"98","2024","Roberto Caro","TIG",4,4,1,4,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"99","2024","Roberto Caro","TIG",11,10,0,16,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"100","2024","Alberto Carreon","VER",8,6,16,13,0,"1.000",4,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"101","2024","Alberto Carreon","VER",2,0,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"102","2024","Raul Carrillo","TIG",16,14,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"103","2024","Erick Casillas","VER",43,0,5,5,0,"1.000",2,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"104","2024","Antonio Castaneda","OAX",6,0,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"105","2024","Gerardo Castaneda","PUE",3,0,0,4,0,"1.000",0,0,0,0,".---",0,0,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"106","2024","Ryan Castellani","LAG",7,7,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"107","2024","Pedro Castellano","OAX",2,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"108","2024","Pedro Castellano","OAX",5,0,4,2,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"109","2024","Enrique Castillo","MTY",14,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"110","2024","Johan Castillo","TIG",5,5,3,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"111","2024","Luis Castillo","CAM",25,1,9,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"112","2024","Moisés Castillo","AGS",1,1,2,3,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"113","2024","Moisés Castillo","AGS",1,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"114","2024","Rusney Castillo","QRO",3,3,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"115","2024","Rusney Castillo","QRO",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"116","2024","Yamil Castillo","CHI",10,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"117","2024","Anthony Castro","CAM",14,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"118","2024","Daniel Castro","MTY",3,3,6,4,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"119","2024","Harold Castro","TIJ",23,19,1,39,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"120","2024","Harold Castro","TIJ",12,11,0,12,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"121","2024","Linder Castro","QRO",21,4,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"122","2024","Jorgan Cavanerio","QRO",9,0,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"123","2024","Braulio Cavero","MVA",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"124","2024","Henry Centeno","CHI",14,13,7,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"125","2024","Jhoulys Chacín","SLT",16,15,14,6,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"126","2024","Angel Chavarin","CAM",16,8,4,55,0,"1.000",1,0,5,13,".722",1,0,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"127","2024","Angel Chavarin","CAM",2,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"128","2024","Jose Guadalupe Chavez","JAL",1,0,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"129","2024","Yaya Chentouf","AGS",14,0,2,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"130","2024","Freddvil Chevez","DUR",3,3,1,22,0,"1.000",2,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"131","2024","Freddvil Chevez","DUR",4,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"132","2024","Marcus Chiu","TIG",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"133","2024","Alex Claudio","MEX",32,0,4,4,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"134","2024","Rogelio Cobos","PUE",3,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"135","2024","Rogelio Cobos","PUE",9,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"136","2024","Yeison Coca","YUC",2,0,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"137","2024","Yeison Coca","YUC",9,3,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"138","2024","Yeison Coca","YUC",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"139","2024","Carlos Contreras","AGS",7,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"140","2024","Joe Corbett","DUR",16,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"141","2024","Francisco Cordoba","MEX",13,7,8,62,0,"1.000",1,0,4,7,".636",0,0,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"142","2024","Jesus Cordova","JAL",7,0,0,8,0,"1.000",0,0,0,1,"1.000",0,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"143","2024","Rafael Cordova","MEX",28,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"144","2024","Daniel Cornejo","AGS",3,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"145","2024","Daniel Cornejo","AGS",35,27,1,34,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"146","2024","Bryan Corral","MVA",2,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"147","2024","Pablo Cortes","CHI",8,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"148","2024","Juan Cossio","TIG",37,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"149","2024","Clark Cota","LAR",5,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"150","2024","Fabian Cota","MTY",30,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"151","2024","Justin Courtney","MEX",15,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"152","2024","Narciso Crook","TIG",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"153","2024","Narciso Crook","TIG",1,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"154","2024","Daniel Cruz","LEO",34,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"155","2024","Jesus Cruz","YUC",39,0,4,0,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"156","2024","Romer Cuadrado","OAX",17,15,0,21,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"157","2024","Romer Cuadrado","MTY",2,0,1,8,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"158","2024","Oscar Cuello","LAR",7,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"159","2024","Cesar Cuevas","TIG",3,3,6,1,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"160","2024","Allen Córdoba","LAG",11,3,13,12,0,"1.000",2,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"161","2024","Allen Córdoba","LAG",2,2,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"162","2024","Allen Córdoba","LAG",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"163","2024","Tiago Da Silva","DUR",21,14,10,6,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"164","2024","Kevin Davis","LEO",37,0,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"165","2024","Yonathan Daza","OAX",61,60,5,147,0,"1.000",2,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"166","2024","Yonathan Daza","LAR",4,4,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"167","2024","Yonathan Daza","LAR",21,19,3,30,0,"1.000",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"168","2024","Adrian De Horta","OAX",12,4,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"169","2024","Daniel De La Fuente","MTY",5,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"170","2024","Alex Delgado","CHI",3,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"171","2024","Kristian Delgado","CHI",5,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"172","2024","Kristian Delgado","CHI",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"173","2024","Kristian Delgado","CHI",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"174","2024","Randall Delgado","YUC",8,8,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"175","2024","Odrisamer Despaigne","YUC",18,18,16,14,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"176","2024","Eduardo Diaz","YUC",3,2,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"177","2024","Diego Dominguez","CAM",3,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"178","2024","Yadir Drake","YUC",2,1,0,11,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"179","2024","Frank Duncan","DUR",12,11,4,8,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"180","2024","Edwin Díaz","SLT",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"181","2024","Yennsy Díaz","VER",6,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"182","2024","Norman Elenes","CAM",21,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"183","2024","Sebastián Elizalde","MTY",16,15,1,20,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"184","2024","Sebastián Elizalde","MTY",4,4,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"185","2024","Jerar Encarnacion","OAX",16,16,0,21,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"186","2024","Jerar Encarnacion","OAX",7,5,1,10,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"187","2024","Angel Erro","TIG",17,12,11,84,0,"1.000",11,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"188","2024","Luis Escobar","MVA",18,12,4,5,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"189","2024","Julian Escobedo","LAG",10,5,0,18,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"190","2024","Julian Escobedo","LAG",11,8,1,13,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"191","2024","Raynel Espinal","AGS",6,4,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"192","2024","Calvin Estrada","JAL",1,1,0,9,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"193","2024","Calvin Estrada","JAL",11,5,0,14,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"194","2024","Phillip Evans","TIJ",2,2,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"195","2024","Phillip Evans","TIJ",17,17,33,12,0,"1.000",3,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"196","2024","Jesus Fabela","MEX",4,1,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"197","2024","Jeurys Familia","MEX",9,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"198","2024","Jose Heberto Felix","TAB",30,25,15,187,0,"1.000",0,0,13,18,".581",1,0,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"199","2024","Neftalí Feliz","YUC",32,0,6,2,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"200","2024","José Manuel Fernández","JAL",34,0,6,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"201","2024","Julian Fernández","VER",34,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"202","2024","Xavier Fernández","MEX",7,6,4,52,0,"1.000",1,0,2,3,".600",0,0,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"203","2024","Edwin Fierro","MEX",33,0,6,3,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"204","2024","Carlos Figueroa","TIG",36,35,2,54,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"205","2024","Carlos Figueroa","TIG",22,21,0,39,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"206","2024","Bryant Flete","TIG",1,1,2,2,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"207","2024","Bryant Flete","TIG",3,3,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"208","2024","Wendell Floranus","DUR",45,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"209","2024","Alejandro Flores","DUR",1,0,0,3,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"210","2024","Alejandro Flores","DUR",3,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"211","2024","Bernardo Flores Jr.","TIG",15,4,4,0,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"212","2024","Fernando Flores","VER",20,13,3,123,0,"1.000",2,0,2,4,".667",0,0,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"213","2024","Fernando Flores","VER",4,0,0,10,0,"1.000",2,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"214","2024","Jecksson Flores","MVA",1,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"215","2024","Jecksson Flores","MVA",15,4,0,12,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"216","2024","Jecksson Flores","MVA",37,36,4,67,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"217","2024","Oziel Flores","CHI",1,0,1,0,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"218","2024","Oziel Flores","CHI",4,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"219","2024","Oziel Flores","CHI",19,3,1,16,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"220","2024","Oziel Flores","CHI",11,8,0,18,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"221","2024","Oziel Flores","CHI",3,1,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"222","2024","Ramón Flores","MEX",6,4,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"223","2024","Ramón Flores","MEX",19,14,0,34,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"224","2024","Ramón Flores","MEX",24,20,3,36,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"225","2024","Ti'Quan Forbes","QRO",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"226","2024","Ti'Quan Forbes","QRO",6,4,11,9,0,"1.000",3,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"227","2024","Ti'Quan Forbes","QRO",25,9,16,16,0,"1.000",3,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"228","2024","Ti'Quan Forbes","QRO",6,2,17,3,0,"1.000",4,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"229","2024","Antonio Frias","CAM",13,4,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"230","2024","Jose Frutos","OAX",24,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"231","2024","Balbino Fuenmayor","MVA",6,6,4,47,0,"1.000",4,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"232","2024","Steven Fuentes","JAL",18,11,1,3,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"233","2024","Jose Gaitan","VER",3,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"234","2024","Jose Gaitan","VER",9,7,0,11,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"235","2024","Jesse Galindo","TIG",27,0,4,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"236","2024","Pablo Garabitos","CHI",7,3,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"237","2024","Alan Garcia","LEO",4,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"238","2024","Alan Garcia","LEO",2,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"239","2024","Anhuar Garcia","YUC",11,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"240","2024","Bryan Garcia","JAL",18,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"241","2024","Edson Garcia","TIG",3,2,6,4,0,"1.000",2,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"242","2024","Edson Garcia","TIG",10,6,1,11,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"243","2024","Freylin Garcia","PUE",10,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"244","2024","Manny Garcia","CHI",14,14,1,29,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"245","2024","Manny Garcia","CHI",2,2,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"246","2024","Mario Garcia","AGS",4,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"247","2024","Pedro Garcia","PUE",29,0,4,1,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"248","2024","Sebastian Garcia","OAX",7,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"249","2024","Anthony García","PUE",4,4,0,10,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"250","2024","Anthony García","AGS",11,7,4,48,0,"1.000",9,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"251","2024","Edgar García","MVA",12,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"252","2024","Jason García","OAX",16,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"253","2024","Jonas Garibay","VER",31,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"254","2024","Saul Garza","CHI",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"255","2024","Saul Garza","TIJ",19,16,17,124,0,"1.000",19,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"256","2024","Carlos Alberto Gastelum","TIG",1,1,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"257","2024","Christopher Gastelum","JAL",4,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"258","2024","Christopher Gastelum","JAL",7,0,7,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"259","2024","Christopher Gastelum","JAL",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"260","2024","Christopher Gastelum","JAL",2,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"261","2024","Leo German","PUE",3,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"262","2024","Leo German","PUE",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"263","2024","Anthony Giansanti","TIJ",2,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"264","2024","Anthony Giansanti","TIJ",13,8,1,15,0,"1.000",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"265","2024","Robbie Glendinning","TAB",3,1,0,13,0,"1.000",1,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"266","2024","Amilcar Gomez","AGS",6,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"267","2024","Amilcar Gomez","AGS",16,1,0,9,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"268","2024","Yapson Gomez","DUR",6,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"269","2024","Alejandro Gonzalez","OAX",5,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"270","2024","Felipe Gonzalez","LEO",15,12,5,1,0,"1.000",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"271","2024","Jorge Gonzalez","AGS",1,0,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"272","2024","Jorge Gonzalez","AGS",7,3,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"273","2024","Santiago Gonzalez","DUR",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"274","2024","Santiago Gonzalez","DUR",6,4,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"275","2024","Santiago Gonzalez","DUR",5,0,1,3,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"276","2024","Yariel Gonzalez","OAX",4,0,1,12,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"277","2024","Yariel Gonzalez","OAX",1,1,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"278","2024","Harol González","TIG",10,10,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"279","2024","Severino González","JAL",25,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"280","2024","Cade Gotta","LAR",3,3,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"281","2024","Ashton Goudeau","AGS",9,9,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"282","2024","Ariel Gracia","CHI",31,3,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"283","2024","A.J. Griffin","TIG",8,4,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"284","2024","Ryan Grotjohn","TAB",2,2,8,7,0,"1.000",2,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"285","2024","Zac Grotz","MVA",14,14,10,4,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"286","2024","Norwith Gudiño","MTY",15,10,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"287","2024","Deolis Guerra","SLT",42,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"288","2024","Alberto Guerrero","LEO",30,0,3,4,0,"1.000",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"289","2024","Jesus Guerrero","LEO",6,5,4,38,0,"1.000",0,0,3,7,".700",2,0,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"290","2024","Adrian Gusman","QRO",8,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"291","2024","Alfred Gutierrez","PUE",47,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"292","2024","Beder Gutierrez","QRO",5,3,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"293","2024","Beder Gutierrez","QRO",5,5,0,9,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"294","2024","David Gutierrez","TIJ",39,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"295","2024","Demetrio Gutierrez","OAX",23,3,8,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"296","2024","Gabriel Gutierrez","MEX",27,23,12,167,0,"1.000",2,0,4,13,".765",2,0,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"297","2024","Vladimir Gutierrez","PUE",8,8,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"298","2024","Kelvin Gutiérrez","QRO",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"299","2024","Gael Guzman","LAG",8,2,2,21,0,"1.000",0,0,2,1,".333",0,0,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"300","2024","Marco Guzman","CAM",2,2,4,4,0,"1.000",2,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"301","2024","Marco Guzman","CAM",1,1,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"302","2024","Miguel Guzman","PUE",43,13,15,177,0,"1.000",25,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"303","2024","Miguel Guzman","PUE",13,12,1,24,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"304","2024","Juan Gámez","MTY",27,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"305","2024","Tom Hackimer","LAR",47,0,8,0,0,"1.000",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"306","2024","Brooks Hall","MEX",3,3,1,2,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"307","2024","Billy Hamilton","JAL",60,59,1,132,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"308","2024","Alen Hanson","QRO",3,2,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"309","2024","Alen Hanson","QRO",2,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"310","2024","Scott Harkin","CAM",6,6,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"311","2024","Esteban Haro","JAL",23,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"312","2024","Alonzo Harris","LAR",5,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"313","2024","Matt Hartman","JAL",11,7,2,0,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"314","2024","Kent Hasler","DUR",36,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"315","2024","Adeiny Hechavarría","TAB",9,6,10,5,0,"1.000",2,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"316","2024","Adeiny Hechavarría","TAB",1,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"317","2024","Nolberto Henriquez","OAX",2,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"318","2024","Leo Heras","TAB",16,11,0,31,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"319","2024","Leo Heras","TAB",8,7,2,19,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"320","2024","Alemao Hernandez","MEX",18,4,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"321","2024","Arnaldo Hernandez","LAR",37,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"322","2024","David Hernandez","LEO",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"323","2024","Francisco Hernandez","LAG",1,0,0,1,0,"1.000",0,0,0,0,".---",0,0,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"324","2024","Francisco Hernandez","LAG",10,1,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"325","2024","Francisco Hernandez","LAG",6,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"326","2024","Francisco Hernandez","LAG",14,6,0,12,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"327","2024","Josuan Hernandez","TIG",1,1,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"328","2024","Josuan Hernandez","TIG",1,0,1,1,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"329","2024","Kenny Hernandez","PUE",26,1,1,0,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"330","2024","Ramon Hernandez","MVA",6,2,0,30,0,"1.000",3,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"331","2024","Ricardo Hernandez","DUR",7,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"332","2024","Yadiel Hernandez","LAR",4,2,2,13,0,"1.000",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"333","2024","Ariel Hernández","JAL",7,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"334","2024","Anthony Herrera","AGS",9,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"335","2024","Carlos Herrera","CHI",3,3,7,4,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"336","2024","Kurt Heyer","SLT",29,0,5,7,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"337","2024","Jesus Higuera","CAM",2,2,5,4,0,"1.000",3,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"338","2024","Yaramil Hiraldo","DUR",24,0,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"339","2024","Adam Hofacket","LEO",38,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"340","2024","Jesus Huerta","PUE",29,0,5,1,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"341","2024","Niko Hulsizer","TIG",7,7,0,17,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"342","2024","Alfredo Hurtado","JAL",1,0,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"343","2024","Alfredo Hurtado","JAL",7,0,3,1,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"344","2024","Alfredo Hurtado","JAL",7,3,11,2,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"345","2024","Alfredo Hurtado","JAL",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"346","2024","Jeff Ibarra","LAG",39,0,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"347","2024","Walter Ibarra","YUC",3,2,0,15,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"348","2024","Walter Ibarra","YUC",7,2,10,3,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"349","2024","Walter Ibarra","YUC",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"350","2024","Ivan Izaguirre","SLT",17,0,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"351","2024","Marco Jaime","AGS",1,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"352","2024","Odalvi Javier","OAX",29,7,7,3,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"353","2024","Williams Jerez","OAX",32,1,2,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"354","2024","Domingo Jimenez","PUE",18,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"355","2024","Isaac Jimenez","DUR",37,0,2,4,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"356","2024","Keone Kela","LAR",42,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"357","2024","Kevin Kelly","MTY",16,11,6,3,0,"1.000",2,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"358","2024","Gunnar Kines","DUR",10,4,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"359","2024","Nolan Kingham","MTY",14,8,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"360","2024","Max Kuhns","LEO",41,1,2,3,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"361","2024","Alay Lago","TIG",7,6,6,6,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"362","2024","Alay Lago","TIG",2,1,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"363","2024","Mitch Lambson","SLT",11,8,7,3,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"364","2024","Albert Lara","LAG",11,8,13,7,0,"1.000",4,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"365","2024","Stevie Ledesma","MVA",5,2,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"366","2024","Khalil Lee","CHI",2,2,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"367","2024","Julian Leon","LAG",32,29,8,177,0,"1.000",0,0,4,23,".852",0,0,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"368","2024","Alberto Leyva","CHI",29,0,5,2,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"369","2024","Gabriel Lino","OAX",7,3,3,27,0,"1.000",5,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"370","2024","Elvin Liriano","MVA",22,3,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"371","2024","Walker Lockett","TAB",3,3,1,1,0,"1.000",1,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"372","2024","Shed Long Jr.","TAB",2,2,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"373","2024","Derrick Loop","SLT",37,0,6,3,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"374","2024","Alan Lopez","LEO",3,0,1,7,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"375","2024","Alfredo Lopez","DUR",2,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"376","2024","Elmer Lopez","DUR",2,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"377","2024","Elmer Lopez","DUR",6,1,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"378","2024","Irving Lopez","PUE",19,18,42,43,0,"1.000",17,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"379","2024","Ulises Lopez","AGS",1,0,0,1,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"380","2024","Zac Lowther","TIJ",5,4,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"381","2024","Jesus Loya","CHI",1,1,1,6,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"382","2024","Jesus Loya","CHI",19,18,1,26,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"383","2024","Ivan Lozano","VER",2,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"384","2024","Dawel Lugo","TAB",1,1,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"385","2024","Francisco Lugo","TAB",5,1,1,15,0,"1.000",1,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"386","2024","Francisco Lugo","TAB",6,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"387","2024","Francisco Lugo","TAB",8,4,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"388","2024","Rito Lugo","PUE",12,7,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"389","2024","Eduardo Luna","LAR",3,0,0,7,0,"1.000",0,0,0,0,".---",0,0,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"390","2024","Jose Luna","VER",5,2,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"391","2024","Jose Luna","VER",4,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"392","2024","Jose Luna","AGS",27,0,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"393","2024","Yoan López","LAG",49,0,6,4,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"394","2024","Diago Machado","TIJ",3,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"395","2024","Irving Machuca","CAM",32,0,3,3,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"396","2024","Vimael Machín","JAL",3,3,0,31,0,"1.000",3,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"397","2024","Diego Madero","SLT",8,5,17,10,0,"1.000",3,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"398","2024","Diego Madero","SLT",2,0,2,1,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"399","2024","Terance Marin","SLT",4,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"400","2024","Emilio Marquez","PUE",9,5,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"401","2024","Jose Isidro Marquez","TIG",38,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"402","2024","Luis Marquez","VER",4,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"403","2024","Victor Marquez","DUR",2,0,2,0,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"404","2024","Ignacio Marrujo","CAM",15,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"405","2024","Alberth Martinez","LEO",18,11,0,19,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"406","2024","Jorge Martinez","QRO",16,11,4,3,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"407","2024","Jose Martinez","LAR",2,1,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"408","2024","Luis Martinez","AGS",3,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"409","2024","Luis Carlos Martinez","SLT",2,0,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"410","2024","R.J. Martinez","TAB",26,5,5,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"411","2024","Rogelio Martinez","CHI",31,0,2,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"412","2024","Yordi Martinez","CAM",10,0,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"413","2024","Yordi Martinez","CAM",2,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"414","2024","Yordi Martinez","CAM",9,3,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"415","2024","Carlos Martínez","CHI",4,4,3,33,0,"1.000",4,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"416","2024","José A. Martínez","YUC",3,1,2,16,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"417","2024","José A. Martínez","YUC",11,11,1,12,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"418","2024","Oliver Mateo","TAB",5,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"419","2024","Seuly Matias","CHI",14,14,0,35,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"420","2024","J.J. Matijevic","DUR",2,2,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"421","2024","Zach Matson","CAM",18,17,8,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"422","2024","Jack Mayfield","TIJ",2,1,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"423","2024","Patrick Mazeika","MEX",13,12,4,119,0,"1.000",1,0,3,5,".625",1,1,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"424","2024","Kevin McGovern","JAL",6,3,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"425","2024","Thomas McIlraith","LAG",40,0,7,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"426","2024","Ian McKinney","MVA",5,5,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"427","2024","Carlos Medina","MTY",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"428","2024","Jose Carlos Medina","AGS",16,2,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"429","2024","Luis Medina","LEO",9,3,14,10,0,"1.000",3,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"430","2024","Luis Medina","LEO",2,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"431","2024","Luis Medina","PUE",3,0,2,1,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"432","2024","Kevin Medrano","LAR",2,0,1,0,0,"1.000",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"433","2024","Ronald Medrano","AGS",15,15,12,5,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"434","2024","Alex D. Mejia","SLT",4,1,1,12,0,"1.000",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"435","2024","Cristian Mejia","OAX",8,4,3,24,0,"1.000",0,0,3,1,".250",0,0,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"436","2024","Manuel Melendez","VER",2,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"437","2024","Keury Mella","MTY",33,0,4,4,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"438","2024","Ozzie Mendez","DUR",39,0,3,0,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"439","2024","Roman Mendez","QRO",46,0,11,5,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"440","2024","Brayan Mendoza","MTY",5,0,1,3,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"441","2024","Drew Mendoza","CHI",1,1,0,7,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"442","2024","Drew Mendoza","CHI",3,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"443","2024","Jonathan Mendoza","CAM",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"444","2024","Daniel Mercado","PUE",6,1,0,5,0,"1.000",0,0,0,0,".---",0,0,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"445","2024","Melvin Mercedes","TIG",15,9,0,23,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"446","2024","Yermín Mercedes","SLT",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"447","2024","José Mesa Jr.","VER",23,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"448","2024","Mario Meza","SLT",36,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"449","2024","Kevin Milam","TAB",6,2,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"450","2024","Tommy Milone","SLT",14,13,7,4,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"451","2024","Javier Mirabal","LEO",11,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"452","2024","Aríel Miranda","CAM",15,15,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"453","2024","Luis Miranda","OAX",16,16,5,6,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"454","2024","Daniel Missaki","MEX",5,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"455","2024","Hector Mora","CHI",2,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"456","2024","Jose Mora","MVA",7,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"457","2024","Juan Mora","MVA",9,5,17,8,0,"1.000",4,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"458","2024","Juan Mora","MVA",1,0,1,0,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"459","2024","Ramon Mora","LAG",1,1,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"460","2024","Ramon Mora","LAG",5,2,10,3,0,"1.000",1,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"461","2024","Isboseth Morales","CAM",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"462","2024","Isboseth Morales","CAM",3,1,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"463","2024","Ivan Morales","LEO",6,1,0,13,0,"1.000",0,0,0,0,".---",0,0,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"464","2024","Jonathan Morales","MTY",2,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"465","2024","Jorge Morales","SLT",4,0,0,7,0,"1.000",0,0,0,1,"1.000",0,0,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"466","2024","Jorge Morales","SLT",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"467","2024","Mario Morales","TAB",9,0,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"468","2024","Osmer Morales","CAM",6,6,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"469","2024","Roy Morales","TAB",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"470","2024","Victor Morales","OAX",14,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"471","2024","Luis Moreno","JAL",9,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"472","2024","Reyes Moronta","LEO",19,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"473","2024","Zach Mort","SLT",18,18,10,4,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"474","2024","Taylor Motter","YUC",6,6,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"475","2024","Zach Muckenhirn","MTY",9,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"476","2024","José Mujica","OAX",43,0,3,2,0,"1.000",2,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"477","2024","Fabian Muniz","QRO",11,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"478","2024","Max Murphy","SLT",5,5,1,11,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"479","2024","Yairo Muñoz","LAR",2,1,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"480","2024","Efren Navarro","CAM",10,9,1,80,0,"1.000",5,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"481","2024","Efren Navarro","CAM",2,2,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"482","2024","Efren Navarro","CAM",2,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"483","2024","Juan Carlos Negret","CHI",27,23,0,42,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"484","2024","Yoanner Negrin","YUC",15,15,10,7,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"485","2024","Dean Nevarez","LAG",3,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"486","2024","Dovydas Neverauskas","JAL",34,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"487","2024","Gabriel Noriega","TIJ",6,4,8,4,0,"1.000",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"488","2024","Ciro Norzagaray","PUE",11,1,8,5,0,"1.000",3,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"489","2024","Jacob Nottingham","JAL",7,7,3,47,0,"1.000",4,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"490","2024","Aldo Nunez","MVA",5,3,9,4,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"491","2024","Aldo Nunez","MVA",2,1,4,5,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"492","2024","Darien Núñez","MVA",27,0,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"493","2024","Peter O'Brien","PUE",11,11,1,17,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"494","2024","Justin O'Conner","AGS",2,2,3,11,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"495","2024","Norberto Obeso","YUC",10,9,0,15,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"496","2024","Wirfin Obispo","TAB",9,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"497","2024","Gonzalo Ochoa","OAX",9,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"498","2024","Takeru Ohashi","TIG",4,4,0,12,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"499","2024","Takeru Ohashi","TIG",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"500","2024","Jafet Ojeda","YUC",3,0,1,1,0,"1.000",0,0,1,2,".667",0,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"501","2024","Miguel Ojeda Jr.","VER",14,5,5,39,0,"1.000",1,0,3,1,".250",1,0,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"502","2024","Fernando Olguin","CHI",13,2,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"503","2024","Manny Olloque","TIG",4,3,1,5,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"504","2024","Juan Pablo Oramas","TAB",18,18,8,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"505","2024","Manuel Orduno","VER",2,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"506","2024","Manuel Orduno","VER",4,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"507","2024","Manuel Orduno","TIG",1,0,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"508","2024","Julian Ornelas","MEX",1,1,0,9,0,"1.000",2,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"509","2024","Jio Orozco","VER",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"510","2024","Jose Manuel Orozco","DUR",2,1,0,9,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"511","2024","Jose Manuel Orozco","DUR",5,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"512","2024","Jose Manuel Orozco","DUR",3,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"513","2024","Jose Orrantia","JAL",6,1,6,3,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"514","2024","Jose Orrantia","JAL",10,3,7,4,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"515","2024","Jose Orrantia","JAL",2,0,2,1,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"516","2024","Alejandro Ortiz","CAM",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"517","2024","Alejandro Ortiz","CAM",12,11,1,14,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"518","2024","Channy Ortiz","CHI",2,1,1,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"519","2024","Channy Ortiz","CHI",1,1,3,1,0,"1.000",2,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"520","2024","Leonardo Ortiz","MEX",1,1,0,1,0,"1.000",0,0,0,1,"1.000",0,0,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"521","2024","Tomo Otosaka","YUC",64,62,2,139,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"522","2024","Luis Oviedo","OAX",4,3,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"523","2024","Carlos Pacheco","CHI",4,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"524","2024","Carlos Pacheco","CHI",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"525","2024","Carlos Pacheco","CHI",8,1,0,7,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"526","2024","Luis Pacheco","AGS",25,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"527","2024","Angel Padron","CHI",8,8,4,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"528","2024","Loiger Padron","CAM",22,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"529","2024","Connor Panas","VER",4,2,1,20,0,"1.000",3,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"530","2024","Yorvin Pantoja","TIG",34,0,3,0,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"531","2024","Jonathan Partida","PUE",7,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"532","2024","Spencer Patton","TAB",42,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"533","2024","Carlos Paulino","QRO",1,1,0,7,0,"1.000",2,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"534","2024","Félix Paulino","TIG",11,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"535","2024","Luis Payan","DUR",6,5,3,3,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"536","2024","Pedro Payano","TIG",32,1,4,1,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"537","2024","Carlos Peguero","VER",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"538","2024","CD Pelham","YUC",17,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"539","2024","Miguel Pena","QRO",6,0,1,0,0,"1.000",1,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"540","2024","Ramiro Pena","MTY",5,0,1,5,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"541","2024","Ofelky Peralta","MVA",3,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"542","2024","Luis Perdomo","TIJ",10,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"543","2024","Felix Perez","TAB",2,2,1,9,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"544","2024","Felix Perez","TAB",1,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"545","2024","Fernando Perez","QRO",10,7,3,62,0,"1.000",6,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"546","2024","Fernando Perez","QRO",6,3,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"547","2024","Jorge Perez","TIJ",14,14,14,5,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"548","2024","Juan Perez","MVA",6,4,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"549","2024","Juan Perez","MVA",19,15,3,20,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"550","2024","Maikol Perez","TIG",2,1,1,2,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"551","2024","Maikol Perez","TIG",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"552","2024","Maikol Perez","TIG",3,3,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"553","2024","Sergio Perez","AGS",3,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"554","2024","Noah Perio","TIG",4,4,3,34,0,"1.000",2,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"555","2024","Noah Perio","TIG",3,2,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"556","2024","Noah Perio","TIG",2,2,1,5,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"557","2024","Richelson Peña","QRO",4,4,2,4,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"558","2024","Zach Phillips","MVA",31,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"559","2024","Cesilio Pimentel","TIG",5,3,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"560","2024","Chester Pimentel","YUC",19,3,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"561","2024","Sandber Pimentel","LEO",3,3,5,12,0,"1.000",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"562","2024","Orlando Pina","PUE",9,5,4,4,0,"1.000",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"563","2024","Gleyvin Pineda","CHI",33,0,3,1,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"564","2024","Jesus Pirela","TIJ",32,0,2,4,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"565","2024","José Pirela","MEX",7,7,1,13,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"566","2024","José Pirela","MEX",12,11,0,14,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"567","2024","Gersel Pitre","PUE",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"568","2024","Leobaldo Piña","CHI",7,6,9,58,0,"1.000",11,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"569","2024","Erick Preciado","PUE",13,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"570","2024","A.J. Puckett","JAL",18,0,4,0,0,"1.000",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"571","2024","Juniel Querecuto","OAX",4,3,11,8,0,"1.000",3,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"572","2024","Juniel Querecuto","OAX",12,10,0,17,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"573","2024","Juniel Querecuto","OAX",5,5,1,8,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"574","2024","Juniel Querecuto","OAX",1,1,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"575","2024","Rogelio Quesada","CHI",6,3,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"576","2024","Johan Quezada","OAX",22,1,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"577","2024","Jose Quezada","CAM",29,0,5,1,0,"1.000",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"578","2024","Hazahel Quijada","LEO",25,7,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"579","2024","Fredy Quintero","VER",6,6,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"580","2024","Sean Rackoski","OAX",11,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"581","2024","Luis Ramirez","DUR",31,3,4,2,0,"1.000",1,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"582","2024","Eury Ramos","SLT",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"583","2024","JC Ramírez","AGS",14,14,7,7,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"584","2024","Roel Ramírez","TIJ",41,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"585","2024","Iker Redona","OAX",1,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"586","2024","Cody Reed","TAB",26,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"587","2024","Leonardo Reginatto","AGS",2,2,6,5,0,"1.000",2,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"588","2024","Omar Renteria","MTY",34,12,7,110,0,"1.000",0,0,4,8,".667",1,0,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"589","2024","Alex Reyes","OAX",31,0,5,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"590","2024","Angel Reyes","AGS",2,0,0,4,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"591","2024","Angel Reyes","AGS",7,7,0,14,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"592","2024","Angel Reyes","AGS",3,3,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"593","2024","Jesús Reyes","LAG",42,0,3,4,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"594","2024","Jairus Richards","TIJ",20,15,2,18,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"595","2024","Jairus Richards","TIJ",5,1,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"596","2024","Ademar Rifaela","LEO",14,14,2,18,0,"1.000",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"597","2024","Joe Riley","MVA",41,0,2,4,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"598","2024","Ricardo Rincon","VER",8,0,1,11,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"599","2024","Diego Rincones","CHI",1,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"600","2024","Diego Rincones","CAM",6,6,0,7,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"601","2024","Jorge Rivera","TIG",5,2,5,7,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"602","2024","Jorge Rivera","TIG",4,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"603","2024","Alejandro Rivero","CHI",2,1,1,6,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"604","2024","Alejandro Rivero","CHI",24,22,61,49,0,"1.000",17,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"605","2024","Alejandro Rivero","CHI",8,3,11,0,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"606","2024","Alex Robles","CAM",1,1,1,1,0,"1.000",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"607","2024","Alex Robles","CAM",1,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"608","2024","Edgar Robles","LAG",9,6,1,13,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"609","2024","Edgar Robles","LAG",17,12,0,33,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"610","2024","Edgar Robles","LAG",9,4,0,17,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"611","2024","Michael Robles","DUR",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"612","2024","Michael Robles","DUR",5,5,0,11,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"613","2024","Michael Robles","DUR",4,2,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"614","2024","Arturo Rodriguez","SLT",19,13,1,104,0,"1.000",0,0,2,22,".917",1,0,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"615","2024","Arturo Rodriguez","SLT",3,0,0,7,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"616","2024","Henry Alejandro Rodriguez","CAM",9,9,21,21,0,"1.000",9,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"617","2024","Isaac Rodriguez","TIJ",19,6,15,6,0,"1.000",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"618","2024","Joshua Rodriguez","LAR",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"619","2024","Maximo Rodriguez","MEX",8,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"620","2024","Nellie Rodriguez","PUE",23,14,12,144,0,"1.000",20,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"621","2024","Ricky Rodriguez","VER",2,1,1,14,0,"1.000",2,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"622","2024","Ricky Rodriguez","VER",2,1,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"623","2024","Ricky Rodriguez","VER",4,2,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"624","2024","Victor Rodriguez","LAG",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"625","2024","Yorman Rodriguez","LEO",9,7,2,67,0,"1.000",7,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"626","2024","David Rodríguez","TIG",13,11,6,90,0,"1.000",10,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"627","2024","Dereck Rodríguez","JAL",16,16,8,15,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"628","2024","Ricardo Rodríguez","VER",18,0,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"629","2024","Richard Rodríguez","MTY",41,0,4,1,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"630","2024","Ronny Rodríguez","CAM",4,4,5,10,0,"1.000",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"631","2024","Ronny Rodríguez","CAM",4,4,0,5,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"632","2024","Esmil Rogers","VER",17,17,16,10,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"633","2024","Luis Romero","QRO",10,10,6,3,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"634","2024","Randy Romero","TAB",7,3,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"635","2024","Randy Romero","TAB",2,1,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"636","2024","Jorge Rondon","MTY",41,0,6,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"637","2024","José Rondón","MEX",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"638","2024","Manuel Rondon","VER",22,0,5,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"639","2024","Bruce Rondón","CHI",9,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"640","2024","Arturo Roque","MTY",16,4,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"641","2024","Aneuris Rosario","VER",31,0,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"642","2024","Zac Rosscup","TIJ",26,1,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"643","2024","Ramón Rosso","LEO",10,10,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"644","2024","Gustavo Ruiz","JAL",4,0,0,10,0,"1.000",0,0,0,2,"1.000",0,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"645","2024","Rio Ruiz","QRO",22,16,20,115,0,"1.000",11,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"646","2024","Evan Rutckyj","VER",16,0,3,0,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"647","2024","Blake Rutherford","TIJ",2,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"648","2024","Fernando Salas","TAB",33,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"649","2024","Issmael Salas","QRO",1,0,4,3,0,"1.000",1,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"650","2024","Javier Salazar","MTY",12,6,21,6,0,"1.000",3,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"651","2024","Javier Salazar","MTY",30,23,78,33,0,"1.000",23,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"652","2024","Javier Salazar","MTY",5,3,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"653","2024","Alex Sanabia","SLT",14,14,11,2,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"654","2024","Asael Sanchez","MTY",10,1,2,30,0,"1.000",5,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"655","2024","Brian Sanchez","TIG",6,5,2,7,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"656","2024","Jake Sanchez","MEX",42,0,2,2,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"657","2024","Sasagi Sanchez","MTY",27,0,3,2,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"658","2024","Donny Sands","TIJ",1,0,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"659","2024","Cristian Santana","CHI",3,3,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"660","2024","Edgar Santana","PUE",48,0,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"661","2024","Antonio Santos","PUE",4,4,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"662","2024","Luis Santos","MTY",15,4,24,12,0,"1.000",6,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"663","2024","Luis Santos","MTY",6,0,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"664","2024","Gonzalo Sanudo","JAL",20,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"665","2024","Luis Sardinas","OAX",8,7,21,17,0,"1.000",5,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"666","2024","Axel Sauceda","PUE",3,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"667","2024","Jorge Sauceda","JAL",19,2,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"668","2024","Brian Schlitter","CHI",23,0,4,1,0,"1.000",1,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"669","2024","Darren Seferina","LAG",18,10,25,27,0,"1.000",6,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"670","2024","Jose Sermo","DUR",7,7,3,43,0,"1.000",5,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"671","2024","Maikel Serrano","JAL",8,3,0,29,0,"1.000",3,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"672","2024","Ricardo Serrano","CAM",5,2,13,7,0,"1.000",6,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"673","2024","Anderson Severino","OAX",20,1,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"674","2024","D.J. Sharabi","TIG",5,0,0,1,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"675","2024","Kenneth Sigman","QRO",3,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"676","2024","Rubi Silva","QRO",5,4,1,7,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"677","2024","Rubi Silva","QRO",5,2,0,10,0,"1.000",0,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"678","2024","Dwight Smith Jr.","JAL",1,0,0,4,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"679","2024","Javier Solano","CAM",16,16,6,6,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"680","2024","Yangervis Solarte","OAX",1,1,3,1,0,"1.000",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"681","2024","Alejandro Soto","VER",15,10,6,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"682","2024","Carlos Soto","MTY",12,2,1,38,0,"1.000",10,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"683","2024","Shea Spitzbarth","AGS",30,0,5,0,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"684","2024","Drew Stankiewicz","PUE",1,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"685","2024","Nick Struck","TAB",18,18,14,6,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"686","2024","Darnell Sweeney","PUE",2,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"687","2024","Angel Sánchez","PUE",6,6,7,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"688","2024","Héctor Sánchez","LAR",25,21,10,148,0,"1.000",0,0,5,15,".750",1,1,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"689","2024","Héctor Sánchez","LAR",1,0,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"690","2024","Alain Tandron","LAG",4,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"691","2024","Stephen Tarpley","MTY",17,17,10,3,0,"1.000",2,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"692","2024","Aneury Tavárez","TIJ",2,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"693","2024","Curtis Taylor","LAG",14,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"694","2024","Julio Teheran","MTY",3,3,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"695","2024","Pablo Tellez","MVA",17,11,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"696","2024","Dillon Thomas","OAX",2,2,0,3,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"697","2024","Christian Torres","CHI",17,1,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"698","2024","Jojanse Torres","OAX",36,0,4,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"699","2024","Braulio Torres-Perez","SLT",17,17,15,4,0,"1.000",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"700","2024","Adrian Tovalin","LAG",29,18,10,161,0,"1.000",19,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"701","2024","Adrian Tovalin","LAG",3,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"702","2024","Adrian Tovalin","LAG",22,19,0,22,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"703","2024","Alexandro Tovalin","YUC",42,0,2,4,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"704","2024","Randy Trejo","TIG",6,1,4,5,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"705","2024","Phillips Valdez","VER",16,16,8,5,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"706","2024","Emiliano Valencia","TAB",4,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"707","2024","Emiliano Valencia","TAB",3,0,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"708","2024","Marcos Valenzuela","LAR",3,0,3,1,0,"1.000",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"709","2024","Vicente Valenzuela","TIG",37,1,2,3,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"710","2024","Breyvic Valera","TIJ",4,1,5,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"711","2024","Edwyn Valle","DUR",48,0,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"712","2024","Jesus Valles","TIG",21,3,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"713","2024","Jonathan Vargas","LEO",23,1,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"714","2024","Gregori Vasquez","DUR",10,8,5,1,0,"1.000",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"715","2024","Saul Vazquez","YUC",13,2,3,0,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"716","2024","Greg Veliz","AGS",29,0,3,2,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"717","2024","Hector Velázquez","VER",5,0,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"718","2024","Alexis Vera","MTY",14,0,3,1,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"719","2024","Eduardo Vera","JAL",22,10,5,0,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"720","2024","Cam Vieaux","LAR",31,1,4,1,0,"1.000",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"721","2024","Carlos Viera","QRO",14,13,10,4,0,"1.000",1,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"722","2024","Fernando Villalobos","MEX",4,0,0,4,0,"1.000",0,0,0,0,".---",0,0,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"723","2024","Hector Villalobos","PUE",32,4,6,2,0,"1.000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"724","2024","Elih Villanueva","CHI",12,6,1,1,0,"1.000",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"725","2024","Brandon Villarreal","SLT",15,11,1,21,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"726","2024","Fred Villarreal","TAB",35,0,2,2,0,"1.000",1,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"727","2024","Carlos Villegas","CAM",5,4,6,6,0,"1.000",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"728","2024","Carlos Villegas","CAM",5,3,0,2,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"729","2024","Carlos Villegas","CAM",3,0,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"730","2024","Fernando Villegas","SLT",2,2,0,1,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"731","2024","Francisco Villegas","AGS",44,0,4,0,0,"1.000",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"732","2024","Jeremy Walker","LAG",9,9,6,4,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"733","2024","Drew Ward","DUR",20,18,16,132,0,"1.000",16,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"734","2024","Brac Warren","MVA",30,0,1,0,0,"1.000",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"735","2024","David Washington","SLT",4,3,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"736","2024","Braden Webb","LAG",18,18,11,1,0,"1.000",2,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"737","2024","Patrick Weigel","SLT",39,0,2,3,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"738","2024","Nick Wells","TIJ",5,4,2,0,0,"1.000",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"739","2024","Joe Wieland","TAB",9,6,7,4,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"740","2024","Taylor Williams","LAG",47,0,12,5,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"741","2024","Hans Wilson","AGS",6,3,2,19,0,"1.000",0,0,2,5,".714",0,0,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"742","2024","Jared Wilson","TIJ",46,0,6,4,0,"1.000",2,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"743","2024","Tyler Wilson","LAG",34,1,2,2,0,"1.000",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"744","2024","Michael Wing","JAL",6,6,0,43,0,"1.000",7,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"745","2024","Michael Wing","JAL",4,4,0,8,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"746","2024","Michael Wing","JAL",4,3,0,6,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"747","2024","Jimmy Yacabonis","MEX",38,0,8,2,0,"1.000",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"748","2024","Yandy Yanes","TIG",1,1,2,2,0,"1.000",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"749","2024","Gabriel Ynoa","PUE",19,19,11,12,0,"1.000",2,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"750","2024","Ernesto Zaragoza","OAX",23,0,2,2,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"751","2024","Daniel Zazueta","CAM",32,2,2,2,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"752","2024","Samuel Zazueta","VER",12,0,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"753","2024","Luke Voit","TAB",77,77,37,566,1,".998",45,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"754","2024","Reynaldo Rodriguez","OAX",75,68,43,514,1,".998",52,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"755","2024","Lewin Díaz","MEX",62,62,24,466,1,".998",60,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"756","2024","Kyle Martin","OAX",51,47,30,412,1,".998",46,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"757","2024","Alexi Amarista","OAX",87,87,261,176,1,".998",69,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"758","2024","Matt Adams","TIJ",46,44,26,310,1,".997",29,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"759","2024","Bobby Bradley","TIJ",34,30,13,250,1,".996",25,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"760","2024","Ryan Aguilar","LAR",51,24,17,230,1,".996",30,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"761","2024","Henry Urrutia","LEO",58,55,38,441,2,".996",49,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"762","2024","Aldrem Corredor","MVA",84,82,50,662,3,".996",81,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"763","2024","Jose Guadalupe Chavez","JAL",51,48,137,93,1,".996",33,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"764","2024","Robinson Canó","MEX",52,52,131,96,1,".996",50,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"765","2024","Alfredo Hurtado","JAL",36,30,16,210,1,".996",0,0,14,20,".588",4,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"766","2024","Logan Brown","SLT",29,26,17,197,1,".995",3,0,11,14,".560",1,2,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"767","2024","Carlos Franco","VER",29,24,11,192,1,".995",20,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"768","2024","Isaias Tejeda","CAM",25,25,11,180,1,".995",15,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"769","2024","Ricardo Valenzuela","OAX",49,46,21,347,2,".995",4,0,15,25,".625",3,0,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"770","2024","Domingo Leyba","TAB",42,38,96,78,1,".994",25,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"771","2024","Juan Kirk","PUE",56,47,26,317,2,".994",3,0,17,20,".541",1,2,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"772","2024","Edwin Espinal","VER",82,82,57,621,4,".994",73,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"773","2024","Adeiny Hechavarría","TAB",33,32,87,66,1,".994",15,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"774","2024","Yermín Mercedes","SLT",19,18,8,145,1,".994",20,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"775","2024","Carlos Soto","MTY",50,40,23,279,2,".993",2,0,18,16,".471",1,1,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"776","2024","Ricardo Cespedes","CAM",62,61,10,139,1,".993",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"777","2024","Wendell Rijo","VER",28,28,78,71,1,".993",17,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"778","2024","Jesse Castillo","QRO",55,55,28,415,3,".993",56,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"779","2024","Henry Alejandro Rodriguez","CHI",18,18,6,140,1,".993",13,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"780","2024","Kennys Vargas","LAR",38,38,20,271,2,".993",37,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"781","2024","Mario Feliciano","PUE",30,22,5,140,1,".993",0,0,3,11,".786",1,0,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"782","2024","Roy Morales","TAB",57,48,20,414,3,".993",2,0,16,36,".692",1,0,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"783","2024","Carlos Castro","TIG",20,18,8,134,1,".993",2,0,2,12,".857",1,0,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"784","2024","Donny Sands","TIJ",35,33,11,271,2,".993",1,0,8,27,".771",2,0,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"785","2024","Christian Villanueva","MTY",51,50,20,396,3,".993",52,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"786","2024","Randy Romero","TAB",64,62,4,134,1,".993",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"787","2024","J.J. Matijevic","CHI",16,15,8,126,1,".993",25,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"788","2024","Leobaldo Cabrera","AGS",72,70,6,127,1,".993",2,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"789","2024","Angelo Castellano","JAL",32,32,86,47,1,".993",20,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"790","2024","Eric Filia","MVA",82,82,1,132,1,".993",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"791","2024","José Marmolejos","MEX",63,61,43,483,4,".992",69,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"792","2024","Juan Centeno","SLT",39,35,15,241,2,".992",5,0,8,33,".805",5,0,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"793","2024","Jonathan Schoop","LAG",18,14,3,122,1,".992",9,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"794","2024","Carlos Martínez","CHI",59,50,34,338,3,".992",5,0,19,24,".558",4,0,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"795","2024","Logan Moore","MVA",65,65,37,458,4,".992",5,0,29,30,".508",3,0,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"796","2024","José Briceño","MEX",46,39,21,337,3,".992",2,0,10,20,".667",2,1,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"797","2024","Greg Bird","JAL",71,71,44,552,5,".992",63,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"798","2024","Victor Mendoza","MTY",37,37,28,310,3,".991",42,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"799","2024","Julian Ornelas","MEX",75,75,5,106,1,".991",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"800","2024","Kristian Delgado","CHI",40,38,117,103,2,".991",41,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"801","2024","Jonathan Mendoza","CAM",28,21,49,61,1,".991",14,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"802","2024","Roldani Baldwin","VER",15,14,2,107,1,".991",0,0,2,12,".857",3,0,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"803","2024","Webster Rivas","YUC",68,66,29,512,5,".991",2,0,12,36,".750",1,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"804","2024","Daniel Castro","MTY",28,16,66,42,1,".991",22,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"805","2024","Santiago Chávez","MVA",35,25,12,204,2,".991",1,0,9,12,".571",2,0,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"806","2024","Ali Castillo","LAR",92,92,266,162,4,".991",75,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"807","2024","Alexis Wilson","TIG",63,60,52,475,5,".991",10,0,31,31,".500",3,0,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"808","2024","Gabriel Lino","OAX",46,37,24,283,3,".990",1,0,18,27,".600",2,2,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"809","2024","Alan Espinoza","VER",59,58,26,380,4,".990",4,0,9,25,".735",5,1,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"810","2024","Leonardo Reginatto","AGS",48,47,42,364,4,".990",48,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"811","2024","Sebastián Elizalde","MTY",53,53,4,96,1,".990",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"812","2024","Alberth Martinez","LEO",54,51,3,96,1,".990",1,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"813","2024","Carlos Garzon","DUR",60,55,34,361,4,".990",7,0,19,34,".642",2,1,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"814","2024","Roberto Ramos","OAX",17,15,9,89,1,".990",13,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"815","2024","Francisco Arcia","LAR",77,72,37,641,7,".990",5,0,22,64,".744",3,4,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"816","2024","Herlis Rodriguez","VER",90,90,3,190,2,".990",2,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"817","2024","Allen Córdoba","LAG",76,74,6,185,2,".990",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"818","2024","Aristides Aquino","MEX",52,51,10,83,1,".989",3,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"819","2024","Daniel Palka","LAG",26,25,17,168,2,".989",20,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"820","2024","Yasiel Puig","VER",50,50,3,89,1,".989",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"821","2024","Jose Gaitan","VER",59,54,4,86,1,".989",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"822","2024","Issmael Salas","QRO",17,9,7,83,1,".989",9,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"823","2024","Alfredo Lopez","DUR",45,45,3,86,1,".989",2,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"824","2024","Hansen Lopez","CHI",16,9,1,85,1,".989",0,0,0,12,"1.000",2,0,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"825","2024","Carlos Munoz","AGS",19,9,4,81,1,".988",9,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"826","2024","Norberto Obeso","YUC",51,49,3,82,1,".988",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"827","2024","Tomás Telis","AGS",60,55,40,383,5,".988",4,0,29,24,".453",2,1,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"828","2024","Johneshwy Fargas","SLT",67,64,8,160,2,".988",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"829","2024","Roel Santos","TAB",49,49,1,83,1,".988",1,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"830","2024","Nick Williams","TIJ",36,36,5,79,1,".988",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"831","2024","Carlos Mendivil","DUR",25,20,9,156,2,".988",1,0,3,19,".864",7,0,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"832","2024","Tres Barrera","TIJ",50,46,11,379,5,".987",5,0,7,46,".868",2,0,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"833","2024","Nicholas Torres","LAG",73,73,13,143,2,".987",2,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"834","2024","Jose Aguilar","SLT",36,30,2,75,1,".987",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"835","2024","Dwight Smith Jr.","JAL",41,34,1,76,1,".987",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"836","2024","Justin O'Conner","AGS",43,39,33,268,4,".987",2,0,22,23,".511",10,3,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"837","2024","Cristian Santana","CHI",30,28,13,208,3,".987",21,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"838","2024","Andretty Cordero","AGS",33,32,17,272,4,".986",37,1,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"839","2024","Michael De León","LEO",14,14,43,29,1,".986",6,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"840","2024","Jhon Nuñez","JAL",43,41,16,268,4,".986",0,0,10,26,".722",0,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"841","2024","German Revilla","TIG",14,8,4,66,1,".986",0,0,2,6,".750",1,0,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"842","2024","Sam Travis","DUR",45,45,30,384,6,".986",38,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"843","2024","Diosbel Arias","MEX",15,14,9,128,2,".986",19,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"844","2024","Dean Nevarez","LAG",43,34,19,249,4,".985",2,0,8,31,".795",1,0,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"845","2024","Yosmany Guerra","QRO",43,40,114,86,3,".985",30,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"846","2024","Manny Garcia","CHI",16,14,8,125,2,".985",15,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"847","2024","Marco Chicuate","LEO",63,56,19,444,7,".985",2,0,8,49,".860",5,1,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"848","2024","Oziel Flores","CHI",20,15,33,31,1,".985",10,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"849","2024","Michael Wing","JAL",13,12,37,27,1,".985",9,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"850","2024","Danny Ortiz","PUE",84,84,3,124,2,".984",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"851","2024","Ricardo Serrano","CAM",47,45,77,50,2,".984",12,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"852","2024","Yangervis Solarte","OAX",16,16,3,124,2,".984",20,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"853","2024","Jonathan Morales","MTY",28,26,13,175,3,".984",0,0,11,12,".522",0,0,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"854","2024","Harold Castro","TIJ",45,37,98,89,3,".984",23,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"855","2024","Art Charles","YUC",72,72,52,570,10,".984",50,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"856","2024","Sebastian Valle","SLT",39,35,16,228,4,".984",2,0,8,41,".837",5,2,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"857","2024","Ali Solis","QRO",38,38,27,277,5,".984",2,0,12,29,".707",1,1,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"858","2024","Yadir Drake","YUC",67,67,6,113,2,".983",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"859","2024","Alejandro Mejia","SLT",67,66,47,547,10,".983",65,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"860","2024","Demetrius Sims","TIG",28,27,79,39,2,".983",16,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"861","2024","Saul Garza","TIJ",27,22,7,169,3,".983",2,0,5,14,".737",2,0,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"862","2024","Aneury Tavárez","TIJ",76,76,3,114,2,".983",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"863","2024","Rangel Ravelo","LAR",21,21,13,162,3,".983",19,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"864","2024","Aaron Altherr","LAG",37,37,1,57,1,".983",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"865","2024","Ciro Norzagaray","PUE",30,14,66,50,2,".983",24,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"866","2024","Rio Ruiz","QRO",26,24,40,18,1,".983",3,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"867","2024","Missael Rivera","SLT",75,74,213,133,6,".983",52,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"868","2024","Jose Martinez","LAR",28,26,40,17,1,".983",7,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"869","2024","Orlando Pina","PUE",13,9,3,54,1,".983",7,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"870","2024","Isaac Rodriguez","TIJ",55,47,128,100,4,".983",35,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"871","2024","Angel Reyes","AGS",74,74,3,166,3,".983",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"872","2024","Julian Escobedo","LAG",33,27,2,54,1,".982",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"873","2024","Yosmany Guerra","QRO",20,20,32,24,1,".982",2,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"874","2024","Leo Heras","TAB",26,24,1,55,1,".982",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"875","2024","Juan Uriarte","DUR",6,5,5,51,1,".982",3,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"876","2024","Fernando Villegas","SLT",74,73,13,99,2,".982",4,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"877","2024","Yadiel Hernandez","LAR",70,69,4,107,2,".982",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"878","2024","Yorman Rodriguez","LEO",30,28,10,212,4,".982",6,0,6,22,".786",4,0,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"879","2024","J.J. Matijevic","DUR",35,30,1,54,1,".982",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"880","2024","Carlos Paulino","QRO",41,38,14,258,5,".982",3,0,9,20,".690",2,1,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"881","2024","Jose Cardona","MTY",83,83,9,153,3,".982",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"882","2024","Leo German","PUE",61,41,1,107,2,".982",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"883","2024","Francisco Peña","CAM",64,63,35,448,9,".982",5,0,14,48,".774",3,0,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"884","2024","Eddy Diaz","LEO",27,24,68,39,2,".982",21,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"885","2024","Keven Lamas","SLT",47,40,132,82,4,".982",36,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"886","2024","Jose Carlos Urena","OAX",62,58,5,100,2,".981",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"887","2024","José Peraza","YUC",78,78,227,139,7,".981",46,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"888","2024","Héctor Sánchez","LAR",13,7,2,50,1,".981",5,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"889","2024","Raudy Read","PUE",46,45,18,290,6,".981",26,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"890","2024","Juan Carlos Gamboa","MEX",72,72,233,122,7,".981",61,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"891","2024","Nomar Mazara","MTY",68,67,5,94,2,".980",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"892","2024","Ramiro Pena","MTY",72,70,203,139,7,".980",58,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"893","2024","Jacob Nottingham","JAL",33,29,16,227,5,".980",2,0,10,21,".677",3,0,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"894","2024","Anthony Giansanti","TIJ",51,50,8,89,2,".980",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"895","2024","Samar Leyva","PUE",31,21,53,44,2,".980",15,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"896","2024","Ramon Rios","AGS",77,76,223,163,8,".980",63,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"897","2024","Alex Liddi","YUC",12,5,6,42,1,".980",4,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"898","2024","Lazaro Alonso","DUR",33,28,16,222,5,".979",28,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"899","2024","Michael Robles","DUR",40,36,112,78,4,".979",26,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"900","2024","Rodolfo Amador","MVA",32,15,35,12,1,".979",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"901","2024","Moises Gutierrez","MEX",23,16,55,39,2,".979",18,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"902","2024","Jack Mayfield","TIJ",67,67,182,100,6,".979",47,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"903","2024","Missael Rivera","SLT",13,12,31,16,1,".979",11,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"904","2024","Junior Lake","TIJ",88,88,7,180,4,".979",3,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"905","2024","Christopher Escarrega","MTY",14,12,7,85,2,".979",1,0,1,12,".923",1,0,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"906","2024","Jimmy Kerrigan","LEO",87,87,12,218,5,".979",4,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"907","2024","Italo Motta","LEO",51,42,113,69,4,".978",28,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"908","2024","Manny Olloque","DUR",23,20,2,42,1,".978",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"909","2024","Niko Vasquez","TIJ",15,10,4,83,2,".978",13,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"910","2024","Didi Gregorius","LAG",73,72,198,101,7,".977",38,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"911","2024","Takeru Ohashi","TIG",32,31,3,82,2,".977",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"912","2024","Hector Mora","CHI",18,8,27,15,1,".977",5,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"913","2024","Jose Martinez","LAR",39,28,81,43,3,".976",17,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"914","2024","Juan Perez","MVA",53,48,141,107,6,".976",41,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"915","2024","Edwin Díaz","SLT",62,58,159,87,6,".976",37,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"916","2024","Edwin Garcia","CAM",10,10,27,14,1,".976",5,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"917","2024","Luis Medina","LEO",14,10,26,14,1,".976",3,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"918","2024","Alejandro Flores","DUR",38,31,14,260,7,".975",4,0,8,24,".750",2,0,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"919","2024","Manuel Boscan","DUR",25,17,50,28,2,".975",11,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"920","2024","Diego Madero","SLT",24,9,29,10,1,".975",4,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"921","2024","Juan Uriarte","DUR",16,13,9,69,2,".975",1,0,7,13,".650",1,0,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"922","2024","Alejandro Urias","DUR",19,2,5,34,1,".975",0,0,1,7,".875",1,0,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"923","2024","Danry Vasquez","LAR",71,71,2,115,3,".975",2,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"924","2024","Cristhian Adames","PUE",88,88,271,149,11,".974",65,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"925","2024","Miguel Guzman","PUE",23,22,2,36,1,".974",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"926","2024","Melvin Mercedes","TIG",22,19,6,32,1,".974",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"927","2024","Brayan Quintero","CAM",35,31,77,37,3,".974",17,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"928","2024","Alcides Escobar","TIG",75,74,183,156,9,".974",44,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"929","2024","Jonathan Schoop","LAG",67,66,182,114,8,".974",52,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"930","2024","Maikel Serrano","JAL",23,20,1,36,1,".974",1,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"931","2024","Wilfredo Tovar","AGS",28,27,48,25,2,".973",5,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"932","2024","Gilberto Vizcarra","YUC",21,7,6,67,2,".973",0,0,1,3,".750",0,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"933","2024","Alberth Martinez","LEO",19,16,0,36,1,".973",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"934","2024","Carlos Arellano","VER",53,48,141,109,7,".973",36,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"935","2024","Odúbel Herrera","PUE",15,15,0,35,1,".972",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"936","2024","Jairus Richards","TIJ",26,16,1,34,1,".972",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"937","2024","Asael Sanchez","MTY",16,14,0,35,1,".972",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"938","2024","Miguel Guzman","PUE",38,36,86,53,4,".972",20,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"939","2024","Zoilo Almonte","MTY",45,45,1,68,2,".972",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"940","2024","Alen Hanson","QRO",48,45,133,108,7,".972",35,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"941","2024","Jose Lizarraga","QRO",19,13,11,91,3,".971",0,0,5,5,".500",1,0,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"942","2024","Connor Panas","CAM",53,52,3,99,3,".971",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"943","2024","Brandon Villarreal","SLT",28,21,2,32,1,".971",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"944","2024","Manuel Boscan","DUR",56,53,135,102,7,".971",31,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"945","2024","Dawel Lugo","TAB",84,82,121,48,5,".971",7,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"946","2024","Leobaldo Piña","CHI",6,6,17,16,1,".971",10,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"947","2024","Adeiny Hechavarría","TAB",31,27,56,40,3,".970",8,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"948","2024","Carlos Sepulveda","MEX",34,21,71,54,4,".969",19,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"949","2024","Hendrik Clementina","LAG",4,4,1,30,1,".969",0,0,1,0,".000",0,0,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"950","2024","Agustin Murillo","QRO",16,16,24,7,1,".969",4,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"951","2024","Asael Sanchez","MTY",24,18,2,29,1,".969",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"952","2024","Dwight Smith Jr.","JAL",20,16,0,31,1,".969",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"953","2024","Jorge Bonifacio","SLT",15,14,2,28,1,".968",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"954","2024","Alejandro Gonzalez","OAX",15,8,0,30,1,".968",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"955","2024","Fabricio Macias","YUC",18,15,1,29,1,".968",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"956","2024","Renato Núñez","OAX",5,5,3,27,1,".968",4,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"957","2024","Jose Manuel Orozco","DUR",58,51,1,119,4,".968",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"958","2024","Jorge Bonifacio","TAB",34,33,2,57,2,".967",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"959","2024","Luis García","DUR",15,13,39,20,2,".967",7,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"960","2024","Ryan Grotjohn","TAB",17,17,28,31,2,".967",5,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"961","2024","Odúbel Herrera","MVA",38,37,1,58,2,".967",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"962","2024","Wilfredo Tovar","AGS",58,58,145,89,8,".967",46,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"963","2024","Drew Stankiewicz","PUE",67,65,122,53,6,".967",14,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"964","2024","Edgar Bravo","CAM",17,15,0,29,1,".967",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"965","2024","Alex D. Mejia","SLT",71,70,141,62,7,".967",21,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"966","2024","Melvin Mercedes","TIG",33,23,5,53,2,".967",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"967","2024","Yefri Pérez","LEO",13,13,32,26,2,".967",5,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
-"968","2024","Daniel Sanchez","CAM",23,16,9,107,4,".967",2,0,3,14,".824",2,0,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"969","2024","Addison Russell","MVA",82,82,266,135,14,".966",65,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"970","2024","Brayan Mendoza","MTY",24,5,1,27,1,".966",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"971","2024","David Rodríguez","TIG",18,18,1,27,1,".966",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"972","2024","Gabriel Noriega","TIJ",22,16,51,32,3,".965",9,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"973","2024","Albert Lara","LAG",26,16,54,28,3,".965",12,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"974","2024","Jorge Flores","OAX",70,69,216,111,12,".965",42,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"975","2024","Jose Guadalupe Chavez","JAL",10,6,19,8,1,".964",3,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"976","2024","Juniel Querecuto","OAX",14,9,22,5,1,".964",2,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"977","2024","Jasson Atondo","TAB",63,63,190,78,10,".964",30,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"978","2024","Peter O'Brien","PUE",67,58,3,104,4,".964",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"979","2024","Edson Garcia","TIG",28,24,45,35,3,".964",13,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"980","2024","Anthony Alford","CAM",33,33,2,51,2,".964",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"981","2024","Yeison Asencio","SLT",16,16,2,24,1,".963",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"982","2024","Cade Gotta","LAR",90,89,5,177,7,".963",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"983","2024","Keven Lamas","SLT",16,16,51,27,3,".963",11,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"984","2024","Brayan Quintero","CAM",14,12,24,28,2,".963",11,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"985","2024","David Rodríguez","TIG",12,12,2,24,1,".963",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"986","2024","Freddy Galvis","LAR",65,65,173,110,11,".963",50,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"987","2024","Willians Astudillo","AGS",48,45,72,30,4,".962",13,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"988","2024","Eduardo Diaz","TIG",28,25,3,48,2,".962",1,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"989","2024","Leobaldo Piña","CHI",69,68,133,45,7,".962",16,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"990","2024","Marco Jaime","AGS",17,12,47,29,3,".962",10,1,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"991","2024","Angel Aguilar","OAX",11,10,15,10,1,".962",3,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"992","2024","Connor Panas","VER",14,13,2,23,1,".962",0,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"993","2024","Yairo Muñoz","LAR",54,54,86,38,5,".961",11,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"994","2024","Michael Baca","TAB",9,3,13,11,1,".960",3,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"995","2024","Angel Erro","TIG",42,40,50,22,3,".960",3,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"996","2024","Marco Jaime","AGS",19,17,2,22,1,".960",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"997","2024","Victor Marquez","DUR",17,13,32,16,2,".960",3,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"998","2024","Angel Aguilar","MVA",38,35,108,81,8,".959",35,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"999","2024","Roberto Valenzuela","MTY",80,77,145,67,9,".959",22,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"1000","2024","Gustavo Nunez","VER",82,82,218,134,15,".959",49,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"1","2024","Tanner Anderson","MTY",18,18,11,4,0,"1.000",0,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"2","2024","Franklin Barreto","MEX",76,75,7,148,0,"1.000",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"3","2024","Jhoulys Chacín","SLT",16,15,14,6,0,"1.000",1,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"4","2024","Yonathan Daza","OAX",61,60,5,147,0,"1.000",2,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"5","2024","Odrisamer Despaigne","YUC",18,18,16,14,0,"1.000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"6","2024","Zac Grotz","MVA",14,14,10,4,0,"1.000",1,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"7","2024","Zach Matson","CAM",18,17,8,0,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"8","2024","Ronald Medrano","AGS",15,15,12,5,0,"1.000",1,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"9","2024","Aríel Miranda","CAM",15,15,2,1,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"10","2024","Luis Miranda","OAX",16,16,5,6,0,"1.000",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"11","2024","Zach Mort","SLT",18,18,10,4,0,"1.000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"12","2024","Yoanner Negrin","YUC",15,15,10,7,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"13","2024","Juan Pablo Oramas","TAB",18,18,8,0,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"14","2024","Tomo Otosaka","YUC",64,62,2,139,0,"1.000",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"15","2024","Dereck Rodríguez","JAL",16,16,8,15,0,"1.000",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
+"16","2024","Esmil Rogers","VER",17,17,16,10,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"17","2024","Javier Solano","CAM",16,16,6,6,0,"1.000",0,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"18","2024","Nick Struck","TAB",18,18,14,6,0,"1.000",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"19","2024","Stephen Tarpley","MTY",17,17,10,3,0,"1.000",2,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"20","2024","Braulio Torres-Perez","SLT",17,17,15,4,0,"1.000",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"21","2024","Phillips Valdez","VER",16,16,8,5,0,"1.000",1,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"22","2024","Braden Webb","LAG",18,18,11,1,0,"1.000",2,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"23","2024","Gabriel Ynoa","PUE",19,19,11,12,0,"1.000",2,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"24","2024","Luke Voit","TAB",77,77,37,566,1,".998",45,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"25","2024","Reynaldo Rodriguez","OAX",75,68,43,514,1,".998",52,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"26","2024","Lewin Díaz","MEX",62,62,24,466,1,".998",60,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"27","2024","Alexi Amarista","OAX",87,87,261,176,1,".998",69,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"28","2024","Aldrem Corredor","MVA",84,82,50,662,3,".996",81,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"29","2024","Ricardo Valenzuela","OAX",49,46,21,347,2,".995",4,0,15,25,".625",3,0,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"30","2024","Juan Kirk","PUE",56,47,26,317,2,".994",3,0,17,20,".541",1,2,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"31","2024","Edwin Espinal","VER",82,82,57,621,4,".994",73,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"32","2024","Carlos Soto","MTY",50,40,23,279,2,".993",2,0,18,16,".471",1,1,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"33","2024","Ricardo Cespedes","CAM",62,61,10,139,1,".993",1,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"34","2024","Roy Morales","TAB",57,48,20,414,3,".993",2,0,16,36,".692",1,0,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"35","2024","Randy Romero","TAB",64,62,4,134,1,".993",0,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"36","2024","Leobaldo Cabrera","AGS",72,70,6,127,1,".993",2,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"37","2024","Eric Filia","MVA",82,82,1,132,1,".993",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"38","2024","José Marmolejos","MEX",63,61,43,483,4,".992",69,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"39","2024","Carlos Martínez","CHI",59,50,34,338,3,".992",5,0,19,24,".558",4,0,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
+"40","2024","Logan Moore","MVA",65,65,37,458,4,".992",5,0,29,30,".508",3,0,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"41","2024","José Briceño","MEX",46,39,21,337,3,".992",2,0,10,20,".667",2,1,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"42","2024","Greg Bird","JAL",71,71,44,552,5,".992",63,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
+"43","2024","Julian Ornelas","MEX",75,75,5,106,1,".991",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"44","2024","Webster Rivas","YUC",68,66,29,512,5,".991",2,0,12,36,".750",1,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"45","2024","Ali Castillo","LAR",92,92,266,162,4,".991",75,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"46","2024","Alexis Wilson","TIG",63,60,52,475,5,".991",10,0,31,31,".500",3,0,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
+"47","2024","Gabriel Lino","OAX",46,37,24,283,3,".990",1,0,18,27,".600",2,2,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"48","2024","Alan Espinoza","VER",59,58,26,380,4,".990",4,0,9,25,".735",5,1,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"49","2024","Carlos Garzon","DUR",60,55,34,361,4,".990",7,0,19,34,".642",2,1,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
+"50","2024","Francisco Arcia","LAR",77,72,37,641,7,".990",5,0,22,64,".744",3,4,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"51","2024","Herlis Rodriguez","VER",90,90,3,190,2,".990",2,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"52","2024","Allen Córdoba","LAG",76,74,6,185,2,".990",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"53","2024","Tomás Telis","AGS",60,55,40,383,5,".988",4,0,29,24,".453",2,1,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"54","2024","Johneshwy Fargas","SLT",67,64,8,160,2,".988",2,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"55","2024","Tres Barrera","TIJ",50,46,11,379,5,".987",5,0,7,46,".868",2,0,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"56","2024","Nicholas Torres","LAG",73,73,13,143,2,".987",2,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"57","2024","Marco Chicuate","LEO",63,56,19,444,7,".985",2,0,8,49,".860",5,1,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
+"58","2024","Danny Ortiz","PUE",84,84,3,124,2,".984",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"59","2024","Art Charles","YUC",72,72,52,570,10,".984",50,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"60","2024","Yadir Drake","YUC",67,67,6,113,2,".983",2,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"61","2024","Alejandro Mejia","SLT",67,66,47,547,10,".983",65,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"62","2024","Aneury Tavárez","TIJ",76,76,3,114,2,".983",1,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"63","2024","Missael Rivera","SLT",75,74,213,133,6,".983",52,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"64","2024","Angel Reyes","AGS",74,74,3,166,3,".983",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"65","2024","Fernando Villegas","SLT",74,73,13,99,2,".982",4,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"66","2024","Yadiel Hernandez","LAR",70,69,4,107,2,".982",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"67","2024","Jose Cardona","MTY",83,83,9,153,3,".982",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"68","2024","Leo German","PUE",61,41,1,107,2,".982",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"69","2024","Francisco Peña","CAM",64,63,35,448,9,".982",5,0,14,48,".774",3,0,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"70","2024","Jose Carlos Urena","OAX",62,58,5,100,2,".981",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"71","2024","José Peraza","YUC",78,78,227,139,7,".981",46,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"72","2024","Juan Carlos Gamboa","MEX",72,72,233,122,7,".981",61,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"73","2024","Nomar Mazara","MTY",68,67,5,94,2,".980",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"74","2024","Ramiro Pena","MTY",72,70,203,139,7,".980",58,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"75","2024","Ramon Rios","AGS",77,76,223,163,8,".980",63,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"76","2024","Jack Mayfield","TIJ",67,67,182,100,6,".979",47,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"77","2024","Junior Lake","TIJ",88,88,7,180,4,".979",3,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"78","2024","Jimmy Kerrigan","LEO",87,87,12,218,5,".979",4,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
+"79","2024","Didi Gregorius","LAG",73,72,198,101,7,".977",38,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"80","2024","Edwin Díaz","SLT",62,58,159,87,6,".976",37,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"81","2024","Danry Vasquez","LAR",71,71,2,115,3,".975",2,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"82","2024","Cristhian Adames","PUE",88,88,271,149,11,".974",65,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"83","2024","Alcides Escobar","TIG",75,74,183,156,9,".974",44,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
+"84","2024","Jonathan Schoop","LAG",67,66,182,114,8,".974",52,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"85","2024","Dawel Lugo","TAB",84,82,121,48,5,".971",7,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"86","2024","Drew Stankiewicz","PUE",67,65,122,53,6,".967",14,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"87","2024","Alex D. Mejia","SLT",71,70,141,62,7,".967",21,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"88","2024","Addison Russell","MVA",82,82,266,135,14,".966",65,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"89","2024","Jorge Flores","OAX",70,69,216,111,12,".965",42,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"90","2024","Jasson Atondo","TAB",63,63,190,78,10,".964",30,0,NA,NA,NA,NA,NA,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
+"91","2024","Peter O'Brien","PUE",67,58,3,104,4,".964",1,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"92","2024","Cade Gotta","LAR",90,89,5,177,7,".963",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"93","2024","Freddy Galvis","LAR",65,65,173,110,11,".963",50,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"94","2024","Leobaldo Piña","CHI",69,68,133,45,7,".962",16,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
+"95","2024","Roberto Valenzuela","MTY",80,77,145,67,9,".959",22,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"96","2024","Gustavo Nunez","VER",82,82,218,134,15,".959",49,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"97","2024","Carlos Herrera","CHI",70,70,178,108,13,".957",49,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
+"98","2024","Jesus Vargas","PUE",20,16,14,8,1,".957",2,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"99","2024","Vimael Machín","JAL",80,79,166,44,10,".955",22,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
+"100","2024","Kelvin Gutiérrez","QRO",82,82,206,144,17,".954",52,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
+"101","2024","Jermaine Palacios","MTY",68,64,199,106,15,".953",57,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"102","2024","Emmanuel Avila","LEO",69,68,119,35,8,".951",8,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
+"103","2024","Rubén Tejada","YUC",73,73,190,91,15,".949",44,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"104","2024","Robert Stock","LAR",19,19,13,5,1,".947",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"105","2024","Joshua Fuentes","YUC",67,65,131,47,10,".947",12,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"106","2024","Felix Doubront","YUC",19,19,14,3,1,".944",3,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"107","2024","Junior Guerra","LAR",20,18,10,7,1,".944",1,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"108","2024","Jonathan Villar","LAG",79,78,108,61,10,".944",19,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"109","2024","Ramon Hernandez","MVA",76,76,157,58,13,".943",17,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"110","2024","Jesus Martinez","CHI",64,59,4,123,8,".941",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
+"111","2024","Andy Otero","QRO",16,16,6,9,1,".938",1,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
+"112","2024","Wilmer Rios","MVA",17,17,9,6,1,".938",0,0,NA,NA,NA,NA,NA,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
+"113","2024","Nico Tellache","LAG",19,19,13,2,1,".938",1,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"114","2024","Jake Walters","OAX",17,17,8,7,1,".938",1,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"115","2024","James Nelson","DUR",69,69,120,57,12,".937",10,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
+"116","2024","Luis Aviles Jr.","DUR",64,64,173,102,19,".935",46,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
+"117","2024","Erick Leal","MEX",16,15,4,9,1,".929",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"118","2024","David Reyes","VER",18,18,17,8,2,".926",3,0,NA,NA,NA,NA,NA,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
+"119","2024","Faustino Carrera","LEO",15,15,8,4,1,".923",0,0,NA,NA,NA,NA,NA,434,"leo","LEO","Leon","Bravos",5320,"Parque Domingo Santana",6500,125,223,23
+"120","2024","Niko Vasquez","TIJ",64,63,104,50,13,".922",10,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"121","2024","Luis Ivan Rodriguez","JAL",15,15,7,4,1,".917",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
+"122","2024","Nate Antone","LAR",18,18,6,4,1,".909",0,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"123","2024","Joe Van Meter","LAG",16,16,5,5,1,".909",0,0,NA,NA,NA,NA,NA,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
+"124","2024","Tyler Viza","MTY",16,16,8,12,2,".909",1,0,NA,NA,NA,NA,NA,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
+"125","2024","Ronnie Williams","MEX",16,16,5,4,1,".900",1,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"126","2024","Henry Sosa","QRO",20,12,4,4,1,".889",1,0,NA,NA,NA,NA,NA,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
+"127","2024","César Valdez","YUC",18,18,9,6,2,".882",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
+"128","2024","Yunesky Maya","CAM",15,15,5,2,1,".875",2,0,NA,NA,NA,NA,NA,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+"129","2024","Emilio Vargas","LAR",19,19,10,4,2,".875",3,0,NA,NA,NA,NA,NA,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
+"130","2024","Lewis Thorpe","CHI",18,17,10,2,2,".857",0,0,NA,NA,NA,NA,NA,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
+"131","2024","Matt Dermody","TIJ",18,18,7,4,2,".846",0,0,NA,NA,NA,NA,NA,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
+"132","2024","Cameron Gann","TIG",17,17,6,4,2,".833",0,0,NA,NA,NA,NA,NA,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
+"133","2024","Ben Holmes","DUR",18,16,8,1,2,".818",0,0,NA,NA,NA,NA,NA,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
+"134","2024","Derek West","AGS",16,16,2,0,1,".667",0,0,NA,NA,NA,NA,NA,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
+"135","2024","Solomon Bates","OAX",16,16,4,3,4,".636",0,0,NA,NA,NA,NA,NA,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
+"136","2024","Matt Minnick","JAL",18,18,4,0,3,".571",0,0,NA,NA,NA,NA,NA,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
+"137","2024","Trevor Bauer","MEX",14,14,2,1,3,".500",0,0,NA,NA,NA,NA,NA,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
+"138","2024","Oswaldo Arcia","SLT",75,75,0,0,0,".000",0,0,NA,NA,NA,NA,NA,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
+"139","2024","Chris Carter","PUE",70,70,0,0,0,".000",0,0,NA,NA,NA,NA,NA,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
+"140","2024","Luis Juarez","YUC",60,60,0,0,0,".000",0,0,NA,NA,NA,NA,NA,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23

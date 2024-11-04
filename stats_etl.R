@@ -1,55 +1,90 @@
 ####EXTRACTION
 hitting <- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'hitting', season = 2024, sport_ids = 23))
-teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/test_theme/teams.csv")
+#write.csv(hitting[-c(55:56)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/hitting.csv")
+teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/teams.csv")
 
 ###TRANSFORMATION
 hitting <- hitting %>%
   select(season,player_full_name,team_name,position_abbreviation,games_played,at_bats,plate_appearances,hits,rbi,
-         stolen_bases,doubles,triples,home_runs,runs,total_bases,hit_by_pitch,sac_flies,strike_outs,base_on_balls,
-         intentional_walks,avg,obp,slg,ops) %>%
+         stolen_bases,doubles,triples,home_runs,runs,total_bases,hit_by_pitch,strike_outs,base_on_balls,
+         intentional_walks,avg,obp,slg,ops,
+         left_on_base,sac_bunts,sac_flies,ground_outs,air_outs,ground_outs_to_airouts,babip,at_bats_per_home_run
+        ) %>%
   rename("Season"=season,"Name"=player_full_name,"Team"=team_name,"POS"=position_abbreviation,"GP"=games_played,
          "PA"=plate_appearances,"AB"=at_bats,"H"=hits,"RBI"=rbi,"SB"=stolen_bases,"2B"=doubles,"3B"=triples,"HR"=home_runs,"R"=runs,
-         "TB"=total_bases,"HBP"=hit_by_pitch,"SF"=sac_flies,"SO"=strike_outs,"BB"=base_on_balls,"IBB"=intentional_walks,"AVG"=avg,
-         "OBP"=obp,"SLG"=slg,"OPS"=ops) %>%
+         "TB"=total_bases,"HBP"=hit_by_pitch,"K"=strike_outs,"BB"=base_on_balls,"IBB"=intentional_walks,"AVG"=avg,
+         "OBP"=obp,"SLG"=slg,"OPS"=ops,
+         "LOB"=left_on_base,"SH"=sac_bunts,"SF"=sac_flies,"GO"=ground_outs,"AO"=air_outs,"GO/AO"=ground_outs_to_airouts,
+         "BABIP"=babip,"AB/HR"=at_bats_per_home_run,
+         ) %>%
   inner_join(teams, by = c("Team" = "team_full_name")) %>%
-  mutate(Team = team_abbreviation)
+  mutate(Team = team_abbreviation
+         ,`K%` = round(K/PA,3)
+         ,`BB%` = round(BB/PA,3)
+         ,`BB/K` = round(BB/K,3)
+         ) %>%
+  select(!c(team_id:sport_id))
 
 ###LOAD
-write.csv(hitting[1:24],"/Users/axel.mora/Documents/lmb_statsapp/test_theme/lmb_hitting_2024.csv")
+write.csv(hitting[1:23],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_standard.csv")
+write.csv(hitting[-c(8:23)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_advanced.csv")
+
 
 ####EXTRACTION
 pitching<- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'pitching', season = 2024, sport_ids = 23))
-teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/test_theme/teams.csv")
+#write.csv(pitching[-c(83:84)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pitching_test.csv")
+
+teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/teams.csv")
 
 ###TRANSFORMATION
 pitching <- pitching %>%
-  select(season,player_full_name,team_name,games_played,games_started,innings_pitched,era,wins,losses,
+  select(season,player_full_name,team_name,position_abbreviation,games_played,games_started,innings_pitched,era,wins,losses,
          saves,save_opportunities,holds,strike_outs,base_on_balls,intentional_walks,batters_faced,hits,
-         home_runs,earned_runs,hit_by_pitch,ground_into_double_play,wild_pitches) %>%
-  rename("Season"=season,"Name"=player_full_name,"Team"=team_name,"GP"=games_played,
-         "GS"=games_started,"IP"=innings_pitched,"ERA"=era,"W"=wins,"L"=losses,"SV"=saves,"Svopp"=save_opportunities,"HLD"=holds,
+         home_runs,earned_runs,hit_by_pitch,ground_into_double_play,wild_pitches,
+         ground_outs,air_outs,number_of_pitches,outs,complete_games,shutouts,strikes,strike_percentage,balks,
+         ground_outs_to_airouts,pitches_per_inning,strikeout_walk_ratio,strikeouts_per9inn,walks_per9inn,hits_per9inn,
+         runs_scored_per9,home_runs_per9
+         ) %>%
+  rename("Season"=season,"Name"=player_full_name,"Team"=team_name,"POS"=position_abbreviation,"GP"=games_played,
+         "GS"=games_started,"IP"=innings_pitched,"ERA"=era,"W"=wins,"L"=losses,"SV"=saves,"SVO"=save_opportunities,"HLD"=holds,
          "K"=strike_outs,"BB"=base_on_balls,"IBB"=intentional_walks,"BF"=batters_faced,"H"=hits,
-         "HR"=home_runs,"ER"=earned_runs,"HBP"=hit_by_pitch,"GIDP"=ground_into_double_play,"WP"=wild_pitches) %>%
+         "HR"=home_runs,"ER"=earned_runs,"HBP"=hit_by_pitch,"GIDP"=ground_into_double_play,"WP"=wild_pitches,
+         "GO"=ground_outs,"AO"=air_outs,"NP"=number_of_pitches,"O"=outs,"CG"=complete_games,"SHO"=shutouts,"S"=strikes,
+         "K%"=strike_percentage,"BK"=balks,"GO/AO"=ground_outs_to_airouts,"P/INN"=pitches_per_inning,"K/BB"=strikeout_walk_ratio,
+         "K/9"=strikeouts_per9inn,"W/9"=walks_per9inn,"H/9"=hits_per9inn,"R/9"=runs_scored_per9,"HR/9"=home_runs_per9
+         ) %>%
   inner_join(teams, by = c("Team" = "team_full_name")) %>%
-  mutate(Team = team_abbreviation)
+  mutate(Team = team_abbreviation) %>%
+  select(!c(team_id:sport_id))
 
 ###LOAD
-write.csv(pitching,"/Users/axel.mora/Documents/lmb_statsapp/test_theme/lmb_pitching_2024.csv")
+write.csv(pitching[1:23],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pitching_standard.csv")
+write.csv(pitching[-c(8:23)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pitching_advanced.csv")
+
 
 
 ####EXTRACTION
 fielding<- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'fielding', season = 2024, sport_ids = 23))
-teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/test_theme/teams.csv")
+#write.csv(fielding[-c(45,46)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_test.csv")
+teams <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/teams.csv")
 
 ###TRANSFORMATION
 fielding <- fielding %>%
-  select(season,player_full_name,team_name,games_played, games_started,assists,put_outs,errors,fielding,
-         double_plays,triple_plays,caught_stealing,stolen_bases,stolen_base_percentage,passed_ball,pickoffs) %>%
-  rename("Season"=season,"Name"=player_full_name,"Team"=team_name,"GP"=games_played,"GS"=games_started,
-         "A"=assists,"PO"=put_outs,"E"=errors,"F%"=fielding,"DP"=double_plays,"TP"=triple_plays,
-         "CS"=caught_stealing,"SB"=stolen_bases,"SB%"=stolen_base_percentage,"PB"=passed_ball) %>%
+  select(season,player_full_name,team_name,position_abbreviation,games_played, games_started,innings,assists,put_outs,errors,fielding,
+         double_plays,triple_plays,caught_stealing,stolen_bases,stolen_base_percentage,passed_ball,pickoffs,
+         chances,range_factor_per_game,range_factor_per9inn,throwing_errors,catcher_era,catchers_interference
+         ) %>%
+  rename("Season"=season,"Name"=player_full_name,"Team"=team_name,"POS"=position_abbreviation,"GP"=games_played,"GS"=games_started,
+         "INN"=innings,"A"=assists,"PO"=put_outs,"E"=errors,"F%"=fielding,"DP"=double_plays,"TP"=triple_plays,
+         "CS"=caught_stealing,"SB"=stolen_bases,"CS%"=stolen_base_percentage,"PB"=passed_ball,"PK"=pickoffs,
+         "TC"=chances,"RF/G"=range_factor_per_game,"RF/9"=range_factor_per9inn,"TE"=throwing_errors,"CERA"=catcher_era,
+         "CI"=catchers_interference
+         ) %>%
   inner_join(teams, by = c("Team" = "team_full_name")) %>%
-  mutate(Team = team_abbreviation)
+  mutate(Team = team_abbreviation
+         ,`CS%` = CS/(SB+CS)) %>%
+  select(!c(team_id:sport_id))
 
 ###LOAD
-write.csv(fielding,"/Users/axel.mora/Documents/lmb_statsapp/test_theme/lmb_fielding_2024.csv")
+write.csv(fielding[1:18],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_standard.csv")
+write.csv(fielding[-c(8:18)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_advanced.csv")
