@@ -51,9 +51,10 @@ theme_set(theme_bw(base_size = 14))
 # UI ----------------------------------------------------------------------
 
 ui <- page_navbar(
+  input_dark_mode(id = "mode"),
   title = "LMB Stats App",
   theme = bs_theme(
-    bootswatch = "darkly", version = 5),
+    bootswatch = "minty", version = 5),
   nav_panel(
     title = "Player stats", 
     #layout_sidebar(
