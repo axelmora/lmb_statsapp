@@ -55,22 +55,63 @@ ui <- page_navbar(
   title = "LMB Stats App",
   theme = bs_theme(
     bootswatch = "minty", version = 5),
-  nav_panel(
-    title = "Player stats", 
-    #layout_sidebar(
-            navset_card_underline(
-              title = "Standard Stats",
-              nav_panel("Hitting", DTOutput("hitting_std")),
-              nav_panel("Pitching", DTOutput("pitching_std")),
-              nav_panel("Fielding", DTOutput("fielding_std"))
-              ),
-            navset_card_underline(
-              title = "Advanced Stats",
-              nav_panel("Hitting", DTOutput("hitting_adv")),
-              nav_panel("Pitching", DTOutput("pitching_adv")),
-              nav_panel("Fielding", DTOutput("fielding_adv"))
-            )
-     # )
+  nav_menu(
+    title = "Player Stats",
+    nav_panel(
+      title = "Hitting", 
+      layout_sidebar(
+        sidebar = sidebar(
+          selectInput("player_name","Player Name",
+                      lmb_hitting_standard$Name)
+        ),
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("hitting_std"))
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("hitting_adv"))
+        )
+      )
+    ),
+    nav_panel(
+      title = "Pitching", 
+      layout_sidebar(
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("pitching_std"))
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("pitching_adv"))
+        )
+      )
+    ),
+    nav_panel(
+      title = "Fielding", 
+      layout_sidebar(
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("fielding_std"))
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("fielding_adv"))
+        )
+      )
+    )
   ),
   nav_panel(title = "Team Stats", p("Second page content.")),
   nav_panel(title = "League Stats", p("Third page content.")),
