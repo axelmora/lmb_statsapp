@@ -6,69 +6,82 @@ library(readr)
 
 lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
 lmb_hitting_standard <- lmb_hitting_standard[2:24]
-lmb_hitting_standard$Name <- factor(lmb_hitting_standard$Name)
-lmb_hitting_standard$Team <- factor(lmb_hitting_standard$Team)
-lmb_hitting_standard$POS <- factor(lmb_hitting_standard$POS)
 #
 lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
 lmb_hitting_advanced <- lmb_hitting_advanced[2:19]
-lmb_hitting_advanced$Name <- factor(lmb_hitting_advanced$Name)
-lmb_hitting_advanced$Team <- factor(lmb_hitting_advanced$Team)
-lmb_hitting_advanced$POS <- factor(lmb_hitting_advanced$POS)
 #
 lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
 lmb_pitching_standard <- lmb_pitching_standard[2:24]
-lmb_pitching_standard$Name <- factor(lmb_pitching_standard$Name)
-lmb_pitching_standard$Team <- factor(lmb_pitching_standard$Team)
-lmb_pitching_standard$POS <- factor(lmb_pitching_standard$POS)
 #
 lmb_pitching_advanced <- read_csv("lmb_pitching_advanced.csv")
 lmb_pitching_advanced <- lmb_pitching_advanced[2:25]
-lmb_pitching_advanced$Name <- factor(lmb_pitching_advanced$Name)
-lmb_pitching_advanced$Team <- factor(lmb_pitching_advanced$Team)
-lmb_pitching_advanced$POS <- factor(lmb_pitching_advanced$POS)
-
 
 lmb_fielding_standard <- read_csv("lmb_fielding_standard.csv")
 lmb_fielding_standard <- lmb_fielding_standard[2:19]
-lmb_fielding_standard$Name <- factor(lmb_fielding_standard$Name)
-lmb_fielding_standard$Team <- factor(lmb_fielding_standard$Team)
-lmb_fielding_standard$POS <- factor(lmb_fielding_standard$POS)
 #
 lmb_fielding_advanced <- read_csv("lmb_fielding_advanced.csv")
 lmb_fielding_advanced <- lmb_fielding_advanced[2:14]
-lmb_fielding_advanced$Name <- factor(lmb_fielding_advanced$Name)
-lmb_fielding_advanced$Team <- factor(lmb_fielding_advanced$Team)
-lmb_fielding_advanced$POS <- factor(lmb_fielding_advanced$POS)
+
 
 # Setup -------------------------------------------------------------------
 
 
 # Turn on thematic for theme-matched plots
 thematic::thematic_shiny(font = "auto")
-theme_set(theme_bw(base_size = 14))
+theme_set(theme_bw(base_size = 10))
 
 # UI ----------------------------------------------------------------------
 
 ui <- page_navbar(
   input_dark_mode(id = "mode"),
+  tags$head(
+    tags$style(HTML("
+      table.dataTable {
+        font-size: 16px;
+        padding: 0px;
+      }
+      table.dataTable td, table.dataTable th {
+        padding: 0px;
+      }
+      .dataTable td {
+
+      }
+      .dataTable thead {
+        
+      }
+       .dataTables_paginate {
+        font-size: 6px;  /* Smaller font size */
+        padding: 0px;     /* Less padding */
+      }
+      .dataTables_paginate .paginate_button {
+        padding: 0px; /* Smaller padding for page buttons */
+        font-size: 6px;   /* Smaller font size for page buttons */
+      }
+      .dataTables_info {
+        font-size: 10px;  /* Smaller font size for information text */
+        padding: 0px;     /* Less padding */
+      }
+    ")
+    )
+  ),
   title = "LMB Stats App",
   theme = bs_theme(
-    bootswatch = "minty", version = 5),
+    bootswatch = "cerulean", version = 5),
   nav_menu(
     title = "Player Stats",
     nav_panel(
-      title = "Hitting", 
+      title = "Hitting",
       layout_sidebar(
         sidebar = sidebar(
-          selectInput("player_name","Player Name",
-                      lmb_hitting_standard$Name)
-        ),
+          selectInput("player_name_h","Player Name",
+                      choices = c("All", lmb_hitting_standard$Name), 
+                      selected = "All")
+          ),
         card(
           card_header(
             "Standard Stats"),
           card_body(
-            DTOutput("hitting_std"))
+            DTOutput("hitting_std")),
         ),
         card(
           card_header(
@@ -81,6 +94,11 @@ ui <- page_navbar(
     nav_panel(
       title = "Pitching", 
       layout_sidebar(
+        sidebar = sidebar(
+          selectInput("player_name_p","Player Name",
+                      choices = c("All", lmb_pitching_standard$Name), 
+                      selected = "All")
+        ),
         card(
           card_header(
             "Standard Stats"),
@@ -98,6 +116,11 @@ ui <- page_navbar(
     nav_panel(
       title = "Fielding", 
       layout_sidebar(
+        sidebar = sidebar(
+          selectInput("player_name_f","Player Name",
+                      choices = c("All", lmb_fielding_standard$Name), 
+                      selected = "All")
+        ),
         card(
           card_header(
             "Standard Stats"),
@@ -129,25 +152,43 @@ ui <- page_navbar(
 # Server ------------------------------------------------------------------
 
 server <- function(input, output) {
+  
+  filtered_hitting_std <- reactive({
+    lmb_hitting_standard %>%
+      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE) 
+  })
+  filtered_hitting_adv <- reactive({
+    lmb_hitting_advanced %>%
+      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE) 
+  })
+  filtered_pitching_std <- reactive({
+    lmb_pitching_standard %>%
+      filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
+  })
+  filtered_pitching_adv <- reactive({
+    lmb_pitching_advanced %>%
+      filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
+  })
+  filtered_fielding_std <- reactive({
+    lmb_fielding_standard %>%
+      filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
+  })
+  filtered_fielding_adv <- reactive({
+    lmb_fielding_advanced %>%
+      filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
+  })
+  
   output$hitting_std <- renderDT({
     datatable(
-      lmb_hitting_standard,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_hitting_std(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10,
+        dom = 'tip',
+        pageLength = 8,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = 2, width = '100px')
                           ,list(targets = c(2:22), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
                           ),
         order = list(5, 'desc')
         ,scrollX = FALSE
@@ -158,24 +199,16 @@ server <- function(input, output) {
   
   output$hitting_adv <- renderDT({
     datatable(
-      lmb_hitting_advanced,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_hitting_adv(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10,
+        dom = 'tip',
+        pageLength = 8,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = 2, width = '100px')
                           ,list(targets = c(2:17), width = '5px')
-        ),
+                          ,list(targets = "_all", className = 'dt-left')
+                          ),
         order = list(5, 'desc')
         ,scrollX = FALSE
       )
@@ -184,24 +217,16 @@ server <- function(input, output) {
   
   output$pitching_std <- renderDT({
     datatable(
-      lmb_pitching_standard,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_pitching_std(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10, 
+        dom = 'tip',
+        pageLength = 8, 
         columnDefs = list(list(targets = 0, width = '5px')
                            ,list(targets = 1, width = '180px')
-                           ,list(targets = 2, width = '100px')
                            ,list(targets = c(3:22), width = '5px')
-        )
+                           ,list(targets = "_all", className = 'dt-left')
+                          )
         ,order = list(6, 'desc')
         ,scrollX = FALSE
       )
@@ -211,24 +236,16 @@ server <- function(input, output) {
   
   output$pitching_adv <- renderDT({
     datatable(
-      lmb_pitching_advanced,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_pitching_adv(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10, 
+        dom = 'tip',
+        pageLength = 8, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = 2, width = '100px')
                           ,list(targets = c(3:23), width = '5px')
-        )
+                          ,list(targets = "_all", className = 'dt-left')
+                          )
         ,order = list(6, 'desc')
         ,scrollX = FALSE
       )
@@ -237,24 +254,16 @@ server <- function(input, output) {
   
   output$fielding_std <- renderDT({
     datatable(
-      lmb_fielding_standard,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_fielding_std(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10,
+        dom = 'tip',
+        pageLength = 8,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = 2, width = '100px')
                           ,list(targets = c(3:17), width = '5px')
-        )
+                          ,list(targets = "_all", className = 'dt-left')
+                          )
         ,order = list(6, 'desc')
         ,scrollX = FALSE
       )
@@ -264,24 +273,16 @@ server <- function(input, output) {
   
   output$fielding_adv <- renderDT({
     datatable(
-      lmb_fielding_advanced,
-      filter = "top",
-      extensions = c('Buttons'),
+      filtered_fielding_adv(),
       rownames = FALSE,
       options = list(
-        dom = 'Brtip',
-        buttons = 
-          list('print', list(
-            extend = 'collection',
-            buttons = c('csv', 'excel', 'pdf'),
-            text = 'Download'
-          )),
-        pageLength = 10,
+        dom = 'tip',
+        pageLength = 8,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = 2, width = '100px')
                           ,list(targets = c(3:12), width = '5px')
-        )
+                          ,list(targets = "_all", className = 'dt-left')
+                          )
         ,order = list(6, 'desc')
         ,scrollX = FALSE
       )
