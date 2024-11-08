@@ -1,3 +1,4 @@
+# ------------------ LIBRARIES ------------------------------------------
 library(shiny)
 library(bslib)
 library(ggplot2)
@@ -5,33 +6,60 @@ library(DT)
 library(readr)
 library(dplyr)
 
+# ----------------- DATA PREPARATION -------------------------------------
 lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
-lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], stringAsFactors = FALSE)
+lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], 
+                                      stringAsFactors = FALSE)
 #
 lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
-lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:19,drop = F], stringAsFactors = FALSE)
+lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:19,drop = F], 
+                                      stringAsFactors = FALSE)
 #
 lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
-lmb_pitching_standard <- as.data.frame(lmb_pitching_standard[2:24,drop = F], stringAsFactors = FALSE)
+lmb_pitching_standard <- as.data.frame(lmb_pitching_standard[2:24,drop = F], 
+                                       stringAsFactors = FALSE)
 #
 lmb_pitching_advanced <- read_csv("lmb_pitching_advanced.csv")
-lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:25,drop = F], stringAsFactors = FALSE)
+lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:26,drop = F], 
+                                       stringAsFactors = FALSE)
 
 lmb_fielding_standard <- read_csv("lmb_fielding_standard.csv")
-lmb_fielding_standard <- as.data.frame(lmb_fielding_standard[2:19,drop = F], stringAsFactors = FALSE)
+lmb_fielding_standard <- as.data.frame(lmb_fielding_standard[2:19,drop = F], 
+                                       stringAsFactors = FALSE)
 #
 lmb_fielding_advanced <- read_csv("lmb_fielding_advanced.csv")
-lmb_fielding_advanced <- as.data.frame(lmb_fielding_advanced[2:14,drop = F], stringAsFactors = FALSE)
+lmb_fielding_advanced <- as.data.frame(lmb_fielding_advanced[2:14,drop = F], 
+                                       stringAsFactors = FALSE)
+#
+lmb_hitting_team_standard <- read_csv("lmb_hitting_team_standard.csv")
+lmb_hitting_team_standard <- as.data.frame(lmb_hitting_team_standard[2:23,drop = F], 
+                                      stringAsFactors = FALSE)
+#
+lmb_hitting_team_advanced <- read_csv("lmb_hitting_team_advanced.csv")
+lmb_hitting_team_advanced <- as.data.frame(lmb_hitting_team_advanced[2:18,drop = F], 
+                                      stringAsFactors = FALSE)
+#
+lmb_pitching_team_standard <- read_csv("lmb_pitching_team_standard.csv")
+lmb_pitching_team_standard <- as.data.frame(lmb_pitching_team_standard[2:22,drop = F], 
+                                       stringAsFactors = FALSE)
+#
+lmb_pitching_team_advanced <- read_csv("lmb_pitching_team_advanced.csv")
+lmb_pitching_team_advanced <- as.data.frame(lmb_pitching_team_advanced[2:23,drop = F], 
+                                       stringAsFactors = FALSE)
 
+lmb_fielding_team_standard <- read_csv("lmb_fielding_team_standard.csv")
+lmb_fielding_team_standard <- as.data.frame(lmb_fielding_team_standard[2:11,drop = F], 
+                                       stringAsFactors = FALSE)
+#
+lmb_fielding_team_advanced <- read_csv("lmb_fielding_team_advanced.csv")
+lmb_fielding_team_advanced <- as.data.frame(lmb_fielding_team_advanced[2:14,drop = F], 
+                                       stringAsFactors = FALSE)
 
-# Setup -------------------------------------------------------------------
-
-
-# Turn on thematic for theme-matched plots
+# ----------- SETUP -------------------------------------------------------
 thematic::thematic_shiny(font = "auto")
 theme_set(theme_bw(base_size = 10))
 
-# UI ----------------------------------------------------------------------
+#-------------------- UI ---------------------------------------------------
 
 ui <- page_navbar(
   input_dark_mode(id = "mode"),
@@ -137,7 +165,54 @@ ui <- page_navbar(
       )
     )
   ),
-  nav_panel(title = "Team Stats", p("Second page content.")),
+  nav_menu(
+    title = "Team Stats",
+    nav_panel(
+      title = "Hitting",
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("hitting_team_std")),
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("hitting_team_adv"))
+        )
+    ),
+    nav_panel(
+      title = "Pitching", 
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("pitching_team_std"))
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("pitching_team_adv"))
+        )
+    ),
+    nav_panel(
+      title = "Fielding", 
+        card(
+          card_header(
+            "Standard Stats"),
+          card_body(
+            DTOutput("fielding_team_std"))
+        ),
+        card(
+          card_header(
+            "Advanced Stats"),
+          card_body(
+            DTOutput("fielding_team_adv"))
+        )
+    )
+  ),
   nav_panel(title = "League Stats", p("Third page content.")),
   nav_spacer(),
   nav_menu(
@@ -150,7 +225,7 @@ ui <- page_navbar(
 )
 
 
-# Server ------------------------------------------------------------------
+# ------ SERVER --------------------------------------------------
 
 server <- function(input, output, session) {
   
@@ -244,7 +319,7 @@ server <- function(input, output, session) {
         pageLength = 8, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(3:23), width = '5px')
+                          #,list(targets = c(3:25), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
                           )
         ,order = list(6, 'desc')
@@ -289,9 +364,123 @@ server <- function(input, output, session) {
       )
     )
   })
+  
+  output$hitting_team_std <- renderDT({
+    datatable(
+      lmb_hitting_team_standard,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10,
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(2:22), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        ),
+        order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    ) 
+    #%>%
+    #  formatRound(columns = 20:22, digits = 3)
+  })
+  
+  output$hitting_team_adv <- renderDT({
+    datatable(
+      lmb_hitting_team_advanced,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10,
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(2:17), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        ),
+        order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    ) 
+  })
+  
+  output$pitching_team_std <- renderDT({
+    datatable(
+      lmb_pitching_team_standard,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10, 
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(3:22), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        )
+        ,order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    )
+    #%>%
+    #  formatRound(columns = 7, digits = 2)
+  })
+  
+  output$pitching_team_adv <- renderDT({
+    datatable(
+      lmb_pitching_team_advanced,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10, 
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(3:23), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        )
+        ,order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    )
+  })
+  
+  output$fielding_team_std <- renderDT({
+    datatable(
+      lmb_fielding_team_standard,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10,
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(3:17), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        )
+        ,order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    )
+    #%>%
+    #  formatRound(columns = c(11,16), digits = 3)
+  })
+  
+  output$fielding_team_adv <- renderDT({
+    datatable(
+      lmb_fielding_team_advanced,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip',
+        pageLength = 10,
+        columnDefs = list(list(targets = 0, width = '5px')
+                          ,list(targets = 1, width = '180px')
+                          #,list(targets = c(3:12), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        )
+        ,order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    )
+  })
 }
 
 
-# Shiny App ---------------------------------------------------------------
+# ---------------- RUN ------------------------------------------------------
 
 shinyApp(ui, server)
