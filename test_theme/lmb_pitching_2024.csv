@@ -1,43 +1,85 @@
-"","Season","Name","Team","GP","GS","IP","ERA","W","L","SV","Svopp","HLD","K","BB","IBB","BF","H","HR","ER","HBP","GIDP","WP","team_id","team_code","team_abbreviation","franchise_name","club_name","venue_id","venue_name","capacity","league_id","division_id","sport_id"
-"1","2024","Zac Grotz","MVA",14,14,"76.2","2.35",7,1,0,0,0,81,19,0,314,75,4,20,2,10,4,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"2","2024","Trevor Bauer","MEX",14,14,"83.1","2.48",10,0,0,0,0,120,21,0,330,66,4,23,2,5,2,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"3","2024","David Reyes","VER",18,18,"123.0","2.49",9,6,0,0,0,85,14,0,478,95,16,34,3,7,0,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"4","2024","Erick Leal","MEX",16,15,"80.1","2.91",8,1,0,0,0,95,24,0,328,69,6,26,7,6,3,532,"mxo","MEX","Mexico","Diablos Rojos",5340,"Estadio Alfredo Harp Helu",20062,125,223,23
-"5","2024","Matt Dermody","TIJ",18,18,"95.0","3.03",9,3,0,0,0,89,26,0,395,88,7,32,6,5,4,5010,"tij","TIJ","Tijuana","Toros",2957,"Estadio Chevron",17000,125,222,23
-"6","2024","Emilio Vargas","LAR",19,19,"112.1","3.20",6,5,0,0,0,99,30,0,455,97,12,40,6,8,1,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"7","2024","Tyler Viza","MTY",16,16,"79.0","3.30",7,2,0,0,0,62,20,0,327,82,8,29,4,12,3,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"8","2024","Yoanner Negrin","YUC",15,15,"78.0","3.35",6,3,0,0,0,65,24,0,319,65,6,29,6,8,1,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"9","2024","Robert Stock","LAR",19,19,"98.2","3.38",9,4,0,0,0,104,41,0,432,109,2,37,5,12,5,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"10","2024","Nate Antone","LAR",18,18,"94.2","3.42",6,4,0,0,0,98,31,0,404,100,8,36,4,13,7,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"11","2024","Ronald Medrano","AGS",15,15,"81.1","3.54",7,4,0,0,0,68,22,0,328,71,10,32,4,8,6,528,"agu","AGS","Aguascalientes","Rieleros",2929,"Estadio Alberto Romo Chavez",6496,125,223,23
-"12","2024","Felix Doubront","YUC",19,19,"113.2","3.88",3,11,0,0,0,85,39,0,483,105,8,49,7,14,0,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"13","2024","Nick Struck","TAB",18,18,"95.0","3.88",8,8,0,0,0,64,35,1,410,97,12,41,3,6,3,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"14","2024","Cameron Gann","TIG",17,17,"85.2","3.89",5,7,0,0,0,84,44,1,367,76,5,37,2,6,4,569,"qui","TIG","Quintana Roo","Tigres",3929,"Estadio De Beisbol Beto Avila",10825,125,222,23
-"15","2024","César Valdez","YUC",18,18,"106.1","4.06",10,6,0,0,0,73,12,0,449,117,14,48,5,9,2,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"16","2024","Wilmer Rios","MVA",17,17,"85.2","4.10",6,5,0,0,0,51,21,0,365,91,5,39,3,5,1,560,"mva","MVA","Monclova","Acereros",2950,"Estadio Kickapoo Lucky Eagle",8500,125,222,23
-"17","2024","Stephen Tarpley","MTY",17,17,"81.0","4.11",7,3,0,0,0,75,35,0,352,84,5,37,3,12,6,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"18","2024","Luis Ivan Rodriguez","JAL",15,15,"77.1","4.31",5,3,0,0,0,56,16,0,337,95,8,37,6,7,3,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"19","2024","Zach Mort","SLT",18,18,"87.0","4.34",8,4,0,0,0,79,19,0,372,110,10,42,1,3,4,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"20","2024","Juan Pablo Oramas","TAB",18,18,"93.1","4.44",10,6,0,0,0,71,41,0,404,97,16,46,1,4,4,442,"tab","TAB","Tabasco","Olmecas",2955,"Parque Centenario 27 de Febrero",6600,125,222,23
-"21","2024","Yunesky Maya","CAM",15,15,"74.1","4.48",5,7,0,0,0,49,31,0,327,74,10,37,6,5,3,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"22","2024","Dereck Rodríguez","JAL",16,16,"82.0","4.50",6,2,0,0,0,51,30,0,348,79,10,41,3,5,4,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"23","2024","Phillips Valdez","VER",16,16,"77.0","4.56",7,5,0,0,0,35,23,0,333,83,11,39,7,15,1,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"24","2024","Jesus Vargas","PUE",20,16,"87.0","4.66",5,5,0,0,0,59,22,1,381,101,13,45,5,11,4,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"25","2024","Odrisamer Despaigne","YUC",18,18,"98.2","4.74",3,7,0,0,0,78,29,0,426,101,8,52,7,8,5,496,"yuc","YUC","Yucatan","Leones",6081,"Estadio de Beisbol VIctor Cervera Pacheco",5104,125,223,23
-"26","2024","Braden Webb","LAG",18,18,"82.2","4.79",7,8,0,0,0,78,53,0,376,86,10,44,4,9,9,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"27","2024","Esmil Rogers","VER",17,17,"91.0","4.85",6,7,0,0,0,55,29,0,390,94,10,49,3,10,5,5567,"ver","VER","Veracruz","El Aguila",2958,"Estadio Universitario Beto Avila",7319,125,222,23
-"28","2024","Braulio Torres-Perez","SLT",17,17,"82.2","4.90",4,4,0,0,0,60,23,0,349,86,9,45,3,5,3,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"29","2024","Gabriel Ynoa","PUE",19,19,"91.2","4.91",9,4,0,0,0,43,28,2,412,127,16,50,2,11,2,520,"pue","PUE","Puebla","Pericos",2869,"Estadio Hermanos Serdan",9200,125,222,23
-"30","2024","Jake Walters","OAX",17,17,"79.1","4.99",6,2,0,0,0,61,41,0,361,90,9,44,9,6,7,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"31","2024","Joe Van Meter","LAG",16,16,"75.1","5.02",6,4,0,0,0,45,25,0,339,95,12,42,1,8,1,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"32","2024","Solomon Bates","OAX",16,16,"76.1","5.19",6,5,0,0,0,79,35,0,336,80,11,44,1,5,2,579,"oax","OAX","Oaxaca","Guerreros",2951,"Parque Lic. Eduardo Vasconcelos",7200,125,223,23
-"33","2024","Javier Solano","CAM",16,16,"90.1","5.28",7,6,0,0,0,46,17,0,398,113,16,53,3,8,3,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
-"34","2024","Andy Otero","QRO",16,16,"76.2","5.28",5,2,0,0,0,56,25,1,355,113,11,45,1,7,0,6303,"qro","QRO","Queretaro","Conspiradores",6070,"Estadio Conspiradores",6800,125,222,23
-"35","2024","Lewis Thorpe","CHI",18,17,"74.2","5.30",1,7,0,0,1,80,37,0,349,88,9,44,6,5,5,575,"chi","CHI","Chihuahua","Dorados",3210,"Estadio Chihuahua",15500,125,222,23
-"36","2024","Nico Tellache","LAG",19,19,"94.2","5.32",5,7,0,0,0,80,26,0,419,106,13,56,5,9,4,447,"vaq","LAG","Laguna","Algodoneros",2956,"Estadio de la Revolucion",7689,125,223,23
-"37","2024","Tanner Anderson","MTY",18,18,"90.1","5.58",6,4,0,0,0,63,33,0,385,104,10,56,0,20,0,562,"mty","MTY","Monterrey","Sultanes",2701,"Estadio Mobil Super",21803,125,223,23
-"38","2024","Junior Guerra","LAR",20,18,"85.0","5.61",7,5,0,0,1,76,55,0,397,98,6,53,0,7,8,536,"lar","LAR","Dos Laredos","Tecos",3410,"Parque la Junta",5000,125,223,23
-"39","2024","Ben Holmes","DUR",18,16,"78.1","6.20",4,8,0,0,0,60,39,0,361,92,12,54,4,9,0,4444,"dur","DUR","Durango","Caliente",5321,"Estadio Francisco Villa",4983,125,223,23
-"40","2024","Jhoulys Chacín","SLT",16,15,"77.1","6.40",4,5,0,0,0,58,21,0,346,100,7,55,5,7,5,502,"slt","SLT","Saltillo","Saraperos",2953,"Parque Francisco I. Madero",11000,125,222,23
-"41","2024","Matt Minnick","JAL",18,18,"75.0","6.96",3,8,0,0,0,67,37,0,362,93,13,58,9,5,7,6304,"jal","JAL","Jalisco","Charros",4710,"Estadio Panamericano",16500,125,222,23
-"42","2024","Zach Matson","CAM",18,17,"76.2","7.04",2,8,0,0,0,82,54,1,378,99,7,60,5,6,9,523,"cam","CAM","Campeche","Piratas",2949,"Parque Nelson Barrera Romellon",4190,125,223,23
+,,TC,=,chances,"chances,","""TC""=chances,"
+total_splits,,RF/G,=,range_factor_per_game,"range_factor_per_game,","""RF/G""=range_factor_per_game,"
+season,,RF/9,=,range_factor_per9inn,"range_factor_per9inn,","""RF/9""=range_factor_per9inn,"
+num_teams,,TE,=,throwing_errors,"throwing_errors,","""TE""=throwing_errors,"
+rank,,CERA,=,catcher_era,"catcher_era,","""CERA""=catcher_era,"
+games_played,,CI,=,catchers_interference,"catchers_interference,","""CI""=catchers_interference,"
+games_started,,,=,,",","""""=,"
+assists,,,=,,",","""""=,"
+put_outs,,,=,,",","""""=,"
+errors,,,=,,",","""""=,"
+,,,=,,",","""""=,"
+fielding,,,=,,",","""""=,"
+,,,=,,",","""""=,"
+,,,=,,",","""""=,"
+innings,,,=,,",","""""=,"
+games,,,=,,",","""""=,"
+double_plays,,,=,,",","""""=,"
+triple_plays,,,=,,",",
+,,,=,,",",
+caught_stealing,,,=,,",",
+stolen_bases,,,=,,",",
+stolen_base_percentage,,,=,,",",
+passed_ball,,,,,",",
+,,,,,",",
+,,,,,",",
+wild_pitches,,,,,",",
+pickoffs,,,,,",",
+team_id,,,,,",",
+team_name,,,,,",",
+team_link,,,,,",",
+player_id,,,,,",",
+player_full_name,,,,,",",
+player_link,,,,,",",
+player_first_name,,,,,",",
+player_last_name,,,,,",",
+league_id,,,,,",",
+league_name,,,,,",",
+league_link,,,,,",",
+sport_id,,,,,",",
+sport_link,,,,,",",
+sport_abbreviation,,,,,",",
+position_code,,,,,",",
+position_name,,,,,",",
+position_type,,,,,",",
+position_abbreviation,,,,,",",
+player_pool,,,,,",",
+type_display_name,,,,,",",
+group_display_name,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",
+,,,,,",",

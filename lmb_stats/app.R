@@ -3,24 +3,25 @@ library(bslib)
 library(ggplot2)
 library(DT)
 library(readr)
+library(dplyr)
 
 lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
-lmb_hitting_standard <- lmb_hitting_standard[2:24]
+lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], stringAsFactors = FALSE)
 #
 lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
-lmb_hitting_advanced <- lmb_hitting_advanced[2:19]
+lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:19,drop = F], stringAsFactors = FALSE)
 #
 lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
-lmb_pitching_standard <- lmb_pitching_standard[2:24]
+lmb_pitching_standard <- as.data.frame(lmb_pitching_standard[2:24,drop = F], stringAsFactors = FALSE)
 #
 lmb_pitching_advanced <- read_csv("lmb_pitching_advanced.csv")
-lmb_pitching_advanced <- lmb_pitching_advanced[2:25]
+lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:25,drop = F], stringAsFactors = FALSE)
 
 lmb_fielding_standard <- read_csv("lmb_fielding_standard.csv")
-lmb_fielding_standard <- lmb_fielding_standard[2:19]
+lmb_fielding_standard <- as.data.frame(lmb_fielding_standard[2:19,drop = F], stringAsFactors = FALSE)
 #
 lmb_fielding_advanced <- read_csv("lmb_fielding_advanced.csv")
-lmb_fielding_advanced <- lmb_fielding_advanced[2:14]
+lmb_fielding_advanced <- as.data.frame(lmb_fielding_advanced[2:14,drop = F], stringAsFactors = FALSE)
 
 
 # Setup -------------------------------------------------------------------
@@ -74,7 +75,7 @@ ui <- page_navbar(
       layout_sidebar(
         sidebar = sidebar(
           selectInput("player_name_h","Player Name",
-                      choices = c("All", lmb_hitting_standard$Name), 
+                      choices = c("All", sort(lmb_hitting_standard$Name)), 
                       selected = "All")
           ),
         card(
@@ -96,7 +97,7 @@ ui <- page_navbar(
       layout_sidebar(
         sidebar = sidebar(
           selectInput("player_name_p","Player Name",
-                      choices = c("All", lmb_pitching_standard$Name), 
+                      choices = c("All", sort(lmb_pitching_standard$Name)), 
                       selected = "All")
         ),
         card(
@@ -118,7 +119,7 @@ ui <- page_navbar(
       layout_sidebar(
         sidebar = sidebar(
           selectInput("player_name_f","Player Name",
-                      choices = c("All", lmb_fielding_standard$Name), 
+                      choices = c("All", sort(lmb_fielding_standard$Name)), 
                       selected = "All")
         ),
         card(
@@ -151,15 +152,15 @@ ui <- page_navbar(
 
 # Server ------------------------------------------------------------------
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   filtered_hitting_std <- reactive({
     lmb_hitting_standard %>%
-      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE) 
+      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
   })
   filtered_hitting_adv <- reactive({
     lmb_hitting_advanced %>%
-      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE) 
+      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
   })
   filtered_pitching_std <- reactive({
     lmb_pitching_standard %>%

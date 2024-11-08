@@ -53,10 +53,8 @@ ui <- fluidPage(
 
 # Define server logic
 server <- function(input, output, session) {
-  
-  # Reactive expression for filtered data
+
   filtered_data <- reactive({
-    # Filter based on city and age range
     data %>%
       filter(if (input$city_filter != "All") City == input$city_filter else TRUE) %>%
       filter(Age >= input$age_filter[1] & Age <= input$age_filter[2])
