@@ -54,7 +54,12 @@ lmb_fielding_team_standard <- as.data.frame(lmb_fielding_team_standard[2:11,drop
 lmb_fielding_team_advanced <- read_csv("lmb_fielding_team_advanced.csv")
 lmb_fielding_team_advanced <- as.data.frame(lmb_fielding_team_advanced[2:14,drop = F], 
                                        stringAsFactors = FALSE)
+#
+league_pace <- read_csv("lmb_pace_24.csv")
+league_pace <- as.data.frame(league_pace[-1])
 
+teams_pace <- read_csv("lmb_pace_venue_24.csv")
+teams_pace <- as.data.frame(teams_pace[-1])
 # ----------- SETUP -------------------------------------------------------
 thematic::thematic_shiny(font = "auto")
 theme_set(theme_bw(base_size = 10))
@@ -213,7 +218,24 @@ ui <- page_navbar(
         )
     )
   ),
-  nav_panel(title = "League Stats", p("Third page content.")),
+  nav_menu(
+    title = "League Stats",
+    nav_panel(
+      title = "Game Pace",
+      card(
+        card_header(
+          "League Game Pace"),
+        card_body(
+          DTOutput("league_pace_dt")),
+      ),
+      card(
+        card_header(
+          "Game Pace by Venue/Team"),
+        card_body(
+          DTOutput("teams_pace_dt"))
+      )
+    )
+  ),
   nav_spacer(),
   nav_menu(
     title = "Links",
@@ -474,6 +496,33 @@ server <- function(input, output, session) {
                           ,list(targets = "_all", className = 'dt-left')
         )
         ,order = list(1, 'asc')
+        ,scrollX = FALSE
+      )
+    )
+  })
+  
+  output$league_pace_dt <- renderDT({
+    datatable(
+      league_pace,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip'
+        ,scrollX = FALSE
+      )
+    )
+  })
+  
+  output$teams_pace_dt <- renderDT({
+    datatable(
+      teams_pace,
+      rownames = FALSE,
+      options = list(
+        dom = 'tip'
+        ,columnDefs = list(list(targets = 0, width = '100x')
+                          ,list(targets = 1, width = '180px')
+                          ,list(targets = c(2:7), width = '5px')
+                          ,list(targets = "_all", className = 'dt-left')
+        )
         ,scrollX = FALSE
       )
     )

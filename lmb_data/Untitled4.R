@@ -3,30 +3,37 @@ library(dplyr)
 
 lmb_pace_24 <- mlb_game_pace(season = 2024, sport_ids = 23)
 lmb_pace_24 <- lmb_pace_24 %>%
-  select(hits_per9inn, runs_per9inn, total_hits, total_runs,pitches_per_pitcher, pr_portal_calculated_fields_time_per9inn_game)
-write.csv(lmb_pace_24,"/Users/axel.mora/lmb_pace_24.csv")
+  select(season, hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance,
+         pr_portal_calculated_fields_time_per9inn_game
+         ) %>%
+  rename("Year"=season,"Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+         "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game
+        )
+write.csv(lmb_pace_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_24.csv")
 
-teams <- read.csv("~/teams.csv")
+venues <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/venues.csv")
 league_pace_venue = list()
 
-for(i in teams$venue_id){
-  name <- teams %>% filter(venue_id == i) %>% 
+for(i in venues$venue_id){
+  print(venues$venue_id)
+  name <- venues %>% filter(venue_id == i) %>% 
             select(venue_name, team_full_name)
   pace_venue_aux <- mlb_game_pace(season = 2024, venue_ids = i, sport_ids = 23)
   pace_venue_select <- pace_venue_aux %>%
-      select(hits_per9inn, runs_per9inn, total_hits, total_runs,pitches_per_pitcher, pr_portal_calculated_fields_time_per9inn_game)
+      select(hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance, 
+             pr_portal_calculated_fields_time_per9inn_game)
   league_pace_venue[[i]] <- cbind(name,pace_venue_select)
 }
 lmb_pace_venue_24 = do.call(rbind, league_pace_venue)
 
-write.csv(lmb_pace_venue_24,"/Users/axel.mora/lmb_pace_venue_24.csv")
+lmb_pace_venue_24 <- lmb_pace_venue_24 %>%
+  rename("Venue"=venue_name,"Team"=team_full_name,
+    "Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+    "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game
+  )
 
+write.csv(lmb_pace_venue_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_venue_24.csv")
 
-pace_venue_uni_trade <- mlb_game_pace(season = 2024, venue_ids = 5330, sport_ids = 23)
-pace_venue_uni_trade <- pace_venue_uni_trade %>%
-  select(hits_per9inn, runs_per9inn, total_hits, total_runs,pitches_per_pitcher, pr_portal_calculated_fields_time_per9inn_game)
-
-write.csv(pace_venue_uni_trade,"/Users/axel.mora/pace_venue_uni_trade.csv")
 
 lmb_att_24 <- mlb_attendance(season = 2024, league_id = 125)
 lmb_att_24 <- lmb_att_24 %>%
