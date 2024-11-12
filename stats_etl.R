@@ -19,9 +19,9 @@ hitting <- hitting %>%
          ) %>%
   inner_join(teams, by = c("Team" = "team_full_name")) %>%
   mutate(Team = team_abbreviation
-         ,`K%` = round(K/PA,3)
-         ,`BB%` = round(BB/PA,3)
-         ,`BB/K` = round(BB/K,3)
+         ,`K%` = round((K/PA)*100,1)
+         ,`BB%` = round((BB/PA)*100,1)
+         ,`BB/K` = round((BB/K)*100,1)
          ) %>%
   select(!c(team_id:sport_id))
 
@@ -111,9 +111,9 @@ team_hitting  <- team_hitting  %>%
          "GIDP"=ground_into_double_play,"LOB"=left_on_base,"SH"=sac_bunts,"SF"=sac_flies,"GO"=ground_outs,
          "AO"=air_outs,"GO/AO"=ground_outs_to_airouts,"AB/HR"=at_bats_per_home_run,"BABIP"=babip
   ) %>%
-  mutate(`K%` = round(K/PA,3)
-         ,`BB%` = round(BB/PA,3)
-         ,`BB/K` = round(BB/K,3)
+  mutate(`K%` = round((K/PA)*100,1)
+         ,`BB%` = round((BB/PA)*100,1)
+         ,`BB/K` = round((BB/K)*100,1)
   ) 
 
 write.csv(team_hitting[1:22],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_team_standard.csv")
@@ -160,7 +160,7 @@ team_fielding <- team_fielding %>%
          "TC"=chances,"RF/G"=range_factor_per_game,"RF/9"=range_factor_per9inn,"TE"=throwing_errors,
          "CI"=catchers_interference
   ) %>%
-  mutate(`CS%` = CS/(SB+CS)) 
+  mutate(`CS%` = (CS/(SB+CS)*100)) 
 
 
 write.csv(team_fielding[1:10],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_team_standard.csv")

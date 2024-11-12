@@ -60,6 +60,10 @@ league_pace <- as.data.frame(league_pace[-1])
 
 teams_pace <- read_csv("lmb_pace_venue_24.csv")
 teams_pace <- as.data.frame(teams_pace[-1])
+
+lmb_att_24 <- read_csv("lmb_att_teams.csv")
+lmb_att_24 <- as.data.frame(lmb_att_24[-1])
+
 # ----------- SETUP -------------------------------------------------------
 thematic::thematic_shiny(font = "auto")
 theme_set(theme_bw(base_size = 10))
@@ -219,20 +223,65 @@ ui <- page_navbar(
     )
   ),
   nav_menu(
-    title = "League Stats",
+    title = "Misc Stats",
     nav_panel(
       title = "Game Pace",
-      card(
-        card_header(
-          "League Game Pace"),
-        card_body(
-          DTOutput("league_pace_dt")),
+      layout_column_wrap(
+        height = "20px",
+        value_box(
+          title = 'Hits per 9 innings',
+          value = textOutput("hits9")
+        ),
+        value_box(
+          title = 'Runs per 9 innings',
+          value = textOutput("runs9")
+        ),
+        value_box(
+          title = 'Pitches per pitcher',
+          value = textOutput("pitches")
+        ),
+        value_box(
+          title = 'Time per pitch (Sec)',
+          value = textOutput("time_pitch")
+        ),
+        value_box(
+          title = 'Time per PA (Sec)',
+          value = textOutput("time_pa")
+        ),
+        value_box(
+          title = 'Game time',
+          value = textOutput("time_game")
+        ),
       ),
       card(
         card_header(
           "Game Pace by Venue/Team"),
         card_body(
           DTOutput("teams_pace_dt"))
+      )
+    ),
+    nav_panel(
+      title = "Attendance",
+      layout_column_wrap(
+        height = "20px",
+        value_box(
+          title = 'Avg Attendance',
+          value = textOutput("lmb_att_avg")
+        ),
+        value_box(
+          title = 'Avg Attendance Pct',
+          value = textOutput("lmb_cap_pct")
+        ),
+        value_box(
+          title = 'Max Attendance',
+          value = textOutput("lmb_max_att")
+        ),
+      ),
+      card(
+        card_header(
+          "Attendance"),
+        card_body(
+          DTOutput("lmb_att_dt"))
       )
     )
   ),
@@ -501,31 +550,74 @@ server <- function(input, output, session) {
     )
   })
   
-  output$league_pace_dt <- renderDT({
-    datatable(
-      league_pace,
-      rownames = FALSE,
-      options = list(
-        dom = 'tip'
-        ,scrollX = FALSE
-      )
-    )
-  })
-  
   output$teams_pace_dt <- renderDT({
     datatable(
       teams_pace,
       rownames = FALSE,
       options = list(
-        dom = 'tip'
-        ,columnDefs = list(list(targets = 0, width = '100x')
-                          ,list(targets = 1, width = '180px')
+        dom = 't'
+        ,pageLength = 21
+        ,columnDefs = list(list(targets = 0, width = '150x')
+                          ,list(targets = 1, width = '200px')
                           ,list(targets = c(2:7), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
         )
         ,scrollX = FALSE
       )
     )
+  })
+  
+  output$lmb_att_dt <- renderDT({
+    datatable(
+      lmb_att_24,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+        ,pageLength = 20
+        ,columnDefs = list(list(targets = 0, width = '150x')
+                           ,list(targets = 1, width = '200px')
+                           ,list(targets = c(2:8), width = '5px')
+                           ,list(targets = "_all", className = 'dt-left')
+        )
+        ,scrollX = FALSE
+      )
+    )
+  })
+  
+  output$hits9 <- renderText({
+    league_pace$`Hits/9in`
+  })
+  
+  output$runs9 <- renderText({
+    league_pace$`Runs/9in`
+  })
+  
+  output$pitches <- renderText({
+    league_pace$`Pitches/Pitcher`
+  })
+  
+  output$time_pitch <- renderText({
+    league_pace$`Time/Pitch`
+  })
+  
+  output$time_pa <- renderText({
+    league_pace$`Time/PA`
+  })
+  
+  output$time_game <- renderText({
+    format(league_pace$`Time/9inGame`)
+  })
+  
+  output$lmb_att_avg <- renderText({
+    round(sum(lmb_att_24$`Total Home Attendance`)/sum(lmb_att_24$`Home Openings`),1)
+  })
+  
+  output$lmb_cap_pct <- renderText({
+    round((lmb_att_avg*100)/mean(lmb_att_24$Capacity),1)
+  })
+  
+  output$lmb_max_att <- renderText({
+    max(lmb_att_24$`High Home Attendance`)
   })
 }
 

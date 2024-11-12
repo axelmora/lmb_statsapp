@@ -37,11 +37,24 @@ write.csv(lmb_pace_venue_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/l
 
 lmb_att_24 <- mlb_attendance(season = 2024, league_id = 125)
 lmb_att_24 <- lmb_att_24 %>%
-    select(team_name, attendance_average_away, attendance_high, attendance_low, attendance_average_home, attendance_total_home) %>%
-    rename('EQUIPO' = team_name, 'AVG ASISTENCIA GIRA' = attendance_average_away, 'MAXIMA ASISTENCIA CASA' = attendance_high,
-           'MENOR ASISTENCIA CASA' = attendance_low,
-           'AVG ASISTENCIA CASA' = attendance_average_home,
-           'AVG ASISTENCIA GIRA' = attendance_average_away,
-           'ASISTENCIA TOTAL CASA' = attendance_total_home
-           )
-write.csv(lmb_att_24,"/Users/axel.mora/lmb_att_24_0708.csv")
+    select(team_name, openings_total_home, attendance_average_away, attendance_high, attendance_low, attendance_average_home, 
+           attendance_total_home) %>%
+    rename('Team' = team_name, 'Home Openings' = openings_total_home, 'AVG Away Attendance' = attendance_average_away, 
+           'High Home Attendance' = attendance_high,
+           'Low Home Attendance' = attendance_low,'Avg Home Attendance' = attendance_average_home,
+           'Avg Away Attendance' = attendance_average_away,'Total Home Attendance' = attendance_total_home
+           ) %>%
+    inner_join(teams, by = c("Team" = "team_full_name")) %>%
+    select(!c(team_id:venue_name,league_id:sport_id)) %>%
+    rename('Capacity'=capacity) %>%
+    mutate(
+      `Avg Capacity%` = round(((`Avg Home Attendance`*100)/`Capacity`),1)
+    )
+
+write.csv(lmb_att_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_att_teams.csv")
+
+lmb_att_avg <- sum(lmb_att_24$`Total Home Attendance`)/sum(lmb_att_24$`Home Openings`)
+lmb_cap_pct <- (lmb_att_avg*100)/mean(lmb_att_24$Capacity)
+lmb_max_att <- max(lmb_att_24$`High Home Attendance`)
+
+
