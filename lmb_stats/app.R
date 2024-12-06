@@ -7,6 +7,12 @@ library(readr)
 library(dplyr)
 
 # ----------------- DATA PREPARATION -------------------------------------
+woba_fipc <- read_csv("woba_fipc.csv")
+woba_fipc <- as.data.frame(woba_fipc[2:11])
+
+park_factors <- read_csv("park_factors.csv")
+park_factors <- as.data.frame(park_factors[2:3])
+
 lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
 lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], 
                                       stringAsFactors = FALSE)
@@ -282,6 +288,22 @@ ui <- page_navbar(
           "Attendance"),
         card_body(
           DTOutput("lmb_att_dt"))
+      )
+    ),
+    nav_panel(
+      title = "GUTS",
+      card(
+        max_height = 150,
+        card_header(
+          "wOBA and FIP constant"),
+        card_body(
+          DTOutput("woba_fip_dt"))
+      ),
+      card(
+        card_header(
+          "Park Factors 2024"),
+        card_body(
+          DTOutput("pf_dt"))
       )
     )
   ),
@@ -584,6 +606,30 @@ server <- function(input, output, session) {
     )
   })
   
+  output$woba_fip_dt <- renderDT({
+    datatable(
+      woba_fipc,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+        ,scrollX = FALSE
+      )
+    )%>%
+      formatRound(columns = 2:10, digits = 3)
+  })
+  
+  output$pf_dt <- renderDT({
+    datatable(
+      park_factors,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+        ,pageLength = 20
+        ,scrollX = FALSE
+      )
+    )
+  })
+  
   output$hits9 <- renderText({
     league_pace$`Hits/9in`
   })
@@ -613,7 +659,7 @@ server <- function(input, output, session) {
   })
   
   output$lmb_cap_pct <- renderText({
-    round((lmb_att_avg*100)/mean(lmb_att_24$Capacity),1)
+    round(((sum(lmb_att_24$`Total Home Attendance`)/sum(lmb_att_24$`Home Openings`))*100)/mean(lmb_att_24$Capacity),1)
   })
   
   output$lmb_max_att <- renderText({
