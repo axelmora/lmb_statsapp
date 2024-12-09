@@ -1,3 +1,5 @@
+woba_fipc <- read_csv("lmb_stats/woba_fipc.csv")
+
 ####EXTRACTION
 hitting <- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'hitting', season = 2024, sport_ids = 23))
 #write.csv(hitting[-c(55:56)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/hitting.csv")
@@ -22,12 +24,20 @@ hitting <- hitting %>%
          ,`K%` = round((K/PA)*100,1)
          ,`BB%` = round((BB/PA)*100,1)
          ,`BB/K` = round((BB/K)*100,1)
+         ,`1B` = H - `2B` - `3B` - `HR`
+         ,`wOBA` = round((woba_fipc$HBP * `HBP`+
+                   woba_fipc$BB * `BB` +
+                   woba_fipc$`1B` * `1B` +
+                   woba_fipc$`2B` * `2B` +
+                   woba_fipc$`3B` * `3B` +
+                   woba_fipc$HR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
+         ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,3)
          ) %>%
   select(!c(team_id:sport_id))
 
 ###LOAD
 write.csv(hitting[1:23],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_standard.csv")
-write.csv(hitting[-c(8:23)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_advanced.csv")
+write.csv(hitting[-c(8:23,35)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_advanced.csv")
 
 
 ####EXTRACTION

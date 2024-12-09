@@ -18,7 +18,7 @@ lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F],
                                       stringAsFactors = FALSE)
 #
 lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
-lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:19,drop = F], 
+lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:21,drop = F], 
                                       stringAsFactors = FALSE)
 #
 lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
@@ -115,67 +115,55 @@ ui <- page_navbar(
     title = "Player Stats",
     nav_panel(
       title = "Hitting",
-      layout_sidebar(
-        sidebar = sidebar(
-          selectInput("player_name_h","Player Name",
-                      choices = c("All", sort(lmb_hitting_standard$Name)), 
-                      selected = "All")
-          ),
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("hitting_std")),
+      selectInput("player_name_h","Player Name",
+                                  choices = c("All", sort(lmb_hitting_standard$Name)), 
+                                  selected = "All"),
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Hitting",
+        nav_panel(
+          "Standard Stats",
+            DTOutput("hitting_std")
         ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("hitting_adv"))
+        nav_panel(
+          "Advanced Stats",
+            DTOutput("hitting_adv")
         )
       )
     ),
     nav_panel(
       title = "Pitching", 
-      layout_sidebar(
-        sidebar = sidebar(
-          selectInput("player_name_p","Player Name",
-                      choices = c("All", sort(lmb_pitching_standard$Name)), 
-                      selected = "All")
+      selectInput("player_name_p","Player Name",
+                  choices = c("All", sort(lmb_pitching_standard$Name)), 
+                  selected = "All"),
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Pitching",
+        nav_panel(
+          "Standard Stats",
+          DTOutput("pitching_std")
         ),
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("pitching_std"))
-        ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("pitching_adv"))
+        nav_panel(
+          "Advanced Stats",
+          DTOutput("pitching_adv")
         )
       )
     ),
     nav_panel(
       title = "Fielding", 
-      layout_sidebar(
-        sidebar = sidebar(
-          selectInput("player_name_f","Player Name",
-                      choices = c("All", sort(lmb_fielding_standard$Name)), 
-                      selected = "All")
+      selectInput("player_name_f","Player Name",
+                  choices = c("All", sort(lmb_fielding_standard$Name)), 
+                  selected = "All"),
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Fielding",
+        nav_panel(
+          "Standard Stats",
+          DTOutput("fielding_std")
         ),
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("fielding_std"))
-        ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("fielding_adv"))
+        nav_panel(
+          "Advanced Stats",
+          DTOutput("fielding_adv")
         )
       )
     )
@@ -184,48 +172,48 @@ ui <- page_navbar(
     title = "Team Stats",
     nav_panel(
       title = "Hitting",
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("hitting_team_std")),
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Hitting",
+        nav_panel(
+          "Standard Stats",
+          DTOutput("hitting_team_std")
         ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("hitting_team_adv"))
+        nav_panel(
+          "Advanced Stats",
+          DTOutput("hitting_team_adv")
         )
+      )
     ),
     nav_panel(
       title = "Pitching", 
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("pitching_team_std"))
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Pitching",
+        nav_panel(
+          "Standard Stats",
+          DTOutput("pitching_team_std")
         ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("pitching_team_adv"))
+        nav_panel(
+          "Advanced Stats",
+          DTOutput("pitching_team_adv")
         )
+      )
     ),
     nav_panel(
       title = "Fielding", 
-        card(
-          card_header(
-            "Standard Stats"),
-          card_body(
-            DTOutput("fielding_team_std"))
+      navset_card_tab(
+        full_screen = TRUE,
+        title = "Fielding",
+        nav_panel(
+          "Standard Stats",
+          DTOutput("fielding_team_std")
         ),
-        card(
-          card_header(
-            "Advanced Stats"),
-          card_body(
-            DTOutput("fielding_team_adv"))
+        nav_panel(
+          "Advanced Stats",
+          DTOutput("fielding_team_adv")
         )
+      )
     )
   ),
   nav_menu(
@@ -301,7 +289,7 @@ ui <- page_navbar(
       ),
       card(
         card_header(
-          "Park Factors 2024"),
+          "Park Factors 2024max_height = 250,,k"),
         card_body(
           DTOutput("pf_dt"))
       )
@@ -353,7 +341,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           ,list(targets = c(2:22), width = '5px')
@@ -372,10 +360,10 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(2:17), width = '5px')
+                          ,list(targets = c(2:19), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
                           ),
         order = list(5, 'desc')
@@ -390,7 +378,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8, 
+        pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                            ,list(targets = 1, width = '180px')
                            ,list(targets = c(3:22), width = '5px')
@@ -409,7 +397,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8, 
+        pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(3:25), width = '5px')
@@ -427,7 +415,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           ,list(targets = c(3:17), width = '5px')
@@ -446,7 +434,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 8,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           ,list(targets = c(3:12), width = '5px')
@@ -464,7 +452,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(2:22), width = '5px')
@@ -484,7 +472,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(2:17), width = '5px')
@@ -502,7 +490,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10, 
+        pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(3:22), width = '5px')
@@ -522,7 +510,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10, 
+        pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(3:23), width = '5px')
@@ -540,7 +528,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(3:17), width = '5px')
@@ -560,7 +548,7 @@ server <- function(input, output, session) {
       rownames = FALSE,
       options = list(
         dom = 'tip',
-        pageLength = 10,
+        pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
                           #,list(targets = c(3:12), width = '5px')
