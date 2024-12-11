@@ -1,4 +1,9 @@
 woba_fipc <- read_csv("lmb_stats/woba_fipc.csv")
+park_factors <- read_csv("lmb_stats/park_factors.csv")
+
+pf_br <- park_factors %>%
+  select(team_abbreviation, PF) %>%
+  rename(Team = team_abbreviation)
 
 ####EXTRACTION
 hitting <- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'hitting', season = 2024, sport_ids = 23))
@@ -17,7 +22,7 @@ hitting <- hitting %>%
          "TB"=total_bases,"HBP"=hit_by_pitch,"K"=strike_outs,"BB"=base_on_balls,"IBB"=intentional_walks,"AVG"=avg,
          "OBP"=obp,"SLG"=slg,"OPS"=ops,
          "LOB"=left_on_base,"SH"=sac_bunts,"SF"=sac_flies,"GO"=ground_outs,"AO"=air_outs,"GO/AO"=ground_outs_to_airouts,
-         "BABIP"=babip,"AB/HR"=at_bats_per_home_run,
+         "BABIP"=babip,"AB/HR"=at_bats_per_home_run
          ) %>%
   inner_join(teams, by = c("Team" = "team_full_name")) %>%
   mutate(Team = team_abbreviation
@@ -25,16 +30,20 @@ hitting <- hitting %>%
          ,`BB%` = round((BB/PA)*100,1)
          ,`BB/K` = round((BB/K)*100,1)
          ,`1B` = H - `2B` - `3B` - `HR`
-         ,`wOBA` = round((woba_fipc$HBP * `HBP`+
-                   woba_fipc$BB * `BB` +
-                   woba_fipc$`1B` * `1B` +
-                   woba_fipc$`2B` * `2B` +
-                   woba_fipc$`3B` * `3B` +
-                   woba_fipc$HR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
+         ,`wOBA` = round((woba_fipc$wHBP * `HBP`+
+                   woba_fipc$wBB * `BB` +
+                   woba_fipc$`w1B` * `1B` +
+                   woba_fipc$`w2B` * `2B` +
+                   woba_fipc$`w3B` * `3B` +
+                   woba_fipc$wHR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
          ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,3)
+         ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA ,3)
          ) %>%
-  select(!c(team_id:sport_id))
-
+  inner_join(pf_br, by = join_by(Team)) %>%
+  select(!c(team_id:sport_id)) %>%
+  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100 ,3)
+        ) %>%
+  select(!c(PF))
 ###LOAD
 write.csv(hitting[1:23],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_standard.csv")
 write.csv(hitting[-c(8:23,35)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_advanced.csv")
@@ -68,6 +77,7 @@ pitching <- pitching %>%
          ,`K%` = round((K/BF)*100,1)
          ,`BB%` = round((BB/BF)*100,1)
          ,`K-BB%` = round((`K%`- `BB%`),1)
+         ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,3)
          ) %>%
   select(!c(team_id:sport_id))
 
@@ -176,3 +186,10 @@ team_fielding <- team_fielding %>%
 write.csv(team_fielding[1:10],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_team_standard.csv")
 write.csv(team_fielding[-c(4:10)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_fielding_team_advanced.csv")
 
+
+
+  
+hitting_war <- hitting %>%
+      inner_join(pf_br, by = join_by(Team)) %>%
+      mutate(BatRuns = hitting$wRAA + (woba_fipc$`R/PA` - ((hitting$PF/100) * woba_fipc$`R/PA`))*hitting$PA + 
+               (woba_fipc$`R/PA`- (hitting$wRC/hitting$PA)) * hitting$PA)

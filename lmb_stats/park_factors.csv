@@ -1,21 +1,21 @@
-"","Team","PF"
-"1","Acereros del Norte",92
-"2","Algodoneros Union Laguna",84
-"3","Bravos de Leon",122
-"4","Caliente de Durango",123
-"5","Charros de Jalisco",123
-"6","Conspiradores de Queretaro",128
-"7","Diablos Rojos del Mexico",140
-"8","Dorados de Chihuahua",125
-"9","El Aguila de Veracruz",89
-"10","Guerreros de Oaxaca",112
-"11","Leones de Yucatan",75
-"12","Olmecas de Tabasco",62
-"13","Pericos de Puebla",114
-"14","Piratas de Campeche",85
-"15","Rieleros de Aguascalientes",108
-"16","Saraperos de Saltillo",105
-"17","Sultanes de Monterrey",106
-"18","Tecos de los Dos Laredos",81
-"19","Tigres de Quintana Roo",65
-"20","Toros de Tijuana",76
+"","Team","team_abbreviation","Venue","PF"
+"1","Acereros del Norte","MVA","Estadio Kickapoo Lucky Eagle",92
+"2","Algodoneros Union Laguna","LAG","Estadio de la Revolucion",84
+"3","Bravos de Leon","LEO","Parque Domingo Santana",122
+"4","Caliente de Durango","DUR","Estadio Francisco Villa",123
+"5","Charros de Jalisco","JAL","Estadio Panamericano",123
+"6","Conspiradores de Queretaro","QRO","Estadio Conspiradores",128
+"7","Diablos Rojos del Mexico","MEX","Estadio Alfredo Harp Helu",140
+"8","Dorados de Chihuahua","CHI","Estadio Chihuahua",125
+"9","El Aguila de Veracruz","VER","Estadio Universitario Beto Avila",89
+"10","Guerreros de Oaxaca","OAX","Parque Lic. Eduardo Vasconcelos",112
+"11","Leones de Yucatan","YUC","Estadio de Beisbol VIctor Cervera Pacheco",75
+"12","Olmecas de Tabasco","TAB","Parque Centenario 27 de Febrero",62
+"13","Pericos de Puebla","PUE","Estadio Hermanos Serdan",114
+"14","Piratas de Campeche","CAM","Parque Nelson Barrera Romellon",85
+"15","Rieleros de Aguascalientes","AGS","Estadio Alberto Romo Chavez",108
+"16","Saraperos de Saltillo","SLT","Parque Francisco I. Madero",105
+"17","Sultanes de Monterrey","MTY","Estadio Mobil Super",106
+"18","Tecos de los Dos Laredos","LAR","Parque la Junta",81
+"19","Tigres de Quintana Roo","TIG","Estadio De Beisbol Beto Avila",65
+"20","Toros de Tijuana","TIJ","Estadio Chevron",76

@@ -8,17 +8,17 @@ library(dplyr)
 
 # ----------------- DATA PREPARATION -------------------------------------
 woba_fipc <- read_csv("woba_fipc.csv")
-woba_fipc <- as.data.frame(woba_fipc[2:11])
+woba_fipc <- as.data.frame(woba_fipc[2:12])
 
 park_factors <- read_csv("park_factors.csv")
-park_factors <- as.data.frame(park_factors[2:3])
+park_factors <- as.data.frame(park_factors[c(2,4,5)])
 
 lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
 lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], 
                                       stringAsFactors = FALSE)
 #
 lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
-lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:21,drop = F], 
+lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:23,drop = F], 
                                       stringAsFactors = FALSE)
 #
 lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
@@ -26,7 +26,7 @@ lmb_pitching_standard <- as.data.frame(lmb_pitching_standard[2:24,drop = F],
                                        stringAsFactors = FALSE)
 #
 lmb_pitching_advanced <- read_csv("lmb_pitching_advanced.csv")
-lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:26,drop = F], 
+lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:27,drop = F], 
                                        stringAsFactors = FALSE)
 
 lmb_fielding_standard <- read_csv("lmb_fielding_standard.csv")
@@ -289,7 +289,8 @@ ui <- page_navbar(
       ),
       card(
         card_header(
-          "Park Factors 2024max_height = 250,,k"),
+          "Park Factors 2024",
+          max_height = 250),
         card_body(
           DTOutput("pf_dt"))
       )
@@ -363,7 +364,7 @@ server <- function(input, output, session) {
         pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(2:19), width = '5px')
+                          ,list(targets = c(2:21), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
                           ),
         order = list(5, 'desc')
@@ -603,7 +604,7 @@ server <- function(input, output, session) {
         ,scrollX = FALSE
       )
     )%>%
-      formatRound(columns = 2:10, digits = 3)
+      formatRound(columns = 2:11, digits = 3)
   })
   
   output$pf_dt <- renderDT({
