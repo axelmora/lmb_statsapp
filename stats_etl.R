@@ -36,12 +36,12 @@ hitting <- hitting %>%
                    woba_fipc$`w2B` * `2B` +
                    woba_fipc$`w3B` * `3B` +
                    woba_fipc$wHR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
-         ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,3)
-         ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA ,3)
+         ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,1)
+         ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA)
          ) %>%
   inner_join(pf_br, by = join_by(Team)) %>%
   select(!c(team_id:sport_id)) %>%
-  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100 ,3)
+  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
         ) %>%
   select(!c(PF))
 ###LOAD
@@ -77,7 +77,7 @@ pitching <- pitching %>%
          ,`K%` = round((K/BF)*100,1)
          ,`BB%` = round((BB/BF)*100,1)
          ,`K-BB%` = round((`K%`- `BB%`),1)
-         ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,3)
+         ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,2)
          ) %>%
   select(!c(team_id:sport_id))
 
@@ -134,7 +134,20 @@ team_hitting  <- team_hitting  %>%
   mutate(`K%` = round((K/PA)*100,1)
          ,`BB%` = round((BB/PA)*100,1)
          ,`BB/K` = round((BB/K)*100,1)
-  ) 
+         ,`1B` = H - `2B` - `3B` - `HR`
+         ,`wOBA` = round((woba_fipc$wHBP * `HBP`+
+                            woba_fipc$wBB * `BB` +
+                            woba_fipc$`w1B` * `1B` +
+                            woba_fipc$`w2B` * `2B` +
+                            woba_fipc$`w3B` * `3B` +
+                            woba_fipc$wHR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
+         ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,1)
+         ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA)
+  ) %>%
+  inner_join(park_factors, by = join_by(Team)) %>%
+  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
+  ) %>%
+  select(!c(39:42))
 
 write.csv(team_hitting[1:22],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_team_standard.csv")
 write.csv(team_hitting[-c(6:22)],"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_hitting_team_advanced.csv")
@@ -161,6 +174,7 @@ team_pitching <- team_pitching %>%
     `K%` = round((K/BF)*100,1)
     ,`BB%` = round((BB/BF)*100,1)
     ,`K-BB%` = round((`K%`- `BB%`),1)
+    ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,2)
   )
 
 ###LOAD
@@ -193,3 +207,43 @@ hitting_war <- hitting %>%
       inner_join(pf_br, by = join_by(Team)) %>%
       mutate(BatRuns = hitting$wRAA + (woba_fipc$`R/PA` - ((hitting$PF/100) * woba_fipc$`R/PA`))*hitting$PA + 
                (woba_fipc$`R/PA`- (hitting$wRC/hitting$PA)) * hitting$PA)
+
+
+teams_wl <- team_hitting %>%
+              inner_join(team_pitching, by = join_by(Team)) %>%
+              select(Year.x, Team, GP.y, W, L, R, ER) %>%
+              rename(G = GP.y, RA = ER)
+
+teams_wl <- teams_wl %>%
+  mutate(RD = R - RA, Wpct = W / (W + L))
+
+run_diff <- ggplot(teams_wl, aes(x = RD, y = Wpct)) + 
+  geom_point() + 
+  scale_x_continuous("Run differential") + 
+  scale_y_continuous("Winning percentage")
+
+linfit <- lm(Wpct ~ RD, data = teams_wl)
+linfit
+
+run_diff + 
+  geom_smooth(method = "lm", se = FALSE)
+
+teams_wl_aug <- augment(linfit, data = teams_wl)
+
+base_plot <- ggplot(teams_wl_aug, aes(x = RD, y = .resid)) +
+  geom_point(alpha = 0.3) + 
+  geom_hline(yintercept = 0, linetype = 3) + 
+  xlab("Run differential") + ylab("Residual")
+
+highlight_teams <- teams_wl_aug %>%
+  arrange(desc(abs(.resid))) %>%
+  slice_head(n = 6)
+
+base_plot +
+  geom_point(data = highlight_teams) + 
+  geom_text_repel(
+    data = highlight_teams, 
+    aes(label = paste(Team, Year.x))
+  )
+
+comp <- team_hitting %>% filter(Team == "Tigres de Quintana Roo" | Team == "Diablos Rojos del Mexico") %>% select(Year,Team,H,  `2B`,  `3B`,    HR,   RBI,     R,  AVG,   OBP,   SLG,   OPS, wOBA, wRAA, wRC, `wRC+` )

@@ -42,7 +42,7 @@ lmb_hitting_team_standard <- as.data.frame(lmb_hitting_team_standard[2:23,drop =
                                       stringAsFactors = FALSE)
 #
 lmb_hitting_team_advanced <- read_csv("lmb_hitting_team_advanced.csv")
-lmb_hitting_team_advanced <- as.data.frame(lmb_hitting_team_advanced[2:18,drop = F], 
+lmb_hitting_team_advanced <- as.data.frame(lmb_hitting_team_advanced[2:23,drop = F], 
                                       stringAsFactors = FALSE)
 #
 lmb_pitching_team_standard <- read_csv("lmb_pitching_team_standard.csv")
@@ -50,7 +50,7 @@ lmb_pitching_team_standard <- as.data.frame(lmb_pitching_team_standard[2:22,drop
                                        stringAsFactors = FALSE)
 #
 lmb_pitching_team_advanced <- read_csv("lmb_pitching_team_advanced.csv")
-lmb_pitching_team_advanced <- as.data.frame(lmb_pitching_team_advanced[2:23,drop = F], 
+lmb_pitching_team_advanced <- as.data.frame(lmb_pitching_team_advanced[2:24,drop = F], 
                                        stringAsFactors = FALSE)
 
 lmb_fielding_team_standard <- read_csv("lmb_fielding_team_standard.csv")
