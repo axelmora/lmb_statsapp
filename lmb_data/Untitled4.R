@@ -9,7 +9,9 @@ lmb_pace_24 <- lmb_pace_24 %>%
   rename("Year"=season,"Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
          "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game
         )
-write.csv(lmb_pace_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_24.csv")
+#write.csv(lmb_pace_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_24.csv")
+
+lmb_pace_24 <- gs4_create("lmb_pace_24", sheets = lmb_pace_24)
 
 venues <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/venues.csv")
 league_pace_venue = list()
@@ -32,8 +34,8 @@ lmb_pace_venue_24 <- lmb_pace_venue_24 %>%
     "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game
   )
 
-write.csv(lmb_pace_venue_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_venue_24.csv")
-
+#write.csv(lmb_pace_venue_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_venue_24.csv")
+lmb_pace_venue_24 <- gs4_create("lmb_pace_venue_24", sheets = lmb_pace_venue_24)
 
 lmb_att_24 <- mlb_attendance(season = 2024, league_id = 125)
 lmb_att_24 <- lmb_att_24 %>%
@@ -51,7 +53,8 @@ lmb_att_24 <- lmb_att_24 %>%
       `Avg Capacity%` = round(((`Avg Home Attendance`*100)/`Capacity`),1)
     )
 
-write.csv(lmb_att_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_att_teams.csv")
+#write.csv(lmb_att_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_att_teams.csv")
+lmb_att_24 <- gs4_create("lmb_att_24", sheets = lmb_att_24)
 
 lmb_att_avg <- sum(lmb_att_24$`Total Home Attendance`)/sum(lmb_att_24$`Home Openings`)
 lmb_cap_pct <- (lmb_att_avg*100)/mean(lmb_att_24$Capacity)
@@ -191,3 +194,20 @@ dataframe2 <- data.frame(game_pk=character(),game_date=character(),index=charact
                          umpire.id=character(),
                          umpire.link=character()
                          )
+
+
+woba_fipc <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/woba_fipc.csv")
+woba_fipc <- as.data.frame(woba_fipc[2:12])
+woba_fipc <- gs4_create("woba_fipc", sheets = woba_fipc)
+park_factors <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/park_factors.csv")
+park_factors <- as.data.frame(park_factors[2:8])
+park_factors <- gs4_create("park_factors", sheets = park_factors)
+
+
+
+
+gs_ids <- data.frame(woba_fipc, park_factors, fielding_std, fielding_adv, hitting_std, hitting_adv, pitching_std, pitching_adv, team_fielding_std, 
+                     team_fielding_adv, team_hitting_std, team_hitting_adv, team_pitching_std, 
+                     team_pitching_adv, lmb_att_24, lmb_pace_24, lmb_pace_venue_24)
+
+write.csv(gs_ids,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/gs_ids.csv")

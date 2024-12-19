@@ -5,71 +5,42 @@ library(ggplot2)
 library(DT)
 library(readr)
 library(dplyr)
+library(googlesheets4)
 
 # ----------------- DATA PREPARATION -------------------------------------
-woba_fipc <- read_csv("woba_fipc.csv")
-woba_fipc <- as.data.frame(woba_fipc[2:12])
+# Set authentication token to be stored in a folder called `.secrets`
+options(gargle_oauth_cache = ".secrets")
 
-park_factors <- read_csv("park_factors.csv")
-park_factors <- as.data.frame(park_factors[c(2,4,5)])
+# Authenticate manually
+gs4_auth()
 
-lmb_hitting_standard <- read_csv("lmb_hitting_standard.csv")
-lmb_hitting_standard <- as.data.frame(lmb_hitting_standard[2:24,drop = F], 
-                                      stringAsFactors = FALSE)
-#
-lmb_hitting_advanced <- read_csv("lmb_hitting_advanced.csv")
-lmb_hitting_advanced <- as.data.frame(lmb_hitting_advanced[2:23,drop = F], 
-                                      stringAsFactors = FALSE)
-#
-lmb_pitching_standard <- read_csv("lmb_pitching_standard.csv")
-lmb_pitching_standard <- as.data.frame(lmb_pitching_standard[2:24,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-lmb_pitching_advanced <- read_csv("lmb_pitching_advanced.csv")
-lmb_pitching_advanced <- as.data.frame(lmb_pitching_advanced[2:27,drop = F], 
-                                       stringAsFactors = FALSE)
+# If successful, the previous step stores a token file.
+# Check that a file has been created with:
+list.files(".secrets/")
 
-lmb_fielding_standard <- read_csv("lmb_fielding_standard.csv")
-lmb_fielding_standard <- as.data.frame(lmb_fielding_standard[2:19,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-lmb_fielding_advanced <- read_csv("lmb_fielding_advanced.csv")
-lmb_fielding_advanced <- as.data.frame(lmb_fielding_advanced[2:14,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-lmb_hitting_team_standard <- read_csv("lmb_hitting_team_standard.csv")
-lmb_hitting_team_standard <- as.data.frame(lmb_hitting_team_standard[2:23,drop = F], 
-                                      stringAsFactors = FALSE)
-#
-lmb_hitting_team_advanced <- read_csv("lmb_hitting_team_advanced.csv")
-lmb_hitting_team_advanced <- as.data.frame(lmb_hitting_team_advanced[2:23,drop = F], 
-                                      stringAsFactors = FALSE)
-#
-lmb_pitching_team_standard <- read_csv("lmb_pitching_team_standard.csv")
-lmb_pitching_team_standard <- as.data.frame(lmb_pitching_team_standard[2:22,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-lmb_pitching_team_advanced <- read_csv("lmb_pitching_team_advanced.csv")
-lmb_pitching_team_advanced <- as.data.frame(lmb_pitching_team_advanced[2:24,drop = F], 
-                                       stringAsFactors = FALSE)
+# Check that the non-interactive authentication works by first deauthorizing:
+gs4_deauth()
 
-lmb_fielding_team_standard <- read_csv("lmb_fielding_team_standard.csv")
-lmb_fielding_team_standard <- as.data.frame(lmb_fielding_team_standard[2:11,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-lmb_fielding_team_advanced <- read_csv("lmb_fielding_team_advanced.csv")
-lmb_fielding_team_advanced <- as.data.frame(lmb_fielding_team_advanced[2:14,drop = F], 
-                                       stringAsFactors = FALSE)
-#
-league_pace <- read_csv("lmb_pace_24.csv")
-league_pace <- as.data.frame(league_pace[-1])
-
-teams_pace <- read_csv("lmb_pace_venue_24.csv")
-teams_pace <- as.data.frame(teams_pace[-1])
-
-lmb_att_24 <- read_csv("lmb_att_teams.csv")
-lmb_att_24 <- as.data.frame(lmb_att_24[-1])
-
+# Authenticate using token. If no browser opens, the authentication works.
+gs4_auth(cache = ".secrets", email = "lmb.stats.app@gmail.com")
+gs_ids <- read_csv("gs_ids.csv")
+woba_fipc <- as.data.frame(read_sheet(gs_ids$woba_fipc),stringAsFactors = FALSE)
+park_factors <- as.data.frame(read_sheet(gs_ids$park_factors),stringAsFactors = FALSE)
+lmb_hitting_standard <- as.data.frame(read_sheet(gs_ids$hitting_std),stringAsFactors = FALSE)
+lmb_hitting_advanced <- as.data.frame(read_sheet(gs_ids$hitting_adv),stringAsFactors = FALSE)
+lmb_pitching_standard <- as.data.frame(read_sheet(gs_ids$pitching_std),stringAsFactors = FALSE)
+lmb_pitching_advanced <- as.data.frame(read_sheet(gs_ids$pitching_adv),stringAsFactors = FALSE)
+lmb_fielding_standard <- as.data.frame(read_sheet(gs_ids$fielding_std),stringAsFactors = FALSE)
+lmb_fielding_advanced <- as.data.frame(read_sheet(gs_ids$fielding_adv),stringAsFactors = FALSE)
+lmb_hitting_team_standard <- as.data.frame(read_sheet(gs_ids$team_hitting_std),stringAsFactors = FALSE)
+lmb_hitting_team_advanced <- as.data.frame(read_sheet(gs_ids$team_hitting_adv),stringAsFactors = FALSE)
+lmb_pitching_team_standard <- as.data.frame(read_sheet(gs_ids$team_pitching_std),stringAsFactors = FALSE)
+lmb_pitching_team_advanced <- as.data.frame(read_sheet(gs_ids$team_pitching_adv),stringAsFactors = FALSE)
+lmb_fielding_team_standard <- as.data.frame(read_sheet(gs_ids$team_fielding_std),stringAsFactors = FALSE)
+lmb_fielding_team_advanced <- as.data.frame(read_sheet(gs_ids$team_fielding_adv),stringAsFactors = FALSE)
+league_pace <- as.data.frame(read_sheet(gs_ids$lmb_pace_24),stringAsFactors = FALSE)
+teams_pace <- as.data.frame(read_sheet(gs_ids$lmb_pace_venue_24),stringAsFactors = FALSE)
+lmb_att_24 <- as.data.frame(read_sheet(gs_ids$lmb_att_24),stringAsFactors = FALSE)
 # ----------- SETUP -------------------------------------------------------
 thematic::thematic_shiny(font = "auto")
 theme_set(theme_bw(base_size = 10))
@@ -115,9 +86,15 @@ ui <- page_navbar(
     title = "Player Stats",
     nav_panel(
       title = "Hitting",
+      layout_column_wrap(
+      height = "5px",
+      selectInput("year_h","Season",
+                  choices = c(2024,2023,2022,2021,2019), 
+                  selected = 2024),
       selectInput("player_name_h","Player Name",
                                   choices = c("All", sort(lmb_hitting_standard$Name)), 
-                                  selected = "All"),
+                                  selected = "All")
+      ),
       navset_card_tab(
         full_screen = TRUE,
         title = "Hitting",
@@ -281,7 +258,7 @@ ui <- page_navbar(
     nav_panel(
       title = "GUTS",
       card(
-        max_height = 150,
+        max_height = 250,
         card_header(
           "wOBA and FIP constant"),
         card_body(
@@ -313,6 +290,7 @@ server <- function(input, output, session) {
   
   filtered_hitting_std <- reactive({
     lmb_hitting_standard %>%
+      filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
       filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
   })
   filtered_hitting_adv <- reactive({
