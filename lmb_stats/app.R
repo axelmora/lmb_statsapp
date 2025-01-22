@@ -32,15 +32,34 @@ hitters <- read_csv("hitters.csv")
 pitchers <- read_csv("pitchers.csv")
 fielders <- read_csv("fielders.csv")
 
-load_data <- function(gs_ids) {
-  future({
-    # Use a list to store datasets
-    datasets <- list()
-    for (name in names(gs_ids)) {
-      datasets[[name]] <- read_sheet(gs_ids[[name]])
-    }
-    datasets
-  })
+# Function to load or cache Google Sheets data
+load_or_cache_data <- function(sheet_id, file_path) {
+  if (file.exists(file_path)) {
+    # Load from cache
+    message("Loading data from cache: ", file_path)
+    readRDS(file_path)
+  } else {
+    # Fetch from Google Sheets and save to cache
+    message("Fetching data from Google Sheets: ", sheet_id)
+    data <- read_sheet(sheet_id)
+    saveRDS(data, file_path)
+    data
+  }
+}
+
+# Batch load and cache all datasets
+load_data <- function(gs_ids, cache_dir = "cache") {
+  # Ensure cache directory exists
+  if (!dir.exists(cache_dir)) {
+    dir.create(cache_dir)
+  }
+
+datasets <- list()
+  for (name in names(gs_ids)) {
+    file_path <- file.path(cache_dir, paste0(name, ".rds"))
+    datasets[[name]] <- load_or_cache_data(gs_ids[[name]], file_path)
+  }
+  datasets
 }
 
 gs_ids <- list(
@@ -329,7 +348,9 @@ server <- function(input, output, session) {
   datasets <- reactiveVal(NULL)
   
   observe({
-    load_data(gs_ids) %...>% datasets %...!% (function(err) {
+    future({
+      load_data(gs_ids)  # Load data with caching
+    }) %...>% datasets %...!% (function(err) {
       showNotification(paste("Error loading data:", err$message), type = "error")
     })
   })

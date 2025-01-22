@@ -5,9 +5,8 @@ account: axelmora
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 192190
-bundleId: 9684342
+bundleId: 9684775
 url: https://axelmora.shinyapps.io/lmb_stats/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .secrets/7a6077d23f6776ccc63f8f70bc12b214_axel.asmo@gmail.com|.secrets/c13dc354db9600c8cd9b2bd868d1bf25_lmb.stats.app@gmail.com
