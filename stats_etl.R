@@ -228,7 +228,7 @@ team_fielding_etl <- function(year){
 
 lmb_stats_ETL <- function(x){
 hitting_aux = list()
-for(i in x){
+for(i in c(2019,2021:2024)){
   print("Player Hitting Stats")
   print(i)
   hitting_yr <- hitting_etl(i)

@@ -28,4 +28,6 @@ for(i in teams$team_id){
 }
 lmb_vs_zona_24 = do.call(rbind, vsdiv_standing)
 
-write.csv(final_plays,"/Users/axel.mora/final plays.csv")
+write.csv(hitters,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/hitters.csv")
+write.csv(pitchers,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/pitchers.csv")
+write.csv(fielders,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/fielders.csv")

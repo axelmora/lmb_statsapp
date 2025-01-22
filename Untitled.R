@@ -23,4 +23,4 @@ buttons =
     extend = 'collection',
     buttons = c('csv', 'excel', 'pdf'),
     text = 'Download'
-  )),
+  ))
