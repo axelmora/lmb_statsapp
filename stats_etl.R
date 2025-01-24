@@ -358,4 +358,53 @@ base_plot +
     aes(label = paste(Team, Year.x))
   )
 
-comp <- team_hitting %>% filter(Team == "Tigres de Quintana Roo" | Team == "Diablos Rojos del Mexico") %>% select(Year,Team,H,  `2B`,  `3B`,    HR,   RBI,     R,  AVG,   OBP,   SLG,   OPS, wOBA, wRAA, wRC, `wRC+` )
+comp <- team_hitting %>% filter(Team == "Tigres de Quintana Roo" | Team == "Diablos Rojos del Mexico") %>% 
+  select(Year,Team,H,  `2B`,  `3B`,    HR,   RBI,     R,  AVG,   OBP,   SLG,   OPS, wOBA, wRAA, wRC, `wRC+` )
+
+
+
+
+
+games_info <- list()
+for (game_pk in lmb_24_games$game_pk){
+  print(game_pk)
+  game_info <- mlb_game_info(game_pk)
+  games_info[[game_pk]] <- game_info
+}
+games_info <- Filter(Negate(is.null), games_info)
+games_info_df = do.call(rbind, games_info)
+
+games_info <- Filter(Negate(is.null), games_info)
+
+lmb_24_games <- mlb_schedule(season = 2024, level_ids = 23)
+
+lmb_24_games <- lmb_24_games %>%
+  filter(series_description == 'Regular Season' & status_status_code == 'F') %>%
+  select(date,game_pk,double_header,games_in_series,series_game_number,teams_away_team_name,teams_away_score,
+         teams_away_league_record_wins,teams_away_league_record_losses,teams_home_team_name,teams_home_score,
+         teams_home_league_record_wins,teams_home_league_record_losses,venue_name) %>%
+  mutate(
+       Away = paste0(teams_away_team_name," (",teams_away_league_record_wins,"-",teams_away_league_record_losses,")")
+      ,Home = paste0(teams_home_team_name," (",teams_home_league_record_wins,"-",teams_home_league_record_losses,")")) %>%
+  rename(
+    "Score Away" = teams_away_score
+    ,"Score Home" = teams_home_score
+    ,"Venue" = venue_name
+    ,"Date" = date
+    ,"Series Game N" = series_game_number) %>%
+  select(game_pk,"Date","Series Game N",Away,"Score Away",Home,"Score Home","Venue") 
+
+lmb_24_games <- lmb_24_games %>%
+  inner_join(games_info_df, by = c("game_pk" = "game_pk")) %>%
+  select(!c(game_date:wind,game_id:gameday_sw)) %>%
+  rename(
+    "Attendance" = attendance
+    ,"Start Time" = start_time
+    ,"Game Time" = elapsed_time) %>%
+  mutate(
+    "Box Score" = paste0('<a href="https://www.milb.com/gameday/',game_pk,'/final/box">Box Score</a>')
+  )
+
+
+
+game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])

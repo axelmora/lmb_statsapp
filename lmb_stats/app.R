@@ -79,7 +79,8 @@ gs_ids <- list(
   team_pitching_adv = "1BtBwDEU2NyiNgn-isEc5ObM-Nu6VrAotldexFauVofs",
   lmb_att_24 = "1uer8QQuM-x8VyxCDJBlCtqXofPHE-Dlkzzk64xzLFBQ",
   lmb_pace_24 = "1sJ_KjQgmKDUtLRh1MW0yHyQWTzllarKHXGzSGrLNVBk",
-  lmb_pace_venue_24 = "1_zF8o6iYKrcpE0Cwgky4dpm7gXMt4nU1At7Z4j4qFJI"
+  lmb_pace_venue_24 = "1_zF8o6iYKrcpE0Cwgky4dpm7gXMt4nU1At7Z4j4qFJI",
+  game_logs = "11gdMD1brR01ZuW31b9JpdEj0Jx3qM0CAxhZdNARVLtk"
 )
 
 
@@ -250,8 +251,12 @@ ui <- page_navbar(
       )
     )
   ),
+  nav_panel(
+    "Game Logs",
+    DTOutput("game_logs")
+  ),
   nav_menu(
-    title = "Misc Stats",
+    title = "Extras",
     nav_panel(
       title = "Game Pace",
       layout_column_wrap(
@@ -313,7 +318,7 @@ ui <- page_navbar(
       )
     ),
     nav_panel(
-      title = "GUTS",
+      title = "Guts!",
       card(
         max_height = 250,
         card_header(
@@ -729,6 +734,30 @@ server <- function(input, output, session) {
         dom = 't'
         ,pageLength = 20
         ,scrollX = FALSE
+      )
+    )
+  })
+  
+  output$game_logs <- renderDT({
+    req(datasets()$game_logs)
+    datatable(
+      datasets()$game_logs
+      ,escape = FALSE
+      ,rownames = FALSE
+      ,options = list(
+         dom = 'tip'
+        ,pageLength = 30
+        ,scrollX = FALSE
+        ,columnDefs = list(list(targets = 0, width = '50x')
+                           ,list(targets = 1, width = '50px')
+                           ,list(targets = c(3,5), width = '10px')
+                           ,list(targets = c(1,3,5,9), className = 'dt-center')
+                           ,list(targets = c(2,4,6), width = '250px')
+                           ,list(targets = c(7,8), width = '20px')
+                           ,list(targets = 9, width = '100px')
+                           ,list(targets = 10, width = '100px')
+                           ,list(targets = "_all", className = 'dt-left')
+        )
       )
     )
   })
