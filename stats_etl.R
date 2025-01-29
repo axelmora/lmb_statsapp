@@ -403,8 +403,13 @@ lmb_24_games <- lmb_24_games %>%
     ,"Game Time" = elapsed_time) %>%
   mutate(
     "Box Score" = paste0('<a href="https://www.milb.com/gameday/',game_pk,'/final/box">Box Score</a>')
+    ,Attendance = as.numeric(gsub(",", "",Attendance))
   )
 
 
 
 game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])
+
+sheet_write(lmb_24_games[-1], ss = game_logs, sheet = "Sheet1")
+sheet = "1toeJeYcCvlauqXNPlG3WLv13uPH6ZQVBg2qV93raC-k"
+sheet_write(hitting_adv, ss = sheet, sheet = "Sheet1")

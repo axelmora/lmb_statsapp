@@ -19,15 +19,3 @@ lmb_standing_sur_0722 <- lmb_standings_24_0612[11:20,]
 write.csv(lmb_standing_sur_0722,"/Users/axel.mora/lmb_standing_sur_0722.csv")
 
 
-pageLength = 10,
-responsive = TRUE,
-columnDefs = list(
-  list(
-    targets = 0,
-    width = '100px'
-  ),
-  list(
-    targets = 2,
-    width = '1000px'
-  )
-)

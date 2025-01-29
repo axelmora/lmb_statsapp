@@ -24,6 +24,8 @@ extract_game <- function(game_id) {
     pitch_hand = event_data$matchup$pitchHand$code,
     event = event_data$result$event,
     is_out = event_data$result$isOut,
+    score_away = event_data$result$awayScore,
+    score_home = event_data$result$homeScore,
     runs_on_event = sapply(event_data$runners,
                            FUN = function(x) sum(dplyr::coalesce(x$movement$end, "") == "score")
     )
@@ -55,20 +57,9 @@ extract_game <- function(game_id) {
     from_catcher = replace_null(play_data$details$fromCatcher),
     runner_going = replace_null(play_data$details$runnerGoing),
     is_out = play_data$details$isOut,
-    pitch_type = play_data$details$type$code,
-    ax = play_data$pitchData$coordinates$aX,
-    ay = play_data$pitchData$coordinates$aY,
-    az = play_data$pitchData$coordinates$aZ,
-    vx0 = play_data$pitchData$coordinates$vX0,
-    vy0 = play_data$pitchData$coordinates$vY0,
-    vz0 = play_data$pitchData$coordinates$vZ0,
-    x0 = play_data$pitchData$coordinates$x0,
-    z0 = play_data$pitchData$coordinates$z0,
     extension = replace_null(play_data$pitchData$extension),
     strike_zone_top = play_data$pitchData$strikeZoneTop,
     strike_zone_bottom = play_data$pitchData$strikeZoneBottom,
-    launch_speed = play_data$hitData$launchSpeed,
-    launch_angle = play_data$hitData$launchAngle,
     hit_coord_x = play_data$hitData$coordinates$coordX,
     hit_coord_y = play_data$hitData$coordinates$coordY,
   ) |>
@@ -89,8 +80,8 @@ extract_game <- function(game_id) {
     dplyr::filter(type == "pitch") |>
     dplyr::select(play_id, game_id, event_index, play_index, pitch_number,
                   outs, balls = pre_balls, strikes = pre_strikes,
-                  description, pitch_type, ax, ay, az, vx0, vy0, vz0, x0, z0, extension,
-                  strike_zone_top, strike_zone_bottom, launch_speed, launch_angle, hit_coord_x, hit_coord_y
+                  description, extension,
+                  strike_zone_top, strike_zone_bottom, hit_coord_x, hit_coord_y
     )
   
   
@@ -456,7 +447,6 @@ track_base_out_by_play <- function(event_data) {
   return(base_out_state)
 }
 
-
 replace_null <- function(x, replacement = NA) {
   if (is.null(x)) {
     return(replacement)
@@ -464,3 +454,473 @@ replace_null <- function(x, replacement = NA) {
     return(x)
   }
 }
+
+extract_fielding_lineup <- function(players) {
+  
+  first_position <- do.call(
+    what = c,
+    args = lapply(players, function(x) x$allPositions$code[1])
+  ) |>
+    as.matrix() |>
+    as.data.frame() |>
+    tibble::rownames_to_column() |>
+    dplyr::transmute(
+      position = as.integer(V1),
+      player_id = as.integer(substring(rowname, 3))
+    )
+  
+  is_substitute <- sapply(players, function(x) x$gameStatus)['isSubstitute', ] |>
+    sapply(identity) |>
+    as.matrix() |>
+    as.data.frame() |>
+    tibble::rownames_to_column() |>
+    dplyr::transmute(
+      player_id = as.integer(substring(rowname, 3)),
+      is_substitute = V1
+    )
+  
+  fielding_lineup <- first_position |>
+    dplyr::left_join(is_substitute, by = "player_id") |>
+    dplyr::filter(position != 1, !is_substitute) |>
+    dplyr::select(position, player_id) |>
+    dplyr::arrange(position)
+  
+  return(fielding_lineup)
+}
+
+download_statsapi <- function(start_date,
+                              end_date,
+                              level = c("lmb","aaa"),
+                              game_type = "R",
+                              cl = NULL) {
+  
+  game <- extract_schedule(start_date, end_date, level)
+  game <- game %>%
+          filter(game_id %in% games$game_pk)
+  year <- lubridate::year(start_date)
+  
+  data_list <- pbapply::pblapply(
+    X = game$game_id,
+    # If we encounter an error, try a total of three times before returning NULL and moving on
+    FUN = function(game_id) {
+      is_success <- FALSE
+      num_attempts <- 0
+      while (!is_success & num_attempts < 3) {
+        Sys.sleep(0.1)  # Avoid being rate-limited by statsapi
+        data <- try(extract_game(game_id))
+        if ("try-error" %in% class(data)) {
+          num_attempts <- num_attempts + 1
+          data <- NULL
+          Sys.sleep(5)  # Take a long pause in case it helps avoid network error
+        } else {
+          is_success <- TRUE
+        }
+      }
+      return(data)
+    },
+    cl = cl
+  )
+  
+  event <- do.call(dplyr::bind_rows, args = lapply(data_list, function(x) x$event)) |>
+    tibble::add_column(year = year, .after = "game_id")
+  pitch <- do.call(dplyr::bind_rows, args = lapply(data_list, function(x) x$pitch)) |>
+    tibble::add_column(year = year, .after = "game_id")
+  play <- do.call(dplyr::bind_rows, args = lapply(data_list, function(x) x$play)) |>
+    tibble::add_column(year = year, .after = "game_id")
+  
+  data <- list(
+    event = event,
+    pitch = pitch,
+    play = play,
+    game = game
+  )
+  
+  return(data)
+}
+
+extract_schedule <- function(start_date, end_date, level = c("lmb","aaa"), game_type = "R") {
+  
+  if (lubridate::year(start_date) != lubridate::year(end_date)) {
+    stop("Please choose `start_date` and `end_date` within the same calendar year")
+  }
+  level <- match.arg(level)
+  game_type <- sanitize_game_type(game_type)
+  
+  start <- format(as.Date(start_date), "%m/%d/%Y")
+  end <- format(as.Date(end_date), "%m/%d/%Y")
+  sport_id <- switch(level, lmb = 11, aaa = 11)
+  schedule_filter <- glue::glue(
+    "sportId={sport_id}&gameType={paste(game_type, collapse = ',')}&startDate={start}&endDate={end}"
+  )
+  endpoint <- glue::glue("http://statsapi.mlb.com:80/api/v1/schedule?{schedule_filter}")
+  
+  schedule_json <- jsonlite::fromJSON(endpoint, flatten = TRUE)
+  if(schedule_json$totalGames == 0) {
+    stop(
+      glue::glue(
+        "No games found between {start} and {end} of type {paste(game_type, collapse = ', ')}"
+      )
+    )
+  }
+  
+  schedule <- do.call(dplyr::bind_rows, args = schedule_json$dates$games)
+  
+  # We rely on the resumeDate column to avoid duplicating resumed games, but that column will
+  # not be included in `schedule` if there were no resumed games in our timeframe.
+  if (is.null(schedule$resumeDate)) {
+    schedule$resumeDate <- NA
+  }
+  
+  game <- schedule |>
+    # Filter out non-NA resumeDate to get down to one row per game ID
+    dplyr::filter(status.detailedState %in% c("Final", "Completed Early"), is.na(resumeDate)) |>
+    dplyr::arrange(officialDate) |>
+    dplyr::select(
+      game_id = gamePk,
+      game_type = gameType,
+      year = season,
+      date = officialDate,
+      venue_id = venue.id,
+      team_id_away = teams.away.team.id,
+      team_name_away = teams.away.team.name,
+      score_away = teams.away.score,
+      team_id_home = teams.home.team.id,
+      team_name_home = teams.home.team.name,
+      score_home = teams.home.score
+    )
+  
+  return(game)
+}
+
+sanitize_game_type <- function(game_type) {
+  game_type <- match.arg(
+    arg = game_type,
+    choices = c(
+      "R",  # regular season
+      "F",  # first-round playoff series, aka wild card
+      "D",  # division series
+      "L",  # league championship series
+      "W",  # world series
+      "S",  # spring training
+      "A",  # all-star game
+      "E"   # exhibition
+    ),
+    several.ok = TRUE
+  )
+  return(game_type)
+}
+
+estimate_base_out_run_exp <- function(event) {
+  
+  base_out_transition <- event |>
+    dplyr::filter(event != "Game Advisory") |>
+    dplyr::mutate(
+      pre_base_out_state = paste0(
+        1 * !is.na(pre_runner_1b_id),
+        1 * !is.na(pre_runner_2b_id),
+        1 * !is.na(pre_runner_3b_id),
+        pre_outs
+      ),
+      post_base_out_state = paste0(
+        1 * !is.na(post_runner_1b_id),
+        1 * !is.na(post_runner_2b_id),
+        1 * !is.na(post_runner_3b_id),
+        post_outs
+      ),
+      runs = runs_on_event
+    ) |>
+    # Count the number of each base-out transition
+    dplyr::count(pre_base_out_state, post_base_out_state, runs) |>
+    # Compute the probability of each base-out transition
+    dplyr::group_by(pre_base_out_state) |>
+    dplyr::mutate(pre_runs = 0, post_runs = runs, prob = n / sum(n)) |>
+    dplyr::ungroup() |>
+    dplyr::bind_rows(
+      tibble::tibble(
+        pre_base_out_state = c("0000", "0003"),
+        pre_runs = c(0, 0),
+        post_base_out_state = c("0000", "0003"),
+        post_runs = c(0, 0),
+        prob = c(0, 1)
+      )
+    ) |>
+    dplyr::select(dplyr::starts_with("pre_"), dplyr::starts_with("post_"), prob)
+  
+  # Add an additional dimension (runs already scored) to the state of an inning so that our
+  # Markov chain can track the cumulative runs scored in the terminal states.
+  base_out_transition_augmented <- tibble::tibble()
+  for (extra_runs in 0:9) {   # cap runs already scored at 9 because we have to cap it somewhere
+    base_out_transition_augmented <- base_out_transition_augmented |>
+      dplyr::bind_rows(
+        base_out_transition |>
+          dplyr::mutate(
+            pre_runs = pre_runs + extra_runs,
+            post_runs = pmin(post_runs + extra_runs, 9),
+            pre_state = glue::glue("{pre_base_out_state}{pre_runs}"),
+            post_state = glue::glue("{post_base_out_state}{post_runs}")
+          ) |>
+          dplyr::select(pre_state, post_state, prob)
+      )
+  }
+  
+  # Convert tibble to matrix for multiplication
+  transition_matrix <- base_out_transition_augmented |>
+    dplyr::group_by(pre_state, post_state) |>
+    dplyr::summarize(prob = sum(prob), .groups = "drop") |>
+    dplyr::arrange(post_state) |>
+    tidyr::pivot_wider(names_from = post_state, values_from = prob, values_fill = 0) |>
+    dplyr::arrange(pre_state) |>
+    dplyr::select(-pre_state) |>
+    as.matrix()
+  
+  # Raise transition matrix to 20th power to get terminal state probabilties from each start state.
+  # We substitute 20 for infinity because the probability of 20 PA in an inning is very very low.
+  transition_matrix_20_steps <- transition_matrix
+  for (step in 1:19) {
+    transition_matrix_20_steps <- transition_matrix_20_steps %*% transition_matrix
+  }
+  
+  # Extract run expectancy for each start state from the terminal state probabilties
+  base_out_run_exp <- transition_matrix_20_steps |>
+    tibble::as_tibble() |>
+    tibble::add_column(
+      pre_state = sort(unique(base_out_transition_augmented$pre_state)), .before = 1
+    ) |>
+    tidyr::pivot_longer(cols = -pre_state, names_to = "post_state", values_to = "prob") |>
+    dplyr::mutate(
+      outs = as.integer(substring(post_state, 4, 4)),
+      runs = as.integer(substring(post_state, 5, 5))
+    ) |>
+    dplyr::group_by(pre_state) |>
+    dplyr::summarize(exp_runs = weighted.mean(runs, w = prob), .groups = "drop") |>
+    dplyr::filter(substring(pre_state, 5, 5) == "0") |>
+    dplyr::transmute(
+      runner_1b = substring(pre_state, 1, 1) == 1,
+      runner_2b = substring(pre_state, 2, 2) == 1,
+      runner_3b = substring(pre_state, 3, 3) == 1,
+      outs = as.integer(substring(pre_state, 4, 4)),
+      exp_runs
+    )
+  
+  return(base_out_run_exp)
+}
+
+dw19 <- download_statsapi(start_date = "2019-04-04", end_date = "2019-08-30", level = "lmb")
+
+re24_plays <- data.frame()
+RUNS_1 <- data.frame()
+re24_plays <- dw19$event
+
+re24_plays <-
+re24_plays %>% 
+  group_by(game_id) %>% 
+  mutate(RUNS = lag(cumsum(runs_on_event)))
+
+re24_plays <-
+re24_plays %>% 
+  mutate(
+    HALF.INNING = paste(game_id,inning,half_inning),
+    OUTS.ON.PLAY = as.integer(post_outs) - as.integer(pre_outs),
+    RUNS.SCORED = runs_on_event)
+
+
+re24_plays %>%
+  group_by(HALF.INNING) %>%
+  summarize(Outs.Inning = sum(OUTS.ON.PLAY), 
+            Runs.Inning = sum(RUNS.SCORED),
+            Runs.Start = first(RUNS),
+            MAX.RUNS = Runs.Inning + Runs.Start) -> half_innings
+
+re24_plays %>%
+  inner_join(half_innings, by = "HALF.INNING") %>%
+  mutate(RUNS.ROI = abs(MAX.RUNS - RUNS)) -> re24_plays
+
+re24_plays[,c(15:17,19:21)] <- sapply((re24_plays[,c(15:17,19:21)]), as.character)
+#re24_plays[is.na(re24_plays[,c(15:17,19:21)])] <- ""
+
+re24_plays <- re24_plays %>%
+  mutate_if(is.character, ~replace_na(., ""))
+re24_plays <- re24_plays %>%
+  mutate_if(is.integer, ~replace_na(., 0))
+
+re24_plays <- as.data.frame(re24_plays)
+
+re24_plays %>% 
+  
+  mutate(BASES = 
+           paste0(ifelse(pre_runner_1b_id == "", 0, 1),
+                 ifelse(pre_runner_2b_id == "", 0, 1),
+                 ifelse(pre_runner_3b_id == "", 0, 1)
+           ),
+         STATE = paste(BASES, pre_outs)) -> re24_plays
+
+re24_plays %>%
+  mutate(NEW.BASES = 
+           paste0(ifelse(post_runner_1b_id == "", 0, 1),
+                 ifelse(post_runner_2b_id == "", 0, 1),
+                 ifelse(post_runner_3b_id == "", 0, 1)
+          ),
+         NOUTS = as.integer(pre_outs) + as.integer(OUTS.ON.PLAY),
+         NEW.STATE = paste(NEW.BASES, NOUTS)) -> re24_plays
+
+
+re24_plays %>% 
+  filter((STATE != NEW.STATE) | (as.integer(RUNS.SCORED) > 0)) -> re24_plays
+
+
+re24_plays %>%
+  filter(as.integer(Outs.Inning) == 3) -> re24_plays_final
+
+re24_plays_final %>% 
+  group_by(STATE) %>%
+  summarize(Mean = mean(as.integer(RUNS.ROI))) %>%
+  mutate(Outs = substr(STATE, 5, 5)) %>%
+  arrange(Outs) -> RUNS_1 
+
+
+re24n <- matrix(round(RUNS_1$Mean, 2), 8, 3)
+
+
+
+dimnames(re24n)[[2]] <- c("0 outs", "1 out", "2 outs")
+dimnames(re24n)[[1]] <- c("___", "__3", "_2_", "_23", 
+                         "1__", "1_3", "12_", "123")
+
+re_24_1 <- t(re24n)
+col.order <- c("___", "1__", "_2_", "__3", "12_", "1_3", "_23", "123")
+run_expectancy_matrix <- (t(re_24_1[, col.order]))
+
+print(run_expectancy_matrix)
+
+run_expectancy_matrix_19 <- run_expectancy_matrix
+
+#cp <- matrix(c(0.55,0.91,1.15,1.29,1.35,1.54,1.79,2.15,0.29,0.53,0.63,0.83,0.83,1.02,
+#               1.34,1.41,0.14,0.28,0.35,0.37,0.47,0.45,0.65,0.72),8,3)
+
+
+# Preparation work for finding run values
+re24_plays %>%
+  
+  # Concentrate run values by state
+  left_join(select(RUNS_1, -Outs), by = "STATE") %>%
+  rename(Runs.State = Mean) %>%
+  left_join(select(RUNS_1, -Outs), 
+            by = c("NEW.STATE" = "STATE")) %>%
+  rename(Runs.New.State = Mean) %>%
+  replace_na(list(Runs.New.State = 0)) %>%
+  
+  # Find run value of each play
+  mutate(run_value = Runs.New.State - Runs.State +
+           RUNS.SCORED) -> re24_plays
+
+# Create necessary variable
+outs <- rep(0, nrow(re24_plays))
+
+# Find plays that resulted in outs
+re24_plays %>% 
+  filter(OUTS.ON.PLAY > 0) -> outs
+
+# Find run value of outs
+outs %>%
+  summarize(mean_run_value = mean(run_value)) -> mean_outs
+
+print(mean_outs)
+
+############
+# Create necessary variable
+hbp <- rep(0, nrow(re24_plays))
+
+# Find all instances of a single
+for (i in 1:nrow(re24_plays)){
+  if (isTRUE(grepl("Hit By Pitch", re24_plays$event[i]))) {
+    hbp[i] <- 1
+  }
+}
+
+# Select plays with a single
+re24_plays %>% 
+  mutate(hbps = hbp) %>% 
+  filter(hbps == 1) -> hbps
+
+# Find run value of singles by finding the mean run values of all plays with
+# a single
+hbps %>%
+  summarize(mean_run_value = mean(run_value)) -> mean_hbps
+
+# Find the run value of a single to that of an out
+HBP <- mean_hbps - mean_outs
+
+print(HBP)
+##############
+
+# Create necessary variable
+sf <- rep(0, nrow(re24_plays))
+ibb <- rep(0, nrow(re24_plays))
+
+# Find all instances of a sacrifice fly
+for (i in 1:nrow(re24_plays)){
+  if (isTRUE(grepl("Sac Fly", re24_plays$result.description[i]))) {
+    sf[i] <- 1
+  }
+  if (isTRUE(grepl("Intent Walk", re24_plays$result.description[i]))) {
+    ibb[i] <- 1
+  }
+}
+
+# Select plays with a sacrifice fly
+re24_plays %>% 
+  mutate(sf = sf, ibb = ibb) -> re24_plays
+
+# Create "wOBA Multiplier" by calculating the league wOBA figure
+woba_multiplier <- 
+  (HBP*nrow(hbps) + BB*nrow(walks) + SINGLE*nrow(singles) + DOUBLE*nrow(doubles) 
+   + TRIPLE*nrow(triples) + HOME_RUN*nrow(home_runs))/(nrow(re24_plays) - sum(ibb) 
+                                                 - sum(sf))
+# Calculate the league OBP figure
+league_obp <- 
+  (nrow(hbps) + nrow(walks) + nrow(singles) + nrow(doubles) + nrow(triples) 
+   + nrow(home_runs))/(nrow(re24_plays) - sum(ibb))
+
+woba_scale <- league_obp / woba_multiplier
+
+# Multiply the play run values by the wOBA scale to obtain the weights used in
+# the wOBA calculation
+woba_weights <- c(woba_scale*HBP, woba_scale*BB, woba_scale*SINGLE, 
+                  woba_scale*DOUBLE, woba_scale*TRIPLE, woba_scale*HOME_RUN)
+
+# Create an easily readable table containing the wOBA weights
+linear_weights_table <- as.data.frame(woba_weights)
+
+# Ensure the table is named correctly
+colnames(linear_weights_table) <- c("HBP", "BB", "1B", "2B", "3B", "HR")
+#rownames(linear_weights_table) <- c("Weights")
+
+# View the final product
+print(linear_weights_table)
+
+woba_fipc_19 <- linear_weights_table %>%
+  mutate(Season = 2019,
+          wOBA = woba_multiplier$mean_run_value,
+         "wOBAScale" = woba_scale$mean_run_value,
+         `R/PA` = 0.154,
+         cFIP = 5.79 - (((13*2391)+(3*(997+6657))-(2*13037))/16461)) %>%
+  relocate(Season, wOBA, "wOBAScale") %>%
+  rename(
+        ,`wHBP` = `HBP`
+        ,`wBB` = `BB`
+        ,`w1B` = `1B`
+        ,`w2B` = `2B`
+        ,`w3B` = `3B`
+        ,`wHR` = `HR`
+  )
+
+
+
+#woba_fipc_24 <- read_csv("Documents/lmb_statsapp/lmb_stats/woba_fipc.csv")
+#woba_fipc_24 <- woba_fipc_24[-1]
+
+
+woba_fipc <- rbind(woba_fipc_24, woba_fipc_23, woba_fipc_22, woba_fipc_21, woba_fipc_19)
+
+write.csv(woba_fipc,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/woba_fipc.csv")
+#, woba_fipc_22, woba_fipc_21)

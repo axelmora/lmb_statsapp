@@ -53,8 +53,8 @@ load_data <- function(gs_ids, cache_dir = "cache") {
   if (!dir.exists(cache_dir)) {
     dir.create(cache_dir)
   }
-
-datasets <- list()
+  
+  datasets <- list()
   for (name in names(gs_ids)) {
     file_path <- file.path(cache_dir, paste0(name, ".rds"))
     datasets[[name]] <- load_or_cache_data(gs_ids[[name]], file_path)
@@ -465,7 +465,7 @@ server <- function(input, output, session) {
         pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(2:21), width = '5px')
+                          ,list(targets = c(2:22), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
         ),
         order = list(5, 'desc')
@@ -745,7 +745,7 @@ server <- function(input, output, session) {
       ,escape = FALSE
       ,rownames = FALSE
       ,options = list(
-         dom = 'tip'
+        dom = 'tip'
         ,pageLength = 30
         ,scrollX = FALSE
         ,columnDefs = list(list(targets = 0, width = '50x')
@@ -794,7 +794,7 @@ server <- function(input, output, session) {
   output$lmb_cap_pct <- renderText({
     round(((sum(datasets()$lmb_att_24$`Total Home Attendance`)/
               sum(datasets()$lmb_att_24$`Home Openings`))*100)/
-                mean(datasets()$lmb_att_24$Capacity),1)
+            mean(datasets()$lmb_att_24$Capacity),1)
   })
   
   output$lmb_max_att <- renderText({
