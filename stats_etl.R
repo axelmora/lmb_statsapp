@@ -413,3 +413,16 @@ game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])
 sheet_write(lmb_24_games[-1], ss = game_logs, sheet = "Sheet1")
 sheet = "1toeJeYcCvlauqXNPlG3WLv13uPH6ZQVBg2qV93raC-k"
 sheet_write(hitting_adv, ss = sheet, sheet = "Sheet1")
+
+
+
+
+hitting_p <- left_join(hitting_std,hitting_adv, by =c("Name"="Name","Year"="Year"), relationship = "many-to-many")
+
+
+hitting_p <- hitting_p %>%
+  select(Year, Name, mWAR, GP.x, PA.x, H, RBI, SB, HR, AVG, OBP, SLG, OPS, wOBA) %>%
+  filter(Year == 2024) %>%
+  rename("G" = GP.x, "PA" = PA.x)
+
+hitting_cp <- gs4_create("hitting_cp", sheets = hitting_cp)

@@ -5,10 +5,12 @@ library(ggplot2)
 library(DT)
 library(readr)
 library(dplyr)
+library(tidyr)
 library(googlesheets4)
 library(data.table)
 library(future)
 library(promises)
+library(reactable)
 
 plan(multisession)
 # ----------------- DATA PREPARATION -------------------------------------
@@ -80,7 +82,8 @@ gs_ids <- list(
   lmb_att_24 = "1uer8QQuM-x8VyxCDJBlCtqXofPHE-Dlkzzk64xzLFBQ",
   lmb_pace_24 = "1sJ_KjQgmKDUtLRh1MW0yHyQWTzllarKHXGzSGrLNVBk",
   lmb_pace_venue_24 = "1_zF8o6iYKrcpE0Cwgky4dpm7gXMt4nU1At7Z4j4qFJI",
-  game_logs = "11gdMD1brR01ZuW31b9JpdEj0Jx3qM0CAxhZdNARVLtk"
+  game_logs = "11gdMD1brR01ZuW31b9JpdEj0Jx3qM0CAxhZdNARVLtk",
+  hitting_cp = "1K-wOBfh9QW4ucEShjypBXQkti962Yajyf-Da5QEKbg0"
 )
 
 
@@ -91,7 +94,7 @@ theme_set(theme_bw(base_size = 10))
 #-------------------- UI ---------------------------------------------------
 
 ui <- page_navbar(
-  input_dark_mode(id = "mode"),
+  #input_dark_mode(id = "mode"),
   tags$head(
     tags$style(HTML("
       table.dataTable {
@@ -191,6 +194,27 @@ ui <- page_navbar(
           "Advanced Stats",
           DTOutput("fielding_adv")
         )
+      )
+    )
+  ),
+  nav_panel(
+    "Compare",
+    page_sidebar(
+      sidebar = sidebar(
+        title = "Players selection",
+        selectInput("player1","Player 1 Name",
+                    choices = c("All", sort(hitters$x)), 
+                    selected = NULL),
+        selectInput("player2","Player 2 Name",
+                    choices = c("All", sort(hitters$x)), 
+                    selected = NULL),
+      ),
+      card(
+        full_screen = TRUE,
+        card_header(
+          "Player Statistics Comparison"),
+        card_body(
+          reactableOutput("player_comparison_table"))
       )
     )
   ),
@@ -800,6 +824,72 @@ server <- function(input, output, session) {
   output$lmb_max_att <- renderText({
     max(datasets()$lmb_att_24$`High Home Attendance`)
   })
+  
+  
+########## PLAYERS COMPARISSON #########
+  player_data <- reactive({
+    req(datasets())
+    datasets()$hitting_cp
+  })
+  
+  observe({
+    updateSelectInput(session, "player1", choices = sort(unique(player_data()$Name)), selected = NULL)
+    updateSelectInput(session, "player2", choices = sort(unique(player_data()$Name)), selected = NULL)
+  })
+  
+  selected_players <- reactive({
+    req(input$player1, input$player2)
+    player_data() %>% 
+      filter(Name %in% c(input$player1, input$player2))
+  })
+  
+  output$player_comparison_table <- renderReactable({
+    req(input$player1, input$player2) 
+    
+    # Validate if the same player is selected
+    if (input$player1 == input$player2) {
+      showNotification("⚠ Please select two different players to compare!", type = "warning", duration = 5)
+      return(NULL)  # Prevents the table from rendering
+    }
+    
+    trans_data <- transpose(selected_players(), keep.names = "Stats", make.names = "Name")
+    
+    # Ensure numeric conversion for comparisons
+    trans_data[, -1] <- lapply(trans_data[, -1], as.numeric)
+    
+    # Get the player column names dynamically (assuming they are in columns 2 and 3)
+    player_cols <- colnames(trans_data)[2:3]
+    
+    # Reorder columns: Move "Stats" to the second position
+    trans_data <- trans_data[, c(player_cols[1], "Stats", player_cols[2])]
+    
+    reactable(trans_data,
+              columns = c(
+                setNames(
+                  lapply(player_cols, function(col_name) {
+                    colDef(
+                      align = "center",
+                      style = function(value, index) {
+                        # Find the opponent column dynamically
+                        opponent_col <- ifelse(col_name == player_cols[1], player_cols[2], player_cols[1])
+                        if (is.na(value) || is.na(trans_data[index, opponent_col])) return("")
+                        if (value > trans_data[index, opponent_col]) "background-color: #D4EDDA;" else ""
+                      }
+                    )
+                  }),
+                  player_cols
+                ),
+                list(Stats = colDef(name = "Statistic", align = "center"))  # Now placed in the second position
+              ),
+              pagination = FALSE,
+              defaultColDef = colDef(align = "center"),
+              bordered = TRUE,
+              highlight = TRUE
+    )
+  })
+  
+  
+  
 }
 
 
