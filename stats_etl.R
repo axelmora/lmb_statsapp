@@ -426,3 +426,7 @@ hitting_p <- hitting_p %>%
   rename("G" = GP.x, "PA" = PA.x)
 
 hitting_cp <- gs4_create("hitting_cp", sheets = hitting_cp)
+
+
+
+hitting_tst <- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'hitting', season = 2024, sport_ids = 23))

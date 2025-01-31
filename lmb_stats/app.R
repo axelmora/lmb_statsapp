@@ -18,7 +18,7 @@ plan(multisession)
 options(gargle_oauth_cache = ".secrets")
 
 # Authenticate manually
-gs4_auth()
+#gs4_auth()
 
 # If successful, the previous step stores a token file.
 # Check that a file has been created with:
@@ -86,6 +86,17 @@ gs_ids <- list(
   hitting_cp = "1K-wOBfh9QW4ucEShjypBXQkti962Yajyf-Da5QEKbg0"
 )
 
+refresh_data <- function(gs_ids) {
+  cache_dir = "cache"
+  datasets <- list()
+  for (name in names(gs_ids)) {
+    file_path <- file.path(cache_dir, paste0(name, ".rds"))
+    print(gs_ids[[name]])
+    data <- read_sheet(gs_ids[[name]])
+    saveRDS(data, file_path)
+    print(Sys.time())
+  }
+}
 
 # ----------- SETUP -------------------------------------------------------
 thematic::thematic_shiny(font = "auto")
@@ -364,8 +375,11 @@ ui <- page_navbar(
     title = "Links",
     align = "right",
     nav_item(tags$a("X", href = "https://x.com/axelmora93")),
-    nav_item(tags$a("LinkedIn", href = "https://linkedin.com/in/axelmora"))
-    
+    nav_item(tags$a("LinkedIn", href = "https://linkedin.com/in/axelmora")),
+    nav_panel(
+      title = "About",
+      textOutput("last_refresh_time")
+    )
   )
 )
 
@@ -373,6 +387,15 @@ ui <- page_navbar(
 # ------ SERVER --------------------------------------------------
 
 server <- function(input, output, session) {
+
+  refresh_timer <- reactiveTimer(intervalMs = 43200000)
+  
+  observeEvent(refresh_timer(), {
+    if (format(Sys.time(), "%H:%M") == "00:00") {  # Check if it's midnight
+      refresh_data(gs_ids)  # Refresh the cache
+      print("DATA REFRESHED")
+    }
+  })
   
   datasets <- reactiveVal(NULL)
   
@@ -888,7 +911,9 @@ server <- function(input, output, session) {
     )
   })
   
-  
+  output$last_refresh_time <- renderText({
+    paste()
+  })
   
 }
 
