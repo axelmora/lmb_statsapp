@@ -495,8 +495,6 @@ download_statsapi <- function(start_date,
                               cl = NULL) {
   
   game <- extract_schedule(start_date, end_date, level)
-  game <- game %>%
-          filter(game_id %in% games$game_pk)
   year <- lubridate::year(start_date)
   
   data_list <- pbapply::pblapply(
@@ -545,10 +543,11 @@ extract_schedule <- function(start_date, end_date, level = c("lmb","aaa"), game_
   }
   level <- match.arg(level)
   game_type <- sanitize_game_type(game_type)
+  teams <- baseballmexR::teams(season = lubridate::year(start_date), league = "lmb")
   
   start <- format(as.Date(start_date), "%m/%d/%Y")
   end <- format(as.Date(end_date), "%m/%d/%Y")
-  sport_id <- switch(level, lmb = 11, aaa = 11)
+  sport_id <- switch(level, lmb = 23, aaa = 11)
   schedule_filter <- glue::glue(
     "sportId={sport_id}&gameType={paste(game_type, collapse = ',')}&startDate={start}&endDate={end}"
   )
@@ -573,6 +572,7 @@ extract_schedule <- function(start_date, end_date, level = c("lmb","aaa"), game_
   
   game <- schedule |>
     # Filter out non-NA resumeDate to get down to one row per game ID
+    dplyr::filter(teams.away.team.id %in% teams$team_id & teams.home.team.id %in% teams$team_id) |>
     dplyr::filter(status.detailedState %in% c("Final", "Completed Early"), is.na(resumeDate)) |>
     dplyr::arrange(officialDate) |>
     dplyr::select(
@@ -705,11 +705,16 @@ estimate_base_out_run_exp <- function(event) {
   return(base_out_run_exp)
 }
 
-dw19 <- download_statsapi(start_date = "2019-04-04", end_date = "2019-08-30", level = "lmb")
+
+dw24 <- download_statsapi(start_date = "2024-04-11", end_date = "2024-08-01", level = "lmb")
+dw23 <- download_statsapi(start_date = "2023-04-20", end_date = "2023-08-06", level = "lmb")
+dw22 <- download_statsapi(start_date = "2022-04-21", end_date = "2022-08-07", level = "lmb")
+dw21 <- download_statsapi(start_date = "2021-05-21", end_date = "2021-08-05", level = "lmb")
+dw19 <- download_statsapi(start_date = "2019-04-04", end_date = "2019-08-29", level = "aaa")
 
 re24_plays <- data.frame()
 RUNS_1 <- data.frame()
-re24_plays <- dw19$event
+re24_plays <- dw24$event
 
 re24_plays <-
 re24_plays %>% 
@@ -792,7 +797,7 @@ run_expectancy_matrix <- (t(re_24_1[, col.order]))
 
 print(run_expectancy_matrix)
 
-run_expectancy_matrix_19 <- run_expectancy_matrix
+run_expectancy_matrix_24 <- run_expectancy_matrix
 
 #cp <- matrix(c(0.55,0.91,1.15,1.29,1.35,1.54,1.79,2.15,0.29,0.53,0.63,0.83,0.83,1.02,
 #               1.34,1.41,0.14,0.28,0.35,0.37,0.47,0.45,0.65,0.72),8,3)

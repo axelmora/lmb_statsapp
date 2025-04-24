@@ -1,9 +1,9 @@
 woba_fipc <- read_csv("lmb_stats/woba_fipc.csv")
 park_factors <- read_csv("lmb_stats/park_factors.csv")
 
-pf_br <- park_factors %>%
-  select(team_abbreviation, PF) %>%
-  rename(Team = team_abbreviation)
+#pf_br <- park_factors %>%
+#  select(team_abbreviation, PF) %>%
+#  rename(Team = team_abbreviation)
 
 hitting_etl <- function(year){
 ####EXTRACTION
@@ -12,7 +12,11 @@ hitting <- (mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'h
 teams <- mlb_teams(season = year, league_ids = 125) %>%
   select(team_id, team_full_name, team_code, team_abbreviation, franchise_name, club_name, venue_id, venue_name, league_id, 
          division_id, sport_id)
+year <- (year-1)
 woba_fipc <- woba_fipc %>% filter(Season == year)
+pf_br <- park_factors %>% select(Team,ends_with(as.character(year))) %>% filter(!is.na(.[[2]]))
+p_adj <- pos_adj %>% select(POS,ends_with(as.character(year)))
+rpw <- RpW_Master %>% filter(Year == year)
 ###TRANSFORMATION
 hitting <- hitting %>%
   filter(league_name == 'MEX') %>%
@@ -36,18 +40,20 @@ hitting <- hitting %>%
          ,`1B` = H - `2B` - `3B` - `HR`
          ,`wOBA` = round((woba_fipc$wHBP * `HBP`+
                    woba_fipc$wBB * `BB` +
-                   woba_fipc$`w1B` * `1B` +
-                   woba_fipc$`w2B` * `2B` +
-                   woba_fipc$`w3B` * `3B` +
-                   woba_fipc$wHR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
+                  woba_fipc$`w1B` * `1B` +
+                  woba_fipc$`w2B` * `2B` +
+                  woba_fipc$`w3B` * `3B` +
+                  woba_fipc$wHR * `HR`) / (`AB` + `BB` + `SF` + `HBP`),3)
          ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,1)
          ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA)
          ) %>%
   inner_join(pf_br, by = join_by(Team)) %>%
   select(!c(team_id:sport_id)) %>%
-  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
+  mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((.[[39]]/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
         ) %>%
-  select(!c(PF))
+  inner_join(p_adj, by = c("POS" = "POS")) %>%
+  mutate(mWAR = round(((wRAA+as.numeric(.[[41]]))/rpw$rpw),1)) %>%
+  select(!c(35,39,41))
 
 hitting
 ###LOAD
@@ -61,8 +67,10 @@ pitching_etl <- function(year){
   teams <- mlb_teams(season = year, league_ids = 125) %>%
     select(team_id, team_full_name, team_code, team_abbreviation, franchise_name, club_name, venue_id, venue_name, league_id, 
            division_id, sport_id)
+  year <- (year-1)
   woba_fipc <- woba_fipc %>% filter(Season == year)
-  
+  pad <- pAdj_Master %>% filter(Year == year)
+  pf_br <- park_factors %>% select(Team,ends_with(as.character(year))) %>% filter(!is.na(.[[2]]))
   ###TRANSFORMATION
   pitching <- pitching %>%
     filter(league_name == 'MEX') %>%
@@ -86,9 +94,28 @@ pitching_etl <- function(year){
            ,`K%` = round((K/BF)*100,1)
            ,`BB%` = round((BB/BF)*100,1)
            ,`K-BB%` = round((`K%`- `BB%`),1)
-           ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,2)
+           ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + woba_fipc$cFIP ,2)
     ) %>%
-    select(!c(team_id:sport_id))
+    select(!c(team_id:sport_id)) %>%
+    mutate(FIPR9 = FIP+pad$pAdj) %>%      
+    inner_join(pf_br, by = join_by(Team)) %>%                      
+    mutate(pFIPR9 = FIPR9/(.[[44]]/100))
+  
+  lgFIP <- 8.51
+  lgFIPR9 <- lgFIP+pad$pAdj
+  
+  pitching <- pitching %>%
+    mutate(RAAP9 = lgFIPR9 - pFIPR9
+           ,dRPW = (((
+             ((18-((O/3)/GP))*(lgFIPR9)) + (((O/3)/GP)*pFIPR9))/18)+2)*1.5
+           ,WPGAA = RAAP9/dRPW
+           ,rpL = 0.03*(1-(GS/GP))+0.12*(GS/GP)
+           ,WPGAR = WPGAA+rpL
+           ,mWAR = round(WPGAR*((O/3)/9),1) 
+          ) %>%
+    select(!c(43:50))
+    
+  
   
   pitching
   ###LOAD
@@ -132,7 +159,11 @@ team_hitting_etl <- function(year){
   teams <- mlb_teams(season = year, league_ids = 125) %>%
     select(team_id, team_full_name, team_code, team_abbreviation, franchise_name, club_name, venue_id, venue_name, league_id, 
            division_id, sport_id)
+  year <- (year-1)
   woba_fipc <- woba_fipc %>% filter(Season == year)
+  pf_br <- park_factors %>% select('Team Full Name',ends_with(as.character(year))) %>% filter(!is.na(.[[2]]))
+  p_adj <- pos_adj %>% select(POS,ends_with(as.character(year)))
+  rpw <- RpW_Master %>% filter(Year == year)
   team_hitting  <- team_hitting  %>%
     filter(team_id %in% teams$team_id) %>%
     select(season,team_name,games_played,at_bats,plate_appearances,hits,doubles,triples,home_runs,rbi,runs,
@@ -151,7 +182,7 @@ team_hitting_etl <- function(year){
     mutate(`K%` = round((K/PA)*100,1)
            ,`BB%` = round((BB/PA)*100,1)
            ,`BB/K` = round((BB/K)*100,1)
-           ,`1B` = H - `2B` - `3B` - `HR`
+          ,`1B` = H - `2B` - `3B` - `HR`
            ,`wOBA` = round((woba_fipc$wHBP * `HBP`+
                               woba_fipc$wBB * `BB` +
                               woba_fipc$`w1B` * `1B` +
@@ -161,10 +192,12 @@ team_hitting_etl <- function(year){
            ,wRAA = round(((`wOBA` - woba_fipc$wOBA) / woba_fipc$wOBAScale)* `PA`,1)
            ,wRC = round((((`wOBA`- woba_fipc$wOBA)/woba_fipc$wOBAScale)+(woba_fipc$`R/PA`))*PA)
     ) %>%
-    inner_join(park_factors, by = join_by(Team)) %>%
-    mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((PF/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
+    inner_join(pf_br, by = c("Team" = "Team Full Name")) %>%
+    mutate(`wRC+` = round((((wRAA/PA + woba_fipc$`R/PA`) + (woba_fipc$`R/PA` - ((.[[39]]/100) * woba_fipc$`R/PA`)))/(wRC/PA)) * 100)
     ) %>%
-    select(!c(39:42))
+    mutate(mWAR = 0) %>%
+             #round(((wRAA+.[[41]])/rpw$rpw),1)) %>%
+    select(!c(35,39))
   team_hitting
   
 }
@@ -175,7 +208,10 @@ team_pitching_etl <- function(year){
   teams <- mlb_teams(season = year, league_ids = 125) %>%
     select(team_id, team_full_name, team_code, team_abbreviation, franchise_name, club_name, venue_id, venue_name, league_id, 
            division_id, sport_id)
+  year <- (year-1)
   woba_fipc <- woba_fipc %>% filter(Season == year)
+  pad <- pAdj_Master %>% filter(Year == year)
+  pf_br <- park_factors %>% select('Team Full Name',ends_with(as.character(year))) %>% filter(!is.na(.[[2]]))
   team_pitching <- team_pitching %>%
     filter(team_id %in% teams$team_id) %>%
     select(season,team_name,games_played,innings_pitched,wins,losses,
@@ -196,8 +232,26 @@ team_pitching_etl <- function(year){
       `K%` = round((K/BF)*100,1)
       ,`BB%` = round((BB/BF)*100,1)
       ,`K-BB%` = round((`K%`- `BB%`),1)
-      ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + 3.813 ,2)
-    )
+      ,FIP = round((((13*HR) + (3*(BB+HBP)) - (2*K)) / as.numeric(IP)) + woba_fipc$cFIP ,2)
+    ) %>%
+    mutate(FIPR9 = FIP+pad$pAdj) %>%      
+    inner_join(pf_br, by = c("Team" = "Team Full Name")) %>%                      
+    mutate(pFIPR9 = FIPR9/(.[[42]]/100)) %>%
+    select(!c(42))
+  
+  lgFIP <- 8.51
+  lgFIPR9 <- lgFIP+pad$pAdj
+  
+  team_pitching <- team_pitching %>%
+    mutate(RAAP9 = 0 #lgFIPR9 - pFIPR9
+          ,dRPW = 0 #(((((18-((O/3)/GP))*(lgFIPR9)) + (((O/3)/GP)*pFIPR9))/18)+2)*1.5
+          ,WPGAA = 0 #RAAP9/dRPW
+          ,rpL = 0 #0.03*(1-(GS/GP))+0.12*(GS/GP)
+          ,WPGAR = 0 #WPGAA+rpL
+          ,mWAR = 0 #round(WPGAR*((O/3)/9),1) 
+    )%>%
+    select(!c(41:47))
+  
   team_pitching
   ###LOAD
   
@@ -226,7 +280,7 @@ team_fielding_etl <- function(year){
   
 }
 
-lmb_stats_ETL <- function(x){
+lmb_stats_ETL_HIST  <- function(x){
 hitting_aux = list()
 for(i in c(2019,2021:2024)){
   print("Player Hitting Stats")
@@ -234,10 +288,11 @@ for(i in c(2019,2021:2024)){
   hitting_yr <- hitting_etl(i)
   hitting_aux[[i]] <- hitting_yr
 }
-hitting = do.call(rbind, hitting_aux)
-is.na(hitting) <- sapply(hitting, is.infinite)
-hitting_std <- gs4_create("htting_std", sheets = hitting[,c(1:23)])
-hitting_adv <- gs4_create("hitting_adv", sheets = hitting[,-c(8:23,35)])
+hitting_data = do.call(rbind, hitting_aux)
+is.na(hitting_data) <- sapply(hitting_data, is.infinite)
+write_sheet(hitting_data, ss = "1eVJ4dSg6KgATE8zmPxvriHyk6ZRZB94fuDWpdcloC1M", sheet = "hitting_data")
+#hitting <- gs4_create("htting", sheets = hitting_data) #1eVJ4dSg6KgATE8zmPxvriHyk6ZRZB94fuDWpdcloC1M
+#hitting_adv <- gs4_create("hitting_adv", sheets = hitting[,-c(8:23,35)])
 print("1/6")
 pitching_aux = list()
 for(i in c(2019,2021:2024)){
@@ -246,10 +301,11 @@ for(i in c(2019,2021:2024)){
   pitching_yr <- pitching_etl(i)
   pitching_aux[[i]] <- pitching_yr
 }
-pitching = do.call(rbind, pitching_aux)
-is.na(pitching) <- sapply(pitching, is.infinite)
-pitching_std <- gs4_create("pitching_std", sheets = pitching[,c(1:23)])
-pitching_adv <- gs4_create("pitching_adv", sheets = pitching[,-c(8:23)])
+pitching_data = do.call(rbind, pitching_aux)
+is.na(pitching_data) <- sapply(pitching_data, is.infinite)
+write_sheet(pitching_data, ss="1eVJ4dSg6KgATE8zmPxvriHyk6ZRZB94fuDWpdcloC1M", sheet = "pitching_data")
+#pitching <- gs4_create("pitching", sheets = pitching_data) #1xlYBP_x1mfsuFDnMxk4gtPUIl7FTIJ0hfVRK3BPeeRQ
+#pitching_adv <- gs4_create("pitching_adv", sheets = pitching[,-c(8:23)])
 print("2/6")
 fielding_aux = list()
 for(i in c(2019,2021:2024)){
@@ -258,10 +314,10 @@ for(i in c(2019,2021:2024)){
   fielding_yr <- fielding_etl(i)
   fielding_aux[[i]] <- fielding_yr
 }
-fielding = do.call(rbind, fielding_aux)
-is.na(fielding) <- sapply(fielding, is.infinite)
-fielding_std <- gs4_create("fielding_std", sheets = fielding[,c(1:18)])
-fielding_adv <- gs4_create("fielding_adv", sheets = fielding[,-c(8:18)])
+fielding_data = do.call(rbind, fielding_aux)
+is.na(fielding_data) <- sapply(fielding_data, is.infinite)
+fielding <- gs4_create("fielding", sheets = fielding_data) #1hVRO16lDvVHkYGva06sgG1715wYdEKHaIy2GwyC_K8U
+#fielding_adv <- gs4_create("fielding_adv", sheets = fielding[,-c(8:18)])
 print("3/6")
 team_hitting_aux = list()
 for(i in c(2019,2021:2024)){
@@ -270,10 +326,11 @@ for(i in c(2019,2021:2024)){
   team_hitting_yr <- team_hitting_etl(i)
   team_hitting_aux[[i]] <- team_hitting_yr
 }
-team_hitting = do.call(rbind, team_hitting_aux)
-is.na(team_hitting) <- sapply(team_hitting, is.infinite)
-team_hitting_std <- gs4_create("team_hitting_std", sheets = team_hitting[,c(1:22)])
-team_hitting_adv <- gs4_create("team_hitting_adv", sheets = team_hitting[-c(6:22)])
+team_hitting_data = do.call(rbind, team_hitting_aux)
+is.na(team_hitting_data) <- sapply(team_hitting_data, is.infinite)
+#team_hitting <- gs4_create("team_hitting", sheets = team_hitting_data)
+write_sheet(team_hitting_data, ss = "1gkOC_566Bp7XCuuyEsIkK7jT0V0TMn--Xbuv1i4Wdxc", sheet = "team_hitting_data")
+#team_hitting_adv <- gs4_create("team_hitting_adv", sheets = team_hitting[-c(6:22)])
 print("4/6")
 team_pitching_aux = list()
 for(i in c(2019,2021:2024)){
@@ -282,10 +339,11 @@ for(i in c(2019,2021:2024)){
   team_pitching_yr <- team_pitching_etl(i)
   team_pitching_aux[[i]] <- team_pitching_yr
 }
-team_pitching = do.call(rbind, team_pitching_aux)
-is.na(team_pitching) <- sapply(team_pitching, is.infinite)
-team_pitching_std <- gs4_create("team_pitching_std", sheets = team_pitching[,c(1:21)])
-team_pitching_adv <- gs4_create("team_pitching_adv", sheets = team_pitching[-c(5:21)])
+team_pitching_data = do.call(rbind, team_pitching_aux)
+is.na(team_pitching_data) <- sapply(team_pitching_data, is.infinite)
+#team_pitching <- gs4_create("team_pitching", sheets = team_pitching_data)
+write_sheet(team_pitching, ss = "1uOckNtrCu811khLZ1CxSU7C2TLapZubH4g-Yh2XJTh4", sheet = "team_pitching_data")
+#team_pitching_adv <- gs4_create("team_pitching_adv", sheets = team_pitching[-c(5:21)])
 print("5/6")
 team_fielding_aux = list()
 for(i in c(2019,2021:2024)){
@@ -294,10 +352,10 @@ for(i in c(2019,2021:2024)){
   team_fielding_yr <- team_fielding_etl(i)
   team_fielding_aux[[i]] <- team_fielding_yr
 }
-team_fielding = do.call(rbind, team_fielding_aux)
-is.na(team_fielding) <- sapply(team_fielding, is.infinite)
-team_fielding_std <- gs4_create("team_fielding_std", sheets = team_fielding[,c(1:10)])
-team_fielding_adv <- gs4_create("team_fielding_adv", sheets = team_fielding[,-c(4:10)])
+team_fielding_data = do.call(rbind, team_fielding_aux)
+is.na(team_fielding_data) <- sapply(team_fielding_data, is.infinite)
+team_fielding <- gs4_create("team_fielding", sheets = team_fielding_data)
+#team_fielding_adv <- gs4_create("team_fielding_adv", sheets = team_fielding)
 print("6/6")
 print("COMPLETED")
 }
@@ -361,24 +419,11 @@ base_plot +
 comp <- team_hitting %>% filter(Team == "Tigres de Quintana Roo" | Team == "Diablos Rojos del Mexico") %>% 
   select(Year,Team,H,  `2B`,  `3B`,    HR,   RBI,     R,  AVG,   OBP,   SLG,   OPS, wOBA, wRAA, wRC, `wRC+` )
 
+#######GAME LOGS##########
 
+lmb_25_games <- mlb_schedule(season = 2025, level_ids = 23)
 
-
-
-games_info <- list()
-for (game_pk in lmb_24_games$game_pk){
-  print(game_pk)
-  game_info <- mlb_game_info(game_pk)
-  games_info[[game_pk]] <- game_info
-}
-games_info <- Filter(Negate(is.null), games_info)
-games_info_df = do.call(rbind, games_info)
-
-games_info <- Filter(Negate(is.null), games_info)
-
-lmb_24_games <- mlb_schedule(season = 2024, level_ids = 23)
-
-lmb_24_games <- lmb_24_games %>%
+lmb_25_games <- lmb_25_games %>%
   filter(series_description == 'Regular Season' & status_status_code == 'F') %>%
   select(date,game_pk,double_header,games_in_series,series_game_number,teams_away_team_name,teams_away_score,
          teams_away_league_record_wins,teams_away_league_record_losses,teams_home_team_name,teams_home_score,
@@ -394,7 +439,18 @@ lmb_24_games <- lmb_24_games %>%
     ,"Series Game N" = series_game_number) %>%
   select(game_pk,"Date","Series Game N",Away,"Score Away",Home,"Score Home","Venue") 
 
-lmb_24_games <- lmb_24_games %>%
+games_info <- list()
+for (game_pk in lmb_25_games$game_pk){
+  print(game_pk)
+  game_info <- mlb_game_info(game_pk)
+  games_info[[game_pk]] <- game_info
+}
+games_info <- Filter(Negate(is.null), games_info)
+games_info_df = do.call(rbind, games_info)
+
+games_info <- Filter(Negate(is.null), games_info)
+
+lmb_25_games <- lmb_25_games %>%
   inner_join(games_info_df, by = c("game_pk" = "game_pk")) %>%
   select(!c(game_date:wind,game_id:gameday_sw)) %>%
   rename(
@@ -406,11 +462,13 @@ lmb_24_games <- lmb_24_games %>%
     ,Attendance = as.numeric(gsub(",", "",Attendance))
   )
 
+#game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])
+game_logs = "1NHm3ZAMeTpBag95kOpozo_8Ngkxh9VSXot4bbEQpkR8"
+sheet_write(lmb_25_games[-1], game_logs, sheet = "Sheet1")
+
+########
 
 
-game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])
-
-sheet_write(lmb_24_games[-1], ss = game_logs, sheet = "Sheet1")
 sheet = "1toeJeYcCvlauqXNPlG3WLv13uPH6ZQVBg2qV93raC-k"
 sheet_write(hitting_adv, ss = sheet, sheet = "Sheet1")
 
@@ -426,6 +484,15 @@ hitting_p <- hitting_p %>%
   rename("G" = GP.x, "PA" = PA.x)
 
 hitting_cp <- gs4_create("hitting_cp", sheets = hitting_cp)
+
+pitching_cp <- pitching_data %>%
+  select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', BB, 'BB%') %>%
+  filter(Year == 2024) %>%
+  mutate("W-L" = paste0(W,"-",L)) %>%
+  select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, , K, 'K%', BB, 'BB%')
+
+pitching_cp <- gs4_create("pitching_cp", sheets = pitching_cp)
+
 
 
 

@@ -1,22 +1,22 @@
-team_id,team_full_name,venue_id,venue_name,capacity
-560,Acereros del Norte,2950,Estadio Kickapoo Lucky Eagle,8500
-447,Algodoneros Union Laguna,2956,Estadio de la Revolucion,7689
-434,Bravos de Leon,5320,Parque Domingo Santana,6500
-4444,Caliente de Durango,5321,Estadio Francisco Villa,4983
-6304,Charros de Jalisco,4710,Estadio Panamericano,16500
-6303,Conspiradores de Queretaro,6070,Estadio Conspiradores,6800
-532,Diablos Rojos del Mexico,5340,Estadio Alfredo Harp Helu,20062
-575,Dorados de Chihuahua,3210,Estadio Chihuahua,15500
-5567,El Aguila de Veracruz,2958,Estadio Universitario Beto Avila,7319
-579,Guerreros de Oaxaca,2951,Parque Lic. Eduardo Vasconcelos,7200
-496,Leones de Yucatan,6081,Estadio de Beisbol VIctor Cervera Pacheco,5104
-442,Olmecas de Tabasco,2955,Parque Centenario 27 de Febrero,6600
-520,Pericos de Puebla,2869,Estadio Hermanos Serdan,9200
-523,Piratas de Campeche,2949,Parque Nelson Barrera Romellon,4190
-528,Rieleros de Aguascalientes,2929,Estadio Alberto Romo Chavez,6496
-502,Saraperos de Saltillo,2953,Parque Francisco I. Madero,11000
-562,Sultanes de Monterrey,2701,Estadio Mobil Super,21803
-536,Tecos de los Dos Laredos,3410,Parque la Junta,5000
-569,Tigres de Quintana Roo,3929,Estadio De Beisbol Beto Avila,10825
-5010,Toros de Tijuana,2957,Estadio Chevron,17000
-536,Tecos de los Dos Laredos,5330,Uni-Trade Stadium,600
+team_id,team_full_name,venue_id,venue_name
+560,Acereros del Norte,2950,Estadio Kickapoo Lucky Eagle
+447,Algodoneros Union Laguna,2956,Estadio de la Revolucion
+434,Bravos de Leon,5320,Parque Domingo Santana TV4
+4444,Caliente de Durango,5321,Estadio Francisco Villa
+6304,Charros de Jalisco,4710,Estadio Panamericano de los Charros
+6303,Conspiradores de Queretaro,6070,Estadio Finsus Conspiradores
+532,Diablos Rojos del Mexico,5340,Estadio Alfredo Harp Helu
+575,Dorados de Chihuahua,3210,Estadio Monumental Chihuahua
+5567,El Aguila de Veracruz,2958,Estadio Universitario Beto Avila
+579,Guerreros de Oaxaca,2951,Parque Lic. Eduardo Vasconcelos
+496,Leones de Yucatan,2959,Parque de Beisbol Kukulkan
+442,Olmecas de Tabasco,2955,Parque Centenario 27 de Febrero
+520,Pericos de Puebla,2869,Estadio Hermanos Serdan
+523,Piratas de Campeche,2949,Parque  Cruz Azul  Nelson Barrera Romellon
+528,Rieleros de Aguascalientes,2929,Estadio Alberto Romo Chavez
+502,Saraperos de Saltillo,2953,Parque Francisco I. Madero
+562,Sultanes de Monterrey,2701,Palacio Sultan
+536,Tecos de los Dos Laredos,3410,Parque la Junta
+569,Tigres de Quintana Roo,3929,Estadio Beto Avila Sherwin-Williams
+5010,Toros de Tijuana,2957,Toros Mobil Park
+536,Tecos de los Dos Laredos,5330,Uni-Trade Stadium

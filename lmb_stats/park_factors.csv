@@ -1,21 +1,21 @@
-,Team,PF 2024,PF 2023,PF 2022,PF 2021,PF 2019,Avg 5 Yrs
-1,Acereros del Norte,92,106,107,123,100,106
-2,Algodoneros Union Laguna,84,87,85,84,106,89
-3,Bravos de Leon,122,115,123,153,113,125
-4,Charros de Jalisco/Mariachis de Guadalajara,123,122,132,150,NA,132
-5,Conspiradores de Queretaro,128,NA,NA,NA,NA,128
-6,Diablos Rojos del Mexico,140,121,121,151,127,132
-7,Dorados de Chihuahua,125,NA,NA,NA,NA,125
-8,El Aguila de Veracruz,89,76,101,90,NA,89
-9,Caliente de Durango/Generales de Durango,123,126,130,158,156,139
-10,Guerreros de Oaxaca,112,118,114,142,127,123
-11,Leones de Yucatan,75,72,73,72,74,73
-12,Olmecas de Tabasco,62,68,78,86,77,74
-13,Pericos de Puebla,114,128,158,136,118,131
-14,Piratas de Campeche,85,95,88,111,78,91
-15,Rieleros de Aguascalientes,108,113,123,135,128,121
-16,Saraperos de Saltillo,105,108,127,147,105,118
-17,Sultanes de Monterrey,106,94,106,112,88,101
-18,Tecos de los Dos Laredos,81,84,92,93,81,86
-19,Tigres de Quintana Roo,65,88,77,100,68,80
-20,Toros de Tijuana,76,86,86,88,80,83
+Team,Team Full Name,PF 2024,PF 2023,PF 2022,PF 2021,PF 2019,Avg 5 Yrs
+MVA,Acereros del Norte,92,106,107,123,100,106
+LAG,Algodoneros Union Laguna,84,87,85,84,106,89
+LEO,Bravos de Leon,122,115,123,153,113,125
+JAL,Charros de Jalisco,123,122,132,150,NA,132
+QRO,Conspiradores de Queretaro,128,NA,NA,NA,NA,128
+MEX,Diablos Rojos del Mexico,140,121,121,151,127,132
+CHI,Dorados de Chihuahua,125,NA,NA,NA,NA,125
+VER,El Aguila de Veracruz,89,76,101,90,NA,89
+DUR,Caliente de Durango,123,126,130,158,156,139
+OAX,Guerreros de Oaxaca,112,118,114,142,127,123
+YUC,Leones de Yucatan,75,72,73,72,74,73
+TAB,Olmecas de Tabasco,62,68,78,86,77,74
+PUE,Pericos de Puebla,114,128,158,136,118,131
+CAM,Piratas de Campeche,85,95,88,111,78,91
+AGS,Rieleros de Aguascalientes,108,113,123,135,128,121
+SLT,Saraperos de Saltillo,105,108,127,147,105,118
+MTY,Sultanes de Monterrey,106,94,106,112,88,101
+LAR,Tecos de los Dos Laredos,81,84,92,93,81,86
+TIG,Tigres de Quintana Roo,65,88,77,100,68,80
+TIJ,Toros de Tijuana,76,86,86,88,80,83

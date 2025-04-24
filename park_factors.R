@@ -54,8 +54,10 @@ park_factors <- park_factors %>%
 park_factors <- park_factors %>%
   mutate("Avg 5 Yrs" = round(rowMeans(park_factors[,2:6], na.rm=TRUE)))
   
-  
-write.csv(park_factors,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/park_factors.csv")
+
+teams
+
+write.csv(teams,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/teams.csv")
 
 
 teams_19 <- mlb_teams(season = 2019, league_ids = 125) %>%

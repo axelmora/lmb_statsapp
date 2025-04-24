@@ -33,12 +33,14 @@ gs4_auth(cache = ".secrets", email = "lmb.stats.app@gmail.com")
 hitters <- read_csv("hitters.csv")
 pitchers <- read_csv("pitchers.csv")
 fielders <- read_csv("fielders.csv")
+teams <- read_csv("teams.csv")
 
 # Function to load or cache Google Sheets data
 load_or_cache_data <- function(sheet_id, file_path) {
   if (file.exists(file_path)) {
     # Load from cache
     message("Loading data from cache: ", file_path)
+    print(Sys.time())
     readRDS(file_path)
   } else {
     # Fetch from Google Sheets and save to cache
@@ -67,23 +69,20 @@ load_data <- function(gs_ids, cache_dir = "cache") {
 gs_ids <- list(
   woba_fipc = "1H8xuzPAjuNJxlWaBAk1fmo-lGH9Jfm0Zeyrcv0R5OPY",
   park_factors = "1VkbsNGuHrhZHYoMdxiWVjeUyc3kSMLafYpg0nLHHdcY",
-  fielding_std = "1sbVBgIjyYUqIRCAIwDZpWQz25u5nTayRfUcNt_zCSlo",
-  fielding_adv = "17_HvfhVProIHQXWVNKk02HhS65ujryTJBrk54oOxCTc",
-  hitting_std = "1YdS-ADBbfZS1Z9YOuWUbGIj2mOZ4tmS1rQBmunhY414",
-  hitting_adv = "1toeJeYcCvlauqXNPlG3WLv13uPH6ZQVBg2qV93raC-k",
-  pitching_std = "1rJGvqEWKeQTRRCaMd6AYujMOCU4Ibe0-uDPEMcg67ag",
-  pitching_adv = "1V9mHwpPeY-Pq8yfZtmAyYT94v5M2QYx25aSVYygX2Dc",
-  team_fielding_std = "1O7qE1BRoiMMKCU77FbpBO_ZVKjOjXdoHCDCMLuK7KM8",
-  team_fielding_adv = "1cf9H4oF88Nf_Br69TPTMm6A2OnAtr4KLnD8RF0CW-RA",
-  team_hitting_std = "1OZAMvh_0OyVoA3RRnDmVr8ljhpUzFaj2NgUcbFbXZV0",
-  team_hitting_adv = "1p1J3aslmnA5fjMHiCuQu16Fn6nF4b7-tOUmGntLlOMI",
-  team_pitching_std = "1sqaj3q3QoPOMO0GPUf1ydr96_x7VornWwF3U9lEn05k",
-  team_pitching_adv = "1BtBwDEU2NyiNgn-isEc5ObM-Nu6VrAotldexFauVofs",
+  hitting = "1eVJ4dSg6KgATE8zmPxvriHyk6ZRZB94fuDWpdcloC1M",
+  pitching = "1xlYBP_x1mfsuFDnMxk4gtPUIl7FTIJ0hfVRK3BPeeRQ",
+  fielding = "1hVRO16lDvVHkYGva06sgG1715wYdEKHaIy2GwyC_K8U",
+  team_hitting = "1gkOC_566Bp7XCuuyEsIkK7jT0V0TMn--Xbuv1i4Wdxc",
+  team_pitching = "1uOckNtrCu811khLZ1CxSU7C2TLapZubH4g-Yh2XJTh4",
+  team_fielding = "1GzUH0leAnoAM64ml-XQ2dR9IFL19u31YCY6Ta955xlQ",
   lmb_att_24 = "1uer8QQuM-x8VyxCDJBlCtqXofPHE-Dlkzzk64xzLFBQ",
   lmb_pace_24 = "1sJ_KjQgmKDUtLRh1MW0yHyQWTzllarKHXGzSGrLNVBk",
   lmb_pace_venue_24 = "1_zF8o6iYKrcpE0Cwgky4dpm7gXMt4nU1At7Z4j4qFJI",
-  game_logs = "11gdMD1brR01ZuW31b9JpdEj0Jx3qM0CAxhZdNARVLtk",
-  hitting_cp = "1K-wOBfh9QW4ucEShjypBXQkti962Yajyf-Da5QEKbg0"
+  game_logs = "1NHm3ZAMeTpBag95kOpozo_8Ngkxh9VSXot4bbEQpkR8",
+  hitting_cp = "1K-wOBfh9QW4ucEShjypBXQkti962Yajyf-Da5QEKbg0",
+  pitching_cp = "1Bkbt91wCmAbAGSlMpMgx8dHcPhsyFjxVpi5eo9gy3do",
+  rosters = "1zeor7gan9NlpzDx_Dh5h1soDpdSye-V-joHZwXH9F2Y",
+  trans = "1_Wy1KW5AUH_NTbog_QJ9dFiq5Ujm719MBM0YZ0X7EZw"
 )
 
 refresh_data <- function(gs_ids) {
@@ -138,7 +137,7 @@ ui <- page_navbar(
   ),
   title = "LMB Stats App",
   theme = bs_theme(
-    bootswatch = "cerulean", version = 5),
+    bootswatch = "litera", version = 5),
   nav_menu(
     title = "Player Stats",
     nav_panel(
@@ -146,8 +145,8 @@ ui <- page_navbar(
       layout_column_wrap(
         height = "5px",
         selectInput("year_h","Season",
-                    choices = c(2024,2023,2022,2021,2019), 
-                    selected = 2024),
+                    choices = c(2025,2024,2023,2022,2021,2019), 
+                    selected = 2025),
         selectInput("player_name_h","Player Name",
                     choices = c("All", sort(hitters$x)), 
                     selected = "All")
@@ -167,12 +166,15 @@ ui <- page_navbar(
     ),
     nav_panel(
       title = "Pitching", 
+      layout_column_wrap(
+        height = "5px",
       selectInput("year_p","Season",
-                  choices = c(2024,2023,2022,2021,2019), 
-                  selected = 2024),
+                  choices = c(2025,2024,2023,2022,2021,2019), 
+                  selected = 2025),
       selectInput("player_name_p","Player Name",
                   choices = c("All", sort(pitchers$x)), 
-                  selected = "All"),
+                  selected = "All")
+      ),
       navset_card_tab(
         full_screen = TRUE,
         title = "Pitching",
@@ -188,12 +190,15 @@ ui <- page_navbar(
     ),
     nav_panel(
       title = "Fielding", 
+      layout_column_wrap(
+        height = "5px",
       selectInput("year_f","Season",
-                  choices = c(2024,2023,2022,2021,2019), 
-                  selected = 2024),
+                  choices = c(2025,2024,2023,2022,2021,2019), 
+                  selected = 2025),
       selectInput("player_name_f","Player Name",
                   choices = c("All", sort(fielders$x)), 
-                  selected = "All"),
+                  selected = "All")
+      ),
       navset_card_tab(
         full_screen = TRUE,
         title = "Fielding",
@@ -208,8 +213,10 @@ ui <- page_navbar(
       )
     )
   ),
+  nav_menu(
+    title = "Player comparison",
   nav_panel(
-    "Compare",
+    "Hitters",
     page_sidebar(
       sidebar = sidebar(
         title = "Players selection",
@@ -225,17 +232,39 @@ ui <- page_navbar(
         card_header(
           "Player Statistics Comparison"),
         card_body(
-          reactableOutput("player_comparison_table"))
+          reactableOutput("hitter_comparison_table"))
+          )
+      )
+    ),
+  nav_panel(
+    "Pitchers",
+    page_sidebar(
+      sidebar = sidebar(
+        title = "Players selection",
+        selectInput("player1","Player 1 Name",
+                    choices = c("All", sort(pitchers$x)), 
+                    selected = NULL),
+        selectInput("player2","Player 2 Name",
+                    choices = c("All", sort(pitchers$x)), 
+                    selected = NULL),
+      ),
+      card(
+        full_screen = TRUE,
+        card_header(
+          "Player Statistics Comparison"),
+        card_body(
+          reactableOutput("pitcher_comparison_table"))
       )
     )
+  )
   ),
   nav_menu(
     title = "Team Stats",
     nav_panel(
       title = "Hitting",
       selectInput("year_h","Season",
-                  choices = c(2024,2023,2022,2021,2019), 
-                  selected = 2024),
+                  choices = c(2025,2024,2023,2022,2021,2019), 
+                  selected = 2025),
       navset_card_tab(
         full_screen = TRUE,
         title = "Hitting",
@@ -252,8 +281,8 @@ ui <- page_navbar(
     nav_panel(
       title = "Pitching", 
       selectInput("year_h","Season",
-                  choices = c(2024,2023,2022,2021,2019), 
-                  selected = 2024),
+                  choices = c(2025,2024,2023,2022,2021,2019), 
+                  selected = 2025),
       navset_card_tab(
         full_screen = TRUE,
         title = "Pitching",
@@ -270,8 +299,8 @@ ui <- page_navbar(
     nav_panel(
       title = "Fielding",
       selectInput("year_h","Season",
-                  choices = c(2024,2023,2022,2021,2019), 
-                  selected = 2024),
+                  choices = c(2025,2024,2023,2022,2021,2019), 
+                  selected = 2025),
       navset_card_tab(
         full_screen = TRUE,
         title = "Fielding",
@@ -284,6 +313,20 @@ ui <- page_navbar(
           DTOutput("fielding_team_adv")
         )
       )
+    ),
+    nav_panel(
+      title = "Rosters",
+        selectInput("team_name","Team",
+                    choices = sort(teams$team_full_name)
+                    ,selected = "Acereros del Norte"),
+      reactableOutput("roster")
+    ),
+    nav_panel(
+      title = "Transactions",
+      selectInput("team_name2","Team",
+                  choices = c("All",teams$team_full_name)
+                  ,selected = "All"),
+      DTOutput("trans")
     )
   ),
   nav_panel(
@@ -388,14 +431,25 @@ ui <- page_navbar(
 
 server <- function(input, output, session) {
 
-  refresh_timer <- reactiveTimer(intervalMs = 43200000)
+  refresh_timer <- reactiveTimer(intervalMs = 300000)
   
-  observeEvent(refresh_timer(), {
-    if (format(Sys.time(), "%H:%M") == "00:00") {  # Check if it's midnight
-      refresh_data(gs_ids)  # Refresh the cache
-      print("DATA REFRESHED")
+  observe({
+    refresh_timer()
+    
+    current_time <- format(Sys.time(), "%H:%M")
+    
+    if (current_time %in% c("12:31","12:32","12:33","12:34","12:35","12:36","23:00","23:01","23:02","23:03","23:04","23:05")) {
+      refresh_data(gs_ids)
+      print("DATA REFRESHED at midnight")
     }
   })
+  
+  # observeEvent(refresh_timer(), {
+  #  if (format(Sys.time(), "%H:%M") == "15:30") {  # Check if it's midnight
+  #    refresh_data(gs_ids)  # Refresh the cache
+  #    print("DATA REFRESHED")
+  #  }
+  #})
   
   datasets <- reactiveVal(NULL)
   
@@ -409,40 +463,50 @@ server <- function(input, output, session) {
   
   ##### DATA PLAYER NAME AND YEAR FILTERS
   
+  filtered_team <- reactive({
+    req(datasets())
+    datasets()$rosters %>%
+      filter(Team %in% input$team_name)
+  })
+  filtered_trans <- reactive({
+    req(datasets())
+    datasets()$trans %>%
+      filter(if (input$team_name2 != "All") Team %in% input$team_name2 else TRUE)
+  })
   filtered_hitting_std <- reactive({
     req(datasets())
-    datasets()$hitting_std %>%
+    datasets()$hitting[,1:23] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
       filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
   })
   filtered_hitting_adv <- reactive({
     req(datasets())
-    datasets()$hitting_adv %>%
+    datasets()$hitting[,-c(8:23)] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
       filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
   })
   filtered_pitching_std <- reactive({
     req(datasets())
-    datasets()$pitching_std %>%
-      filter(if (input$year_p != 9999) Year %in% input$year_h else TRUE) %>%
+    datasets()$pitching[,1:23] %>%
+      filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
       filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
   })
   filtered_pitching_adv <- reactive({
     req(datasets())
-    datasets()$pitching_adv %>%
-      filter(if (input$year_p != 9999) Year %in% input$year_h else TRUE) %>%
+    datasets()$pitching[,-c(8:23)] %>%
+      filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
       filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
   })
   filtered_fielding_std <- reactive({
     req(datasets())
-    datasets()$fielding_std %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE) %>%
+    datasets()$fielding[,1:18] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE) %>%
       filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
   })
   filtered_fielding_adv <- reactive({
     req(datasets())
-    datasets()$fielding_adv %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE) %>%
+    datasets()$fielding[,-c(8:18)] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE) %>%
       filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
   })
   
@@ -450,34 +514,34 @@ server <- function(input, output, session) {
   
   filter_hitting_team_std <- reactive({
     req(datasets())
-    datasets()$team_hitting_std %>%
+    datasets()$team_hitting[,1:22] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_h else TRUE) 
   })
   filter_pitching_team_std <- reactive({
     req(datasets())
-    datasets()$team_pitching_std %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE) 
+    datasets()$team_pitching[,c(1:21)] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_p else TRUE) 
   })
   filter_fielding_team_std <- reactive({
     req(datasets())
-    datasets()$team_fielding_std %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE)
+    datasets()$team_fielding[,c(1:10)] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE)
   })
   
   filter_hitting_team_adv <- reactive({
     req(datasets())
-    datasets()$team_hitting_adv %>%
+    datasets()$team_hitting[,-c(6:22)] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_h else TRUE) 
   })
   filter_pitching_team_adv <- reactive({
     req(datasets())
-    datasets()$team_pitching_adv %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE) 
+    datasets()$team_pitching[-c(5:21)] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_p else TRUE) 
   })
   filter_fielding_team_adv <- reactive({
     req(datasets())
-    datasets()$team_fielding_adv %>%
-      filter(if (input$year_f != 9999) Year %in% input$year_h else TRUE)
+    datasets()$team_fielding[,-c(4:10)] %>%
+      filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE)
   })
   
   ########## PLAYER DATA STATS
@@ -531,14 +595,15 @@ server <- function(input, output, session) {
         pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(3:22), width = '5px')
+                          ,list(targets = c(3:22), width = '10px')
                           ,list(targets = "_all", className = 'dt-left')
         )
         ,order = list(6, 'desc')
         ,scrollX = FALSE
       )
     )%>%
-      formatRound(columns = 7, digits = 2)
+      formatRound(columns = 8, digits = 2) %>%
+      formatRound(columns = 7, digits = 1)
   })
   
   output$pitching_adv <- renderDT({
@@ -602,7 +667,7 @@ server <- function(input, output, session) {
   ############### TEAMS STATS ###########
   
   output$hitting_team_std <- renderDT({
-    req(datasets()$team_hitting_std)
+    req(filter_hitting_team_std())
     datatable(
       filter_hitting_team_std(),
       rownames = FALSE,
@@ -623,7 +688,7 @@ server <- function(input, output, session) {
   })
   
   output$hitting_team_adv <- renderDT({
-    req(datasets()$team_hitting_adv)
+    req(filter_hitting_team_adv())
     datatable(
       filter_hitting_team_adv(),
       rownames = FALSE,
@@ -642,7 +707,7 @@ server <- function(input, output, session) {
   })
   
   output$pitching_team_std <- renderDT({
-    req(datasets()$team_pitching_std)
+    req(filter_pitching_team_std())
     datatable(
       filter_pitching_team_std(),
       rownames = FALSE,
@@ -663,7 +728,7 @@ server <- function(input, output, session) {
   })
   
   output$pitching_team_adv <- renderDT({
-    req(datasets()$team_pitching_adv)
+    req(filter_pitching_team_adv())
     datatable(
       filter_pitching_team_adv(),
       rownames = FALSE,
@@ -682,7 +747,7 @@ server <- function(input, output, session) {
   })
   
   output$fielding_team_std <- renderDT({
-    req(datasets()$team_fielding_std)
+    req(filter_fielding_team_std())
     datatable(
       filter_fielding_team_std(),
       rownames = FALSE,
@@ -703,7 +768,7 @@ server <- function(input, output, session) {
   })
   
   output$fielding_team_adv <- renderDT({
-    req(datasets()$team_fielding_adv)
+    req(filter_fielding_team_adv())
     datatable(
       filter_fielding_team_adv(),
       rownames = FALSE,
@@ -809,6 +874,39 @@ server <- function(input, output, session) {
     )
   })
   
+  output$roster <- renderReactable({
+    req(filtered_team())
+    reactable(
+      filtered_team()[,c(1:7,9)],
+      groupBy = "position_group",
+      compact = TRUE,  
+      bordered = TRUE,
+      striped = TRUE,
+      highlight = TRUE
+    )
+  })
+  
+  output$trans <- renderDT({
+    req(filtered_trans())
+    trans_data <- filtered_trans() %>%
+      mutate(Date = format(as.Date(Date), "%Y-%m-%d"))
+    datatable(
+      trans_data
+      ,escape = FALSE
+      ,rownames = FALSE
+      ,options = list(
+        dom = 'tip'
+        ,pageLength = 30
+        ,scrollX = FALSE
+        ,columnDefs = list(list(targets = c(0,1), width = '50x')
+                           ,list(targets = 2, width = '250px')
+                           ,list(targets = 3, width = '200px')
+                           ,list(targets = "_all", className = 'dt-left')
+        )
+      )
+    )
+  })
+  
   output$hits9 <- renderText({
     datasets()$lmb_pace_24$`Hits/9in`
   })
@@ -866,7 +964,7 @@ server <- function(input, output, session) {
       filter(Name %in% c(input$player1, input$player2))
   })
   
-  output$player_comparison_table <- renderReactable({
+  output$hitter_comparison_table <- renderReactable({
     req(input$player1, input$player2) 
     
     # Validate if the same player is selected
