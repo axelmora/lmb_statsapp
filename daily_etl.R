@@ -140,5 +140,5 @@ master_daily_etl <- function(startDate,endDate){
   update_trans(startDate,endDate)
 }
 
-master_daily_etl("2025-04-01","2025-04-29")
+master_daily_etl("2025-04-01","2025-04-30")
 cat("Finished job.\n", file = "job_progress.log", append = TRUE)
