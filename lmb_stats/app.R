@@ -438,9 +438,9 @@ server <- function(input, output, session) {
     
     current_time <- format(Sys.time(), "%H:%M")
     
-    if (current_time %in% c("12:31","12:32","12:33","12:34","12:35","12:36","23:00","23:01","23:02","23:03","23:04","23:05")) {
+    if (current_time %in% c("21:00","21:01","21:02","21:03","21:04","21:05","23:00","23:01","23:02","23:03","23:04","23:05")) {
       refresh_data(gs_ids)
-      print("DATA REFRESHED at midnight")
+      print("DATA REFRESHED")
     }
   })
   

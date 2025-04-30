@@ -420,54 +420,186 @@ comp <- team_hitting %>% filter(Team == "Tigres de Quintana Roo" | Team == "Diab
   select(Year,Team,H,  `2B`,  `3B`,    HR,   RBI,     R,  AVG,   OBP,   SLG,   OPS, wOBA, wRAA, wRC, `wRC+` )
 
 #######GAME LOGS##########
+lmb_game_logs <- function(year){
 
-lmb_25_games <- mlb_schedule(season = 2025, level_ids = 23)
+  lmb_25_games <- mlb_schedule(season = year, level_ids = 23)
+  lmb_25_games <- lmb_25_games %>%
+    filter(series_description == 'Regular Season' & status_status_code == 'F') %>%
+    select(date,game_pk,double_header,games_in_series,series_game_number,teams_away_team_name,teams_away_score,
+           teams_away_league_record_wins,teams_away_league_record_losses,teams_home_team_name,teams_home_score,
+           teams_home_league_record_wins,teams_home_league_record_losses,venue_name) %>%
+    mutate(
+         Away = paste0(teams_away_team_name," (",teams_away_league_record_wins,"-",teams_away_league_record_losses,")")
+        ,Home = paste0(teams_home_team_name," (",teams_home_league_record_wins,"-",teams_home_league_record_losses,")")) %>%
+    rename(
+      "Score Away" = teams_away_score
+      ,"Score Home" = teams_home_score
+      ,"Venue" = venue_name
+      ,"Date" = date
+      ,"Series Game N" = series_game_number) %>%
+    select(game_pk,"Date","Series Game N",Away,"Score Away",Home,"Score Home","Venue") 
 
-lmb_25_games <- lmb_25_games %>%
-  filter(series_description == 'Regular Season' & status_status_code == 'F') %>%
-  select(date,game_pk,double_header,games_in_series,series_game_number,teams_away_team_name,teams_away_score,
-         teams_away_league_record_wins,teams_away_league_record_losses,teams_home_team_name,teams_home_score,
-         teams_home_league_record_wins,teams_home_league_record_losses,venue_name) %>%
-  mutate(
-       Away = paste0(teams_away_team_name," (",teams_away_league_record_wins,"-",teams_away_league_record_losses,")")
-      ,Home = paste0(teams_home_team_name," (",teams_home_league_record_wins,"-",teams_home_league_record_losses,")")) %>%
-  rename(
-    "Score Away" = teams_away_score
-    ,"Score Home" = teams_home_score
-    ,"Venue" = venue_name
-    ,"Date" = date
-    ,"Series Game N" = series_game_number) %>%
-  select(game_pk,"Date","Series Game N",Away,"Score Away",Home,"Score Home","Venue") 
+    games_info <- list()
+    for (game_pk in lmb_25_games$game_pk){
+      #print(game_pk)
+      game_info <- mlb_game_info(game_pk)
+      games_info[[game_pk]] <- game_info
+    }
+    games_info <- Filter(Negate(is.null), games_info)
+    games_info_df = do.call(rbind, games_info)
+    games_info <- Filter(Negate(is.null), games_info)
 
-games_info <- list()
-for (game_pk in lmb_25_games$game_pk){
-  print(game_pk)
-  game_info <- mlb_game_info(game_pk)
-  games_info[[game_pk]] <- game_info
+    lmb_25_games <- lmb_25_games %>%
+      inner_join(games_info_df, by = c("game_pk" = "game_pk")) %>%
+      select(!c(game_date:wind,game_id:gameday_sw)) %>%
+      rename(
+        "Attendance" = attendance
+        ,"Start Time" = start_time
+        ,"Game Time" = elapsed_time) %>%
+      mutate(
+        "Box Score" = paste0('<a href="https://www.milb.com/gameday/',game_pk,'/final/box">Box Score</a>')
+        ,Attendance = as.numeric(gsub(",", "",Attendance)))
+lmb_25_games
 }
-games_info <- Filter(Negate(is.null), games_info)
-games_info_df = do.call(rbind, games_info)
-
-games_info <- Filter(Negate(is.null), games_info)
-
-lmb_25_games <- lmb_25_games %>%
-  inner_join(games_info_df, by = c("game_pk" = "game_pk")) %>%
-  select(!c(game_date:wind,game_id:gameday_sw)) %>%
-  rename(
-    "Attendance" = attendance
-    ,"Start Time" = start_time
-    ,"Game Time" = elapsed_time) %>%
-  mutate(
-    "Box Score" = paste0('<a href="https://www.milb.com/gameday/',game_pk,'/final/box">Box Score</a>')
-    ,Attendance = as.numeric(gsub(",", "",Attendance))
-  )
-
 #game_logs <- gs4_create("game_logs", sheets = lmb_24_games[-1])
 game_logs = "1NHm3ZAMeTpBag95kOpozo_8Ngkxh9VSXot4bbEQpkR8"
-sheet_write(lmb_25_games[-1], game_logs, sheet = "Sheet1")
+sheet_write(lmb_25_games[-1], "1NHm3ZAMeTpBag95kOpozo_8Ngkxh9VSXot4bbEQpkR8", sheet = "Sheet1")
 
 ########
+team_rosters <- function(teamId){
+  rosters <- mlb_rosters(team_id = teamId, season = 2025, roster_type = 'active')
+  player_info <- mlb_people(rosters$person_id)
+  teams <- mlb_teams(season = 2025, league_ids = 125) %>%
+    select(team_id, team_full_name, team_code, team_abbreviation, franchise_name, club_name, venue_id, venue_name, league_id, 
+           division_id, sport_id)
+  teams <- teams %>%
+    filter(team_id == teamId)
+  
+  rosters <- rosters %>%
+    inner_join(player_info, by = c("person_id" = "id")) %>%
+    select(team_id, jersey_number, person_full_name, position_abbreviation,birth_date,birth_country,bat_side_code,pitch_hand_code) %>%
+    inner_join(teams, by = c("team_id" = "team_id")) %>% 
+    rename("Number" = jersey_number
+           ,"Name" = person_full_name
+           ,"Position" = position_abbreviation
+           ,"Team" = team_full_name
+           ,"Birth date" = birth_date
+           ,"Birth Country" = birth_country
+           ,"Bats" = bat_side_code
+           ,"Throws" = pitch_hand_code) %>%
+    select(!c(1,10:18)) %>%
+    mutate(
+      position_group = case_when(
+        Position %in% c("C") ~ "Catchers",
+        Position %in% c("1B", "2B", "3B", "SS", "IF") ~ "Infield",
+        Position %in% c("LF", "CF", "RF", "OF") ~ "Outfield",
+        Position %in% c("P") ~ "Pitchers",
+        TRUE ~ "Other")) 
+  
+  rosters
+}
 
+lmb_roster <- function(){
+  team_roster_aux = list()
+  for(i in teams$team_id){
+    print("roster")
+    print(i)
+    team_roster <- team_rosters(i)
+    team_roster_aux[[i]] <- team_roster
+  }
+  team_rosters_data = do.call(rbind, team_roster_aux)
+  is.na(team_rosters_data) <- sapply(team_rosters_data, is.infinite)
+  team_rosters_data
+}
+
+#rosters <- gs4_create("rosters", sheets = team_rosters_data)
+
+write_sheet(team_rosters_data, rosters, sheet = "team_rosters_data")
+
+#############
+
+lmb_att <- function(year){
+  lmb_att_25 <- mlb_attendance(season = year, league_id = 125)
+  lmb_att_25 <- lmb_att_25 %>%
+    select(team_name, openings_total_home, attendance_average_away, attendance_high, attendance_low, attendance_average_home, 
+           attendance_total_home) %>%
+    rename('Team' = team_name, 'Home Openings' = openings_total_home, 'AVG Away Attendance' = attendance_average_away, 
+           'High Home Attendance' = attendance_high,
+           'Low Home Attendance' = attendance_low,'Avg Home Attendance' = attendance_average_home,
+           'Avg Away Attendance' = attendance_average_away,'Total Home Attendance' = attendance_total_home
+    ) %>%
+    inner_join(venues_cap, by = c("Team" = "team_full_name")) %>%
+    select(!c(team_id:venue_name)) %>%
+    rename('Capacity'=capacity) %>%
+    mutate(`Avg Capacity%` = round(((`Avg Home Attendance`*100)/`Capacity`),1))
+  lmb_att_25
+}
+
+#league_pace_venue[[i]] <- cbind(name,pace_venue_select)}
+
+
+#############
+lmb_pace_venue <- function(year){
+  
+  league_pace_venue = list()
+  
+  for(i in venues$venue_id){
+    print(venues$venue_id)
+    name <- venues %>% filter(venue_id == i) %>% 
+      select(venue_name, team_full_name)
+    pace_venue_aux <- mlb_game_pace(season = year, venue_ids = i, sport_ids = 23)
+    pace_venue_select <- pace_venue_aux %>%
+      select(hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance, 
+             pr_portal_calculated_fields_time_per9inn_game)
+    league_pace_venue[[i]] <- cbind(name,pace_venue_select)}
+  
+  lmb_pace_venue_25 = do.call(rbind, league_pace_venue)
+  
+  lmb_pace_venue_25 <- lmb_pace_venue_25 %>%
+    rename("Venue"=venue_name,"Team"=team_full_name,
+           "Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+           "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
+  lmb_pace_venue_25
+}
+
+###############
+lmb_pace <- function(year){
+  lmb_pace_25 <- mlb_game_pace(season = year, sport_ids = 23)
+  lmb_pace_25 <- lmb_pace_25 %>%
+    select(season, hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance,
+           pr_portal_calculated_fields_time_per9inn_game
+    ) %>%
+    rename("Year"=season,"Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+           "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
+  lmb_pace_25
+}
+
+#########
+lmb_trans <- function(startDate,endDate){
+  # Define the URL
+  url <- paste0("https://statsapi.mlb.com/api/v1/transactions?startDate=",startDate,"&endDate=",endDate)
+  
+  # Fetch and parse the JSON response
+  response <- fromJSON(url)
+  
+  lmb_trans <- response$transactions
+  
+  lmb_trans <- lmb_trans %>%
+    unnest_wider(person, names_sep = "_") %>%
+    unnest_wider(toTeam, names_sep = "_") %>%
+    unnest_wider(fromTeam, names_sep = "_") %>%
+    filter(toTeam_id %in% teams$team_id | fromTeam_id %in% teams$team_id) %>%
+    select(effectiveDate, typeDesc, toTeam_name, person_fullName, description) %>%
+    mutate(effectiveDate = as.Date(effectiveDate)) %>%
+    rename("Date" = effectiveDate,
+           "Type" = typeDesc,
+           "Team" = toTeam_name,
+           "Player Name" = person_fullName,
+           "Description" = description) %>%
+    arrange(desc(Date))
+  lmb_trans
+}
+############
 
 sheet = "1toeJeYcCvlauqXNPlG3WLv13uPH6ZQVBg2qV93raC-k"
 sheet_write(hitting_adv, ss = sheet, sheet = "Sheet1")

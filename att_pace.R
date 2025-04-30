@@ -1,8 +1,8 @@
 ######## pace venue ################
 
 venues <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/venues.csv")
-venues <- venues %>%
-  filter(venue_id != 2959&venue_id != 3210&venue_id != 5330)
+#venues <- venues %>%
+#  filter(venue_id != 2959&venue_id != 3210&venue_id != 5330)
 
 league_pace_venue = list()
 

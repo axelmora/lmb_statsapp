@@ -1,41 +1,46 @@
 library(baseballr)
 library(dplyr)
 
-lmb_pace_25 <- mlb_game_pace(season = 2025, sport_ids = 23)
-lmb_pace_25 <- lmb_pace_24 %>%
-  select(season, hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance,
-         pr_portal_calculated_fields_time_per9inn_game
-         ) %>%
-  rename("Year"=season,"Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
-         "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
+lmb_pace <- function(year){
+  lmb_pace_25 <- mlb_game_pace(season = year, sport_ids = 23)
+  lmb_pace_25 <- lmb_pace_24 %>%
+    select(season, hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance,
+           pr_portal_calculated_fields_time_per9inn_game
+           ) %>%
+    rename("Year"=season,"Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+           "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
+  lmb_pace_25
+}
 #write.csv(lmb_pace_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_pace_24.csv")
 
 lmb_pace_24 <- gs4_create("lmb_pace_24", sheets = lmb_pace_24)
 
-venues <- read_csv("/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/venues.csv")
+lmb_pace_venue <- function(year){
 
-league_pace_venue = list()
+  league_pace_venue = list()
 
-for(i in venues$venue_id){
-  print(venues$venue_id)
-  name <- venues %>% filter(venue_id == i) %>% 
-            select(venue_name, team_full_name)
-  pace_venue_aux <- mlb_game_pace(season = 2025, venue_ids = i, sport_ids = 23)
-  pace_venue_select <- pace_venue_aux %>%
-      select(hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance, 
-             pr_portal_calculated_fields_time_per9inn_game)
-  league_pace_venue[[i]] <- cbind(name,pace_venue_select)}
-
-  lmb_pace_venue_25 = do.call(rbind, league_pace_venue)
-
-  lmb_pace_venue_25 <- lmb_pace_venue_25 %>%
-    rename("Venue"=venue_name,"Team"=team_full_name,
-    "Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
-    "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
-
+  for(i in venues$venue_id){
+    print(venues$venue_id)
+    name <- venues %>% filter(venue_id == i) %>% 
+              select(venue_name, team_full_name)
+    pace_venue_aux <- mlb_game_pace(season = year, venue_ids = i, sport_ids = 23)
+    pace_venue_select <- pace_venue_aux %>%
+        select(hits_per9inn, runs_per9inn, pitches_per_pitcher, time_per_pitch, time_per_plate_appearance, 
+               pr_portal_calculated_fields_time_per9inn_game)
+    league_pace_venue[[i]] <- cbind(name,pace_venue_select)}
+  
+    lmb_pace_venue_25 = do.call(rbind, league_pace_venue)
+  
+    lmb_pace_venue_25 <- lmb_pace_venue_25 %>%
+      rename("Venue"=venue_name,"Team"=team_full_name,
+      "Hits/9in"=hits_per9inn,"Runs/9in"=runs_per9inn,"Pitches/Pitcher"=pitches_per_pitcher,
+      "Time/Pitch"=time_per_pitch,"Time/PA"=time_per_plate_appearance,"Time/9inGame"=pr_portal_calculated_fields_time_per9inn_game)
+    lmb_pace_venue_25
+}
 #lmb_pace_venue_24 <- gs4_create("lmb_pace_venue_24", sheets = lmb_pace_venue_24)
 
-lmb_att_25 <- mlb_attendance(season = 2025, league_id = 125)
+lmb_att <- function(year){
+lmb_att_25 <- mlb_attendance(season = year, league_id = 125)
 lmb_att_25 <- lmb_att_25 %>%
     select(team_name, openings_total_home, attendance_average_away, attendance_high, attendance_low, attendance_average_home, 
            attendance_total_home) %>%
@@ -44,12 +49,12 @@ lmb_att_25 <- lmb_att_25 %>%
            'Low Home Attendance' = attendance_low,'Avg Home Attendance' = attendance_average_home,
            'Avg Away Attendance' = attendance_average_away,'Total Home Attendance' = attendance_total_home
            ) %>%
-    inner_join(teams, by = c("Team" = "team_full_name")) %>%
-    select(!c(team_id:venue_name,league_id:sport_id)) %>%
+    inner_join(venues_cap, by = c("Team" = "team_full_name")) %>%
+    select(!c(team_id:venue_name)) %>%
     rename('Capacity'=capacity) %>%
-    mutate(
-      `Avg Capacity%` = round(((`Avg Home Attendance`*100)/`Capacity`),1)
-    )
+    mutate(`Avg Capacity%` = round(((`Avg Home Attendance`*100)/`Capacity`),1))
+    lmb_att_25
+}
 
 #write.csv(lmb_att_24,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/lmb_att_teams.csv")
 lmb_att_24 <- gs4_create("lmb_att_24", sheets = lmb_att_24)
