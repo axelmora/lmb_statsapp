@@ -607,23 +607,19 @@ sheet_write(hitting_adv, ss = sheet, sheet = "Sheet1")
 
 
 
-hitting_p <- left_join(hitting_std,hitting_adv, by =c("Name"="Name","Year"="Year"), relationship = "many-to-many")
+hitting_cp <- hitting %>%
+  select(Year, Name, mWAR, GP, PA, H, RBI, SB, HR, AVG, OBP, SLG, OPS, wOBA) %>%
+  filter(Year == 2025)
 
+write_sheet(hitting_cp, hitting_cp_gid, sheet = "hitting_cp")
 
-hitting_p <- hitting_p %>%
-  select(Year, Name, mWAR, GP.x, PA.x, H, RBI, SB, HR, AVG, OBP, SLG, OPS, wOBA) %>%
-  filter(Year == 2024) %>%
-  rename("G" = GP.x, "PA" = PA.x)
-
-hitting_cp <- gs4_create("hitting_cp", sheets = hitting_cp)
-
-pitching_cp <- pitching_data %>%
+pitching_cp <- pitching %>%
   select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', BB, 'BB%') %>%
-  filter(Year == 2024) %>%
+  filter(Year == 2025) %>%
   mutate("W-L" = paste0(W,"-",L)) %>%
   select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, , K, 'K%', BB, 'BB%')
 
-pitching_cp <- gs4_create("pitching_cp", sheets = pitching_cp)
+write_sheet(pitching_cp, pitching_cp_gid, sheet = "pitching_cp")
 
 
 
