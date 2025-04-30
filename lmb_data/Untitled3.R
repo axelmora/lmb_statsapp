@@ -1,10 +1,10 @@
 vsdiv_standing = list()
 
 for(i in teams$team_id){
-    name_record <- lmb_standings_24 %>% filter(team_records_team_id == i) %>% 
-                        select(team_records_team_name, team_records_wins, team_records_losses, team_records_winning_percentage)
+    name_record <- lmb_standings_25 %>% filter(team_records_team_id == i) %>% 
+                        select(team_records_team_name, team_records_wins, team_records_losses, team_records_league_record_pct)
     
-    vsdiv_standing_aux <- lmb_standings_24 %>% filter(team_records_team_id == i) %>% 
+    vsdiv_standing_aux <- lmb_standings_25 %>% filter(team_records_team_id == i) %>% 
                           select(team_records_records_division_records)
     
     vsdiv_standing_aux <- vsdiv_standing_aux[[1]][[1]]
@@ -26,7 +26,7 @@ for(i in teams$team_id){
  
     
 }
-lmb_vs_zona_24 = do.call(rbind, vsdiv_standing)
+lmb_vs_zona_25 = do.call(rbind, vsdiv_standing)
 
 write.csv(hitters,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/hitters.csv")
 write.csv(pitchers,"/Users/axel.mora/Documents/lmb_statsapp/lmb_stats/pitchers.csv")
