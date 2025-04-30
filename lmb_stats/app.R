@@ -241,10 +241,10 @@ ui <- page_navbar(
     page_sidebar(
       sidebar = sidebar(
         title = "Players selection",
-        selectInput("player1","Player 1 Name",
+        selectInput("pitcher1","Player 1 Name",
                     choices = c("All", sort(pitchers$x)), 
                     selected = NULL),
-        selectInput("player2","Player 2 Name",
+        selectInput("pitcher2","Player 2 Name",
                     choices = c("All", sort(pitchers$x)), 
                     selected = NULL),
       ),
@@ -487,13 +487,13 @@ server <- function(input, output, session) {
   })
   filtered_pitching_std <- reactive({
     req(datasets())
-    datasets()$pitching[,1:23] %>%
+    datasets()$pitching[,1:24] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
       filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
   })
   filtered_pitching_adv <- reactive({
     req(datasets())
-    datasets()$pitching[,-c(8:23)] %>%
+    datasets()$pitching[,-c(8:24)] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
       filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
   })
@@ -1008,6 +1008,70 @@ server <- function(input, output, session) {
               highlight = TRUE
     )
   })
+  
+  ####
+  pitcher_data <- reactive({
+    req(datasets())
+    datasets()$pitching_cp
+  })
+  
+  observe({
+    updateSelectInput(session, "pitcher1", choices = sort(unique(pitcher_data()$Name)), selected = NULL)
+    updateSelectInput(session, "pitcher2", choices = sort(unique(pitcher_data()$Name)), selected = NULL)
+  })
+  
+  selected_pitchers <- reactive({
+    req(input$pitcher1, input$pitcher2)
+    pitcher_data() %>% 
+      filter(Name %in% c(input$pitcher1, input$pitcher2))
+  })
+  
+  output$pitcher_comparison_table <- renderReactable({
+    req(input$pitcher1, input$pitcher2) 
+    
+    # Validate if the same pitcher is selected
+    if (input$pitcher1 == input$pitcher2) {
+      showNotification("⚠ Please select two different pitchers to compare!", type = "warning", duration = 5)
+      return(NULL)  # Prevents the table from rendering
+    }
+    
+    trans_data_p <- transpose(selected_pitchers(), keep.names = "Stats", make.names = "Name")
+    
+    # Ensure numeric conversion for comparisons
+    trans_data_p[, -1] <- lapply(trans_data_p[, -1], as.numeric)
+    
+    # Get the pitcher column names dynamically (assuming they are in columns 2 and 3)
+    pitcher_cols <- colnames(trans_data_p)[2:3]
+    
+    # Reorder columns: Move "Stats" to the second position
+    trans_data_p <- trans_data_p[, c(pitcher_cols[1], "Stats", pitcher_cols[2])]
+    
+    reactable(trans_data_p,
+              columns = c(
+                setNames(
+                  lapply(pitcher_cols, function(col_name) {
+                    colDef(
+                      align = "center",
+                      style = function(value, index) {
+                        # Find the opponent column dynamically
+                        opponent_col <- ifelse(col_name == pitcher_cols[1], pitcher_cols[2], pitcher_cols[1])
+                        if (is.na(value) || is.na(trans_data_p[index, opponent_col])) return("")
+                        if (value > trans_data_p[index, opponent_col]) "background-color: #D4EDDA;" else ""
+                      }
+                    )
+                  }),
+                  pitcher_cols
+                ),
+                list(Stats = colDef(name = "Statistic", align = "center"))  # Now placed in the second position
+              ),
+              pagination = FALSE,
+              defaultColDef = colDef(align = "center"),
+              bordered = TRUE,
+              highlight = TRUE
+    )
+  })
+  
+  ####
   
   output$last_refresh_time <- renderText({
     paste()

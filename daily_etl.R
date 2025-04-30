@@ -53,12 +53,12 @@ fetch_latest_stats <- function() {
   print("pace extracted")
   
   # Add a date column for tracking
-  daily_hitting <- daily_hitting %>% mutate(date = today)
-  daily_pitching <- daily_pitching %>% mutate(date = today)
-  daily_fielding <- daily_fielding %>% mutate(date = today)
-  daily_team_hitting <- daily_team_hitting %>% mutate(date = today)
-  daily_team_pitching <- daily_team_pitching %>% mutate(date = today)
-  daily_team_fielding <- daily_team_fielding %>% mutate(date = today)
+  daily_hitting <- daily_hitting
+  daily_pitching <- daily_pitching
+  daily_fielding <- daily_fielding
+  daily_team_hitting <- daily_team_hitting 
+  daily_team_pitching <- daily_team_pitching
+  daily_team_fielding <- daily_team_fielding
   
   return(list(hitting = daily_hitting
               ,pitching = daily_pitching
@@ -124,10 +124,10 @@ update_google_sheets <- function() {
     filter(Year == 2025)
   
   pitching_cp <- updated_pitching %>%
-    select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', BB, 'BB%') %>%
+    select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, ,WHIP, 'K%', FIP) %>%
     filter(Year == 2025) %>%
     mutate("W-L" = paste0(W,"-",L)) %>%
-    select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, , K, 'K%', BB, 'BB%')
+    select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, ,WHIP, 'K%', FIP)
   
   # Write back to Google Sheets
   write_sheet(updated_hitting, hitting_gid, sheet = "hitting_data")

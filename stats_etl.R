@@ -76,7 +76,7 @@ pitching_etl <- function(year){
     filter(league_name == 'MEX') %>%
     select(season,player_full_name,team_name,position_abbreviation,games_played,games_started,innings_pitched,era,wins,losses,
            saves,save_opportunities,holds,strike_outs,base_on_balls,intentional_walks,batters_faced,hits,
-           home_runs,earned_runs,hit_by_pitch,ground_into_double_play,wild_pitches,
+           home_runs,earned_runs,whip,hit_by_pitch,ground_into_double_play,wild_pitches,
            ground_outs,air_outs,number_of_pitches,outs,complete_games,shutouts,balks,
            ground_outs_to_airouts,pitches_per_inning,strikeout_walk_ratio,strikeouts_per9inn,walks_per9inn,hits_per9inn,
            runs_scored_per9,home_runs_per9
@@ -84,7 +84,7 @@ pitching_etl <- function(year){
     rename("Year"=season,"Name"=player_full_name,"Team"=team_name,"POS"=position_abbreviation,"GP"=games_played,
            "GS"=games_started,"IP"=innings_pitched,"ERA"=era,"W"=wins,"L"=losses,"SV"=saves,"SVO"=save_opportunities,"HLD"=holds,
            "K"=strike_outs,"BB"=base_on_balls,"IBB"=intentional_walks,"BF"=batters_faced,"H"=hits,
-           "HR"=home_runs,"ER"=earned_runs,"HBP"=hit_by_pitch,"GIDP"=ground_into_double_play,"WP"=wild_pitches,
+           "HR"=home_runs,"ER"=earned_runs,"WHIP"=whip,"HBP"=hit_by_pitch,"GIDP"=ground_into_double_play,"WP"=wild_pitches,
            "GO"=ground_outs,"AO"=air_outs,"NP"=number_of_pitches,"O"=outs,"CG"=complete_games,"SHO"=shutouts,
            "BK"=balks,"GO/AO"=ground_outs_to_airouts,"P/INN"=pitches_per_inning,"K/BB"=strikeout_walk_ratio,
            "K/9"=strikeouts_per9inn,"W/9"=walks_per9inn,"H/9"=hits_per9inn,"R/9"=runs_scored_per9,"HR/9"=home_runs_per9
@@ -99,9 +99,9 @@ pitching_etl <- function(year){
     select(!c(team_id:sport_id)) %>%
     mutate(FIPR9 = FIP+pad$pAdj) %>%      
     inner_join(pf_br, by = join_by(Team)) %>%                      
-    mutate(pFIPR9 = FIPR9/(.[[44]]/100))
+    mutate(pFIPR9 = FIPR9/(.[[45]]/100))
   
-  lgFIP <- 8.51
+  lgFIP <- weights_data$lgFIP[which(year == weights_data$Season)]
   lgFIPR9 <- lgFIP+pad$pAdj
   
   pitching <- pitching %>%
@@ -113,7 +113,7 @@ pitching_etl <- function(year){
            ,WPGAR = WPGAA+rpL
            ,mWAR = round(WPGAR*((O/3)/9),1) 
           ) %>%
-    select(!c(43:50))
+    select(!c(44:51))
     
   
   
@@ -303,7 +303,7 @@ for(i in c(2019,2021:2024)){
 }
 pitching_data = do.call(rbind, pitching_aux)
 is.na(pitching_data) <- sapply(pitching_data, is.infinite)
-write_sheet(pitching_data, ss="1eVJ4dSg6KgATE8zmPxvriHyk6ZRZB94fuDWpdcloC1M", sheet = "pitching_data")
+write_sheet(pitching_data, pitching_gid, sheet = "pitching_data")
 #pitching <- gs4_create("pitching", sheets = pitching_data) #1xlYBP_x1mfsuFDnMxk4gtPUIl7FTIJ0hfVRK3BPeeRQ
 #pitching_adv <- gs4_create("pitching_adv", sheets = pitching[,-c(8:23)])
 print("2/6")
@@ -614,7 +614,7 @@ hitting_cp <- hitting %>%
 write_sheet(hitting_cp, hitting_cp_gid, sheet = "hitting_cp")
 
 pitching_cp <- pitching %>%
-  select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', BB, 'BB%') %>%
+  select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', FIP, 'BB%') %>%
   filter(Year == 2025) %>%
   mutate("W-L" = paste0(W,"-",L)) %>%
   select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, , K, 'K%', BB, 'BB%')

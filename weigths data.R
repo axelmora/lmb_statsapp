@@ -511,6 +511,8 @@ weights_data$pAdj <- weights_data$lgRA9-weights_data$lgERA
 weights_data$RpW <- ((9*(totals$R/totals$IP)*1.5)+3)[which(totals$Year == weights_data$Season)]
 weights_data$RlR <- ((570 * ((totals$GP/2)/(totals$GP/2))) * (weights_data$RpW/totals$PA))[which(totals$Year == weights_data$Season)]
 weights_data$posFactor <- (((totals$GP/totals$Teams)*9)/(162*9))[which(totals$Year == weights_data$Season)]
+weights_data$lgFIP <- round((((((13*totals$HR)+(3*(totals$BB+totals$HBP))-
+                                               (2*totals$K))/totals$IP))+weights_data$cFIP),2)[which(totals$Year == weights_data$Season)]
 
 POS <- c("C","SS","2B","CF","3B","RF","LF","1B","DH","X")
 ADJ <- c(12.5,7.5,3.5,2.5,2.5,-7.5,-7.5,-12.5,-17.5,0)
