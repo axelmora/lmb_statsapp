@@ -3074,6 +3074,33 @@
         "Built": "R 4.4.0; ; 2024-08-01 13:49:42 UTC; unix"
       }
     },
+    "shinyWidgets": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "shinyWidgets",
+        "Title": "Custom Inputs Widgets for Shiny",
+        "Version": "0.9.0",
+        "Authors@R": "c(\n  person(\"Victor\", \"Perrier\", email = \"victor.perrier@dreamrs.fr\", role = c(\"aut\", \"cre\", \"cph\")),\n  person(\"Fanny\", \"Meyer\", role = \"aut\"),\n  person(\"David\", \"Granjon\", role = \"aut\"),\n  person(\"Ian\", \"Fellows\", role = \"ctb\", comment = \"Methods for mutating vertical tabs & updateMultiInput\"),\n  person(\"Wil\", \"Davis\", role = \"ctb\", comment = \"numericRangeInput function\"),\n  person(\"Spencer\", \"Matthews\", role = \"ctb\", comment = \"autoNumeric methods\"),\n  person(family = \"JavaScript and CSS libraries authors\", role = c(\"ctb\", \"cph\"), comment = \"All authors are listed in LICENSE.md\")\n  )",
+        "Description": "Collection of custom input controls and user interface components for 'Shiny' applications. \n  Give your applications a unique and colorful style !",
+        "URL": "https://github.com/dreamRs/shinyWidgets,\nhttps://dreamrs.github.io/shinyWidgets/",
+        "BugReports": "https://github.com/dreamRs/shinyWidgets/issues",
+        "License": "GPL-3",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.3.2",
+        "Depends": "R (>= 3.1.0)",
+        "Imports": "bslib, sass, shiny (>= 1.6.0), htmltools (>= 0.5.1), jsonlite,\ngrDevices, rlang",
+        "Suggests": "testthat, covr, ggplot2, DT, scales, shinydashboard,\nshinydashboardPlus",
+        "NeedsCompilation": "no",
+        "Packaged": "2025-02-21 09:09:48 UTC; perri",
+        "Author": "Victor Perrier [aut, cre, cph],\n  Fanny Meyer [aut],\n  David Granjon [aut],\n  Ian Fellows [ctb] (Methods for mutating vertical tabs &\n    updateMultiInput),\n  Wil Davis [ctb] (numericRangeInput function),\n  Spencer Matthews [ctb] (autoNumeric methods),\n  JavaScript and CSS libraries authors [ctb, cph] (All authors are listed\n    in LICENSE.md)",
+        "Maintainer": "Victor Perrier <victor.perrier@dreamrs.fr>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-02-21 12:30:02 UTC",
+        "Built": "R 4.4.1; ; 2025-02-21 14:14:55 UTC; unix"
+      }
+    },
     "sourcetools": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3841,7 +3868,7 @@
   },
   "files": {
     ".secrets/7a6077d23f6776ccc63f8f70bc12b214_lmb.stats.app@gmail.com": {
-      "checksum": "a02275baf74a2ca0f637b0c47a850b7b"
+      "checksum": "f9cc4094324733822a10331f415cbbfe"
     },
     "2017/att_time.csv": {
       "checksum": "983e23987b429914f4b0faa2885bfd3d"
@@ -3937,7 +3964,7 @@
       "checksum": "75c4f3b0860b457c7db6fb86b324c71e"
     },
     "app.R": {
-      "checksum": "23543fb5a0eb628fef2c536bcb810fc6"
+      "checksum": "7c5f543af96b2e1d68af3d3943605812"
     },
     "batting.csv": {
       "checksum": "23145beae0cb07629517725bf4aac202"
@@ -3952,31 +3979,31 @@
       "checksum": "d0f4ad3a9dabe1c13dd2ade434b45b1a"
     },
     "cache/fielding.rds": {
-      "checksum": "29c69339239a3675ff5b6f165a9aa10f"
+      "checksum": "6be726d424797640e35e3eb18cc78628"
     },
     "cache/game_logs.rds": {
-      "checksum": "5ee9d13460312373783b970bdfb25cd6"
+      "checksum": "794095abbb2f1490f74ded761df5061f"
     },
     "cache/hitting_adv.rds": {
       "checksum": "9c57be3efc4b34c30380308aee92b968"
     },
     "cache/hitting_cp.rds": {
-      "checksum": "f0340782db4f5fbd20ba52e354654d59"
+      "checksum": "6d046a4d7f4aaaa1518f9adb12edbd33"
     },
     "cache/hitting_std.rds": {
       "checksum": "4b13a919e81288b4417683eb430f861e"
     },
     "cache/hitting.rds": {
-      "checksum": "5c8c9de9b94416be93a77b1a5fb4f2d4"
+      "checksum": "db953678e3a5fca54643207313eb01cf"
     },
     "cache/lmb_att_24.rds": {
-      "checksum": "80239790b127803656f600b93331768a"
+      "checksum": "aa596dcc5c24a8938d8a1893be269376"
     },
     "cache/lmb_pace_24.rds": {
-      "checksum": "6ef16ed78e4d59719296ebe44af35cfb"
+      "checksum": "fafc95942a2788202ba6ff76e153396d"
     },
     "cache/lmb_pace_venue_24.rds": {
-      "checksum": "7ceadb090c6f8b8dd9c2b2043dd9aa15"
+      "checksum": "2d5c5eddac38c3f0eb796b1097c7758c"
     },
     "cache/park_factors.rds": {
       "checksum": "87f3beabd8d6da78f408d1723008bee5"
@@ -3985,16 +4012,16 @@
       "checksum": "7d7b6e9fac410aee2171c1e920ec80c2"
     },
     "cache/pitching_cp.rds": {
-      "checksum": "5afe38750cc75d37d5f8513c564802f4"
+      "checksum": "7b95a2980092b33a5b8f3ff0b85c32ee"
     },
     "cache/pitching_std.rds": {
       "checksum": "27451186a28d8b2308c5b449cb56048a"
     },
     "cache/pitching.rds": {
-      "checksum": "dcacf3d048aed55573bbd0608a66f8e2"
+      "checksum": "8512f61e444baad689429a8849619716"
     },
     "cache/rosters.rds": {
-      "checksum": "09a69f276d8c263b1f6402c463936af5"
+      "checksum": "07ced25dcb5fb02644fb3bd964b63491"
     },
     "cache/team_fielding_adv.rds": {
       "checksum": "d950c7553c53660d06450a626cd88622"
@@ -4003,7 +4030,7 @@
       "checksum": "30f4055f38a4c4fa25f6179078b3f232"
     },
     "cache/team_fielding.rds": {
-      "checksum": "af7876b6f861d95000420971ac1431a0"
+      "checksum": "c9ecff9929a1938fda01e2847075c709"
     },
     "cache/team_hitting_adv.rds": {
       "checksum": "346ab1268cb25c70f03f57308a423758"
@@ -4012,7 +4039,7 @@
       "checksum": "17b3e8e6755b00d91ae22e3bbb33a205"
     },
     "cache/team_hitting.rds": {
-      "checksum": "dd33a049afba58b10a9818cdbf93a82b"
+      "checksum": "8732b444f8b05a0435314886a9a465e2"
     },
     "cache/team_pitching_adv.rds": {
       "checksum": "ac4de4eca65d9b0acafce18769cc84fe"
@@ -4021,10 +4048,10 @@
       "checksum": "49486bbc77bc8e98e86a93b02d4205a8"
     },
     "cache/team_pitching.rds": {
-      "checksum": "491ff36256c6b439864b901f457562d6"
+      "checksum": "100e1366a8eb09f14cf2e1adc69270a6"
     },
     "cache/trans.rds": {
-      "checksum": "0821127d397448fa87b3209585fd7931"
+      "checksum": "cf33a00b0256b89688c8f4a5c2085c77"
     },
     "cache/woba_fipc.rds": {
       "checksum": "a21a1d374f28c88afd5c605ed15a56ee"
@@ -4033,7 +4060,7 @@
       "checksum": "b153a6e681cdc1cb641930d9030f8528"
     },
     "fielders.csv": {
-      "checksum": "59b0782a773be4f750764b18df064a05"
+      "checksum": "31ee88adb300f9c7c1486e5b2fa1a07d"
     },
     "gs_ids_2.csv": {
       "checksum": "b907704a00b836585f914b2e28934150"
@@ -4042,7 +4069,7 @@
       "checksum": "f506d8553b42035c9e8722146023dd3d"
     },
     "hitters.csv": {
-      "checksum": "1d92b06d56ceee05fa8ab25517de9fe2"
+      "checksum": "257d5b2bbad2a07cd599f9c08dae5e92"
     },
     "hitting.csv": {
       "checksum": "15a80c6f43f87b1278e6e07823d83cc7"
@@ -4123,7 +4150,7 @@
       "checksum": "77ce6c9ab331436901ef2eb2803ee5c5"
     },
     "pitchers.csv": {
-      "checksum": "6dec31088f040b9cca3ff7b95d23d456"
+      "checksum": "97965d2bd701831b7a6527c9b4343ac7"
     },
     "player_stats_scr_bat.R": {
       "checksum": "c8e067d42f9bae0f3042c6624176d0e3"
