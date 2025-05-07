@@ -12,6 +12,7 @@ library(future)
 library(promises)
 library(reactable)
 library(shinyWidgets)
+library(baseballr)
 
 plan(multisession)
 # ----------------- DATA PREPARATION -------------------------------------
