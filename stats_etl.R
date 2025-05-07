@@ -53,7 +53,10 @@ hitting <- hitting %>%
         ) %>%
   inner_join(p_adj, by = c("POS" = "POS")) %>%
   mutate(mWAR = round(((wRAA+as.numeric(.[[41]]))/rpw$rpw),1)) %>%
-  select(!c(35,39,41))
+  select(!c(35,39,41)) %>%
+  mutate(across(c(20,21,22,23,29,30,31), as.numeric)) %>%
+  mutate(across(c(20,21,22,23), ~ round(.x, 3))) %>%
+  mutate(across(c(29,30,31), ~ round(.x, 2)))
 
 hitting
 ###LOAD
@@ -113,7 +116,9 @@ pitching_etl <- function(year){
            ,WPGAR = WPGAA+rpL
            ,mWAR = round(WPGAR*((O/3)/9),1) 
           ) %>%
-    select(!c(44:51))
+    select(!c(44:51)) %>%
+    mutate(across(c(7,8,21,32,33,34,35,36,39), as.numeric)) %>%
+    mutate(across(c(8,21,32,33,34,35,36,39), ~ round(.x, 2)))
     
   
   
@@ -146,7 +151,9 @@ fielding_etl <- function(year){
     inner_join(teams, by = c("Team" = "team_full_name")) %>%
     mutate(Team = team_abbreviation
            ,`CS%` = CS/(SB+CS)) %>%
-    select(!c(team_id:sport_id))
+    select(!c(team_id:sport_id)) %>%
+    mutate(across(c(7,11,20,21), as.numeric)) %>%
+    mutate(across(c(11,20,21), ~ round(.x, 2)))
   
   fielding
   ###LOAD
@@ -197,7 +204,10 @@ team_hitting_etl <- function(year){
     ) %>%
     mutate(mWAR = 0) %>%
              #round(((wRAA+.[[41]])/rpw$rpw),1)) %>%
-    select(!c(35,39))
+    select(!c(35,39)) %>%
+    mutate(across(c(19,20,21,22,29,30,31), as.numeric)) %>%
+    mutate(across(c(19,20,21,22), ~ round(.x, 3))) %>%
+    mutate(across(c(29,30,31), ~ round(.x, 2)))
   team_hitting
   
 }
@@ -250,7 +260,9 @@ team_pitching_etl <- function(year){
           ,WPGAR = 0 #WPGAA+rpL
           ,mWAR = 0 #round(WPGAR*((O/3)/9),1) 
     )%>%
-    select(!c(41:47))
+    select(!c(41:47)) %>%
+    mutate(across(c(4,17,18,29,30,31,32,33,34,35,36), as.numeric)) %>%
+    mutate(across(c(17,18,29,30,31,32,33,34,35,36), ~ round(.x, 2)))
   
   team_pitching
   ###LOAD
@@ -275,7 +287,9 @@ team_fielding_etl <- function(year){
            "TC"=chances,"RF/G"=range_factor_per_game,"RF/9"=range_factor_per9inn,"TE"=throwing_errors,
            "CI"=catchers_interference
     ) %>%
-    mutate(`CS%` = (CS/(SB+CS)*100)) 
+    mutate(`CS%` = (CS/(SB+CS)*100)) %>%
+    mutate(across(c(4,17,18), as.numeric)) %>%
+    mutate(across(c(13,17,18), ~ round(.x, 2)))
   team_fielding
   
 }
@@ -614,10 +628,11 @@ hitting_cp <- hitting %>%
 write_sheet(hitting_cp, hitting_cp_gid, sheet = "hitting_cp")
 
 pitching_cp <- pitching %>%
-  select(Year, Name, mWAR, GP, IP, W, L, SV, HLD, , K, 'K%', FIP, 'BB%') %>%
+  select(Year, Name, mWAR, GP, ERA, IP, W, L, WHIP, FIP, K,'K%',BB,'BB%') %>%
   filter(Year == 2025) %>%
   mutate("W-L" = paste0(W,"-",L)) %>%
-  select(Year, Name, mWAR, GP, IP, 'W-L', SV, HLD, , K, 'K%', BB, 'BB%')
+  select(Year, Name, mWAR, GP, ERA, IP, "W-L", WHIP, FIP, K,'K%',BB,'BB%') %>% 
+  filter(Name == 'David Reyes'|Name == 'Domingo Acevedo')
 
 write_sheet(pitching_cp, pitching_cp_gid, sheet = "pitching_cp")
 

@@ -79,22 +79,36 @@ update_google_sheets <- function() {
   
   # Read existing data
   existing_hitting <- read_sheet(hitting_gid)
-  existing_hitting <- existing_hitting %>% filter(Year != 2025)
+  existing_hitting <- existing_hitting %>% filter(Year != 2025) %>%
+    mutate(across(c(20,21,22,23,29,30,31), as.numeric)) %>%
+    mutate(across(c(20,21,22,23), ~ round(.x, 3))) %>%
+    mutate(across(c(29,30,31), ~ round(.x, 2)))
   
   existing_pitching <- read_sheet(pitching_gid)
-  existing_pitching <- existing_pitching %>% filter(Year != 2025)
+  existing_pitching <- existing_pitching %>% filter(Year != 2025) %>%
+    mutate(across(c(7,8,21,32,33,34,35,36,39), as.numeric)) %>%
+    mutate(across(c(8,21,32,33,34,35,36,39), ~ round(.x, 2)))
   
   existing_fielding <- read_sheet(fielding_gid)
-  existing_fielding <- existing_fielding %>% filter(Year != 2025)
+  existing_fielding <- existing_fielding %>% filter(Year != 2025) %>%
+    mutate(across(c(7,11,20,21), as.numeric)) %>%
+    mutate(across(c(11,20,21), ~ round(.x, 2)))
   
   existing_team_pitching <- read_sheet(team_pitching_gid)
-  existing_team_pitching <- existing_team_pitching %>% filter(Year != 2025)
+  existing_team_pitching <- existing_team_pitching %>% filter(Year != 2025)  %>%
+    mutate(across(c(4,17,18,29,30,31,32,33,34,35,36), as.numeric)) %>%
+    mutate(across(c(17,18,29,30,31,32,33,34,35,36), ~ round(.x, 2)))
   
   existing_team_hitting <- read_sheet(team_hitting_gid)
-  existing_team_hitting <- existing_team_hitting %>% filter(Year != 2025)
+  existing_team_hitting <- existing_team_hitting %>% filter(Year != 2025)  %>%
+    mutate(across(c(19,20,21,22,29,30,31), as.numeric)) %>%
+    mutate(across(c(19,20,21,22), ~ round(.x, 3))) %>%
+    mutate(across(c(29,30,31), ~ round(.x, 2)))
   
   existing_team_fielding <- read_sheet(team_fielding_gid)
-  existing_team_fielding <- existing_team_fielding %>% filter(Year != 2025)
+  existing_team_fielding <- existing_team_fielding %>% filter(Year != 2025) %>%
+    mutate(across(c(4,17,18), as.numeric)) %>%
+    mutate(across(c(13,17,18), ~ round(.x, 2)))
 
   # Append new data
   updated_hitting <- bind_rows(existing_hitting, new_data$hitting)
@@ -160,5 +174,5 @@ master_daily_etl <- function(startDate,endDate){
   update_trans(startDate,endDate)
 }
 
-master_daily_etl("2025-04-01","2025-04-30")
+master_daily_etl("2025-04-01","2025-05-06")
 cat("Finished job.\n", file = "job_progress.log", append = TRUE)

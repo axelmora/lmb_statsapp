@@ -11,6 +11,7 @@ library(data.table)
 library(future)
 library(promises)
 library(reactable)
+library(shinyWidgets)
 
 plan(multisession)
 # ----------------- DATA PREPARATION -------------------------------------
@@ -147,9 +148,12 @@ ui <- page_navbar(
         selectInput("year_h","Season",
                     choices = c(2025,2024,2023,2022,2021,2019), 
                     selected = 2025),
-        selectInput("player_name_h","Player Name",
-                    choices = c("All", sort(hitters$x)), 
-                    selected = "All")
+        selectInput("teams_h","Team",
+                    choices = c("All", sort(teams$team_full_name)), 
+                    selected = "All"),
+        materialSwitch(inputId = "HQlf",
+                       label = "Qualified Players", 
+                       value = FALSE)
       ),
       navset_card_tab(
         full_screen = TRUE,
@@ -171,9 +175,12 @@ ui <- page_navbar(
       selectInput("year_p","Season",
                   choices = c(2025,2024,2023,2022,2021,2019), 
                   selected = 2025),
-      selectInput("player_name_p","Player Name",
-                  choices = c("All", sort(pitchers$x)), 
-                  selected = "All")
+      selectInput("teams_p","Team",
+                  choices = c("All", sort(teams$team_full_name)), 
+                  selected = "All"),
+      materialSwitch(inputId = "PQlf",
+                     label = "Qualified Players", 
+                     value = FALSE)
       ),
       navset_card_tab(
         full_screen = TRUE,
@@ -195,8 +202,8 @@ ui <- page_navbar(
       selectInput("year_f","Season",
                   choices = c(2025,2024,2023,2022,2021,2019), 
                   selected = 2025),
-      selectInput("player_name_f","Player Name",
-                  choices = c("All", sort(fielders$x)), 
+      selectInput("teams_f","Team",
+                  choices = c("All", sort(teams$team_full_name)), 
                   selected = "All")
       ),
       navset_card_tab(
@@ -438,7 +445,7 @@ server <- function(input, output, session) {
     
     current_time <- format(Sys.time(), "%H:%M")
     
-    if (current_time %in% c("21:00","21:01","21:02","21:03","21:04","21:05","23:00","23:01","23:02","23:03","23:04","23:05")) {
+    if (current_time %in% c("05:00","05:01","05:02","05:03","05:04","05:05","23:00","23:01","23:02","23:03","23:04","23:05")) {
       refresh_data(gs_ids)
       print("DATA REFRESHED")
     }
@@ -461,8 +468,12 @@ server <- function(input, output, session) {
     })
   })
   
-  ##### DATA PLAYER NAME AND YEAR FILTERS
+  ##### DATA Team AND YEAR FILTERS
   
+  gm <- max(mlb_standings(season = 2025, league_id = 125) %>% select(team_records_games_played))
+  qp <- gm*0.8
+  qh <- gm*2.7
+
   filtered_team <- reactive({
     req(datasets())
     datasets()$rosters %>%
@@ -477,37 +488,41 @@ server <- function(input, output, session) {
     req(datasets())
     datasets()$hitting[,1:23] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
-      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
+      filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE) %>%
+      filter(if (input$HQlf == TRUE) PA >= qh else TRUE)
   })
   filtered_hitting_adv <- reactive({
     req(datasets())
     datasets()$hitting[,-c(8:23)] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
-      filter(if (input$player_name_h != "All") Name %in% input$player_name_h else TRUE)
+      filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE) %>%
+      filter(if (input$HQlf == TRUE) PA >= qh else TRUE)
   })
   filtered_pitching_std <- reactive({
     req(datasets())
     datasets()$pitching[,1:24] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
-      filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
+      filter(if (input$teams_p != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_p)] else TRUE) %>%
+      filter(if (input$PQlf == TRUE) IP >= qp else TRUE)
   })
   filtered_pitching_adv <- reactive({
     req(datasets())
     datasets()$pitching[,-c(8:24)] %>%
       filter(if (input$year_p != 9999) Year %in% input$year_p else TRUE) %>%
-      filter(if (input$player_name_p != "All") Name %in% input$player_name_p else TRUE) 
+      filter(if (input$teams_p != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_p)] else TRUE) %>%
+      filter(if (input$PQlf == TRUE) IP >= qp else TRUE)
   })
   filtered_fielding_std <- reactive({
     req(datasets())
     datasets()$fielding[,1:18] %>%
       filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE) %>%
-      filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
+      filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE)
   })
   filtered_fielding_adv <- reactive({
     req(datasets())
     datasets()$fielding[,-c(8:18)] %>%
       filter(if (input$year_f != 9999) Year %in% input$year_f else TRUE) %>%
-      filter(if (input$player_name_f != "All") Name %in% input$player_name_f else TRUE) 
+      filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE)
   })
   
   ######### FILTER YEAR DATA TEAMS
@@ -809,19 +824,20 @@ server <- function(input, output, session) {
   output$lmb_att_dt <- renderDT({
     req(datasets()$lmb_att_24)
     datatable(
-      datasets()$lmb_att_24,
+      datasets()$lmb_att_24[,-5],
       rownames = FALSE,
       options = list(
         dom = 't'
         ,pageLength = 20
         ,columnDefs = list(list(targets = 0, width = '150x')
                            ,list(targets = 1, width = '200px')
-                           ,list(targets = c(2:8), width = '5px')
+                           ,list(targets = c(2:7), width = '5px')
                            ,list(targets = "_all", className = 'dt-left')
         )
         ,scrollX = FALSE
       )
-    )
+    ) %>%
+      formatCurrency(3:7, currency = "", interval = 3, mark = ",", digits = 0)
   })
   
   output$woba_fip_dt <- renderDT({
@@ -1046,6 +1062,8 @@ server <- function(input, output, session) {
     # Reorder columns: Move "Stats" to the second position
     trans_data_p <- trans_data_p[, c(pitcher_cols[1], "Stats", pitcher_cols[2])]
     
+    lower_is_better <- c("ERA", "WHIP", "FIP", "BB%")
+    
     reactable(trans_data_p,
               columns = c(
                 setNames(
@@ -1053,16 +1071,23 @@ server <- function(input, output, session) {
                     colDef(
                       align = "center",
                       style = function(value, index) {
-                        # Find the opponent column dynamically
+                        stat_name <- trans_data_p$Stats[index]
                         opponent_col <- ifelse(col_name == pitcher_cols[1], pitcher_cols[2], pitcher_cols[1])
-                        if (is.na(value) || is.na(trans_data_p[index, opponent_col])) return("")
-                        if (value > trans_data_p[index, opponent_col]) "background-color: #D4EDDA;" else ""
+                        opponent_value <- trans_data_p[index, opponent_col]
+                        
+                        if (is.na(value) || is.na(opponent_value)) return("")
+                        
+                        if (stat_name %in% lower_is_better) {
+                          if (value < opponent_value) "background-color: #D4EDDA;" else ""
+                        } else {
+                          if (value > opponent_value) "background-color: #D4EDDA;" else ""
+                        }
                       }
                     )
                   }),
                   pitcher_cols
                 ),
-                list(Stats = colDef(name = "Statistic", align = "center"))  # Now placed in the second position
+                list(Stats = colDef(name = "Statistic", align = "center"))
               ),
               pagination = FALSE,
               defaultColDef = colDef(align = "center"),
