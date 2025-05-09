@@ -172,4 +172,4 @@ master_daily_etl <- function(startDate,endDate){
   update_trans(startDate,endDate)
 }
 
-master_daily_etl("2025-04-01","2025-05-08")
+master_daily_etl("2025-04-01","2025-05-09")
