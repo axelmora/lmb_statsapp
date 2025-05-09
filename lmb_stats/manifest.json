@@ -229,6 +229,34 @@
         "Archs": "Rcpp.so.dSYM"
       }
     },
+    "RcppParallel": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "RcppParallel",
+        "Type": "Package",
+        "Title": "Parallel Programming Tools for 'Rcpp'",
+        "Version": "5.1.9",
+        "Authors@R": "c(\n    person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\n    person(\"Romain\", \"Francois\", role = c(\"aut\", \"cph\")),\n    person(\"Kevin\", \"Ushey\", role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\"),\n    person(\"Gregory\", \"Vandenbrouck\", role = \"aut\"),\n    person(\"Marcus\", \"Geelnard\", role = c(\"aut\", \"cph\"),\n       comment = \"TinyThread library, https://tinythreadpp.bitsnbites.eu/\"),\n    person(\"Hamada S.\", \"Badr\",\n       email = \"badr@jhu.edu\",\n       role = c(\"ctb\"),\n       comment = c(ORCID = \"0000-0002-9808-2344\")),\n    person(family = \"Posit, PBC\", role = \"cph\"),\n    person(family = \"Intel\", role = c(\"aut\", \"cph\"),\n       comment = \"Intel TBB library, https://www.threadingbuildingblocks.org/\"),\n    person(family = \"Microsoft\", role = \"cph\")\n    )",
+        "Description": "High level functions for parallel programming with 'Rcpp'.\n    For example, the 'parallelFor()' function can be used to convert the work of\n    a standard serial \"for\" loop into a parallel one and the 'parallelReduce()'\n    function can be used for accumulating aggregate or other values.",
+        "Depends": "R (>= 3.0.2)",
+        "Suggests": "Rcpp, RUnit, knitr, rmarkdown",
+        "SystemRequirements": "GNU make, Intel TBB, Windows: cmd.exe and\ncscript.exe, Solaris: g++ is required",
+        "License": "GPL (>= 3)",
+        "URL": "https://rcppcore.github.io/RcppParallel/,\nhttps://github.com/RcppCore/RcppParallel",
+        "BugReports": "https://github.com/RcppCore/RcppParallel/issues",
+        "Biarch": "TRUE",
+        "RoxygenNote": "7.1.1",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-08-19 18:15:55 UTC; kevin",
+        "Author": "JJ Allaire [aut],\n  Romain Francois [aut, cph],\n  Kevin Ushey [aut, cre],\n  Gregory Vandenbrouck [aut],\n  Marcus Geelnard [aut, cph] (TinyThread library,\n    https://tinythreadpp.bitsnbites.eu/),\n  Hamada S. Badr [ctb] (<https://orcid.org/0000-0002-9808-2344>),\n  Posit, PBC [cph],\n  Intel [aut, cph] (Intel TBB library,\n    https://www.threadingbuildingblocks.org/),\n  Microsoft [cph]",
+        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-08-19 22:20:07 UTC",
+        "Built": "R 4.4.1; aarch64-apple-darwin20; 2024-08-19 23:38:20 UTC; unix"
+      }
+    },
     "XML": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -329,6 +357,33 @@
         "Date/Publication": "2015-07-28 08:03:37",
         "Built": "R 4.4.0; aarch64-apple-darwin20; 2024-04-05 15:01:24 UTC; unix",
         "Archs": "base64enc.so.dSYM"
+      }
+    },
+    "baseballr": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "baseballr",
+        "Title": "Acquiring and Analyzing Baseball Data",
+        "Version": "1.6.0",
+        "Authors@R": "c(\n    person(\"Bill\", \"Petti\", , \"billpetti@gmail.com\", role = \"aut\"),\n    person(\"Saiem\", \"Gilani\", , \"saiem.gilani@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Ben\", \"Baumer\", , \"ben.baumer@gmail.com\", role = \"ctb\"),\n    person(\"Ben\", \"Dilday\", , \"ben.dilday.phd@gmail.com\", role = \"ctb\"),\n    person(\"Robert\", \"Frey\", , \"rfrey22@gmail.com\", role = \"ctb\"),\n    person(\"Camden\", \"Kay\", , \"camden.kay23@gmail.com\", role = \"ctb\")\n  )",
+        "Description": "Provides numerous utilities for acquiring and analyzing\n    baseball data from online sources such as 'Baseball Reference' <https://www.baseball-reference.com/>,\n    'FanGraphs' <https://www.fangraphs.com/>, and the 'MLB Stats' API <https://www.mlb.com/>.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://billpetti.github.io/baseballr/,\nhttps://github.com/BillPetti/baseballr",
+        "BugReports": "https://github.com/BillPetti/baseballr/issues",
+        "Depends": "R (>= 4.0.0)",
+        "Imports": "cli (>= 3.4.1), data.table (>= 1.14.0), dplyr (>= 1.0.10),\nggplot2, glue, httr (>= 0.5), janitor, jsonlite, lubridate,\nmagrittr, purrr (>= 1.0.0), Rcpp, RcppParallel, rlang (>=\n1.0.4), rvest (>= 1.0.0), stringr (>= 1.3.0), tibble (>= 3.0),\ntidyr (>= 1.0.0)",
+        "Suggests": "crayon (>= 1.3.4), curl, DBI, furrr, future, ggrepel, knitr,\npacman, progressr (>= 0.6.0), qs (>= 0.25.1), reshape2,\nrmarkdown, RSQLite, scales, stringi, stats, testthat, usethis\n(>= 1.6.0), xml2 (>= 1.3), zoo",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-01-15 11:27:11 UTC; saiem",
+        "Author": "Bill Petti [aut],\n  Saiem Gilani [aut, cre],\n  Ben Baumer [ctb],\n  Ben Dilday [ctb],\n  Robert Frey [ctb],\n  Camden Kay [ctb]",
+        "Maintainer": "Saiem Gilani <saiem.gilani@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-01-16 12:50:02 UTC",
+        "Built": "R 4.4.0; ; 2024-04-06 17:35:02 UTC; unix"
       }
     },
     "bit": {
@@ -1825,6 +1880,34 @@
         "Archs": "isoband.so.dSYM"
       }
     },
+    "janitor": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "janitor",
+        "Title": "Simple Tools for Examining and Cleaning Dirty Data",
+        "Version": "2.2.0",
+        "Authors@R": "c(person(\"Sam\", \"Firke\", email = \"samuel.firke@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Bill\", \"Denney\", email = \"wdenney@humanpredictions.com\", role = \"ctb\"),\n    person(\"Chris\", \"Haid\", email = \"chrishaid@gmail.com\", role = \"ctb\"),\n    person(\"Ryan\", \"Knight\", email = \"ryangknight@gmail.com\", role = \"ctb\"),\n    person(\"Malte\", \"Grosser\", email = \"malte.grosser@gmail.com\", role = \"ctb\"),\n    person(\"Jonathan\", \"Zadra\", email = \"jonathan.zadra@sorensonimpact.com\", role = \"ctb\"))",
+        "Description": "The main janitor functions can: perfectly format data.frame column\n    names; provide quick counts of variable combinations (i.e., frequency\n    tables and crosstabs); and explore duplicate records. Other janitor functions\n    nicely format the tabulation results. These tabulate-and-report functions\n    approximate popular features of SPSS and Microsoft Excel. This package\n    follows the principles of the \"tidyverse\" and works well with the pipe function\n    %>%. janitor was built with beginning-to-intermediate R users in mind and is\n    optimized for user-friendliness.",
+        "URL": "https://github.com/sfirke/janitor,\nhttps://sfirke.github.io/janitor/",
+        "BugReports": "https://github.com/sfirke/janitor/issues",
+        "Depends": "R (>= 3.1.2)",
+        "Imports": "dplyr (>= 1.0.0), hms, lifecycle, lubridate, magrittr, purrr,\nrlang, stringi, stringr, snakecase (>= 0.9.2), tidyselect (>=\n1.0.0), tidyr (>= 0.7.0)",
+        "License": "MIT + file LICENSE",
+        "RoxygenNote": "7.2.3",
+        "Suggests": "dbplyr, knitr, rmarkdown, RSQLite, sf, testthat (>= 3.0.0),\ntibble, tidygraph",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "Config/testthat/edition": "3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-02-02 16:00:15 UTC; samfi",
+        "Author": "Sam Firke [aut, cre],\n  Bill Denney [ctb],\n  Chris Haid [ctb],\n  Ryan Knight [ctb],\n  Malte Grosser [ctb],\n  Jonathan Zadra [ctb]",
+        "Maintainer": "Sam Firke <samuel.firke@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-02-02 16:50:06 UTC",
+        "Built": "R 4.4.0; ; 2024-04-06 17:32:13 UTC; unix"
+      }
+    },
     "jquerylib": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3101,6 +3184,34 @@
         "Built": "R 4.4.1; ; 2025-02-21 14:14:55 UTC; unix"
       }
     },
+    "snakecase": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "snakecase",
+        "Version": "0.11.1",
+        "Date": "2023-08-27",
+        "Title": "Convert Strings into any Case",
+        "Description": "A consistent, flexible and easy to use tool to parse and convert strings into cases like snake or camel among others.",
+        "Authors@R": "c(\n    person(\"Malte\", \"Grosser\", , \"malte.grosser@gmail.com\", role = c(\"aut\", \"cre\")))",
+        "Maintainer": "Malte Grosser <malte.grosser@gmail.com>",
+        "Depends": "R (>= 3.2)",
+        "Imports": "stringr, stringi",
+        "Suggests": "testthat, covr, tibble, purrrlyr, knitr, rmarkdown, magrittr",
+        "URL": "https://github.com/Tazinho/snakecase",
+        "BugReports": "https://github.com/Tazinho/snakecase/issues",
+        "Encoding": "UTF-8",
+        "License": "GPL-3",
+        "RoxygenNote": "6.1.1",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-08-27 20:30:20 UTC; malte",
+        "Author": "Malte Grosser [aut, cre]",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-08-27 22:50:09 UTC",
+        "Built": "R 4.4.0; ; 2024-04-06 06:56:34 UTC; unix"
+      }
+    },
     "sourcetools": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -3868,7 +3979,7 @@
   },
   "files": {
     ".secrets/7a6077d23f6776ccc63f8f70bc12b214_lmb.stats.app@gmail.com": {
-      "checksum": "f9cc4094324733822a10331f415cbbfe"
+      "checksum": "7c7db148e4474595419a9a9d45a0a02b"
     },
     "2017/att_time.csv": {
       "checksum": "983e23987b429914f4b0faa2885bfd3d"
@@ -3964,7 +4075,7 @@
       "checksum": "75c4f3b0860b457c7db6fb86b324c71e"
     },
     "app.R": {
-      "checksum": "7c5f543af96b2e1d68af3d3943605812"
+      "checksum": "33dc6a755712392d2bcd41f754f2cd8f"
     },
     "batting.csv": {
       "checksum": "23145beae0cb07629517725bf4aac202"
@@ -3978,32 +4089,11 @@
     "cache/fielding_std.rds": {
       "checksum": "d0f4ad3a9dabe1c13dd2ade434b45b1a"
     },
-    "cache/fielding.rds": {
-      "checksum": "6be726d424797640e35e3eb18cc78628"
-    },
-    "cache/game_logs.rds": {
-      "checksum": "794095abbb2f1490f74ded761df5061f"
-    },
     "cache/hitting_adv.rds": {
       "checksum": "9c57be3efc4b34c30380308aee92b968"
     },
-    "cache/hitting_cp.rds": {
-      "checksum": "6d046a4d7f4aaaa1518f9adb12edbd33"
-    },
     "cache/hitting_std.rds": {
       "checksum": "4b13a919e81288b4417683eb430f861e"
-    },
-    "cache/hitting.rds": {
-      "checksum": "db953678e3a5fca54643207313eb01cf"
-    },
-    "cache/lmb_att_24.rds": {
-      "checksum": "aa596dcc5c24a8938d8a1893be269376"
-    },
-    "cache/lmb_pace_24.rds": {
-      "checksum": "fafc95942a2788202ba6ff76e153396d"
-    },
-    "cache/lmb_pace_venue_24.rds": {
-      "checksum": "2d5c5eddac38c3f0eb796b1097c7758c"
     },
     "cache/park_factors.rds": {
       "checksum": "87f3beabd8d6da78f408d1723008bee5"
@@ -4011,17 +4101,8 @@
     "cache/pitching_adv.rds": {
       "checksum": "7d7b6e9fac410aee2171c1e920ec80c2"
     },
-    "cache/pitching_cp.rds": {
-      "checksum": "7b95a2980092b33a5b8f3ff0b85c32ee"
-    },
     "cache/pitching_std.rds": {
       "checksum": "27451186a28d8b2308c5b449cb56048a"
-    },
-    "cache/pitching.rds": {
-      "checksum": "8512f61e444baad689429a8849619716"
-    },
-    "cache/rosters.rds": {
-      "checksum": "07ced25dcb5fb02644fb3bd964b63491"
     },
     "cache/team_fielding_adv.rds": {
       "checksum": "d950c7553c53660d06450a626cd88622"
@@ -4029,29 +4110,17 @@
     "cache/team_fielding_std.rds": {
       "checksum": "30f4055f38a4c4fa25f6179078b3f232"
     },
-    "cache/team_fielding.rds": {
-      "checksum": "c9ecff9929a1938fda01e2847075c709"
-    },
     "cache/team_hitting_adv.rds": {
       "checksum": "346ab1268cb25c70f03f57308a423758"
     },
     "cache/team_hitting_std.rds": {
       "checksum": "17b3e8e6755b00d91ae22e3bbb33a205"
     },
-    "cache/team_hitting.rds": {
-      "checksum": "8732b444f8b05a0435314886a9a465e2"
-    },
     "cache/team_pitching_adv.rds": {
       "checksum": "ac4de4eca65d9b0acafce18769cc84fe"
     },
     "cache/team_pitching_std.rds": {
       "checksum": "49486bbc77bc8e98e86a93b02d4205a8"
-    },
-    "cache/team_pitching.rds": {
-      "checksum": "100e1366a8eb09f14cf2e1adc69270a6"
-    },
-    "cache/trans.rds": {
-      "checksum": "cf33a00b0256b89688c8f4a5c2085c77"
     },
     "cache/woba_fipc.rds": {
       "checksum": "a21a1d374f28c88afd5c605ed15a56ee"
@@ -4060,7 +4129,7 @@
       "checksum": "b153a6e681cdc1cb641930d9030f8528"
     },
     "fielders.csv": {
-      "checksum": "31ee88adb300f9c7c1486e5b2fa1a07d"
+      "checksum": "c78ed05e6e970b08c5426d54b0039ccb"
     },
     "gs_ids_2.csv": {
       "checksum": "b907704a00b836585f914b2e28934150"
@@ -4069,7 +4138,7 @@
       "checksum": "f506d8553b42035c9e8722146023dd3d"
     },
     "hitters.csv": {
-      "checksum": "257d5b2bbad2a07cd599f9c08dae5e92"
+      "checksum": "420974d22f327d41b82ca03177827ea0"
     },
     "hitting.csv": {
       "checksum": "15a80c6f43f87b1278e6e07823d83cc7"
@@ -4150,7 +4219,7 @@
       "checksum": "77ce6c9ab331436901ef2eb2803ee5c5"
     },
     "pitchers.csv": {
-      "checksum": "97965d2bd701831b7a6527c9b4343ac7"
+      "checksum": "8abceeac7e284e8d13a3a9263f97e3c1"
     },
     "player_stats_scr_bat.R": {
       "checksum": "c8e067d42f9bae0f3042c6624176d0e3"
