@@ -21,8 +21,6 @@ lmb_att_gs = "1uer8QQuM-x8VyxCDJBlCtqXofPHE-Dlkzzk64xzLFBQ"
 lmb_pace_gs = "1sJ_KjQgmKDUtLRh1MW0yHyQWTzllarKHXGzSGrLNVBk"
 lmb_pace_venue_gs = "1_zF8o6iYKrcpE0Cwgky4dpm7gXMt4nU1At7Z4j4qFJI"
 
-cat("Starting job...\n", file = "job_progress.log", append = TRUE)
-
 
 # Function to fetch the latest daily stats
 fetch_latest_stats <- function() {
@@ -174,5 +172,4 @@ master_daily_etl <- function(startDate,endDate){
   update_trans(startDate,endDate)
 }
 
-master_daily_etl("2025-04-01","2025-05-06")
-cat("Finished job.\n", file = "job_progress.log", append = TRUE)
+master_daily_etl("2025-04-01","2025-05-08")
