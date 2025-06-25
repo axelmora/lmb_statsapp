@@ -92,6 +92,7 @@ refresh_data <- function(gs_ids) {
   datasets <- list()
   for (name in names(gs_ids)) {
     file_path <- file.path(cache_dir, paste0(name, ".rds"))
+    unlink(file_path)
     print(gs_ids[[name]])
     data <- read_sheet(gs_ids[[name]])
     saveRDS(data, file_path)
@@ -439,21 +440,31 @@ ui <- page_navbar(
 
 server <- function(input, output, session) {
 
-  refresh_timer <- reactiveTimer(intervalMs = 300000)
+  #refresh_timer <- reactiveTimer(intervalMs = 300000)
+  
   
   observe({
-    refresh_timer()
+    query <- parseQueryString(session$clientData$url_search)
     
-    current_time <- format(Sys.time(), "%H:%M")
-    
-    if (current_time %in% c(
-        "05:00","05:01","05:02","05:03","05:04","05:05", #10 pm
-        "17:00","17:01","17:02","17:03","17:04","17:05", #10 am
-        "23:00","23:01","23:02","23:03","23:04","23:05" #4 pm
-        )) {
+    if (!is.null(query$run_update) && query$run_update == "true") {
       refresh_data(gs_ids)
+      message("Triggered background update via ping at: ", Sys.time())
       print("DATA REFRESHED")
     }
+    
+    #refresh_timer()
+    
+    #current_time <- format(Sys.time(), "%H:%M")
+    
+    #if (current_time %in% c(
+    #    "06:00","06:01","06:02","06:03","06:04","06:05", #11 pm
+    #    "17:00","17:01","17:02","17:03","17:04","17:05", #10 am
+    #    "20:00","20:01","20:02","20:03","20:04","20:05",#1 pm
+    #    "23:00","23:01","23:02","23:03","23:04","23:05" #4 pm
+    #    )) {
+    #  refresh_data(gs_ids)
+    #  print("DATA REFRESHED")
+    #}
   })
   
   # observeEvent(refresh_timer(), {
@@ -491,14 +502,14 @@ server <- function(input, output, session) {
   })
   filtered_hitting_std <- reactive({
     req(datasets())
-    datasets()$hitting[,1:23] %>%
+    datasets()$hitting[,1:25] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
       filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE) %>%
       filter(if (input$HQlf == TRUE) PA >= qh else TRUE)
   })
   filtered_hitting_adv <- reactive({
     req(datasets())
-    datasets()$hitting[,-c(8:23)] %>%
+    datasets()$hitting[,-c(8:25)] %>%
       filter(if (input$year_h != 9999) Year %in% input$year_h else TRUE) %>%
       filter(if (input$teams_h != "All") Team %in% teams$team_abbreviation[which(teams$team_full_name == input$teams_h)] else TRUE) %>%
       filter(if (input$HQlf == TRUE) PA >= qh else TRUE)
@@ -576,14 +587,15 @@ server <- function(input, output, session) {
         pageLength = 20,
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(2:22), width = '5px')
+                          ,list(targets = c(2:24), width = '5px')
                           ,list(targets = "_all", className = 'dt-left')
         ),
         order = list(5, 'desc')
         ,scrollX = FALSE
       )
     ) %>%
-      formatRound(columns = 20:22, digits = 3)
+      formatRound(columns = 22:25, digits = 3) %>%
+      formatRound(columns = 12, digits = 2)
   })
   
   output$hitting_adv <- renderDT({
@@ -615,7 +627,7 @@ server <- function(input, output, session) {
         pageLength = 20, 
         columnDefs = list(list(targets = 0, width = '5px')
                           ,list(targets = 1, width = '180px')
-                          ,list(targets = c(3:22), width = '10px')
+                          ,list(targets = c(3:23), width = '10px')
                           ,list(targets = "_all", className = 'dt-left')
         )
         ,order = list(6, 'desc')
@@ -882,13 +894,13 @@ server <- function(input, output, session) {
         ,pageLength = 30
         ,scrollX = FALSE
         ,columnDefs = list(list(targets = 0, width = '50x')
-                           ,list(targets = 1, width = '50px')
-                           ,list(targets = c(3,5), width = '10px')
-                           ,list(targets = c(1,3,5,9), className = 'dt-center')
-                           ,list(targets = c(2,4,6), width = '250px')
-                           ,list(targets = c(7,8), width = '20px')
+                           ,list(targets = c(2,4), width = '10px')
+                           ,list(targets = c(2,4,8), className = 'dt-center')
+                           ,list(targets = c(1,3,5,9), className = 'dt-left')
+                           ,list(targets = c(1,3,5), width = '300px')
+                           ,list(targets = c(6,7), width = '50px')
+                           ,list(targets = 8, width = '100px')
                            ,list(targets = 9, width = '100px')
-                           ,list(targets = 10, width = '100px')
                            ,list(targets = "_all", className = 'dt-left')
         )
       )
