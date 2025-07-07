@@ -1,0 +1,26 @@
+Package: lmbstatsapp
+Type: Shiny
+Title: LMB Stats App
+Version: 0.1.0
+Author: Axel Mora
+Description: Shiny app for visualizing Mexican League baseball statistics.
+Depends:
+  R (>= 4.3.1)
+Imports:
+  baseballr,
+  bslib,
+  data.table,
+  dplyr,
+  DT,
+  future,
+  ggplot2,
+  googlesheets4,
+  promises,
+  reactable,
+  readr,
+  shiny,
+  shinyWidgets,
+  thematic,
+  tidyr
+Encoding: UTF-8
+LazyData: true
