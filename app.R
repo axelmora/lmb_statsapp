@@ -1071,13 +1071,27 @@ server <- function(input, output, session) {
     trans_data_p <- transpose(selected_pitchers(), keep.names = "Stats", make.names = "Name")
     
     # Ensure numeric conversion for comparisons
-    trans_data_p[, -1] <- lapply(trans_data_p[, -1], as.numeric)
-    
+    #trans_data_p[, -1] <- lapply(trans_data_p[, -1], as.numeric)
+    #
+
     # Get the pitcher column names dynamically (assuming they are in columns 2 and 3)
     pitcher_cols <- colnames(trans_data_p)[2:3]
     
     # Reorder columns: Move "Stats" to the second position
     trans_data_p <- trans_data_p[, c(pitcher_cols[1], "Stats", pitcher_cols[2])]
+    
+    # Define which stats are NOT numeric (like "W-L")
+    non_numeric_stats <- c("W-L")
+    numeric_stats <- setdiff(trans_data_p$Stats, non_numeric_stats)
+    
+    # Convert only numeric stats to numeric
+    for (col in pitcher_cols) {
+      trans_data_p[[col]] <- ifelse(
+        trans_data_p$Stats %in% numeric_stats,
+        as.numeric(trans_data_p[[col]]),
+        trans_data_p[[col]]
+      )
+    }
     
     lower_is_better <- c("ERA", "WHIP", "FIP", "BB%")
     
@@ -1087,19 +1101,39 @@ server <- function(input, output, session) {
                   lapply(pitcher_cols, function(col_name) {
                     colDef(
                       align = "center",
+                      
                       style = function(value, index) {
                         stat_name <- trans_data_p$Stats[index]
                         opponent_col <- ifelse(col_name == pitcher_cols[1], pitcher_cols[2], pitcher_cols[1])
                         opponent_value <- trans_data_p[index, opponent_col]
                         
+                        # Skip if any value is NA
                         if (is.na(value) || is.na(opponent_value)) return("")
                         
-                        if (stat_name %in% lower_is_better) {
+                        # Special handling for W-L
+                        if (stat_name == "W-L") {
+                          # Extract W and L from "W-L" string
+                          parse_wl <- function(wl) {
+                            parts <- strsplit(wl, "-")[[1]]
+                            w <- as.numeric(parts[1])
+                            l <- as.numeric(parts[2])
+                            return(w / (w + l))
+                          }
+                          
+                          wp1 <- tryCatch(parse_wl(value), error = function(e) NA)
+                          wp2 <- tryCatch(parse_wl(opponent_value), error = function(e) NA)
+                          
+                          if (is.na(wp1) || is.na(wp2)) return("")
+                          
+                          if (wp1 > wp2) "background-color: #D4EDDA;" else ""
+                        } else if (stat_name %in% lower_is_better) {
                           if (value < opponent_value) "background-color: #D4EDDA;" else ""
                         } else {
                           if (value > opponent_value) "background-color: #D4EDDA;" else ""
                         }
                       }
+                      
+                      
                     )
                   }),
                   pitcher_cols
