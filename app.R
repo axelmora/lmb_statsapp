@@ -13,6 +13,7 @@ library(promises)
 library(reactable)
 library(shinyWidgets)
 library(baseballr)
+library(gt)
 
 plan(multisession)
 # ----------------- DATA PREPARATION -------------------------------------
@@ -84,7 +85,12 @@ gs_ids <- list(
   hitting_cp = "1K-wOBfh9QW4ucEShjypBXQkti962Yajyf-Da5QEKbg0",
   pitching_cp = "1Bkbt91wCmAbAGSlMpMgx8dHcPhsyFjxVpi5eo9gy3do",
   rosters = "1zeor7gan9NlpzDx_Dh5h1soDpdSye-V-joHZwXH9F2Y",
-  trans = "1_Wy1KW5AUH_NTbog_QJ9dFiq5Ujm719MBM0YZ0X7EZw"
+  trans = "1_Wy1KW5AUH_NTbog_QJ9dFiq5Ujm719MBM0YZ0X7EZw",
+  stan_nte = "15yPmFjfBfHqfIlhyJVGopp57l-jmcOksu5igvF0h69I",
+  stan_sur = "1sUlR2MkX1aYhiWBhQPobwahvVGX2GRowTZPAGl7I-gU",
+  stan_lmb = "1IvGcj4AL-FHCjybAeZGT4ixIWyx2EGlzcwFiib71LAs",
+  hth_nte_matrix = "1Q7PYR6QwXgFNWxydP8nWWeviEz95E1rNycVpiENlY5U",
+  hth_sur_matrix = "1lhRN9K-q9uHgMYrY3Ey24IVOjCzo1lK-Pb42XM8zg84"
 )
 
 refresh_data <- function(gs_ids) {
@@ -336,6 +342,60 @@ ui <- page_navbar(
                   choices = c("All",teams$team_full_name)
                   ,selected = "All"),
       DTOutput("trans")
+    )
+  ),
+  nav_panel(
+    "Game Logs",
+    DTOutput("game_logs")
+  ),
+  nav_menu(
+    title = "Standings",
+    nav_panel(
+      title = "Standings",
+      navset_card_tab(
+        full_screen = TRUE,
+        nav_panel(
+          "Norte",
+          DTOutput("stan_nte")
+        ),
+        nav_panel(
+          "Sur",
+          DTOutput("stan_sur")
+        )
+      )
+    ),
+    nav_panel(
+      title = "League Standing", 
+      navset_card_tab(
+        nav_panel(
+          "League Stansing",
+          DTOutput("stan_lmb")
+        )
+      )
+    ),
+    nav_panel(
+      title = "Head-to-Head",
+      navset_card_tab(
+        nav_panel(
+          "Head-to-Head Norte",
+          gt_output("hth_nte")
+        ),
+        nav_panel(
+          "Head-to-Head Sur",
+          gt_output("hth_sur")
+        )
+      )
+    ),
+    nav_panel(
+      title = "Standing Evolution",
+      nav_panel(
+        "Norte",
+        DTOutput("evo_nte")
+      ),
+      nav_panel(
+        "Sur",
+        DTOutput("evo_sur")
+      )
     )
   ),
   nav_panel(
@@ -819,6 +879,86 @@ server <- function(input, output, session) {
   })
   
   ############### MISC AND GUTS ###############
+  
+  output$stan_nte <- renderDT({
+    req(datasets()$stan_nte)
+    datatable(
+      datasets()$stan_nte,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+        ,columnDefs = list(list(targets = 0, width = '5px')
+                           ,list(targets = 1, width = '180px')
+                           ,list(targets = "_all", className = 'dt-left')
+          )
+        )
+      )
+  })
+  
+  output$stan_sur <- renderDT({
+    req(datasets()$stan_sur)
+    datatable(
+      datasets()$stan_sur,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+        ,columnDefs = list(list(targets = 0, width = '5px')
+                           ,list(targets = 1, width = '180px')
+                           ,list(targets = "_all", className = 'dt-left')
+        )
+      )
+    )
+  })
+  
+  output$stan_lmb <- renderDT({
+    req(datasets()$stan_lmb)
+    datatable(
+      datasets()$stan_lmb,
+      rownames = FALSE,
+      options = list(
+        dom = 't'
+      ,pageLength = 20
+      ,columnDefs = list(list(targets = 0, width = '5px')
+                        ,list(targets = 1, width = '180px')
+                        ,list(targets = "_all", className = 'dt-left')
+      )
+      )
+    )
+  })
+  
+  output$hth_nte <- render_gt({
+    req(datasets()$hth_nte_matrix)
+    datasets()$hth_nte_matrix %>%
+      gt(rowname_col = "Team") %>%
+      tab_header(
+        title = "Zona Norte Win-Loss Matrix",
+        subtitle = "Head-to-head records by team"
+      ) %>%
+      opt_align_table_header(align = "left") %>%
+      opt_table_font(font = list(gt::google_font("Roboto"))) %>%
+      cols_align(align = "center", columns = everything()) %>%
+      tab_style(
+        style = cell_fill(color = "#f9f9f9"),
+        locations = cells_body()
+      )
+  })
+  
+  output$hth_sur <- render_gt({
+    req(datasets()$hth_sur_matrix)
+    datasets()$hth_sur_matrix %>%
+      gt(rowname_col = "Team") %>%
+      tab_header(
+        title = "Zona Sur Win-Loss Matrix",
+        subtitle = "Head-to-head records by team"
+      ) %>%
+      opt_align_table_header(align = "left") %>%
+      opt_table_font(font = list(gt::google_font("Roboto"))) %>%
+      cols_align(align = "center", columns = everything()) %>%
+      tab_style(
+        style = cell_fill(color = "#f9f9f9"),
+        locations = cells_body()
+      )
+  })
   
   output$teams_pace_dt <- renderDT({
     req(datasets()$lmb_pace_venue_24)
