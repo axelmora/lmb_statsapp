@@ -1,0 +1,33 @@
+Package: lmbshiny
+Title: Mexican League (LMB) Statistics Explorer
+Version: 0.1.0
+Authors@R: 
+    person("Axel Sunem", "Mora Olvera", 
+           role = c("aut", "cre"),
+           email = "your.email@example.com")
+Description: A modular Shiny application for exploring and analyzing 
+    Mexican Baseball League (LMB) statistics (2019–2025). Includes 
+    modules for player stats, team stats, comparisons, and advanced 
+    sabermetric analysis. Data is refreshed daily from Google Sheets 
+    via ETL pipelines.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.1)
+Imports: 
+    shiny,
+    shinydashboard,
+    ggplot2,
+    dplyr,
+    tidyr,
+    stringr,
+    readr,
+    lubridate,
+    tibble,
+    shinyWidgets,
+    reactable,
+    data.table
+Suggests: 
+    testthat,
+    rmarkdown
