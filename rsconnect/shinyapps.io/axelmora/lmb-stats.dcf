@@ -1,0 +1,10 @@
+name: lmb-stats
+title:
+username: axelmora
+account: axelmora
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15485569
+bundleId: 10918570
+url: https://axelmora.shinyapps.io/lmb-stats/
+version: 1

@@ -59,6 +59,8 @@ source("R/modules/module_standings.R")
 source("R/modules/module_pace_venue.R")
 source("R/modules/module_att.R")
 source("R/modules/module_guts.R")
+source("R/modules/module_reports.R")
+
 # ... add more as needed
 
 # ---- App UI ----
@@ -161,6 +163,11 @@ ui <- bs4DashPage(
         "Guts",
         tabName = "guts",
         icon = icon("fire")
+        ),
+      bs4SidebarMenuItem(
+        "Reports",
+        tabName = "reports",
+        icon = icon("file-pdf")
         )
       )
     )
@@ -207,6 +214,11 @@ ui <- bs4DashPage(
       bs4TabItem(
         tabName = "guts", 
         ui_guts("ui_guts_1")
+      ),
+      bs4TabItem(
+        tabName = "reports",
+        h3("Custom Reports"),
+        ui_reports("ui_reports_1")
       )
     )
   ),
@@ -287,6 +299,8 @@ server <- function(input, output, session) {
   server_game_pace("ui_game_pace_1",lmb_pace_venue, lmb_pace)
   server_att("ui_att_1",lmb_att)
   server_guts("ui_guts_1",guts,pf)
+  server_reports("ui_reports_1", player_data = hitting, team_data = team_hitting)
+
 
   
 }
