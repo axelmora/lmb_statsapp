@@ -46,7 +46,25 @@ ui_h2h <- function(id) {
 
 ui_std_evol <- function(id) {
   ns <- NS(id)
-  fluidRow(column(12, DTOutput(ns("game_logs_table"))))
+  tabItem(
+    tabName = "std_evol",
+    fluidRow(
+      column(
+        width = 12,
+        tabsetPanel(
+          id = "tabsetpanel8",
+            tabPanel(
+              "Zona Norte",
+              plotlyOutput(ns("rank_plot_nte"), height = "500px")
+            ),
+            tabPanel(
+              "Zona Sur",
+              plotlyOutput(ns("rank_plot_sur"), height = "500px")
+            )
+        ) 
+      )
+    )
+  )
 }
 
 server_game_logs <- function(id, gl_data) {
@@ -129,5 +147,43 @@ server_std <- function(id, datasets) {
     output$standing_lmb <- renderDT({
       render_standing(datasets$lmb)
     })
+  })
+}
+
+server_std_evol <- function(id, datasets) {
+  moduleServer(id, function(input, output, session) {
+
+    output$rank_plot_nte <- renderPlotly({
+      p <- ggplot(datasets$nte, aes(x = date, y = rank, color = team)) +
+        geom_line(size = 0.8) +
+        scale_y_reverse(breaks = 1:6) +
+        labs(
+          title = "LMB Norte Standings Over Time",
+          x = "Date",
+          y = "Rank",
+          color = "Team"
+        ) +
+        theme_minimal() +
+        scale_color_manual(values = datasets$colors_nte)
+
+      ggplotly(p, tooltip = c("x", "y", "color"))
+    })
+
+    output$rank_plot_sur <- renderPlotly({
+      p <- ggplot(datasets$sur, aes(x = date, y = rank, color = team)) +
+        geom_line(size = 0.8) +
+        scale_y_reverse(breaks = 1:6) +
+        labs(
+          title = "LMB Sur Standings Over Time",
+          x = "Date",
+          y = "Rank",
+          color = "Team"
+        ) +
+        theme_minimal() +
+        scale_color_manual(values = datasets$colors_sur)
+
+      ggplotly(p, tooltip = c("x", "y", "color"))
+    })
+
   })
 }

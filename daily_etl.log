@@ -196,3 +196,2531 @@ Fatal error: no fue posible abrir el archivo '/Users/axel.mora/Documents/lmb_sta
 Fatal error: no fue posible abrir el archivo '/Users/axel.mora/Documents/lmb_statsapp/daily_etl.R': No such file or directory
 Fatal error: no fue posible abrir el archivo '/Users/axel.mora/Documents/lmb_statsapp/daily_etl.R': No such file or directory
 Fatal error: no fue posible abrir el archivo '/Users/axel.mora/Documents/lmb_statsapp/daily_etl.R': No such file or directory
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida
+
+Adjuntando el paquete: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+
+Adjuntando el paquete: 'jsonlite'
+
+The following object is masked from 'package:purrr':
+
+    flatten
+
+
+Adjuntando el paquete: 'lubridate'
+
+The following objects are masked from 'package:base':
+
+    date, intersect, setdiff, union
+
+Error en file(filename, "r", encoding = encoding): 
+  no se puede abrir la conexi'on
+Calls: source -> file
+Adem'as: Aviso:
+In file(filename, "r", encoding = encoding) :
+  no fue posible abrir el archivo 'stats_etl.R': No such file or directory
+Ejecuci'on interrumpida

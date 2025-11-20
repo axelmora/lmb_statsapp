@@ -12,6 +12,7 @@ library(ggplot2)
 library(data.table)
 library(DT)
 library(gt)
+library(plotly)
 
 options(
   shiny.sanitize.errors = TRUE,
@@ -39,6 +40,10 @@ lmb_pace <- readRDS("data/cache/lmb_pace_24.rds")
 lmb_pace_venue <- readRDS("data/cache/lmb_pace_venue_24.rds")
 guts <- readRDS("data/cache/woba_fipc.rds")
 pf <- readRDS("data/cache/park_factors.rds")
+nte_leader_long <- readRDS("data/cache/nte_leader_long.rds")
+team_colors_nte <- readRDS("data/cache/team_colors_nte.rds")
+sur_leader_long <- readRDS("data/cache/sur_leader_long.rds")
+team_colors_sur <- readRDS("data/cache/team_colors_sur.rds")
 # ---- Source Helpers & Modules ----
 # helpers
 source("R/helpers/data_cleaning.R")
@@ -163,12 +168,12 @@ ui <- bs4DashPage(
         "Guts",
         tabName = "guts",
         icon = icon("fire")
-        ),
+        )
+      ),
       bs4SidebarMenuItem(
         "Reports",
         tabName = "reports",
         icon = icon("file-pdf")
-        )
       )
     )
   ),
@@ -202,7 +207,7 @@ ui <- bs4DashPage(
       bs4TabItem(tabName = "standings", h3("Standings"), ui_zone_std("ui_zone_std_1")),
       bs4TabItem(tabName = "league_standing", h3("League Standing"), ui_lg_std("ui_lg_std_1")),
       bs4TabItem(tabName = "head_to_head", h3("Head-to-Head"), ui_h2h("ui_h2h_1")),
-      bs4TabItem(tabName = "standing_evolution", h3("Standing Evolution"), plotOutput("standing_evolution_plot")),
+      bs4TabItem(tabName = "standing_evolution", h3("Standing Evolution"), ui_std_evol("ui_std_evol_1")),
       bs4TabItem(
         tabName = "game_pace",
         ui_game_pace("ui_game_pace_1")
@@ -290,10 +295,12 @@ server <- function(input, output, session) {
   server_std("ui_lg_std_1", datasets = list(
     lmb = lmb_std
   ))
-  
-  output$standing_evolution_plot <- renderPlot({
-    plot(1:10, 1:10, type = "l")  # placeholder
-  })
+  server_std_evol("ui_std_evol_1", datasets = list(
+      nte = nte_leader_long,
+      sur = sur_leader_long,
+      colors_nte = team_colors_nte,
+      colors_sur = team_colors_sur
+  ))
 
   # Extras
   server_game_pace("ui_game_pace_1",lmb_pace_venue, lmb_pace)
