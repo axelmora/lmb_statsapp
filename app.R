@@ -13,6 +13,8 @@ library(data.table)
 library(DT)
 library(gt)
 library(plotly)
+library(shinyWidgets)
+library(shinyjs)
 
 options(
   shiny.sanitize.errors = TRUE,
@@ -65,7 +67,7 @@ source("R/modules/module_pace_venue.R")
 source("R/modules/module_att.R")
 source("R/modules/module_guts.R")
 source("R/modules/module_reports.R")
-
+source("R/modules/mod_chatbot.R")
 # ... add more as needed
 
 # ---- App UI ----
@@ -74,7 +76,7 @@ ui <- bs4DashPage(
   
   header = bs4DashNavbar(
     skin = "light",
-    status = "sucess",
+    status = "success",
     border = TRUE,
     sidebarIcon = icon("bars"),
     controlbarIcon = icon("th"),
@@ -174,7 +176,8 @@ ui <- bs4DashPage(
         "Reports",
         tabName = "reports",
         icon = icon("file-pdf")
-      )
+      ),
+      bs4SidebarMenuItem("Chatbot", tabName = "chatbot", icon = icon("robot"))
     )
   ),
   body = bs4DashBody(
@@ -224,7 +227,8 @@ ui <- bs4DashPage(
         tabName = "reports",
         h3("Custom Reports"),
         ui_reports("ui_reports_1")
-      )
+      ),
+      bs4TabItem(tabName = "chatbot", h3("Chatbot"), chatbotUI("chatmod"))
     )
   ),
   controlbar = bs4DashControlbar(
@@ -308,7 +312,20 @@ server <- function(input, output, session) {
   server_guts("ui_guts_1",guts,pf)
   server_reports("ui_reports_1", player_data = hitting, team_data = team_hitting)
 
-
+  chatbotServer(
+    id = "chatmod",
+    datasets = list(
+      hitting = hitting,
+      pitching = pitching,
+      fielding = fielding,
+      team_hitting = team_hitting,
+      team_pitching = team_pitching,
+      team_fielding = team_fielding,
+      rosters = rosters,
+      trans = trans,
+      game_logs = game_logs
+    )
+  )
   
 }
 
