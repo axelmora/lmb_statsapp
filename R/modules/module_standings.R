@@ -1,21 +1,21 @@
 ui_zone_std <- function(id) {
   ns <- NS(id)
-    fluidRow(
-      column(
+  fluidRow(
+    column(
+      width = 12,
+      id = ns("standings"),
+      box(
         width = 12,
-          id = ns("standings"),
-            box(
-              width = 12,
-              "Zona Norte",
-              DTOutput(ns("standing_norte"))
-            ),
-            box(
-              width = 12,
-              "Zona Sur",
-              DTOutput(ns("standing_sur"))
-            )
+        "Zona Norte",
+        DTOutput(ns("standing_norte"))
+      ),
+      box(
+        width = 12,
+        "Zona Sur",
+        DTOutput(ns("standing_sur"))
       )
     )
+  )
 }
 
 ui_lg_std <- function(id) {
@@ -25,73 +25,43 @@ ui_lg_std <- function(id) {
 
 ui_h2h <- function(id) {
   ns <- NS(id)
-    fluidRow(
-      column(
+  fluidRow(
+    column(
+      width = 12,
+      id = ns("tabsetpanel3"),
+      box(
         width = 12,
-          id = ns("tabsetpanel3"),
-            box(
-              width = 12,
-              "Zona Norte",
-              gt_output(ns("h2h_nte_matrix"))
-            ),
-            box(
-              width = 12,
-              "Zona Sur",
-              gt_output(ns("h2h_sur_matrix"))
-            )
-      )
-    )
-}
-
-
-ui_std_evol <- function(id) {
-  ns <- NS(id)
-  tabItem(
-    tabName = "std_evol",
-    fluidRow(
-      column(
+        "Zona Norte",
+        gt_output(ns("h2h_nte_matrix"))
+      ),
+      box(
         width = 12,
-        tabsetPanel(
-          id = "tabsetpanel8",
-            tabPanel(
-              "Zona Norte",
-              plotlyOutput(ns("rank_plot_nte"), height = "500px")
-            ),
-            tabPanel(
-              "Zona Sur",
-              plotlyOutput(ns("rank_plot_sur"), height = "500px")
-            )
-        ) 
+        "Zona Sur",
+        gt_output(ns("h2h_sur_matrix"))
       )
     )
   )
 }
 
-server_game_logs <- function(id, gl_data) {
-  moduleServer(id, function(input, output, session) {
-    output$game_logs_table <- renderDT({
-    datatable(
-      gl_data
-      ,escape = FALSE
-      ,rownames = FALSE
-      ,options = list(
-        dom = 'tip'
-        ,pageLength = 30
-        ,scrollX = FALSE
-        ,columnDefs = list(list(targets = 0, width = '100x')
-                           ,list(targets = c(2,4), width = '10px')
-                           ,list(targets = c(2,4,8), className = 'dt-center')
-                           ,list(targets = c(1,3,5,9), className = 'dt-left')
-                           ,list(targets = c(1,3,5), width = '250px')
-                           ,list(targets = c(6,7), width = '50px')
-                           ,list(targets = 8, width = '50px')
-                           ,list(targets = 9, width = '50px')
-                           ,list(targets = "_all", className = 'dt-left')
+
+ui_std_evol <- function(id) {
+  ns <- NS(id)
+  fluidRow(
+    column(
+      width = 12,
+      tabsetPanel(
+        id = ns("tabsetpanel8"),
+        tabPanel(
+          "Zona Norte",
+          plotlyOutput(ns("rank_plot_nte"), height = "500px")
+        ),
+        tabPanel(
+          "Zona Sur",
+          plotlyOutput(ns("rank_plot_sur"), height = "500px")
         )
       )
     )
-  })
-  })
+  )
 }
 
 server_h2h <- function(id, datasets) {
