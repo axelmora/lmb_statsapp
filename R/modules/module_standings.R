@@ -75,7 +75,7 @@ server_h2h <- function(id, datasets) {
           subtitle = "Head-to-head records by team"
         ) %>%
         opt_align_table_header(align = "left") %>%
-        opt_table_font(font = list(gt::google_font("Roboto"))) %>%
+        opt_table_font(font = list(gt::google_font("IBM Plex Sans Condensed"))) %>%
         cols_align(align = "center", columns = everything()) %>%
         tab_style(
           style = cell_fill(color = "#f9f9f9"),
@@ -95,7 +95,7 @@ server_std <- function(id, datasets) {
   moduleServer(id, function(input, output, session) {
 
     render_standing <- function(data) {
-      datatable(
+      dt <- datatable(
         data,
         rownames = FALSE,
         options = list(
@@ -107,6 +107,7 @@ server_std <- function(id, datasets) {
         )
         )
       )
+      style_dt_numeric_columns(dt, data)
     }
     output$standing_norte <- renderDT({
       render_standing(datasets$nte)

@@ -29,7 +29,7 @@ server_player_stats <- function(id, datasets, season_filter) {
         showPageSizeOptions = TRUE,
         pageSizeOptions = c(25, 50, 100, 200, 500),
         resizable = TRUE,
-        defaultColDef = colDef(
+        defaultColDef = reactable_lmb_coldef(
           footer = function(values, name) {
             htmltools::div(name, style = list(fontWeight = 600))
           }
@@ -43,9 +43,7 @@ server_player_stats <- function(id, datasets, season_filter) {
                         style = list(borderRight = "1px solid #eee"),
                         headerStyle = list(borderRight = "1px solid #eee"))
         ),
-        theme = reactableTheme(
-          headerStyle = list(background = "#f8f9fa")
-        )
+        theme = reactable_lmb_theme()
       )
     }
     
@@ -65,4 +63,3 @@ server_player_stats <- function(id, datasets, season_filter) {
     
   })
 }
-
