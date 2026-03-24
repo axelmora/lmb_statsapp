@@ -116,6 +116,99 @@ ui <- bs4DashPage(
     )
   ),
   body = bs4DashBody(
+    tags$head(
+      tags$link(
+        rel = "preconnect",
+        href = "https://fonts.googleapis.com"
+      ),
+      tags$link(
+        rel = "preconnect",
+        href = "https://fonts.gstatic.com",
+        crossorigin = "anonymous"
+      ),
+      tags$link(
+        rel = "stylesheet",
+        href = "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      ),
+      tags$style(HTML("
+        :root {
+          --lmb-header-font: 'IBM Plex Sans Condensed', 'Source Sans Pro', sans-serif;
+          --lmb-numeric-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          --lmb-card-radius: 0.85rem;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        .content-header h1,
+        .card-title,
+        .brand-text,
+        .main-sidebar .nav-link p,
+        .main-header .nav-link {
+          font-family: var(--lmb-header-font);
+          letter-spacing: 0.01em;
+        }
+
+        .small-box .inner h3,
+        .info-box-number,
+        .stat-number,
+        .metric-value {
+          font-family: var(--lmb-numeric-font);
+          font-variant-numeric: tabular-nums;
+          letter-spacing: 0.01em;
+        }
+
+        .box, .card, .small-box, .info-box {
+          border-radius: var(--lmb-card-radius);
+        }
+
+        .small-box {
+          box-shadow: 0 0.5rem 1.2rem rgba(17, 24, 39, 0.12);
+        }
+
+        .table td.dt-body-right,
+        .table th.dt-body-right,
+        table.dataTable td.dt-type-numeric,
+        table.dataTable th.dt-type-numeric,
+        .reactable .rt-td[data-type='numeric'],
+        .reactable .rt-th[data-type='numeric'] {
+          font-family: var(--lmb-numeric-font);
+          font-variant-numeric: tabular-nums;
+        }
+
+        body.dark-mode .card,
+        body.dark-mode .box,
+        body.dark-mode .small-box,
+        body.dark-mode .info-box {
+          box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode table.dataTable,
+        body.dark-mode .dataTables_wrapper .dataTables_info,
+        body.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button,
+        body.dark-mode .dataTables_wrapper .dataTables_length,
+        body.dark-mode .dataTables_wrapper .dataTables_filter {
+          color: #d7dce2 !important;
+        }
+
+        body.dark-mode table.dataTable thead th,
+        body.dark-mode table.dataTable tbody td {
+          background-color: #2b3035 !important;
+          border-color: #3a4046 !important;
+          color: #e9edf2 !important;
+        }
+
+        body.dark-mode .reactable .rt-table {
+          background-color: #2b3035;
+          color: #e9edf2;
+        }
+
+        body.dark-mode .reactable .rt-th,
+        body.dark-mode .reactable .rt-td {
+          background-color: #2b3035;
+          border-color: #3a4046;
+          color: #e9edf2;
+        }
+      "))
+    ),
     bs4TabItems(
       bs4TabItem(tabName = "welcome", h3("Bienvenidos")),
       bs4TabItem(tabName = "player_hit",ui_player_stats("ui_player_stats_1")),

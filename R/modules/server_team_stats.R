@@ -8,7 +8,13 @@ server_team_stats <- function(id, data_hitting, data_pitching, data_fielding, fi
       df <- data_hitting
       if (filters$team() != "All") df <- df %>% filter(Team == filters$team())
       if (filters$season() != "All") df <- df %>% filter(Year == filters$season())
-      reactable(df, searchable = TRUE, sortable = TRUE)
+      reactable(
+        df,
+        searchable = TRUE,
+        sortable = TRUE,
+        defaultColDef = reactable_lmb_coldef(),
+        theme = reactable_lmb_theme()
+      )
     })
     
     output$pitching_table <- renderReactable({
@@ -16,7 +22,13 @@ server_team_stats <- function(id, data_hitting, data_pitching, data_fielding, fi
       df <- data_pitching
       if (filters$team() != "All") df <- df %>% filter(Team == filters$team())
       if (filters$season() != "All") df <- df %>% filter(Year == filters$season())
-      reactable(df, searchable = TRUE, sortable = TRUE)
+      reactable(
+        df,
+        searchable = TRUE,
+        sortable = TRUE,
+        defaultColDef = reactable_lmb_coldef(),
+        theme = reactable_lmb_theme()
+      )
     })
     
     output$fielding_table <- renderReactable({
@@ -24,9 +36,14 @@ server_team_stats <- function(id, data_hitting, data_pitching, data_fielding, fi
       df <- data_fielding
       if (filters$team() != "All") df <- df %>% filter(Team == filters$team())
       if (filters$season() != "All") df <- df %>% filter(Year == filters$season())
-      reactable(df, searchable = TRUE, sortable = TRUE)
+      reactable(
+        df,
+        searchable = TRUE,
+        sortable = TRUE,
+        defaultColDef = reactable_lmb_coldef(),
+        theme = reactable_lmb_theme()
+      )
     })
   })
 }
-
 

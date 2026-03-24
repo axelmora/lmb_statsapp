@@ -43,8 +43,22 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
                 align = "center",
                 style = function(value, index) {
                   opponent_col <- ifelse(col_name == player_cols[1], player_cols[2], player_cols[1])
-                  if (is.na(value) || is.na(trans_data[index, opponent_col])) return("")
-                  if (value > trans_data[index, opponent_col]) "background-color: #D4EDDA;" else ""
+                  if (is.na(value) || is.na(trans_data[index, opponent_col])) return(NULL)
+                  cell_style <- if (value > trans_data[index, opponent_col]) {
+                    list(background = "#D4EDDA")
+                  } else {
+                    list()
+                  }
+                  if (is.numeric(value)) {
+                    cell_style <- c(
+                      cell_style,
+                      list(
+                        fontFamily = "'JetBrains Mono', ui-monospace, monospace",
+                        fontVariantNumeric = "tabular-nums"
+                      )
+                    )
+                  }
+                  cell_style
                 }
               )
             }),
@@ -53,9 +67,10 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
           list(Stats = colDef(name = "Statistic", align = "center"))
         ),
         pagination = FALSE,
-        defaultColDef = colDef(align = "center"),
+        defaultColDef = reactable_lmb_coldef(align = "center"),
         bordered = TRUE,
-        highlight = TRUE
+        highlight = TRUE,
+        theme = reactable_lmb_theme()
       )
     })
     
@@ -111,7 +126,7 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
                   opponent_col <- ifelse(col_name == pitcher_cols[1], pitcher_cols[2], pitcher_cols[1])
                   opponent_value <- trans_data_p[index, opponent_col]
                   
-                  if (is.na(value) || is.na(opponent_value)) return("")
+                  if (is.na(value) || is.na(opponent_value)) return(NULL)
                   
                   if (stat_name == "W-L") {
                     parse_wl <- function(wl) {
@@ -122,12 +137,16 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
                     }
                     wp1 <- tryCatch(parse_wl(value), error = function(e) NA)
                     wp2 <- tryCatch(parse_wl(opponent_value), error = function(e) NA)
-                    if (is.na(wp1) || is.na(wp2)) return("")
-                    if (wp1 > wp2) "background-color: #D4EDDA;" else ""
+                    if (is.na(wp1) || is.na(wp2)) return(NULL)
+                    if (wp1 > wp2) {
+                      list(background = "#D4EDDA")
+                    } else {
+                      list()
+                    }
                   } else if (stat_name %in% lower_is_better) {
-                    if (value < opponent_value) "background-color: #D4EDDA;" else ""
+                    if (value < opponent_value) list(background = "#D4EDDA") else list()
                   } else {
-                    if (value > opponent_value) "background-color: #D4EDDA;" else ""
+                    if (value > opponent_value) list(background = "#D4EDDA") else list()
                   }
                 }
               )
@@ -137,9 +156,10 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
           list(Stats = colDef(name = "Statistic", align = "center"))
         ),
         pagination = FALSE,
-        defaultColDef = colDef(align = "center"),
+        defaultColDef = reactable_lmb_coldef(align = "center"),
         bordered = TRUE,
-        highlight = TRUE
+        highlight = TRUE,
+        theme = reactable_lmb_theme()
       )
     })
   })
