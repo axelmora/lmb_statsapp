@@ -6,7 +6,7 @@ ui_game_logs <- function(id) {
 server_game_logs <- function(id, gl_data) {
   moduleServer(id, function(input, output, session) {
     output$game_logs_table <- renderDT({
-      datatable(
+      dt <- datatable(
         gl_data
         ,escape = FALSE
         ,rownames = FALSE
@@ -26,6 +26,7 @@ server_game_logs <- function(id, gl_data) {
           )
         )
       )
+      style_dt_numeric_columns(dt, gl_data)
     })
   })
 }

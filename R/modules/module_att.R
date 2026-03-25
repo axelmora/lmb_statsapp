@@ -23,7 +23,7 @@ ui_att <- function(id) {
 server_att <- function(id, att_data) {
   moduleServer(id, function(input, output, session) {
     output$game_att_table <- renderDT({
-      datatable(
+      dt <- datatable(
         att_data
         ,escape = FALSE
         ,rownames = FALSE,
@@ -38,6 +38,7 @@ server_att <- function(id, att_data) {
           ,scrollX = FALSE
         )
       )
+      style_dt_numeric_columns(dt, att_data)
     })
   
   output$lmb_att_avg <- renderText({

@@ -38,7 +38,7 @@ ui_game_pace <- function(id) {
 server_game_pace <- function(id, pace_venue_data, pace_data) {
   moduleServer(id, function(input, output, session) {
     output$game_pace_table <- renderDT({
-      datatable(
+      dt <- datatable(
         pace_venue_data
         ,escape = FALSE
         ,rownames = FALSE
@@ -54,6 +54,7 @@ server_game_pace <- function(id, pace_venue_data, pace_data) {
           ,scrollX = FALSE
         )
       )
+      style_dt_numeric_columns(dt, pace_venue_data)
     })
   
   output$hits9 <- renderText({

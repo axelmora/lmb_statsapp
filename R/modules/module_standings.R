@@ -95,7 +95,7 @@ server_std <- function(id, datasets) {
   moduleServer(id, function(input, output, session) {
 
     render_standing <- function(data) {
-      datatable(
+      dt <- datatable(
         data,
         rownames = FALSE,
         options = list(
@@ -107,6 +107,7 @@ server_std <- function(id, datasets) {
         )
         )
       )
+      style_dt_numeric_columns(dt, data)
     }
     output$standing_norte <- renderDT({
       render_standing(datasets$nte)
