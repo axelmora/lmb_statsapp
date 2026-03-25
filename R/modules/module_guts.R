@@ -38,7 +38,7 @@ server_guts <- function(id, guts_data, pf_data) {
           dom = 't'
           ,scrollX = TRUE
         )
-      )%>%
+      ) %>%
         formatRound(columns = 2:11, digits = 3)
     })
   })

@@ -38,23 +38,23 @@ ui_game_pace <- function(id) {
 server_game_pace <- function(id, pace_venue_data, pace_data) {
   moduleServer(id, function(input, output, session) {
     output$game_pace_table <- renderDT({
-    datatable(
-      pace_venue_data
-      ,escape = FALSE
-      ,rownames = FALSE
-      ,options = list(
-        dom = 't'
-        ,pageLength = 21
-        ,scrollX = FALSE
-        ,columnDefs = list(list(targets = 0, width = '150x')
-                           ,list(targets = 1, width = '200px')
-                           ,list(targets = c(2:7), width = '5px')
-                           ,list(targets = "_all", className = 'dt-left')
+      datatable(
+        pace_venue_data
+        ,escape = FALSE
+        ,rownames = FALSE
+        ,options = list(
+          dom = 't'
+          ,pageLength = 21
+          ,scrollX = FALSE
+          ,columnDefs = list(list(targets = 0, width = '150x')
+                             ,list(targets = 1, width = '200px')
+                             ,list(targets = c(2:7), width = '5px')
+                             ,list(targets = "_all", className = 'dt-left')
+          )
+          ,scrollX = FALSE
         )
-        ,scrollX = FALSE
       )
-    )
-  })
+    })
   
   output$hits9 <- renderText({
     pace_data$`Hits/9in`

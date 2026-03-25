@@ -23,22 +23,22 @@ ui_att <- function(id) {
 server_att <- function(id, att_data) {
   moduleServer(id, function(input, output, session) {
     output$game_att_table <- renderDT({
-    datatable(
-      att_data
-      ,escape = FALSE
-      ,rownames = FALSE,
-      options = list(
-        dom = 't'
-        ,pageLength = 20
-        ,columnDefs = list(list(targets = 0, width = '150x')
-                           ,list(targets = 1, width = '200px')
-                           ,list(targets = c(2:7), width = '5px')
-                           ,list(targets = "_all", className = 'dt-left')
+      datatable(
+        att_data
+        ,escape = FALSE
+        ,rownames = FALSE,
+        options = list(
+          dom = 't'
+          ,pageLength = 20
+          ,columnDefs = list(list(targets = 0, width = '150x')
+                             ,list(targets = 1, width = '200px')
+                             ,list(targets = c(2:7), width = '5px')
+                             ,list(targets = "_all", className = 'dt-left')
+          )
+          ,scrollX = FALSE
         )
-        ,scrollX = FALSE
       )
-    )
-  })
+    })
   
   output$lmb_att_avg <- renderText({
     round(sum(att_data$`Total Home Attendance`)/
