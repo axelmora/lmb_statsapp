@@ -1,30 +1,46 @@
-# LMB Shiny App
+# LMB Stats Lab
 
-A modular Shiny application for exploring **Mexican Baseball League (LMB)** statistics (2019–2025).  
-This app provides interactive dashboards for player stats, team stats, and advanced sabermetric analysis, with daily-updated data pipelines.
+A fully modernized Shiny application for exploring Mexican Baseball League (LMB) data with a clean Bootstrap 5 UI, responsive layouts, and robust data loading.
 
----
+## What's new
 
-## 🚀 Features
+- **Modern UI stack** using `bslib::page_navbar()` and cards/value boxes.
+- **Robust data loading** with fallback paths (`data/cache` and `cache`).
+- **Interactive explorers** for players and teams with dynamic metric detection.
+- **League-level insights** for standings, park factors, and sabermetric constants.
+- **Operational reliability** with safer defaults and graceful handling when certain columns are missing.
 
-- **Player Statistics Module**: 
-  - Interactive selection of players
-  - Time series trends (wOBA, OPS, FIP, etc.)
-  - Table and visualization outputs
+## App sections
 
-- **Team Statistics Module** (coming soon):
-  - Compare teams by season
-  - Explore pitching and batting strengths
+1. **Overview**
+   - KPI cards (players, teams, games, seasons)
+   - Team performance snapshot
+   - Attendance and pace signal chart
+2. **Player Explorer**
+   - Switch between hitting/pitching/fielding
+   - Dynamic season and metric widgets
+   - Top-N leaderboard and full table
+3. **Team Explorer**
+   - Team/season filters and metric selector
+   - Trend chart + detailed table
+4. **Game Center**
+   - Game logs, rosters, and transactions
+5. **League Insights**
+   - Standings, park factors, and guts constants
 
-- **Data Pipeline Integration**:
-  - Data pulled from Google Sheets (daily ETL with GitHub Actions)
-  - Caching for faster load times
+## Data expectations
 
-- **Modular Structure**:
-  - Each feature is isolated as a module (`player_stats`, `team_stats`, etc.)
-  - Helper functions for data cleaning, plotting, and utilities
+The app reads `.rds` files from either:
 
----
+- `data/cache/*.rds` (preferred)
+- `cache/*.rds` (fallback)
 
-## 📂 Project Structure
+## Run locally
 
+```r
+shiny::runApp()
+```
+
+## Notes
+
+- This project keeps historical modular files under `R/modules/` for reference, while the new `app.R` provides a complete modern rebuild.

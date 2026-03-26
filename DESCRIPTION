@@ -17,7 +17,8 @@ Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.1)
 Imports: 
     shiny,
-    shinydashboard,
+    bslib,
+    bsicons,
     ggplot2,
     dplyr,
     tidyr,
@@ -26,7 +27,12 @@ Imports:
     lubridate,
     tibble,
     shinyWidgets,
+    shinycssloaders,
     reactable,
+    plotly,
+    scales,
+    thematic,
+    htmltools,
     data.table
 Suggests: 
     testthat,
