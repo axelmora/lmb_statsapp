@@ -46,14 +46,27 @@ reactable_lmb_coldef <- function(...) {
   )
 }
 
-style_dt_numeric_columns <- function(dt, df) {
+reactable_numeric_columns <- function(df, digits = 3) {
   numeric_cols <- names(df)[vapply(df, is.numeric, logical(1))]
-  if (length(numeric_cols) == 0) return(dt)
+  if (!length(numeric_cols)) return(list())
 
-  DT::formatStyle(
-    dt,
-    columns = numeric_cols,
-    `font-family` = "'JetBrains Mono', ui-monospace, monospace",
-    `font-variant-numeric` = "tabular-nums"
-  )
+  col_defs <- lapply(numeric_cols, function(col_name) {
+    values <- df[[col_name]]
+    has_fractional <- any(!is.na(values) & (abs(values - round(values)) > .Machine$double.eps^0.5))
+
+    formatter <- if (has_fractional) {
+      reactable::colFormat(digits = digits, separators = TRUE)
+    } else {
+      reactable::colFormat(separators = TRUE)
+    }
+
+    reactable::colDef(
+      align = "right",
+      format = formatter,
+      minWidth = 80,
+      maxWidth = 120
+    )
+  })
+
+  stats::setNames(col_defs, numeric_cols)
 }

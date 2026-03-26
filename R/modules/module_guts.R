@@ -4,12 +4,12 @@ ui_guts <- function(id) {
     box(
       width = 12,
       title = "Guts",
-      DTOutput(ns("woba_fip_dt"))
+      reactableOutput(ns("woba_fip_dt"))
     ),
     box(
       width = 12,
       title = "Park Factors",
-      DTOutput(ns("pf_dt"))
+      reactableOutput(ns("pf_dt"))
     )
 
   )
@@ -17,31 +17,31 @@ ui_guts <- function(id) {
 
 server_guts <- function(id, guts_data, pf_data) {
   moduleServer(id, function(input, output, session) {
-        output$pf_dt <- renderDT({
-        dt <- datatable(
+        output$pf_dt <- renderReactable({
+        reactable(
           pf_data,
-          escape = FALSE,
-          rownames = FALSE,
-          options = list(
-            dom = 't'
-            ,pageLength = 20
-            ,scrollX = TRUE
-          )
+          searchable = FALSE,
+          sortable = TRUE,
+          striped = TRUE,
+          compact = TRUE,
+          defaultPageSize = 20,
+          columns = reactable_numeric_columns(pf_data, digits = 3),
+          defaultColDef = reactable_lmb_coldef(minWidth = 85, maxWidth = 145),
+          theme = reactable_lmb_theme()
         )
-        style_dt_numeric_columns(dt, pf_data)
       })
   
-    output$woba_fip_dt <- renderDT({
-      dt <- datatable(
+    output$woba_fip_dt <- renderReactable({
+      reactable(
         guts_data,
-        rownames = FALSE,
-        options = list(
-          dom = 't'
-          ,scrollX = TRUE
-        )
-      ) %>%
-        formatRound(columns = 2:11, digits = 3)
-      style_dt_numeric_columns(dt, guts_data)
+        searchable = FALSE,
+        sortable = TRUE,
+        striped = TRUE,
+        compact = TRUE,
+        columns = reactable_numeric_columns(guts_data, digits = 3),
+        defaultColDef = reactable_lmb_coldef(minWidth = 85, maxWidth = 145),
+        theme = reactable_lmb_theme()
+      )
     })
   })
 }

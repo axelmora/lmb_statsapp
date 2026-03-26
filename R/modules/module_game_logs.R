@@ -1,32 +1,23 @@
 ui_game_logs <- function(id) {
   ns <- NS(id)
-  fluidRow(column(12, DTOutput(ns("game_logs_table"))))
+  fluidRow(column(12, reactableOutput(ns("game_logs_table"))))
 }
 
 server_game_logs <- function(id, gl_data) {
   moduleServer(id, function(input, output, session) {
-    output$game_logs_table <- renderDT({
-      dt <- datatable(
-        gl_data
-        ,escape = FALSE
-        ,rownames = FALSE
-        ,options = list(
-          dom = 'tip'
-          ,pageLength = 30
-          ,scrollX = FALSE
-          ,columnDefs = list(list(targets = 0, width = '100px')
-                             ,list(targets = c(2,4), width = '10px')
-                             ,list(targets = c(2,4,8), className = 'dt-center')
-                             ,list(targets = c(1,3,5,9), className = 'dt-left')
-                             ,list(targets = c(1,3,5), width = '250px')
-                             ,list(targets = c(6,7), width = '50px')
-                             ,list(targets = 8, width = '50px')
-                             ,list(targets = 9, width = '50px')
-                             ,list(targets = "_all", className = 'dt-left')
-          )
-        )
+    output$game_logs_table <- renderReactable({
+      reactable(
+        gl_data,
+        searchable = TRUE,
+        sortable = TRUE,
+        striped = TRUE,
+        highlight = TRUE,
+        compact = TRUE,
+        defaultPageSize = 30,
+        columns = reactable_numeric_columns(gl_data, digits = 3),
+        defaultColDef = reactable_lmb_coldef(minWidth = 90, maxWidth = 220),
+        theme = reactable_lmb_theme()
       )
-      style_dt_numeric_columns(dt, gl_data)
     })
   })
 }

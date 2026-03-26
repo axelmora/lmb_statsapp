@@ -7,12 +7,12 @@ ui_zone_std <- function(id) {
       box(
         width = 12,
         "Zona Norte",
-        DTOutput(ns("standing_norte"))
+        reactableOutput(ns("standing_norte"))
       ),
       box(
         width = 12,
         "Zona Sur",
-        DTOutput(ns("standing_sur"))
+        reactableOutput(ns("standing_sur"))
       )
     )
   )
@@ -20,7 +20,7 @@ ui_zone_std <- function(id) {
 
 ui_lg_std <- function(id) {
   ns <- NS(id)
-  fluidRow(column(12, DTOutput(ns("standing_lmb"))))
+  fluidRow(column(12, reactableOutput(ns("standing_lmb"))))
 }
 
 ui_h2h <- function(id) {
@@ -95,27 +95,26 @@ server_std <- function(id, datasets) {
   moduleServer(id, function(input, output, session) {
 
     render_standing <- function(data) {
-      dt <- datatable(
+      reactable(
         data,
-        rownames = FALSE,
-        options = list(
-          dom = 't'
-        ,pageLength = 20
-        ,columnDefs = list(list(targets = 0, width = '5px')
-                          ,list(targets = 1, width = '180px')
-                          ,list(targets = "_all", className = 'dt-left')
-        )
-        )
+        searchable = FALSE,
+        sortable = TRUE,
+        striped = TRUE,
+        highlight = TRUE,
+        compact = TRUE,
+        defaultPageSize = 20,
+        defaultColDef = reactable_lmb_coldef(minWidth = 80, maxWidth = 140),
+        columns = reactable_numeric_columns(data, digits = 3),
+        theme = reactable_lmb_theme()
       )
-      style_dt_numeric_columns(dt, data)
     }
-    output$standing_norte <- renderDT({
+    output$standing_norte <- renderReactable({
       render_standing(datasets$nte)
     })
-    output$standing_sur <- renderDT({
+    output$standing_sur <- renderReactable({
       render_standing(datasets$sur)
     })
-    output$standing_lmb <- renderDT({
+    output$standing_lmb <- renderReactable({
       render_standing(datasets$lmb)
     })
   })
