@@ -16,29 +16,24 @@ ui_att <- function(id) {
       subtitle = "Max Attendance",
       color = "primary"
     ),    
-    DTOutput(ns("game_att_table"))
+    reactableOutput(ns("game_att_table"))
   )
 }
 
 server_att <- function(id, att_data) {
   moduleServer(id, function(input, output, session) {
-    output$game_att_table <- renderDT({
-      dt <- datatable(
-        att_data
-        ,escape = FALSE
-        ,rownames = FALSE,
-        options = list(
-          dom = 't'
-          ,pageLength = 20
-          ,columnDefs = list(list(targets = 0, width = '150x')
-                             ,list(targets = 1, width = '200px')
-                             ,list(targets = c(2:7), width = '5px')
-                             ,list(targets = "_all", className = 'dt-left')
-          )
-          ,scrollX = FALSE
-        )
+    output$game_att_table <- renderReactable({
+      reactable(
+        att_data,
+        searchable = FALSE,
+        sortable = TRUE,
+        striped = TRUE,
+        compact = TRUE,
+        defaultPageSize = 20,
+        columns = reactable_numeric_columns(att_data, digits = 3),
+        defaultColDef = reactable_lmb_coldef(minWidth = 85, maxWidth = 150),
+        theme = reactable_lmb_theme()
       )
-      style_dt_numeric_columns(dt, att_data)
     })
   
   output$lmb_att_avg <- renderText({

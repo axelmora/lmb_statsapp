@@ -31,30 +31,24 @@ ui_game_pace <- function(id) {
       subtitle = "Game time",
       color = "primary"
     ),     
-    DTOutput(ns("game_pace_table"))
+    reactableOutput(ns("game_pace_table"))
   )
 }
 
 server_game_pace <- function(id, pace_venue_data, pace_data) {
   moduleServer(id, function(input, output, session) {
-    output$game_pace_table <- renderDT({
-      dt <- datatable(
-        pace_venue_data
-        ,escape = FALSE
-        ,rownames = FALSE
-        ,options = list(
-          dom = 't'
-          ,pageLength = 21
-          ,scrollX = FALSE
-          ,columnDefs = list(list(targets = 0, width = '150x')
-                             ,list(targets = 1, width = '200px')
-                             ,list(targets = c(2:7), width = '5px')
-                             ,list(targets = "_all", className = 'dt-left')
-          )
-          ,scrollX = FALSE
-        )
+    output$game_pace_table <- renderReactable({
+      reactable(
+        pace_venue_data,
+        searchable = FALSE,
+        sortable = TRUE,
+        striped = TRUE,
+        compact = TRUE,
+        defaultPageSize = 21,
+        columns = reactable_numeric_columns(pace_venue_data, digits = 3),
+        defaultColDef = reactable_lmb_coldef(minWidth = 85, maxWidth = 150),
+        theme = reactable_lmb_theme()
       )
-      style_dt_numeric_columns(dt, pace_venue_data)
     })
   
   output$hits9 <- renderText({
