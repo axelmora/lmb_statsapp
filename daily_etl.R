@@ -209,24 +209,7 @@ update_google_sheets <- function() {
   write_sheet(new_data$hth_sur, hth_sur_matrix_gid, sheet = "hth_sur_matrix")
   saveRDS(new_data$hth_sur, "hth_sur_matrix.rds")
   
-  saveRDS(updated_hitting, "~/Documents/lmb_statsapp/cache/hitting.rds")
-  saveRDS(updated_pitching, "~/Documents/lmb_statsapp/cache/pitching.rds")
-  saveRDS(updated_fielding, "~/Documents/lmb_statsapp/cache/fielding.rds")
-  saveRDS(updated_team_hitting, "~/Documents/lmb_statsapp/cache/team_hitting.rds")
-  saveRDS(updated_team_pitching, "~/Documents/lmb_statsapp/cache/team_pitching.rds")
-  saveRDS(updated_team_fielding, "~/Documents/lmb_statsapp/cache/team_fielding.rds")
-  saveRDS(new_data$logs[-1], "~/Documents/lmb_statsapp/cache/game_logs.rds")
-  saveRDS(new_data$rosters, "~/Documents/lmb_statsapp/cache/rosters.rds")
-  saveRDS(new_data$att, "~/Documents/lmb_statsapp/cache/lmb_att_24.rds")
-  saveRDS(new_data$pace, "~/Documents/lmb_statsapp/cache/lmb_pace_24.rds")
-  saveRDS(new_data$pace_venue, "~/Documents/lmb_statsapp/cache/lmb_pace_venue_24.rds")
-  saveRDS(hitting_cp, "~/Documents/lmb_statsapp/cache/hitting_cp.rds")
-  saveRDS(pitching_cp, "~/Documents/lmb_statsapp/cache/pitching_cp.rds")
-  saveRDS(new_data$standings[1:10,], "~/Documents/lmb_statsapp/cache/stan_nte.rds")
-  saveRDS(new_data$standings[11:20,], "~/Documents/lmb_statsapp/cache/stan_sur.rds")
-  saveRDS(new_data$standing_lmb, "~/Documents/lmb_statsapp/cache/stan_lmb.rds")
-  saveRDS(new_data$hth_nte, "~/Documents/lmb_statsapp/cache/hth_nte_matrix.rds")
-  saveRDS(new_data$hth_sur, "~/Documents/lmb_statsapp/cache/hth_sur_matrix.rds")
+
   
   print(paste("Google Sheets updated on", Sys.time()))
 }
@@ -236,7 +219,6 @@ update_trans <- function(startDate,endDate){
   
   write_sheet(lmb_trans_data, trans_gid, sheet = "lmb_trans")
   saveRDS(lmb_trans_data, "lmb_trans_data_2025.rds")
-  saveRDS(lmb_trans_data, "~/Documents/lmb_statsapp/cache/lmb_trans_data_2025.rds")
   print("Transactions updated")
 }
 
@@ -246,4 +228,4 @@ master_daily_etl <- function(startDate,endDate){
 }
 
 
-master_daily_etl("2025-04-01",Sys.Date())
+master_daily_etl("2026-04-01",Sys.Date())

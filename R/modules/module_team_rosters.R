@@ -10,7 +10,21 @@ server_rosters <- function(id, rosters_data, filters) {
       req(filters$team())
       df <- rosters_data
       if (filters$team() != "All") df <- df %>% filter(Team == filters$team())
-      reactable(df, searchable = TRUE, sortable = TRUE)
+      reactable(df, 
+                searchable = TRUE, 
+                sortable = TRUE,
+                groupBy = "position_group",
+                highlight      = TRUE,
+                striped        = TRUE,
+                compact        = TRUE,
+                defaultPageSize = 25,
+                columns = list(
+                  Number = colDef(width = 70),
+                  Name = colDef(width = 200),
+                  Team = colDef(width = 230),
+                  `Birth Country` = colDef(width = 200)
+                )
+      )
     })
   })
 }

@@ -6,19 +6,17 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
     ns <- session$ns
     
     # --- HITTERS ---
-    player_data <- reactive({
-      hit_cp
-    })
+    hitter_names <- sort(unique(hit_cp$Name))
     
+    # Initialize predictive inputs for Hitters
     observe({
-      updateSelectInput(session, "player1", choices = sort(unique(player_data()$Name)))
-      updateSelectInput(session, "player2", choices = sort(unique(player_data()$Name)))
+      updateSelectizeInput(session, "player1", choices = hitter_names, selected = "", server = TRUE)
+      updateSelectizeInput(session, "player2", choices = hitter_names, selected = "", server = TRUE)
     })
     
     selected_players <- reactive({
       req(input$player1, input$player2)
-      player_data() %>%
-        filter(Name %in% c(input$player1, input$player2))
+      hit_cp %>% filter(Name %in% c(input$player1, input$player2))
     })
     
     output$hitter_comparison_table <- renderReactable({
@@ -60,18 +58,17 @@ playerComparisonServer <- function(id, hit_cp, pit_cp) {
     })
     
     # --- PITCHERS ---
-    pitcher_data <- reactive({
-      pit_cp
-    })
+    pitcher_names <- sort(unique(pit_cp$Name))
     
+    # Initialize predictive inputs for Pitchers
     observe({
-      updateSelectInput(session, "pitcher1", choices = sort(unique(pitcher_data()$Name)))
-      updateSelectInput(session, "pitcher2", choices = sort(unique(pitcher_data()$Name)))
+      updateSelectizeInput(session, "pitcher1", choices = pitcher_names, selected = "", server = TRUE)
+      updateSelectizeInput(session, "pitcher2", choices = pitcher_names, selected = "", server = TRUE)
     })
     
     selected_pitchers <- reactive({
       req(input$pitcher1, input$pitcher2)
-      pitcher_data() %>% filter(Name %in% c(input$pitcher1, input$pitcher2))
+      pit_cp %>% filter(Name %in% c(input$pitcher1, input$pitcher2))
     })
     
     output$pitcher_comparison_table <- renderReactable({

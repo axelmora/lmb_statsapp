@@ -52,6 +52,7 @@ source("R/helpers/data_cleaning.R")
 source("R/helpers/plotting.R")
 source("R/helpers/utils.R")
 source("R/modules/mod_team_filters.R")
+source("R/modules/mod_player_filters.R")
 # modules (UI + server)
 source("R/modules/ui_player_stats.R")
 source("R/modules/server_player_stats.R")
@@ -141,34 +142,28 @@ ui <- bs4DashPage(
     title = "Filters",
     collapsed = FALSE,
     uiOutput("team_filters"),
-    uiOutput("players_filters")
+    uiOutput("player_filters")
   )
 )
 
 
 # ---- App Server ----
 server <- function(input, output, session) {
-  # Dynamic filter UI based on dataset
-  teams   <- sort(unique(team_hitting$Team))
-  seasons <- sort(unique(team_hitting$Year))
   
-  output$players_filters <- renderUI({
-    if (input$tabs != "player_hit") return(NULL)
-    tagList(
-      selectInput("players_year", "Select Season:",
-                  choices  = c("All", seasons),
-                  selected = max(seasons))
-    )
+  filters_player <- playerFiltersServer("player_filters")
+  
+  output$player_filters <- renderUI({
+    if (!input$tabs %in% c("player_hit")) return(NULL)
+    playerFiltersUI("player_filters")   # <-- this renders the UI
   })
-   
-  server_player_stats(
-    id            = "ui_player_stats_1",
-    datasets = list(
-      hit = hitting,
-      pit = pitching,
-      fie = fielding
-    ),
-    season_filter = reactive(input$players_year)
+  
+  server_player_stats("ui_player_stats_1",
+                      datasets = list(
+                        hit = hitting,
+                        pit = pitching,
+                        fie = fielding
+                      ),
+                      filters_player
   )
 
   filters <- teamFiltersServer("team_filters")
