@@ -56,13 +56,17 @@ server_player_stats <- function(id, datasets, filters) {
           }
         ),
         columns = list(
-          Name = colDef(sticky = "left",
-                        style = list(borderRight = "1px solid #eee"),
-                        headerStyle = list(borderRight = "1px solid #eee"),
-                        width = 200),
-          Team = colDef(sticky = "left",
-                        style = list(borderRight = "1px solid #eee"),
-                        headerStyle = list(borderRight = "1px solid #eee")),
+          Name = colDef(
+            sticky = "left",
+            style = function(value) list(borderRight = "1px solid var(--rt-border-color, #eee)"),
+            headerStyle = list(borderRight = "1px solid var(--rt-border-color, #eee)"),
+            width = 200
+          ),
+          Team = colDef(
+            sticky = "left",
+            style = function(value) list(borderRight = "1px solid var(--rt-border-color, #eee)"),
+            headerStyle = list(borderRight = "1px solid var(--rt-border-color, #eee)")
+          ),
           PlayerId = colDef(show = FALSE),
           dRPW = colDef(show = FALSE),
           rpL = colDef(show = FALSE),

@@ -1,0 +1,369 @@
+"","Season","Team_full","Team_short","Abbr","TeamId"
+"1",2005,"Guerreros de Oaxaca","Warriors","OAX",579
+"2",2005,"Pericos de Puebla","Parrots","PUE",520
+"3",2005,"Piratas de Campeche","Pirates","CAM",523
+"4",2005,"Acereros de Monclova","Steelers","MVA",560
+"5",2005,"Leones de Yucatan","Lions","YUC",496
+"6",2005,"Rieleros de Aguascalientes","Railroadmen","AGU",528
+"7",2005,"Langosteros de Cancun","Langosteros","CAN",497
+"8",2005,"Sultanes de Monterrey","Sultans","MTY",562
+"9",2005,"Potros de Tijuana","Colts","TIJ",434
+"10",2005,"Diablos Rojos del Mexico","Red Devils","MXO",532
+"11",2005,"Saraperos de Saltillo","Sarape Makers","SLT",502
+"12",2005,"Rojos del Aguila de Veracruz","Reds","VRA",536
+"13",2005,"Tigres de la Angelopolis","Tigres","TIG",569
+"14",2005,"Olmecas de Tabasco","Olmecas","TAB",442
+"15",2005,"Tuneros de San Luis","Cactus Pear Growers","SLP",575
+"16",2005,"Vaqueros Laguna","Cowboys","VAQ",447
+"17",2006,"Guerreros de Oaxaca","Guerreros","OAX",579
+"18",2006,"Pericos de Puebla","Pericos","PUE",520
+"19",2006,"Piratas de Campeche","Piratas","CAM",523
+"20",2006,"Acereros de Monclova","Acereros","MVA",560
+"21",2006,"Rieleros de Aguascalientes","Rieleros","AGU",528
+"22",2006,"Leones de Yucatan","Leones","YUC",496
+"23",2006,"Sultanes de Monterrey","Sultanes","MTY",562
+"24",2006,"Potros de Tijuana","Potros","TIJ",434
+"25",2006,"Diablos Rojos del Mexico","Diablos Rojos","MXO",532
+"26",2006,"Saraperos de Saltillo","Saraperos","SLT",502
+"27",2006,"Rojos del Aguila de Veracruz","Rojos","VRA",536
+"28",2006,"Tigres de la Angelopolis","Tigres","TIG",569
+"29",2006,"Cafeteros de Cordoba","Cafeteros","COR",1210
+"30",2006,"Olmecas de Tabasco","Olmecas","TAB",442
+"31",2006,"Tuneros de San Luis","Tuneros","SLP",575
+"32",2006,"Vaqueros Laguna","Vaqueros","VAQ",447
+"33",2007,"Guerreros de Oaxaca","Guerreros","OAX",579
+"34",2007,"Pericos de Puebla","Pericos","PUE",520
+"35",2007,"Piratas de Campeche","Piratas","CAM",523
+"36",2007,"Acereros del Norte","Acereros","MVA",560
+"37",2007,"Rieleros de Aguascalientes","Rieleros","AGU",528
+"38",2007,"Leones de Yucatan","Leones","YUC",496
+"39",2007,"Sultanes de Monterrey","Sultanes","MTY",562
+"40",2007,"Potros de Tijuana","Potros","TIJ",434
+"41",2007,"Diablos Rojos del Mexico","Diablos Rojos","MXO",532
+"42",2007,"Saraperos de Saltillo","Saraperos","SLT",502
+"43",2007,"Rojos del Aguila de Veracruz","Rojos","VRA",536
+"44",2007,"Tigres de Quintana Roo","Tigres","QR",569
+"45",2007,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"46",2007,"Olmecas de Tabasco","Olmecas","TAB",442
+"47",2007,"Dorados de Chihuahua","Dorados","CHI",575
+"48",2007,"Vaqueros Laguna","Vaqueros","VAQ",447
+"49",2008,"Guerreros de Oaxaca","Guerreros","OAX",579
+"50",2008,"Pericos de Puebla","Pericos","PUE",520
+"51",2008,"Piratas de Campeche","Piratas","CAM",523
+"52",2008,"Acereros del Norte","Acereros","MVA",560
+"53",2008,"Tecolotes de Nuevo Laredo","Tecolotes","LAR",528
+"54",2008,"Leones de Yucatan","Leones","YUC",496
+"55",2008,"Sultanes de Monterrey","Sultanes","MTY",562
+"56",2008,"Potros de Tijuana","Potros","TIJ",434
+"57",2008,"Diablos Rojos del Mexico","Diablos Rojos","MXO",532
+"58",2008,"Saraperos de Saltillo","Saraperos","SLT",502
+"59",2008,"Rojos del Aguila de Veracruz","Rojos","VRA",536
+"60",2008,"Tigres de Quintana Roo","Tigres","QR",569
+"61",2008,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"62",2008,"Olmecas de Tabasco","Olmecas","TAB",442
+"63",2008,"Dorados de Chihuahua","Dorados","CHI",575
+"64",2008,"Vaqueros Laguna","Vaqueros","VAQ",447
+"65",2009,"Guerreros de Oaxaca","Guerreros","OAX",579
+"66",2009,"Pericos de Puebla","Pericos","PUE",520
+"67",2009,"Piratas de Campeche","Piratas","CAM",523
+"68",2009,"Acereros del Norte","Acereros","MVA",560
+"69",2009,"Tecolotes de Nuevo Laredo","Tecolotes","LAR",528
+"70",2009,"Leones de Yucatan","Leones","YUC",496
+"71",2009,"Sultanes de Monterrey","Sultanes","MTY",562
+"72",2009,"Broncos de Reynosa","Broncos","REY",434
+"73",2009,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"74",2009,"Saraperos de Saltillo","Saraperos","SLT",502
+"75",2009,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"76",2009,"Tigres de Quintana Roo","Tigres","TIG",569
+"77",2009,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"78",2009,"Olmecas de Tabasco","Olmecas","TAB",442
+"79",2009,"Dorados de Chihuahua","Dorados","CHI",575
+"80",2009,"Vaqueros Laguna","Vaqueros","LAG",447
+"81",2010,"Guerreros de Oaxaca","Guerreros","OAX",579
+"82",2010,"Pericos de Puebla","Pericos","PUE",520
+"83",2010,"Piratas de Campeche","Piratas","CAM",523
+"84",2010,"Acereros del Norte","Acereros","MVA",560
+"85",2010,"Tecolotes de Nuevo Laredo","Tecolotes","LAR",528
+"86",2010,"Leones de Yucatan","Leones","YUC",496
+"87",2010,"Sultanes de Monterrey","Sultanes","MTY",562
+"88",2010,"Broncos de Reynosa","Broncos","REY",434
+"89",2010,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"90",2010,"Saraperos de Saltillo","Saraperos","SLT",502
+"91",2010,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"92",2010,"Tigres de Quintana Roo","Tigres","TIG",569
+"93",2010,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"94",2010,"Olmecas de Tabasco","Olmecas","TAB",442
+"95",2010,"Dorados de Chihuahua","Dorados","CHI",575
+"96",2010,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"97",2011,"Guerreros de Oaxaca","Guerreros","OAX",579
+"98",2011,"Pericos de Puebla","Pericos","PUE",520
+"99",2011,"Piratas de Campeche","Piratas","CAM",523
+"100",2011,"Acereros del Norte","Acereros","MVA",560
+"101",2011,"Leones de Yucatan","Leones","YUC",496
+"102",2011,"Sultanes de Monterrey","Sultanes","MTY",562
+"103",2011,"Broncos de Reynosa","Broncos","REY",434
+"104",2011,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"105",2011,"Saraperos de Saltillo","Saraperos","SLT",502
+"106",2011,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"107",2011,"Tigres de Quintana Roo","Tigres","TIG",569
+"108",2011,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"109",2011,"Olmecas de Tabasco","Olmecas","TAB",442
+"110",2011,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"111",2012,"Guerreros de Oaxaca","Guerreros","OAX",579
+"112",2012,"Pericos de Puebla","Pericos","PUE",520
+"113",2012,"Piratas de Campeche","Piratas","CAM",523
+"114",2012,"Acereros del Norte","Acereros","MVA",560
+"115",2012,"Leones de Yucatan","Leones","YUC",496
+"116",2012,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"117",2012,"Sultanes de Monterrey","Sultanes","MTY",562
+"118",2012,"Broncos de Reynosa","Broncos","REY",434
+"119",2012,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"120",2012,"Saraperos de Saltillo","Saraperos","SLT",502
+"121",2012,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"122",2012,"Tigres de Quintana Roo","Tigres","TIG",569
+"123",2012,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"124",2012,"Olmecas de Tabasco","Olmecas","TAB",442
+"125",2012,"Delfines de Ciudad del Carmen","Delfines","CDC",4444
+"126",2012,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"127",2013,"Guerreros de Oaxaca","Guerreros","OAX",579
+"128",2013,"Pericos de Puebla","Pericos","PUE",520
+"129",2013,"Piratas de Campeche","Piratas","CAM",523
+"130",2013,"Acereros del Norte","Acereros","MVA",560
+"131",2013,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"132",2013,"Leones de Yucatan","Leones","YUC",496
+"133",2013,"Sultanes de Monterrey","Sultanes","MTY",562
+"134",2013,"Broncos de Reynosa","Broncos","REY",434
+"135",2013,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"136",2013,"Saraperos de Saltillo","Saraperos","SLT",502
+"137",2013,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"138",2013,"Tigres de Quintana Roo","Tigres","TIG",569
+"139",2013,"Petroleros de Minatitlan","Petroleros","MIN",1210
+"140",2013,"Olmecas de Tabasco","Olmecas","TAB",442
+"141",2013,"Delfines de Ciudad del Carmen","Delfines","CDC",4444
+"142",2013,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"143",2014,"Guerreros de Oaxaca","Guerreros","OAX",579
+"144",2014,"Pericos de Puebla","Pericos","PUE",520
+"145",2014,"Piratas de Campeche","Piratas","CAM",523
+"146",2014,"Acereros del Norte","Acereros","MVA",560
+"147",2014,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"148",2014,"Leones de Yucatan","Leones","YUC",496
+"149",2014,"Toros de Tijuana","Toros","TIJ",5010
+"150",2014,"Sultanes de Monterrey","Sultanes","MTY",562
+"151",2014,"Broncos de Reynosa","Broncos","REY",434
+"152",2014,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"153",2014,"Saraperos de Saltillo","Saraperos","SLT",502
+"154",2014,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"155",2014,"Tigres de Quintana Roo","Tigres","TIG",569
+"156",2014,"Olmecas de Tabasco","Olmecas","TAB",442
+"157",2014,"Delfines de Ciudad del Carmen","Delfines","CDC",4444
+"158",2014,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"159",2015,"Guerreros de Oaxaca","Guerreros","OAX",579
+"160",2015,"Pericos de Puebla","Pericos","PUE",520
+"161",2015,"Piratas de Campeche","Piratas","CAM",523
+"162",2015,"Leones de Yucatan","Leones","YUC",496
+"163",2015,"Acereros del Norte","Acereros","MVA",560
+"164",2015,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"165",2015,"Sultanes de Monterrey","Sultanes","MTY",562
+"166",2015,"Broncos de Tamaulipas","Broncos","TAM",434
+"167",2015,"Toros de Tijuana","Toros","TIJ",5010
+"168",2015,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"169",2015,"Saraperos de Saltillo","Saraperos","SLT",502
+"170",2015,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"171",2015,"Tigres de Quintana Roo","Tigres","TIG",569
+"172",2015,"Olmecas de Tabasco","Olmecas","TAB",442
+"173",2015,"Delfines de Ciudad del Carmen","Delfines","CDC",4444
+"174",2015,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"175",2016,"Guerreros de Oaxaca","Guerreros","OAX",579
+"176",2016,"Pericos de Puebla","Pericos","PUE",520
+"177",2016,"Piratas de Campeche","Piratas","CAM",523
+"178",2016,"Acereros del Norte","Acereros","MVA",560
+"179",2016,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"180",2016,"Leones de Yucatan","Leones","YUC",496
+"181",2016,"Toros de Tijuana","Toros","TIJ",5010
+"182",2016,"Sultanes de Monterrey","Sultanes","MTY",562
+"183",2016,"Broncos de Reynosa","Broncos","REY",434
+"184",2016,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"185",2016,"Saraperos de Saltillo","Saraperos","SLT",502
+"186",2016,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"187",2016,"Tigres de Quintana Roo","Tigres","TIG",569
+"188",2016,"Olmecas de Tabasco","Olmecas","TAB",442
+"189",2016,"Delfines de Ciudad del Carmen","Delfines","CDC",4444
+"190",2016,"Vaqueros de la Laguna","Vaqueros","LAG",447
+"191",2017,"Guerreros de Oaxaca","Guerreros","OAX",579
+"192",2017,"Pericos de Puebla","Pericos","PUE",520
+"193",2017,"Piratas de Campeche","Piratas","CAM",523
+"194",2017,"Acereros del Norte","Acereros","MVA",560
+"195",2017,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"196",2017,"Leones de Yucatan","Leones","YUC",496
+"197",2017,"Toros de Tijuana","Toros","TIJ",5010
+"198",2017,"Sultanes de Monterrey","Sultanes","MTY",562
+"199",2017,"Bravos de Leon","Bravos","LEO",434
+"200",2017,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"201",2017,"Saraperos de Saltillo","Saraperos","SLT",502
+"202",2017,"Rojos del Aguila de Veracruz","Rojos","VER",536
+"203",2017,"Tigres de Quintana Roo","Tigres","TIG",569
+"204",2017,"Olmecas de Tabasco","Olmecas","TAB",442
+"205",2017,"Generales de Durango","Generales","DUR",4444
+"206",2017,"Vaqueros Union Laguna","Vaqueros","LAG",447
+"207",2018,"Guerreros de Oaxaca","Guerreros","OAX",579
+"208",2018,"Pericos de Puebla","Pericos","PUE",520
+"209",2018,"Piratas de Campeche","Piratas","CAM",523
+"210",2018,"Acereros del Norte","Acereros","MVA",560
+"211",2018,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"212",2018,"Leones de Yucatan","Leones","YUC",496
+"213",2018,"Toros de Tijuana","Toros","TIJ",5010
+"214",2018,"Sultanes de Monterrey","Sultanes","MTY",562
+"215",2018,"Bravos de Leon","Bravos","LEO",434
+"216",2018,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"217",2018,"Saraperos de Saltillo","Saraperos","SLT",502
+"218",2018,"Tecos de los Dos Laredos","Tecos","LAR",536
+"219",2018,"Tigres de Quintana Roo","Tigres","TIG",569
+"220",2018,"Olmecas de Tabasco","Olmecas","TAB",442
+"221",2018,"Generales de Durango","Generales","DUR",4444
+"222",2018,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"223",2018,"Guerreros de Oaxaca","Guerreros","OAX",579
+"224",2018,"Pericos de Puebla","Pericos","PUE",520
+"225",2018,"Piratas de Campeche","Piratas","CAM",523
+"226",2018,"Acereros del Norte","Acereros","MVA",560
+"227",2018,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"228",2018,"Leones de Yucatan","Leones","YUC",496
+"229",2018,"Toros de Tijuana","Toros","TIJ",5010
+"230",2018,"Sultanes de Monterrey","Sultanes","MTY",562
+"231",2018,"Bravos de Leon","Bravos","LEO",434
+"232",2018,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"233",2018,"Saraperos de Saltillo","Saraperos","SLT",502
+"234",2018,"Tecos de los Dos Laredos","Tecos","LAR",536
+"235",2018,"Tigres de Quintana Roo","Tigres","TIG",569
+"236",2018,"Olmecas de Tabasco","Olmecas","TAB",442
+"237",2018,"Generales de Durango","Generales","DUR",4444
+"238",2018,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"239",2019,"Guerreros de Oaxaca","Guerreros","OAX",579
+"240",2019,"Pericos de Puebla","Pericos","PUE",520
+"241",2019,"Piratas de Campeche","Piratas","CAM",523
+"242",2019,"Acereros del Norte","Acereros","MVA",560
+"243",2019,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"244",2019,"Leones de Yucatan","Leones","YUC",496
+"245",2019,"Toros de Tijuana","Toros","TIJ",5010
+"246",2019,"Sultanes de Monterrey","Sultanes","MTY",562
+"247",2019,"Bravos de Leon","Bravos","LEO",434
+"248",2019,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"249",2019,"Saraperos de Saltillo","Saraperos","SLT",502
+"250",2019,"Tecos de los Dos Laredos","Tecos","LAR",536
+"251",2019,"Tigres de Quintana Roo","Tigres","TIG",569
+"252",2019,"Olmecas de Tabasco","Olmecas","TAB",442
+"253",2019,"Generales de Durango","Generales","DUR",4444
+"254",2019,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"255",2021,"Guerreros de Oaxaca","Guerreros","OAX",579
+"256",2021,"Pericos de Puebla","Pericos","PUE",520
+"257",2021,"Piratas de Campeche","Piratas","CAM",523
+"258",2021,"Acereros del Norte","Acereros","MVA",560
+"259",2021,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"260",2021,"Leones de Yucatan","Leones","YUC",496
+"261",2021,"Toros de Tijuana","Toros","TIJ",5010
+"262",2021,"Sultanes de Monterrey","Sultanes","MTY",562
+"263",2021,"Bravos de Leon","Bravos","LEO",434
+"264",2021,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"265",2021,"Saraperos de Saltillo","Saraperos","SLT",502
+"266",2021,"Tecos de los Dos Laredos","Tecos","LAR",536
+"267",2021,"Tigres de Quintana Roo","Tigres","TIG",569
+"268",2021,"Olmecas de Tabasco","Olmecas","TAB",442
+"269",2021,"Generales de Durango","Generales","DUR",4444
+"270",2021,"Mariachis de Guadalajara","Mariachis","GDL",5566
+"271",2021,"El Aguila de Veracruz","El Aguila","VER",5567
+"272",2021,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"273",2022,"Guerreros de Oaxaca","Guerreros","OAX",579
+"274",2022,"Pericos de Puebla","Pericos","PUE",520
+"275",2022,"Piratas de Campeche","Piratas","CAM",523
+"276",2022,"Acereros del Norte","Acereros","MVA",560
+"277",2022,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"278",2022,"Leones de Yucatan","Leones","YUC",496
+"279",2022,"Toros de Tijuana","Toros","TIJ",5010
+"280",2022,"Sultanes de Monterrey","Sultanes","MTY",562
+"281",2022,"Bravos de Leon","Bravos","LEO",434
+"282",2022,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"283",2022,"Saraperos de Saltillo","Saraperos","SLT",502
+"284",2022,"Tecos de los Dos Laredos","Tecos","LAR",536
+"285",2022,"Tigres de Quintana Roo","Tigres","TIG",569
+"286",2022,"Olmecas de Tabasco","Olmecas","TAB",442
+"287",2022,"Generales de Durango","Generales","DUR",4444
+"288",2022,"Mariachis de Guadalajara","Mariachis","GDL",5566
+"289",2022,"El Aguila de Veracruz","El Aguila","VER",5567
+"290",2022,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"291",2023,"Guerreros de Oaxaca","Guerreros","OAX",579
+"292",2023,"Pericos de Puebla","Pericos","PUE",520
+"293",2023,"Piratas de Campeche","Piratas","CAM",523
+"294",2023,"Acereros del Norte","Acereros","MVA",560
+"295",2023,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"296",2023,"Leones de Yucatan","Leones","YUC",496
+"297",2023,"Toros de Tijuana","Toros","TIJ",5010
+"298",2023,"Sultanes de Monterrey","Sultanes","MTY",562
+"299",2023,"Bravos de Leon","Bravos","LEO",434
+"300",2023,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"301",2023,"Saraperos de Saltillo","Saraperos","SLT",502
+"302",2023,"Tecos de los Dos Laredos","Tecos","LAR",536
+"303",2023,"Tigres de Quintana Roo","Tigres","TIG",569
+"304",2023,"Olmecas de Tabasco","Olmecas","TAB",442
+"305",2023,"Generales de Durango","Generales","DUR",4444
+"306",2023,"Mariachis de Guadalajara","Mariachis","GDL",5566
+"307",2023,"El Aguila de Veracruz","El Aguila","VER",5567
+"308",2023,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"309",2024,"Charros de Jalisco","Charros","JAL",6304
+"310",2024,"Guerreros de Oaxaca","Guerreros","OAX",579
+"311",2024,"Pericos de Puebla","Pericos","PUE",520
+"312",2024,"Piratas de Campeche","Piratas","CAM",523
+"313",2024,"Acereros del Norte","Acereros","MVA",560
+"314",2024,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"315",2024,"Leones de Yucatan","Leones","YUC",496
+"316",2024,"Toros de Tijuana","Toros","TIJ",5010
+"317",2024,"Sultanes de Monterrey","Sultanes","MTY",562
+"318",2024,"Bravos de Leon","Bravos","LEO",434
+"319",2024,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"320",2024,"Saraperos de Saltillo","Saraperos","SLT",502
+"321",2024,"Tecos de los Dos Laredos","Tecos","LAR",536
+"322",2024,"Tigres de Quintana Roo","Tigres","TIG",569
+"323",2024,"Olmecas de Tabasco","Olmecas","TAB",442
+"324",2024,"Caliente de Durango","Caliente","DUR",4444
+"325",2024,"Conspiradores de Queretaro","Conspiradores","QRO",6303
+"326",2024,"El Aguila de Veracruz","El Aguila","VER",5567
+"327",2024,"Dorados de Chihuahua","Dorados","CHI",575
+"328",2024,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"329",2025,"Charros de Jalisco","Charros","JAL",6304
+"330",2025,"Guerreros de Oaxaca","Guerreros","OAX",579
+"331",2025,"Pericos de Puebla","Pericos","PUE",520
+"332",2025,"Piratas de Campeche","Piratas","CAM",523
+"333",2025,"Acereros del Norte","Acereros","MVA",560
+"334",2025,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"335",2025,"Leones de Yucatan","Leones","YUC",496
+"336",2025,"Toros de Tijuana","Toros","TIJ",5010
+"337",2025,"Sultanes de Monterrey","Sultanes","MTY",562
+"338",2025,"Bravos de Leon","Bravos","LEO",434
+"339",2025,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"340",2025,"Saraperos de Saltillo","Saraperos","SLT",502
+"341",2025,"Tecos de los Dos Laredos","Tecos","LAR",536
+"342",2025,"Tigres de Quintana Roo","Tigres","TIG",569
+"343",2025,"Olmecas de Tabasco","Olmecas","TAB",442
+"344",2025,"Caliente de Durango","Caliente","DUR",4444
+"345",2025,"Conspiradores de Queretaro","Conspiradores","QRO",6303
+"346",2025,"El Aguila de Veracruz","El Aguila","VER",5567
+"347",2025,"Dorados de Chihuahua","Dorados","CHI",575
+"348",2025,"Algodoneros Union Laguna","Algodoneros","LAG",447
+"349",2026,"Charros de Jalisco","Charros","JAL",6304
+"350",2026,"Guerreros de Oaxaca","Guerreros","OAX",579
+"351",2026,"Pericos de Puebla","Pericos","PUE",520
+"352",2026,"Piratas de Campeche","Piratas","CAM",523
+"353",2026,"Acereros del Norte","Acereros","MVA",560
+"354",2026,"Rieleros de Aguascalientes","Rieleros","AGS",528
+"355",2026,"Leones de Yucatan","Leones","YUC",496
+"356",2026,"Toros de Tijuana","Toros","TIJ",5010
+"357",2026,"Sultanes de Monterrey","Sultanes","MTY",562
+"358",2026,"Bravos de Leon","Bravos","LEO",434
+"359",2026,"Diablos Rojos del Mexico","Diablos Rojos","MEX",532
+"360",2026,"Saraperos de Saltillo","Saraperos","SLW",502
+"361",2026,"Tecos de los Dos Laredos","Tecos","LAR",536
+"362",2026,"Tigres de Quintana Roo","Tigres","TIG",569
+"363",2026,"Olmecas de Tabasco","Olmecas","TAB",442
+"364",2026,"Caliente de Durango","Caliente","DUR",4444
+"365",2026,"Conspiradores de Queretaro","Conspiradores","QRO",6303
+"366",2026,"El Aguila de Veracruz","El Aguila","VER",5567
+"367",2026,"Dorados de Chihuahua","Dorados","CHI",575
+"368",2026,"Algodoneros Union Laguna","Algodoneros","LAG",447
