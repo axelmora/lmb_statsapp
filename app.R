@@ -49,6 +49,8 @@ sur_leader_long <- readRDS("data/cache/sur_leader_long.rds")
 team_colors_sur <- readRDS("data/cache/team_colors_sur.rds")
 teams_ref <- readRDS("data/cache/teams_ref.rds")
 logos <- readRDS("data/cache/logos.rds")
+hitting_cp_cum <- readRDS("data/cache/hitting_cp_cum.rds")
+pitching_cp_cum <- readRDS("data/cache/pitching_cp_cum.rds")
 # ---- Source Helpers & Modules ----
 # helpers
 source("R/helpers/data_cleaning.R")
@@ -437,9 +439,12 @@ server <- function(input, output, session) {
   server_transactions("ui_transactions_1", trans, filters)
 
   playerComparisonServer(
-    id     = "comparison", 
+    id = "comparison",
     hit_cp = hitting_cp,
-    pit_cp = pitching_cp)
+    pit_cp = pitching_cp,
+    hit_cp_cum = hitting_cp_cum,
+    pit_cp_cum = pitching_cp_cum
+  )
   
   server_game_logs("ui_game_logs_1",game_logs)
 

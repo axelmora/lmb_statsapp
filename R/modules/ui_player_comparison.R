@@ -1,21 +1,28 @@
-
 # ======================================================
 # Player Comparison - UI Module
 # ======================================================
 
 playerComparisonUI <- function(id) {
-  
+
   ns <- NS(id)
-  
+
   tabsetPanel(
     id = ns("comparison_tabs"),
-    
+
     # --------------------------------------------------
     # HITTERS
     # --------------------------------------------------
     tabPanel(
       "Hitters",
-      
+
+      radioButtons(
+        ns("hitter_mode"),
+        "Comparison mode",
+        choices = c("Single Season" = "season", "Career" = "career"),
+        selected = "season",
+        inline = TRUE
+      ),
+
       fluidRow(
         column(
           6,
@@ -25,13 +32,16 @@ playerComparisonUI <- function(id) {
             choices = NULL,
             options = list(placeholder = "Type a name...")
           ),
-          selectInput(
-            ns("season1"),
-            "Season",
-            choices = NULL
+          conditionalPanel(
+            condition = sprintf("input['%s'] == 'season'", ns("hitter_mode")),
+            selectInput(
+              ns("season1"),
+              "Season",
+              choices = NULL
+            )
           )
         ),
-        
+
         column(
           6,
           selectizeInput(
@@ -40,23 +50,34 @@ playerComparisonUI <- function(id) {
             choices = NULL,
             options = list(placeholder = "Type a name...")
           ),
-          selectInput(
-            ns("season2"),
-            "Season",
-            choices = NULL
+          conditionalPanel(
+            condition = sprintf("input['%s'] == 'season'", ns("hitter_mode")),
+            selectInput(
+              ns("season2"),
+              "Season",
+              choices = NULL
+            )
           )
         )
       ),
-      
+
       reactableOutput(ns("hitter_comparison_table"))
     ),
-    
+
     # --------------------------------------------------
     # PITCHERS
     # --------------------------------------------------
     tabPanel(
       "Pitchers",
-      
+
+      radioButtons(
+        ns("pitcher_mode"),
+        "Comparison mode",
+        choices = c("Single Season" = "season", "Career" = "career"),
+        selected = "season",
+        inline = TRUE
+      ),
+
       fluidRow(
         column(
           6,
@@ -66,13 +87,16 @@ playerComparisonUI <- function(id) {
             choices = NULL,
             options = list(placeholder = "Type a name...")
           ),
-          selectInput(
-            ns("pitcher_season1"),
-            "Season",
-            choices = NULL
+          conditionalPanel(
+            condition = sprintf("input['%s'] == 'season'", ns("pitcher_mode")),
+            selectInput(
+              ns("pitcher_season1"),
+              "Season",
+              choices = NULL
+            )
           )
         ),
-        
+
         column(
           6,
           selectizeInput(
@@ -81,14 +105,17 @@ playerComparisonUI <- function(id) {
             choices = NULL,
             options = list(placeholder = "Type a name...")
           ),
-          selectInput(
-            ns("pitcher_season2"),
-            "Season",
-            choices = NULL
+          conditionalPanel(
+            condition = sprintf("input['%s'] == 'season'", ns("pitcher_mode")),
+            selectInput(
+              ns("pitcher_season2"),
+              "Season",
+              choices = NULL
+            )
           )
         )
       ),
-      
+
       reactableOutput(ns("pitcher_comparison_table"))
     )
   )
